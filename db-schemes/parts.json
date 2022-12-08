@@ -1,0 +1,1 @@
+{"title":"Запчасти","properties":[{"title":"ТО","article":"maintenance_id","type":"int","default":null,"is_required":"Y"},{"title":"Название запчасти","article":"title","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Кол-во","article":"count","type":"int","default":"0","is_required":"Y"}]}
