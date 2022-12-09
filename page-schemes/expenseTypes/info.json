@@ -20,7 +20,7 @@
         "size": 2,
         "blocks": [{
           "title": "Основное",
-          "fields": ["title", "parent_id"]
+          "fields": ["title", "article"]
         }]
       }]
     },

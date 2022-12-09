@@ -23,7 +23,7 @@
           "size": 2,
           "blocks": [{
             "title": "Основное",
-            "fields": ["title", "parent_id"]
+            "fields": ["title", "article"]
           }]
         }]
       }]
@@ -34,7 +34,7 @@
         "settings": {
           "title": "Изменить",
           "background": "dark",
-          "icon": "expenseTypes"
+          "icon": ""
         }
       }]
     }
