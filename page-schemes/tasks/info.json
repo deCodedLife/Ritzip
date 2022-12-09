@@ -1,0 +1,41 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Задачи - Просмотр",
+      "title": [":id"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "info",
+    "size": 4,
+    "settings": {
+      "object": "tasks",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": []
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "Св-ва",
+          "fields": ["status", "deadline"]
+        }]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": ["description"]
+        }]
+      }]
+    },
+    "components": {}
+  }]
+}

@@ -1,0 +1,29 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Плановые ТО - Просмотр",
+      "title": [":id"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "info",
+    "size": 4,
+    "settings": {
+      "object": "maintenanceSchedules",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": ["mileage", "description", "autoservice_id"]
+        }]
+      }]
+    },
+    "components": {}
+  }]
+}

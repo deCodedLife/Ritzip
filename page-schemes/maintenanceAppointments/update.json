@@ -1,0 +1,48 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Записи на ТО - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "maintenanceAppointments",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": ["car_id", "employee_id", "distance", "status_id"]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "Отправка",
+          "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]
+        }, {
+          "title": "Получение",
+          "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Изменить",
+          "background": "dark",
+          "icon": ""
+        }
+      }]
+    }
+  }]
+}

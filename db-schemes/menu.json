@@ -99,8 +99,8 @@
       "id": 11,
       "title": "Автосервисы",
       "href": "autoservices",
-      "order_position": 8,
-      "parent_id": 101,
+      "order_position": 101,
+      "parent_id": 2,
       "is_system": "Y"
     },
     {

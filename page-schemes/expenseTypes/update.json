@@ -1,0 +1,42 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Типы расходов - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "expenseTypes",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "size": 2,
+          "blocks": [{
+            "title": "Основное",
+            "fields": ["title", "parent_id"]
+          }]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Изменить",
+          "background": "dark",
+          "icon": "expenseTypes"
+        }
+      }]
+    }
+  }]
+}

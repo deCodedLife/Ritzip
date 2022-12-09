@@ -1,1 +1,1 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Задачи","title":["Задачи"]},"components":[]}]}
+{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Задачи","title":["Задачи"]},"components":[]},{"title":"Список","type":"list","size":4,"settings":{"object":"tasks"},"components":{"buttons":[{"type":"href","settings":{"title":"Добавить задачу","background":"dark","page":"tasks/add"}}]}}]}

@@ -1,0 +1,29 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Типы расходов - Просмотр",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "info",
+    "size": 4,
+    "settings": {
+      "object": "expenseTypes",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": ["title", "parent_id"]
+        }]
+      }]
+    },
+    "components": {}
+  }]
+}

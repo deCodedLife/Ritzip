@@ -1,0 +1,29 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Автосервисы - Просмотр",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "info",
+    "size": 4,
+    "settings": {
+      "object": "autoservices",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основные данные",
+          "fields": ["title", "address", "coordinates"]
+        }]
+      }]
+    },
+    "components": {}
+  }]
+}

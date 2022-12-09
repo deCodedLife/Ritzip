@@ -1,0 +1,48 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Автомобили - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "cars",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": ["vin", "license_plate", "license_plate_state", "trailer_license_plate", "trailer_license_plate_state"]
+        }, {
+          "title": "Дополнительно",
+          "fields": ["coordinates", "last_maintenance"]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "Характеристики",
+          "fields": ["color", "brand", "model", "mileage"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Изменить",
+          "background": "dark",
+          "icon": "cars"
+        }
+      }]
+    }
+  }]
+}

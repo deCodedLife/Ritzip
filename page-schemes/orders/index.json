@@ -1,1 +1,1 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Заявки","title":["Заявки"]},"components":[]}]}
+{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Заявки","title":["Заявки"]},"components":[]},{"title":"Список","type":"list","size":4,"settings":{"object":"orders"},"components":{"buttons":[{"type":"href","settings":{"title":"Добавить заявку","background":"dark","page":"orders/add"}}]}}]}
