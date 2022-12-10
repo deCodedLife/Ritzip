@@ -21,16 +21,19 @@
         "size": 2,
         "blocks": [{
           "title": "Основное",
-          "fields": ["car_id", "employee_id", "distance", "status_id"]
+          "fields": ["car_id", "employee_id", "autoservice_id", "status"]
         }]
       }, {
         "size": 2,
         "blocks": [{
-          "title": "Отправка",
-          "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]
-        }, {
-          "title": "Получение",
-          "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+          "title": "Оплата",
+          "fields": ["cost", "payed_cost", "is_payed"]
+        }]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": ["description"]
         }]
       }]
     },

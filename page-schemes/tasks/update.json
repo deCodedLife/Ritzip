@@ -21,7 +21,7 @@
         "size": 2,
         "blocks": [{
           "title": "Основное",
-          "fields": []
+          "fields": ["employee_id", "author_id", "client_id"]
         }]
       }, {
         "size": 2,
@@ -35,6 +35,9 @@
           "title": "",
           "fields": ["description"]
         }]
+      }, {
+        "size": null,
+        "blocks": []
       }]
     },
     "components": {

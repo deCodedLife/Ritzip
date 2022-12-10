@@ -45,6 +45,7 @@
       "href": "users",
       "order_position": 1,
       "parent_id": null,
+      "icon": "user",
       "is_system": "Y"
     },
     {
@@ -53,6 +54,7 @@
       "href": "clients",
       "order_position": 2,
       "parent_id": null,
+      "icon": "customers",
       "is_system": "Y"
     },
     {
@@ -61,6 +63,7 @@
       "href": "drivers",
       "order_position": 3,
       "parent_id": null,
+      "icon": "customers",
       "is_system": "Y"
     },
     {
@@ -69,6 +72,7 @@
       "href": "cars",
       "order_position": 4,
       "parent_id": null,
+      "icon": "shipping-van",
       "is_system": "Y"
     },
     {
@@ -77,6 +81,7 @@
       "href": "maintenanceAppointments",
       "order_position": 5,
       "parent_id": null,
+      "icon": "schedule",
       "is_system": "Y"
     },
     {
@@ -85,6 +90,7 @@
       "href": "tasks",
       "order_position": 6,
       "parent_id": null,
+      "icon": "bullet-list",
       "is_system": "Y"
     },
     {
@@ -93,6 +99,7 @@
       "href": "orders",
       "order_position": 7,
       "parent_id": null,
+      "icon": "reading",
       "is_system": "Y"
     },
     {
@@ -101,6 +108,7 @@
       "href": "autoservices",
       "order_position": 101,
       "parent_id": 2,
+      "icon": "garage",
       "is_system": "Y"
     },
     {
@@ -109,6 +117,7 @@
       "href": "maintenanceSchedules",
       "order_position": 102,
       "parent_id": 2,
+      "icon": "schedule",
       "is_system": "Y"
     },
     {
@@ -117,6 +126,7 @@
       "href": "expenseTypes",
       "order_position": 103,
       "parent_id": 2,
+      "icon": "tag",
       "is_system": "Y"
     },
     {
@@ -125,6 +135,7 @@
       "href": "documentCategories",
       "order_position": 104,
       "parent_id": 2,
+      "icon": "tag",
       "is_system": "Y"
     }
   ]

@@ -1,1 +1,49 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Заявки - Добавление","title":["Добавление заявки"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"orders","command":"add","areas":[{"size":2,"blocks":[{"title":"Основное","fields":["status_id","distance"]}]},{"size":2,"blocks":[{"title":"Отправка","fields":["origin_city","origin_state","origin_zip","origin_coordinates"]}]},{"size":2,"blocks":[{"title":"Получение","fields":["destination_city","destination_state","destination_zip","destination_coordinates"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"orders"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Заявки - Добавление",
+      "title": ["Добавление заявки"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "orders",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Отправка",
+          "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]
+        },
+        {
+          "title": "Получение",
+          "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+        }]
+      },{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": ["status_id", "distance"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "orders"
+        }
+      }]
+    }
+  }]
+}

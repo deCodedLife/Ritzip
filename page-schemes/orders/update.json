@@ -20,20 +20,18 @@
       "areas": [{
         "size": 2,
         "blocks": [{
-          "title": "Основное",
-          "fields": ["status_id", "distance"]
-        }]
-      }, {
-        "size": 2,
-        "blocks": [{
           "title": "Отправка",
           "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]
-        }]
-      }, {
+        },
+          {
+            "title": "Получение",
+            "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+          }]
+      },{
         "size": 2,
         "blocks": [{
-          "title": "Получение",
-          "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+          "title": "Основное",
+          "fields": ["status_id", "distance"]
         }]
       }]
     },
