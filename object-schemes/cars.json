@@ -1,1 +1,127 @@
-{"title":"Автомобили","table":"cars","is_trash":true,"properties":[{"title":"VIN номер","article":"vin","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":true,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Номерной знак","article":"license_plate","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Номерной знак (государство)","article":"license_plate_state","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Номерной знак прицепа","article":"trailer_license_plate","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Номерной знак прицепа (государство)","article":"trailer_license_plate_state","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Цвет","article":"color","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Марка автомобиля","article":"brand","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Модель автомобиля","article":"model","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Пробег","article":"mileage","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Координаты","article":"coordinates","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Привязанные сотрудники","article":"employees_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"join":{"connection_table":"cars_users","donor_table":"users","property_article":"last_name","insert_property":"car_id","filter_property":"user_id"}},{"title":"Дата и время последнего ТО","article":"last_maintenance","data_type":"datetime","field_type":"datetime","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]}]}
+{
+  "title": "Автомобили",
+  "table": "cars",
+  "is_trash": true,
+  "properties": [{
+    "title": "VIN номер",
+    "article": "vin",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": true,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Номерной знак",
+    "article": "license_plate",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Номерной знак (государство)",
+    "article": "license_plate_state",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Номерной знак прицепа",
+    "article": "trailer_license_plate",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Номерной знак прицепа (государство)",
+    "article": "trailer_license_plate_state",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Цвет",
+    "article": "color",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Марка автомобиля",
+    "article": "brand",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
+  }, {
+    "title": "Модель автомобиля",
+    "article": "model",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Пробег",
+    "article": "mileage",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Координаты",
+    "article": "coordinates",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Привязанные сотрудники",
+    "article": "employees_id",
+    "data_type": "array",
+    "field_type": "list",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update", "get"],
+    "join": {
+      "connection_table": "cars_users",
+      "donor_table": "users",
+      "property_article": "last_name",
+      "insert_property": "car_id",
+      "filter_property": "user_id"
+    }
+  }, {
+    "title": "Дата и время последнего ТО",
+    "article": "last_maintenance",
+    "data_type": "datetime",
+    "field_type": "datetime",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }]
+}

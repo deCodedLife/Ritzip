@@ -7,42 +7,68 @@
     "size": 4,
     "settings": {
       "description": "Автомобили - Редактирование",
-      "title": [":title"]
+      "title": [":vin"]
     },
     "components": []
   }, {
-    "title": "Форма",
-    "type": "form",
+    "title": "Табы",
+    "type": "tabs",
     "size": 4,
-    "settings": {
-      "object": "cars",
-      "command": "update",
-      "areas": [{
-        "size": 2,
-        "blocks": [{
-          "title": "Основное",
-          "fields": ["vin", "license_plate", "license_plate_state", "trailer_license_plate", "trailer_license_plate_state"]
-        }, {
-          "title": "Дополнительно",
-          "fields": ["coordinates", "last_maintenance"]
-        }]
-      }, {
-        "size": 2,
-        "blocks": [{
-          "title": "Характеристики",
-          "fields": ["color", "brand", "model", "mileage"]
-        }]
-      }]
-    },
-    "components": {
-      "buttons": [{
-        "type": "submit",
+    "settings": [{
+      "title": "Основная информация",
+      "body": [{
+        "title": "Форма",
+        "type": "form",
+        "size": 4,
         "settings": {
-          "title": "Изменить",
-          "background": "dark",
-          "icon": ""
+          "object": "cars",
+          "command": "update",
+          "areas": [{
+            "size": 2,
+            "blocks": [{
+              "title": "Основное",
+              "fields": [
+                "vin", "license_plate", "license_plate_state", "trailer_license_plate", "trailer_license_plate_state",
+                "employees_id"
+              ]
+            }, {
+              "title": "Дополнительно",
+              "fields": ["coordinates", "last_maintenance"]
+            }]
+          }, {
+            "size": 2,
+            "blocks": [{
+              "title": "Характеристики",
+              "fields": ["color", "brand", "model", "mileage"]
+            }]
+          }]
+        },
+        "components": {
+          "buttons": [{
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "background": "dark",
+              "icon": ""
+            }
+          }]
         }
+      } ]
+    }, {
+      "title": "Проведенные ТО",
+      "body": [{
+        "title": "Проведенные ТО",
+        "type": "list",
+        "size": 4,
+        "settings": {
+          "object": "maintenanceAppointments",
+          "filters": [{
+            "property": "car_id",
+            "value": ":id"
+          }]
+        },
+        "components": []
       }]
-    }
+    } ]
   }]
 }

@@ -41,7 +41,7 @@
   "rows": [
     {
       "id": 4,
-      "title": "Пользователи",
+      "title": "Сотрудники",
       "href": "users",
       "order_position": 1,
       "parent_id": null,

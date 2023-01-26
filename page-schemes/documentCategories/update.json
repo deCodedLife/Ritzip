@@ -32,7 +32,7 @@
       "buttons": [{
         "type": "submit",
         "settings": {
-          "title": "Изменить",
+          "title": "Сохранить",
           "background": "dark",
           "icon": ""
         }

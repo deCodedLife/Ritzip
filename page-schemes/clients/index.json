@@ -1,1 +1,34 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Клиенты","title":["Клиенты"]},"components":[]},{"title":"Список","type":"list","size":4,"settings":{"object":"users"},"components":{"buttons":[{"type":"href","settings":{"title":"Добавить клиента","page":"/clients/add"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Клиенты",
+      "title": ["Клиенты"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "users",
+      "filters": [{
+        "property": "type",
+        "value": "client"
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить клиента",
+          "page": "/clients/add"
+        }
+      }]
+    }
+  }]
+}

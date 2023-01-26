@@ -1,1 +1,76 @@
-{"title":"Автомобили","properties":[{"title":"VIN номер","article":"vin","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Номерной знак","article":"license_plate","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Номерной знак (государство)","article":"license_plate_state","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Номерной знак прицепа","article":"trailer_license_plate","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Номерной знак прицепа (государство)","article":"trailer_license_plate_state","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Цвет","article":"color","type":"varchar(255)","default":null,"is_required":"N"},{"title":"Марка автомобиля","article":"brand","type":"varchar(255)","default":null,"is_required":"N"},{"title":"Модель автомобиля","article":"model","type":"varchar(255)","default":null,"is_required":"N"},{"title":"Пробег (мили)","article":"mileage","type":"float","default":null,"is_required":"N"},{"title":"Координаты","article":"coordinates","type":"varchar(255)","default":null,"is_required":"N"},{"title":"Дата и время последнего ТО","article":"last_maintenance","type":"datetime","default":null,"is_required":"N"},{"title":"Активность (Y/N)","article":"is_active","type":"char(1)","default":"Y","is_required":"Y"}]}
+{
+  "title": "Автомобили",
+  "properties": [{
+    "title": "VIN номер",
+    "article": "vin",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Номерной знак",
+    "article": "license_plate",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Номерной знак (государство)",
+    "article": "license_plate_state",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Номерной знак прицепа",
+    "article": "trailer_license_plate",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Номерной знак прицепа (государство)",
+    "article": "trailer_license_plate_state",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Цвет",
+    "article": "color",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Марка автомобиля",
+    "article": "brand",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Модель автомобиля",
+    "article": "model",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Пробег (мили)",
+    "article": "mileage",
+    "type": "float",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Координаты",
+    "article": "coordinates",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  },{
+    "title": "Дата и время последнего ТО",
+    "article": "last_maintenance",
+    "type": "datetime",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Активность (Y/N)",
+    "article": "is_active",
+    "type": "char(1)",
+    "default": "Y",
+    "is_required": "Y"
+  }]
+}

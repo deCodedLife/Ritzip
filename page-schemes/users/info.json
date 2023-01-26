@@ -1,0 +1,71 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [ "№ ", ":id", " ", ":last_name", " ", ":first_name", " ", ":patronymic" ],
+        "description": "Сотрудники - Просмотр"
+      },
+      "components": {}
+    },
+    {
+      "title": "Форма",
+      "type": "info",
+      "size": 4,
+      "settings": {
+        "object": "users",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [ "first_name", "last_name", "patronymic", "type" ]
+              },
+              {
+                "title": "Документы",
+                "fields": [
+                  "license_number", "license_from", "license_to", "license_address", "address"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Доступ",
+                "fields": [ "role_id", "email", "password", "phone" ]
+              },
+              {
+                "title": "Компания",
+                "fields": [
+                  "company_title", "company_ein", "swift"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "href": "users",
+              "icon": "",
+              "background": "dark"
+            },
+            "required_permissions": [],
+            "required_modules": []
+          }
+        ]
+      }
+    }
+  ]
+}

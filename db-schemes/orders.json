@@ -13,6 +13,12 @@
     "default": null,
     "is_required": "Y"
   }, {
+    "title": "Клиент",
+    "article": "client_id",
+    "type": "int",
+    "default": null,
+    "is_required": "N"
+  }, {
     "title": "Город отправки",
     "article": "origin_city",
     "type": "varchar(255)",
