@@ -1,0 +1,79 @@
+{
+  "title": "Доступы",
+  "properties": [],
+  "rows_key": "article",
+  "rows": [
+    {
+      "title": "Сотрудники",
+      "article": "menu_users",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Клиенты",
+      "article": "menu_clients",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Водители",
+      "article": "menu_drivers",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Автомобили",
+      "article": "menu_cars",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Записи на ТО",
+      "article": "menu_maintenanceAppointments",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Задачи",
+      "article": "menu_tasks",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Заявки",
+      "article": "menu_orders",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Автосервисы",
+      "article": "menu_autoservices",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Плановые ТО",
+      "article": "menu_maintenanceSchedules",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Типы расходов",
+      "article": "menu_expenseTypes",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Категории документов",
+      "article": "menu_documentCategories",
+      "description": "",
+      "group_id": 1
+    },
+    {
+      "title": "Роли",
+      "article": "menu_roles",
+      "description": "",
+      "group_id": 1
+    }
+  ]
+}

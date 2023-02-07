@@ -1,0 +1,13 @@
+{
+  "title": "Группы доступов",
+  "properties": [],
+  "rows_key": "id",
+  "rows": [
+    {
+      "id": 1,
+      "title": "Разделы",
+      "description": "",
+      "parent_id": null
+    }
+  ]
+}

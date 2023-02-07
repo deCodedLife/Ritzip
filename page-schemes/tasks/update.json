@@ -11,44 +11,65 @@
     },
     "components": []
   }, {
-    "title": "Форма",
-    "type": "form",
+    "title": "Табы",
+    "type": "tabs",
     "size": 4,
-    "settings": {
-      "object": "tasks",
-      "command": "update",
-      "areas": [{
-        "size": 2,
-        "blocks": [{
-          "title": "Основное",
-          "fields": ["employee_id", "author_id", "client_id"]
-        }]
-      }, {
-        "size": 2,
-        "blocks": [{
-          "title": "Св-ва",
-          "fields": ["status", "deadline"]
-        }]
-      }, {
+    "settings": [{
+      "title": "Основная информация",
+      "body": [{
+        "title": "Форма",
+        "type": "form",
         "size": 4,
-        "blocks": [{
-          "title": "",
-          "fields": ["description"]
-        }]
-      }, {
-        "size": null,
-        "blocks": []
-      }]
-    },
-    "components": {
-      "buttons": [{
-        "type": "submit",
         "settings": {
-          "title": "Изменить",
-          "background": "dark",
-          "icon": ""
+          "object": "tasks",
+          "command": "update",
+          "areas": [{
+            "size": 2,
+            "blocks": [{
+              "title": "Основное",
+              "fields": ["employee_id", "author_id", "client_id"]
+            }]
+          }, {
+            "size": 2,
+            "blocks": [{
+              "title": "Св-ва",
+              "fields": ["status", "deadline"]
+            }]
+          }, {
+            "size": 4,
+            "blocks": [{
+              "title": "",
+              "fields": ["description"]
+            }]
+          }, {
+            "size": null,
+            "blocks": []
+          }]
+        },
+        "components": {
+          "buttons": [{
+            "type": "submit",
+            "settings": {
+              "title": "Изменить",
+              "background": "dark",
+              "icon": ""
+            }
+          }]
         }
+      } ]
+    },{
+      "title": "Чат",
+      "body": [{
+        "title": "Чат задачи",
+        "type": "mini_chat",
+        "size": 4,
+        "hook": "taskChat",
+        "settings": {
+          "object": "taskMessages",
+          "filter_property": "task_id"
+        },
+        "components": {}
       }]
-    }
+    }]
   }]
 }
