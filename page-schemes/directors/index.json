@@ -6,8 +6,8 @@
     "type": "header",
     "size": 4,
     "settings": {
-      "description": "Клиенты",
-      "title": ["Клиенты"]
+      "description": "Директоры",
+      "title": ["Директоры"]
     },
     "components": []
   }, {
@@ -16,18 +16,19 @@
     "size": 4,
     "settings": {
       "object": "users",
-      "link": "clients",
+      "link": "directors",
       "filters": [{
         "property": "role_id",
-        "value": 10
+        "value": 2
       }]
     },
     "components": {
       "buttons": [{
         "type": "href",
         "settings": {
-          "title": "Добавить клиента",
-          "page": "/clients/add"
+          "title": "Добавить директора",
+          "background": "dark",
+          "page": "/directors/add"
         }
       }]
     }

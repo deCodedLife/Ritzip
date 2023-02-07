@@ -66,22 +66,6 @@
       "properties_title": "title"
     }
   }, {
-    "title": "Тип",
-    "article": "type",
-    "data_type": "string",
-    "field_type": "list",
-    "is_default_in_list": true,
-    "is_unique": false,
-    "is_autofill": true,
-    "use_in_commands": ["add", "update", "get"],
-    "custom_list": [{
-      "title": "Клиент",
-      "value": "client"
-    }, {
-      "title": "Сотрудник",
-      "value": "employee"
-    }]
-  }, {
     "title": "Контактный телефон",
     "article": "phone",
     "data_type": "phone",

@@ -7,24 +7,26 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "title": [ "№ ", ":id", " ", ":last_name", " ", ":first_name", " ", ":patronymic" ],
-        "description": "Клиенты - Просмотр"
+        "title": "Менеджеры диспетчера",
+        "description": "Менеджеры - Добавление"
       },
       "components": {}
     },
     {
       "title": "Форма",
-      "type": "info",
+      "type": "form",
       "size": 4,
       "settings": {
         "object": "users",
+        "command": "add",
+        "joined_property": "",
         "areas": [
           {
             "size": 2,
             "blocks": [
               {
                 "title": "Основное",
-                "fields": [ "first_name", "last_name", "patronymic", "type" ]
+                "fields": [ "first_name", "last_name", "patronymic" ]
               },
               {
                 "title": "Документы",
@@ -57,7 +59,7 @@
             "type": "submit",
             "settings": {
               "title": "Сохранить",
-              "href": "clients",
+              "href": "managers",
               "icon": "",
               "background": "dark"
             },

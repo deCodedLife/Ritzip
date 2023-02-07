@@ -1,1 +1,36 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Диспетчеры","title":["Диспетчеры"]},"components":[]}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Диспетчеры",
+      "title": ["Диспетчеры"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "users",
+      "link": "dispatchers",
+      "filters": [{
+        "property": "role_id",
+        "value": 7
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить диспетчера",
+          "background": "dark",
+          "page": "/dispatchers/add"
+        }
+      }]
+    }
+  }]
+}

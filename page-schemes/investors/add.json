@@ -7,13 +7,13 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "title": [ "Сотрудники" ],
-        "description": ""
+        "title": "Добавление инвестора",
+        "description": "Инвесторы - Добавление"
       },
       "components": {}
     },
     {
-      "title": "Форма добавления сотрудника",
+      "title": "Форма",
       "type": "form",
       "size": 4,
       "settings": {
@@ -58,8 +58,8 @@
           {
             "type": "submit",
             "settings": {
-              "title": "Добавить",
-              "href": "users",
+              "title": "Сохранить",
+              "href": "investors",
               "icon": "",
               "background": "dark"
             },

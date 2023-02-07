@@ -1,1 +1,59 @@
-{"title":"Роли","properties":[{"title":"Название","article":"title","type":"varchar(255)","default":null,"is_required":"Y"},{"title":"Артикул","article":"article","type":"varchar(255)","default":null,"is_required":"Y"}]}
+{
+  "title": "Роли",
+  "properties": [{
+    "title": "Название",
+    "article": "title",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Артикул",
+    "article": "article",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }],
+  "rows_key": "article",
+  "rows": [
+    {
+      "title": "Менеджеры",
+      "article": "managers",
+      "is_system": "Y"
+    },
+    {
+      "title": "Водители",
+      "article": "drivers",
+      "is_system": "Y"
+    },
+    {
+      "title": "Клиенты",
+      "article": "clients",
+      "is_system": "Y"
+    },
+    {
+      "title": "Сотрудники ТО",
+      "article": "desk-stuff",
+      "is_system": "Y"
+    },
+    {
+      "title": "Диспетчеры",
+      "article": "dispatchers",
+      "is_system": "Y"
+    },
+    {
+      "title": "Брокеры",
+      "article": "brokers",
+      "is_system": "Y"
+    },
+    {
+      "title": "Инвесторы",
+      "article": "investors",
+      "is_system": "Y"
+    },
+    {
+      "title": "Клиенты",
+      "article": "clients",
+      "is_system": "Y"
+    }
+  ]
+}
