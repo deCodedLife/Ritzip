@@ -46,6 +46,7 @@
         "settings": {
           "title": "Добавить",
           "icon": "",
+          "href": "tasks",
           "background": "dark"
         }
       }]

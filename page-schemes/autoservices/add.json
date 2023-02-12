@@ -1,1 +1,40 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Автосервисы - Добавление","title":["Добавление автосервиса"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"autoservices","command":"add","areas":[{"size":2,"blocks":[{"title":"Основные данные","fields":["title","address","coordinates"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"autoservices"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Автосервисы - Добавление",
+      "title": ["Добавление автосервиса"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "autoservices",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основные данные",
+          "fields": ["title", "address", "coordinates"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "",
+          "href": "autoservices"
+        }
+      }]
+    }
+  }]
+}

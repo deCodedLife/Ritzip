@@ -31,7 +31,8 @@
         "settings": {
           "title": "Добавить",
           "background": "dark",
-          "icon": "expenseTypes"
+          "icon": "",
+          "href": "expenseTypes"
         }
       }]
     }

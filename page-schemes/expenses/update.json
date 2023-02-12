@@ -1,0 +1,54 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Расходы - Редактирование",
+      "title": ["№ ", ":id"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "expenses",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["type_id", "cost", "status"]
+        }]
+      },
+        {
+          "size": 2,
+          "blocks": [{
+            "title": "",
+            "fields": ["maintenance_id"]
+          }]
+        },
+        {
+          "size": 4,
+          "blocks": [{
+            "title": "",
+            "fields": ["description"]
+          }]
+        }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Сохранить",
+          "background": "dark",
+          "icon": "",
+          "href": "expenses"
+        }
+      }]
+    }
+  }]
+}

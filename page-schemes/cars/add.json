@@ -40,7 +40,8 @@
         "settings": {
           "title": "Добавить",
           "background": "dark",
-          "icon": "cars"
+          "icon": "",
+          "href": "cars"
         }
       }]
     }

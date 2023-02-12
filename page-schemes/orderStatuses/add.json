@@ -1,0 +1,48 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "title": ["Добавление статуса заявок"],
+      "description": "Статусы заявок - Добавление"
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "orderStatuses",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": [
+            "title", "article"
+          ]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["priority"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "",
+          "href": "orderStatuses"
+        }
+      }]
+    }
+  }]
+}

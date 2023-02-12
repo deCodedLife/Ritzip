@@ -22,5 +22,15 @@
     "is_autofill": true,
     "use_in_commands": ["add", "update"],
     "require_in_commands": ["add"]
+  }, {
+    "title": "Приоритет",
+    "article": "priority",
+    "data_type": "integer",
+    "field_type": "integer",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
   }]
 }

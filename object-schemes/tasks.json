@@ -25,7 +25,7 @@
     "is_unique": false,
     "is_autofill": true,
     "use_in_commands": ["add", "update", "get"],
-    "require_in_commands": ["add"],
+    "require_in_commands": [],
     "list_donor": {
       "table": "users",
       "properties_title": "last_name"

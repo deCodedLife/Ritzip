@@ -152,6 +152,14 @@
       "is_system": "Y"
     },
     {
+      "title": "Расходы",
+      "href": "expenses",
+      "order_position": 8,
+      "parent_id": null,
+      "icon": "reading",
+      "is_system": "Y"
+    },
+    {
       "title": "Автосервисы",
       "href": "autoservices",
       "order_position": 101,
@@ -170,6 +178,14 @@
     {
       "title": "Типы расходов",
       "href": "expenseTypes",
+      "order_position": 103,
+      "parent_id": 2,
+      "icon": "tag",
+      "is_system": "Y"
+    },
+    {
+      "title": "Статусы заявок",
+      "href": "orderStatuses",
       "order_position": 103,
       "parent_id": 2,
       "icon": "tag",

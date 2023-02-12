@@ -34,7 +34,8 @@
         "settings": {
           "title": "Сохранить",
           "background": "dark",
-          "icon": ""
+          "icon": "",
+          "href": "expenseTypes"
         }
       }]
     }

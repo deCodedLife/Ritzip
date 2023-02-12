@@ -43,7 +43,8 @@
         "settings": {
           "title": "Изменить",
           "background": "dark",
-          "icon": ""
+          "icon": "",
+          "href": "maintenanceAppointments"
         }
       }]
     }

@@ -45,7 +45,8 @@
         "settings": {
           "title": "Добавить",
           "background": "dark",
-          "icon": "orders"
+          "icon": "",
+          "href": "orders"
         }
       }]
     }
