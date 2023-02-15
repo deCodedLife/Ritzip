@@ -1,6 +1,6 @@
 <?php
 
-if ( $requestData->is_list ) {
+if ( $requestData->context === "list" ) {
 
     /**
      * Получение списка задач, где текущий пользователь является Автором
@@ -17,4 +17,4 @@ if ( $requestData->is_list ) {
 
     } // foreach. $authorTasks
 
-} // if. $requestData->is_list
+} // if. $requestData->context === "list"

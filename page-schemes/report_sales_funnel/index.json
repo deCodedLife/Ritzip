@@ -1,0 +1,14 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Виджеты",
+    "type": "analytic_widgets",
+    "size": 4,
+    "settings": {
+      "widgets_group": "sales_funnel",
+      "filters": []
+    },
+    "components": []
+  }]
+}

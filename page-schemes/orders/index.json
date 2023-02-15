@@ -2,15 +2,6 @@
   "required_modules": [],
   "required_permissions": [],
   "structure": [{
-    "title": "Шапка",
-    "type": "header",
-    "size": 4,
-    "settings": {
-      "description": "Заявки",
-      "title": ["Заявки"]
-    },
-    "components": []
-  }, {
     "title": "Воронка продаж",
     "type": "funnel",
     "size": 4,

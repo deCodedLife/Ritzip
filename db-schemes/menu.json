@@ -37,9 +37,10 @@
       "default": null
     }
   ],
-  "rows_key": "href",
+  "rows_key": "id",
   "rows": [
     {
+      "id": 4,
       "title": "Пользователи",
       "href": "users",
       "order_position": 1,
@@ -48,6 +49,7 @@
       "is_system": "Y"
     },
     {
+      "id": 5,
       "title": "Клиенты",
       "href": "clients",
       "order_position": 2,
@@ -56,6 +58,7 @@
       "is_system": "Y"
     },
     {
+      "id": 6,
       "title": "Водители",
       "href": "drivers",
       "order_position": 3,
@@ -64,6 +67,7 @@
       "is_system": "Y"
     },
     {
+      "id": 7,
       "title": "Менеджеры",
       "href": "managers",
       "order_position": 3,
@@ -72,6 +76,7 @@
       "is_system": "Y"
     },
     {
+      "id": 8,
       "title": "Брокеры",
       "href": "brokers",
       "order_position": 3,
@@ -80,6 +85,7 @@
       "is_system": "Y"
     },
     {
+      "id": 9,
       "title": "Сотрудники ТО",
       "href": "desk-stuff",
       "order_position": 3,
@@ -88,6 +94,7 @@
       "is_system": "Y"
     },
     {
+      "id": 10,
       "title": "Диспетчеры",
       "href": "dispatchers",
       "order_position": 3,
@@ -96,6 +103,7 @@
       "is_system": "Y"
     },
     {
+      "id": 11,
       "title": "Инвесторы",
       "href": "investors",
       "order_position": 3,
@@ -104,6 +112,7 @@
       "is_system": "Y"
     },
     {
+      "id": 12,
       "title": "Директоры",
       "href": "directors",
       "order_position": 3,
@@ -112,6 +121,7 @@
       "is_system": "Y"
     },
     {
+      "id": 13,
       "title": "Остальные",
       "href": "custom_users",
       "order_position": 4,
@@ -120,6 +130,7 @@
       "is_system": "Y"
     },
     {
+      "id": 14,
       "title": "Автомобили",
       "href": "cars",
       "order_position": 4,
@@ -128,6 +139,7 @@
       "is_system": "Y"
     },
     {
+      "id": 15,
       "title": "Записи на ТО",
       "href": "maintenanceAppointments",
       "order_position": 5,
@@ -136,6 +148,7 @@
       "is_system": "Y"
     },
     {
+      "id": 16,
       "title": "Задачи",
       "href": "tasks",
       "order_position": 6,
@@ -144,14 +157,16 @@
       "is_system": "Y"
     },
     {
+      "id": 17,
       "title": "Заявки",
       "href": "orders",
       "order_position": 7,
       "parent_id": null,
-      "icon": "reading",
+      "icon": "delivery",
       "is_system": "Y"
     },
     {
+      "id": 18,
       "title": "Расходы",
       "href": "expenses",
       "order_position": 8,
@@ -160,6 +175,106 @@
       "is_system": "Y"
     },
     {
+      "id": 19,
+      "title": "Отчеты",
+      "href": "reports",
+      "order_position": 9,
+      "parent_id": null,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 20,
+      "title": "Воронка продаж",
+      "href": "report_sales_funnel",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 21,
+      "title": "Работа с брокерами",
+      "href": "report_brokers",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 22,
+      "title": "Заказы",
+      "href": "report_orders",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 23,
+      "title": "Расходы водителей",
+      "href": "report_driver_expenses",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 24,
+      "title": "Расходы на ТО",
+      "href": "report_ma_expenses",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 25,
+      "title": "Расходы по топливу",
+      "href": "report_fuel_expenses",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 26,
+      "title": "Выплаты",
+      "href": "report_transactions",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 27,
+      "title": "Аналитика отказов",
+      "href": "report_canceled_orders",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 28,
+      "title": "Хоз расходы",
+      "href": "report_company_expenses",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 29,
+      "title": "Расчет предстоящих расходов",
+      "href": "report_future_expenses",
+      "order_position": 9,
+      "parent_id": 19,
+      "icon": "performance",
+      "is_system": "Y"
+    },
+    {
+      "id": 30,
       "title": "Автосервисы",
       "href": "autoservices",
       "order_position": 101,
@@ -168,6 +283,7 @@
       "is_system": "Y"
     },
     {
+      "id": 31,
       "title": "Плановые ТО",
       "href": "maintenanceSchedules",
       "order_position": 102,
@@ -176,6 +292,7 @@
       "is_system": "Y"
     },
     {
+      "id": 32,
       "title": "Типы расходов",
       "href": "expenseTypes",
       "order_position": 103,
@@ -184,6 +301,7 @@
       "is_system": "Y"
     },
     {
+      "id": 33,
       "title": "Статусы заявок",
       "href": "orderStatuses",
       "order_position": 103,
@@ -192,6 +310,7 @@
       "is_system": "Y"
     },
     {
+      "id": 34,
       "title": "Категории документов",
       "href": "documentCategories",
       "order_position": 104,

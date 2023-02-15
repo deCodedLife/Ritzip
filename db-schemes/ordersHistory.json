@@ -1,0 +1,33 @@
+{
+  "title": "История изменения статусов заявок",
+  "properties": [
+    {
+      "title": "Заявка",
+      "article": "order_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Начальный статус",
+      "article": "from_status_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Новый статус",
+      "article": "to_status_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Дата и время создания заявки",
+      "article": "created_at",
+      "type": "datetime",
+      "default": "CURRENT_TIMESTAMP",
+      "is_required": "Y"
+    }
+  ]
+}

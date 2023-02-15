@@ -9,7 +9,7 @@
       "description": "Клиенты",
       "title": ["Клиенты"]
     },
-    "components": []
+    "components": {}
   }, {
     "title": "Список",
     "type": "list",
@@ -23,6 +23,7 @@
       }]
     },
     "components": {
+      "search": true,
       "buttons": [{
         "type": "href",
         "settings": {
