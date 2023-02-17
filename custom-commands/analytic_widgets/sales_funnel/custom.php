@@ -16,13 +16,36 @@ $returnReport = [];
  */
 $ordersByStatus = [];
 
+/**
+ * Список ID заказов.
+ * Используется для формирования графика
+ */
+$ordersID = [];
+
+
+/**
+ * Получение фильтров
+ */
+
+$filter = [];
+
+if ( $requestData->start_at ) $filter[ "created_at >= ?" ] = $requestData->start_at;
+if ( $requestData->end_at ) $filter[ "created_at <= ?" ] = $requestData->end_at;
+if ( $requestData->source_id ) $filter[ "source_id" ] = $requestData->source_id;
+
 
 /**
  * Получение заказов
  */
 $orders = $API->DB->from( "orders" )
     ->select( null )->select( [ "id", "status_id" ] )
-    ->limit( 0 );
+    ->where( $filter )
+    ->limit( 1000 );
+
+/**
+ * Получение ID заказов
+ */
+foreach ( $orders as $order ) $ordersID[] = $order[ "id" ];
 
 /**
  * Получение статусов заказов
@@ -70,10 +93,24 @@ foreach ( $orderStatuses as $orderStatus ) {
         ->where( "from_status_id", $orderStatus[ "id" ] )
         ->limit( 0 );
 
-    foreach ( $ordersHistory as $orderEvent )
+    foreach ( $ordersHistory as $orderEvent ) {
+
+        /**
+         * Игнорирование заказов, не подходящих по фильтру
+         */
+        if ( !in_array( $orderEvent[ "order_id" ], $ordersID ) ) continue;
+
+
         if ( $orderEvent[ "to_status_id" ] != 3 ) $conversion[ "success" ][ "value" ]++;
             else $conversion[ "canceled" ][ "value" ]++;
 
+    } // foreach. $ordersHistory
+
+
+    /**
+     * Кол-во заказов по умолчанию
+     */
+    if ( !$ordersByStatus[ $orderStatus[ "id" ] ] ) $ordersByStatus[ $orderStatus[ "id" ] ] = 0;
 
     $returnReport[] = [
         "value" => $orderStatus[ "title" ],

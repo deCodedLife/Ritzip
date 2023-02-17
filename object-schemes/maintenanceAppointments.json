@@ -79,16 +79,25 @@
     "is_default_in_list": true,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"]
+    "use_in_commands": ["add"]
   }, {
-    "title": "Сумма оплаты",
-    "article": "payed_cost",
+    "title": "Остаток к оплате",
+    "article": "to_pay",
     "data_type": "float",
     "field_type": "price",
     "is_default_in_list": true,
     "is_unique": false,
     "is_autofill": true,
     "use_in_commands": []
+  }, {
+    "title": "Внесено",
+    "article": "paid",
+    "data_type": "float",
+    "field_type": "price",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": false,
+    "use_in_commands": [ "update" ]
   }, {
     "title": "Оплачено",
     "article": "is_payed",

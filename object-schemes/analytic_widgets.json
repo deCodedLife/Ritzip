@@ -1,0 +1,45 @@
+{
+  "title": "Виджеты аналитики",
+  "table": "",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Период с",
+      "article": "start_at",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": false,
+      "use_in_commands": ["sales_funnel"],
+      "require_in_commands": []
+    }, {
+      "title": "Период до",
+      "article": "end_at",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": false,
+      "use_in_commands": ["sales_funnel"],
+      "require_in_commands": []
+    },
+    {
+      "title": "Источник",
+      "article": "source_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["sales_funnel"],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "orderSources",
+        "properties_title": "title"
+      }
+    }
+  ]
+}

@@ -26,11 +26,8 @@
           "areas": [{
             "size": 2,
             "blocks": [{
-              "size": 2,
-              "blocks": [{
-                "title": "Общее",
-                "fields": ["employee_id", "client_id", "car_id"]
-              }]
+              "title": "Общее",
+              "fields": ["employee_id", "client_id", "car_id", "source_id"]
             },{
               "title": "Отправка",
               "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]

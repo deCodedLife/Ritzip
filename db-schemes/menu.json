@@ -311,9 +311,18 @@
     },
     {
       "id": 34,
+      "title": "Источники заявок",
+      "href": "orderSources",
+      "order_position": 104,
+      "parent_id": 2,
+      "icon": "tag",
+      "is_system": "Y"
+    },
+    {
+      "id": 35,
       "title": "Категории документов",
       "href": "documentCategories",
-      "order_position": 104,
+      "order_position": 105,
       "parent_id": 2,
       "icon": "tag",
       "is_system": "Y"

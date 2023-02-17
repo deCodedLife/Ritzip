@@ -1,0 +1,43 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Источники заявок - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "orderSources",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "size": 2,
+          "blocks": [{
+            "title": "Основное",
+            "fields": ["title"]
+          }]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Сохранить",
+          "background": "dark",
+          "icon": "",
+          "href": "orderSources"
+        }
+      }]
+    }
+  }]
+}

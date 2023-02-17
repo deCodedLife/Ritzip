@@ -32,7 +32,7 @@
                 "blocks": [
                   {
                     "title": "Основное",
-                    "fields": [ "first_name", "last_name", "patronymic", "type" ]
+                    "fields": [ "avatar", "first_name", "last_name", "patronymic", "type" ]
                   },
                   {
                     "title": "Документы",

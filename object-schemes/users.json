@@ -2,7 +2,18 @@
   "title": "Пользователи",
   "table": "users",
   "is_trash": true,
-  "properties": [{
+  "properties": [
+    {
+      "title": "Аватар",
+      "article": "avatar",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["add", "update"],
+      "require_in_commands": []
+    },{
     "title": "Имя",
     "article": "first_name",
     "data_type": "string",

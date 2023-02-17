@@ -11,42 +11,92 @@
     },
     "components": []
   }, {
-    "title": "Форма",
-    "type": "form",
+    "title": "Табы",
+    "type": "tabs",
     "size": 4,
-    "settings": {
-      "object": "maintenanceAppointments",
-      "command": "update",
-      "areas": [{
-        "size": 2,
-        "blocks": [{
-          "title": "Основное",
-          "fields": ["car_id", "employee_id", "autoservice_id", "status"]
-        }]
-      }, {
-        "size": 2,
-        "blocks": [{
-          "title": "Оплата",
-          "fields": ["cost", "payed_cost", "is_payed"]
-        }]
-      }, {
+    "settings": [{
+      "title": "Основная информация",
+      "body": [{
+        "title": "Форма",
+        "type": "form",
         "size": 4,
-        "blocks": [{
-          "title": "",
-          "fields": ["description"]
-        }]
-      }]
-    },
-    "components": {
-      "buttons": [{
-        "type": "submit",
         "settings": {
-          "title": "Изменить",
-          "background": "dark",
-          "icon": "",
-          "href": "maintenanceAppointments"
+          "object": "maintenanceAppointments",
+          "command": "update",
+          "areas": [{
+            "size": 2,
+            "blocks": [{
+              "title": "Основное",
+              "fields": ["car_id", "employee_id", "autoservice_id", "status"]
+            }]
+          }, {
+            "size": 2,
+            "blocks": [{
+              "title": "Оплата",
+              "fields": ["cost", "is_payed"]
+            }]
+          }, {
+            "size": 4,
+            "blocks": [{
+              "title": "",
+              "fields": ["description"]
+            }]
+          }]
+        },
+        "components": {
+          "buttons": [{
+            "type": "submit",
+            "settings": {
+              "title": "Изменить",
+              "background": "dark",
+              "icon": "",
+              "href": "maintenanceAppointments"
+            }
+          }]
+        }
+      } ]
+    }, {
+      "title": "Оплата ТО",
+      "body": [{
+        "title": "Форма",
+        "type": "form",
+        "size": 4,
+        "settings": {
+          "object": "maintenanceAppointments",
+          "command": "update",
+          "areas": [
+            {
+              "size": 2,
+              "blocks": [
+                {
+                  "title": "",
+                  "fields": [ "paid" ]
+                }
+              ]
+            },
+            {
+              "size": 2,
+              "blocks": [
+                {
+                  "title": "",
+                  "fields": [ "cost", "to_pay" ]
+                }
+              ]
+            }
+          ]
+        },
+        "components": {
+          "buttons": [{
+            "type": "submit",
+            "settings": {
+              "title": "Внести оплату",
+              "background": "dark",
+              "icon": "",
+              "href": "maintenanceAppointments"
+            }
+          }]
         }
       }]
-    }
-  }]
+    } ]
+  } ]
 }
