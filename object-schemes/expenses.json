@@ -49,7 +49,7 @@
     "is_unique": false,
     "is_autofill": true,
     "use_in_commands": ["add", "update"],
-    "require_in_commands": ["add"],
+    "require_in_commands": [],
     "custom_list": [{
       "title": "Запланировано",
       "value": "planned"

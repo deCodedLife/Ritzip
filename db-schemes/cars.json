@@ -1,6 +1,12 @@
 {
   "title": "Автомобили",
   "properties": [{
+    "title": "Фотография",
+    "article": "photo",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  }, {
     "title": "VIN номер",
     "article": "vin",
     "type": "varchar(255)",
@@ -60,7 +66,19 @@
     "type": "varchar(255)",
     "default": null,
     "is_required": "N"
-  },{
+  }, {
+    "title": "Страховка",
+    "article": "insurance",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Владелец",
+    "article": "owner_id",
+    "type": "integer",
+    "default": null,
+    "is_required": "N"
+  }, {
     "title": "Дата и время последнего ТО",
     "article": "last_maintenance",
     "type": "datetime",

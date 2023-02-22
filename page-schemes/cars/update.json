@@ -28,9 +28,12 @@
             "blocks": [{
               "title": "Основное",
               "fields": [
-                "vin", "license_plate", "license_plate_state", "trailer_license_plate", "trailer_license_plate_state",
+                "photo", "vin", "license_plate", "license_plate_state", "trailer_license_plate", "trailer_license_plate_state",
                 "employees_id"
               ]
+            }, {
+              "title": "",
+              "fields": [ "insurance", "owner_id"]
             }, {
               "title": "Дополнительно",
               "fields": ["coordinates", "last_maintenance"]

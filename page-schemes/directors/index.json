@@ -6,8 +6,8 @@
     "type": "header",
     "size": 4,
     "settings": {
-      "description": "Директоры",
-      "title": ["Директоры"]
+      "description": "Директора",
+      "title": ["Директора"]
     },
     "components": []
   }, {

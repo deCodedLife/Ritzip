@@ -20,11 +20,8 @@
       "areas": [{
         "size": 2,
         "blocks": [{
-          "size": 2,
-          "blocks": [{
-            "title": "Основное",
-            "fields": ["title", "article"]
-          }]
+          "title": "Основное",
+          "fields": ["title", "article"]
         }]
       }]
     },

@@ -14,7 +14,7 @@
     "is_required": "Y"
   }, {
     "title": "Тело сообщения",
-    "article": "body",
+    "article": "message",
     "type": "varchar(255)",
     "default": null,
     "is_required": "Y"

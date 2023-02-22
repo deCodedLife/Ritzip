@@ -8,7 +8,7 @@
       "article": "avatar",
       "data_type": "image",
       "field_type": "image",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": ["add", "update"],

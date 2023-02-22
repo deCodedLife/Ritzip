@@ -1,10 +1,16 @@
 <?php
 
 /**
+ * Получение автора
+ */
+$requestData->author_id = (int) $API::$userDetail->id;
+
+
+/**
  * Формирование ключа чата
  */
 
-$usersId = [ $API::$userDetail->id, $API::$userDetail->author_id ];
+$usersId = [ $API::$userDetail->id, $requestData->chat_key ];
 asort( $usersId );
 
 $usersId = implode( "", $usersId );

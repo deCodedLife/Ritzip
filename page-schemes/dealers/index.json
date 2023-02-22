@@ -6,29 +6,29 @@
     "type": "header",
     "size": 4,
     "settings": {
-      "description": "Клиенты",
-      "title": ["Клиенты"]
+      "description": "Дилеры",
+      "title": ["Дилеры"]
     },
-    "components": {}
+    "components": []
   }, {
     "title": "Список",
     "type": "list",
     "size": 4,
     "settings": {
       "object": "users",
-      "link": "clients",
+      "link": "dealers",
       "filters": [{
         "property": "role_id",
-        "value": 5
+        "value": 10
       }]
     },
     "components": {
-      "search": true,
       "buttons": [{
         "type": "href",
         "settings": {
-          "title": "Добавить клиента",
-          "page": "/clients/add"
+          "title": "Добавить дилера",
+          "background": "dark",
+          "page": "/dealers/add"
         }
       }]
     }

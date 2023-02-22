@@ -1,0 +1,64 @@
+{
+  "title": "Настройки",
+  "table": "settings",
+  "search": "",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Приватный ключ",
+      "article": "docusign_private_key",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "in_search": false,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [ "update" ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Ключ интеграции",
+      "article": "integration_key",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "in_search": false,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [ "update" ],
+      "require_in_commands": []
+    },
+    {
+      "title": "ID пользователя",
+      "article": "user_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "in_search": false,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [ "update" ],
+      "require_in_commands": []
+    },
+    {
+      "title": "API_URL",
+      "article": "api_url",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "in_search": false,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [ "update" ],
+      "require_in_commands": []
+    }
+  ]
+}

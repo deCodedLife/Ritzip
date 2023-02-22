@@ -28,7 +28,7 @@
     }
   }, {
     "title": "Тело сообщения",
-    "article": "body",
+    "article": "message",
     "data_type": "string",
     "field_type": "textarea",
     "is_default_in_list": false,

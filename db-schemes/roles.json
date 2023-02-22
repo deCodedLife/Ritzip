@@ -1,18 +1,6 @@
 {
   "title": "Роли",
-  "properties": [{
-    "title": "Название",
-    "article": "title",
-    "type": "varchar(255)",
-    "default": null,
-    "is_required": "Y"
-  }, {
-    "title": "Артикул",
-    "article": "article",
-    "type": "varchar(255)",
-    "default": null,
-    "is_required": "Y"
-  }],
+  "properties": [],
   "rows_key": "article",
   "rows": [
     {
@@ -53,6 +41,11 @@
     {
       "title": "Клиенты",
       "article": "clients",
+      "is_system": "Y"
+    },
+    {
+      "title": "Дилеры",
+      "article": "dealers",
       "is_system": "Y"
     }
   ]

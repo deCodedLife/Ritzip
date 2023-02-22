@@ -1,0 +1,35 @@
+{
+  "title": "Настройки",
+  "properties": [
+    {
+      "title": "Приватный ключ (DocuSign)",
+      "article": "docusign_private_key",
+      "type": "text",
+      "is_required": false,
+      "default": null
+    },
+    {
+      "title": "Ключ интеграции (DocuSign)",
+      "article": "integration_key",
+      "type": "varchar(255)",
+      "is_required": false,
+      "default": null
+    },
+    {
+      "title": "ID пользователя (DocuSign)",
+      "article": "user_id",
+      "type": "varchar(255)",
+      "is_required": false,
+      "default": null
+    },
+    {
+      "title": "API URL (DocuSign)",
+      "article": "api_url",
+      "type": "varchar(255)",
+      "is_required": false,
+      "default": null
+    }
+  ],
+  "rows_key": "id",
+  "rows": []
+}

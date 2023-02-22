@@ -7,8 +7,8 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "title": "Добавление директора",
-        "description": "Директора - Добавление"
+        "title": "Добавление дилера",
+        "description": "Дилеры - Добавление"
       },
       "components": {}
     },
@@ -59,7 +59,7 @@
             "type": "submit",
             "settings": {
               "title": "Сохранить",
-              "href": "directors",
+              "href": "dealers",
               "icon": "",
               "background": "dark"
             },
