@@ -1,0 +1,52 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Объявления - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "ads",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["image"]
+        }]
+      },{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["title"]
+        }]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": ["preview_body", "body"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Сохранить",
+          "background": "dark",
+          "icon": "",
+          "href": "ads"
+        }
+      }]
+    }
+  }]
+}

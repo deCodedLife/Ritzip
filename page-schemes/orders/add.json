@@ -22,7 +22,7 @@
           "size": 2,
           "blocks": [{
             "title": "Общее",
-            "fields": ["employee_id", "client_id", "car_id", "source_id"]
+            "fields": ["employee_id", "client_id", "car_id", "vehicles_id", "source_id"]
           }]
         },{
         "size": 2,

@@ -1,0 +1,223 @@
+{
+  "top": [],
+  "side": [
+    {
+      "title": "Панель управления",
+      "href": "dashboard",
+      "children": [],
+      "icon": "garage"
+    },
+    {
+      "title": "Редактор приложения",
+      "href": "appEditor",
+      "children": [],
+      "icon": "garage"
+    },
+    {
+      "title": "Пользователи",
+      "href": "users",
+      "children": [
+        {
+          "title": "Клиенты",
+          "href": "clients"
+        },
+        {
+          "title": "Водители",
+          "href": "drivers"
+        },
+        {
+          "title": "Менеджеры",
+          "href": "managers"
+        },
+        {
+          "title": "Брокеры",
+          "href": "brokers"
+        },
+        {
+          "title": "Сотрудники ТО",
+          "href": "desk-stuff"
+        },
+        {
+          "title": "Диспетчеры",
+          "href": "dispatchers"
+        },
+        {
+          "title": "Инвесторы",
+          "href": "investors"
+        },
+        {
+          "title": "Директора",
+          "href": "directors"
+        },
+        {
+          "title": "Дилеры",
+          "href": "dealers"
+        },
+        {
+          "title": "Остальные",
+          "href": "custom_users"
+        }
+      ],
+      "icon": "user"
+    },
+    {
+      "title": "Списки",
+      "href": "lists",
+      "children": [
+        {
+          "title": "Компании",
+          "href": "companies"
+        },
+        {
+          "title": "Контакты",
+          "href": "contacts"
+        }
+      ],
+      "icon": "bullet-list"
+    },
+    {
+      "title": "Автомобили",
+      "href": "cars",
+      "children": [],
+      "icon": "shipping-van"
+    },
+    {
+      "title": "Транспортные средства на отправку",
+      "href": "vehicles",
+      "children": [],
+      "icon": "shipping-van"
+    },
+    {
+      "title": "Записи на ТО",
+      "href": "maintenanceAppointments",
+      "children": [],
+      "icon": "schedule"
+    },
+    {
+      "title": "Задачи",
+      "href": "tasks",
+      "children": [],
+      "icon": "bullet-list"
+    },
+    {
+      "title": "Заявки",
+      "href": "orders",
+      "children": [],
+      "icon": "delivery"
+    },
+    {
+      "title": "Расходы",
+      "href": "expenses",
+      "children": [],
+      "icon": "reading"
+    },
+    {
+      "title": "Объявления",
+      "href": "ads",
+      "children": [],
+      "icon": "conversation"
+    },
+    {
+      "title": "Отчеты",
+      "href": "reports",
+      "children": [
+        {
+          "title": "Воронка продаж",
+          "href": "report_sales_funnel"
+        },
+        {
+          "title": "Работа с брокерами",
+          "href": "report_brokers"
+        },
+        {
+          "title": "Заказы",
+          "href": "report_orders"
+        },
+        {
+          "title": "Расходы водителей",
+          "href": "report_driver_expenses"
+        },
+        {
+          "title": "Расходы на ТО",
+          "href": "report_ma_expenses"
+        },
+        {
+          "title": "Расходы по топливу",
+          "href": "report_fuel_expenses"
+        },
+        {
+          "title": "Выплаты",
+          "href": "report_transactions"
+        },
+        {
+          "title": "Аналитика отказов",
+          "href": "report_canceled_orders"
+        },
+        {
+          "title": "Хоз расходы",
+          "href": "report_company_expenses"
+        },
+        {
+          "title": "Расчет предстоящих расходов",
+          "href": "report_future_expenses"
+        }
+      ],
+      "icon": "performance"
+    },
+    {
+      "title": "Настройки",
+      "href": "settings",
+      "children": [
+        {
+          "title": "Автосервисы",
+          "href": "autoservices"
+        },
+        {
+          "title": "Плановые ТО",
+          "href": "maintenanceSchedules"
+        },
+        {
+          "title": "Типы расходов",
+          "href": "expenseTypes"
+        },
+        {
+          "title": "Статусы заявок",
+          "href": "orderStatuses"
+        },
+        {
+          "title": "Источники заявок",
+          "href": "orderSources"
+        },
+        {
+          "title": "Категории документов",
+          "href": "documentCategories"
+        },
+        {
+          "title": "Категории компаний",
+          "href": "companyCategories"
+        },
+        {
+          "title": "Категории контактов",
+          "href": "contactCategories"
+        },
+        {
+          "title": "Категории расходов",
+          "href": "expenseCategories"
+        },
+        {
+          "title": "Способы оплаты",
+          "href": "paymentTypes"
+        },
+        {
+          "title": "Роли",
+          "href": "roles"
+        },
+        {
+          "title": "Общие",
+          "href": "settings"
+        }
+      ],
+      "icon": "gear"
+    }
+  ]
+}

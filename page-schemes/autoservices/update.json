@@ -23,6 +23,12 @@
           "title": "Основные данные",
           "fields": ["title", "address", "coordinates"]
         }]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": ["description"]
+        }]
       }]
     },
     "components": {

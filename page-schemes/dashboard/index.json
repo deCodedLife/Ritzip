@@ -1,0 +1,26 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "",
+      "title": ["Объявления"]
+    },
+    "components": []
+  }, {
+    "title": "Объявления",
+    "type": "news",
+    "size": 4,
+    "settings": {
+      "object": "ads",
+      "property_image": "image",
+      "property_title": "title",
+      "property_body": "body",
+      "property_preview": "preview_body"
+    },
+    "components": []
+  }]
+}

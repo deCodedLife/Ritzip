@@ -13,6 +13,29 @@ $requestData->author_id = (int) $API::$userDetail->id;
 $usersId = [ $API::$userDetail->id, $requestData->chat_key ];
 asort( $usersId );
 
-$usersId = implode( "", $usersId );
+$chatKey = implode( "_", $usersId );
 
-$requestData->chat_key = (int) $usersId;
+
+/**
+ * Получение чата
+ */
+
+$personChat = $API->DB->from( "personChats" )
+    ->where( "chat_key", $chatKey )
+    ->limit( 1 )
+    ->fetch();
+
+if ( !$personChat ) {
+
+    $personChatId = $API->DB->insertInto( "personChats" )
+        ->values( [ "chat_key" => $chatKey ] )
+        ->execute();
+
+} else {
+
+    $personChatId = $personChat[ "id" ];
+
+} // if. !!$personChat
+
+
+$requestData->chat_id = (int) $personChatId;

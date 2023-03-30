@@ -1,0 +1,64 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "title": ["Добавление контакта"],
+      "description": "Контакты - Добавление"
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "contacts",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": [ "photo", "title" ]
+        }, {
+          "title": "",
+          "fields": [ "contactCategory_id", "company_id", "user_id" ]
+        },{
+          "title": "",
+          "fields": [ "job_title", "is_main" ]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": [ "address", "state", "zip" ]
+        },{
+          "title": "",
+          "fields": [ "credentials", "tax_id_number" ]
+        },{
+          "title": "",
+          "fields": [ "phone", "email" ]
+        } ]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": [ "note" ]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "",
+          "href": "contacts"
+        }
+      }]
+    }
+  }]
+}

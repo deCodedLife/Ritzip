@@ -27,7 +27,7 @@
             "size": 2,
             "blocks": [{
               "title": "Общее",
-              "fields": ["employee_id", "client_id", "car_id", "source_id"]
+              "fields": ["employee_id", "client_id", "car_id", "vehicles_id", "source_id"]
             },{
               "title": "Отправка",
               "fields": ["origin_city", "origin_state", "origin_zip", "origin_coordinates"]
@@ -60,7 +60,7 @@
       "title": "История изменений",
       "body": [{
         "title": "Логи",
-        "type": "list",
+        "type": "logs",
         "size": 4,
         "settings": {
           "object": "logs",

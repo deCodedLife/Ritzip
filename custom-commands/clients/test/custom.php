@@ -73,4 +73,8 @@ $docuSignApi = new DocuSign\eSign\Api\ConnectApi( $docuSignApi );
  */
 $docuSignUsers = $docuSignApi->listUsers( $docuSignAccountId, 10379674 );
 
-$API->returnResponse( $docuSignUserInfo[ 0 ]["accounts"][0]["account_id"] );
+foreach ( $docuSignUsers as $docuSignUser ) {
+
+    $API->returnResponse( $docuSignUser );
+
+}

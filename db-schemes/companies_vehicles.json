@@ -1,0 +1,16 @@
+{
+  "title": "Автомобили - Сотрудники",
+  "properties": [{
+    "title": "Компания",
+    "article": "company_id",
+    "type": "int",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Транспортное средство на отправку",
+    "article": "vehicle_id",
+    "type": "int",
+    "default": null,
+    "is_required": "Y"
+  }]
+}

@@ -1,0 +1,134 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "title": [":title"],
+      "description": "Контакты - Редактирование"
+    },
+    "components": []
+  }, {
+    "title": "Табы",
+    "type": "tabs",
+    "size": 4,
+    "settings": [
+      {
+        "title": "Основная информация",
+        "body": [{
+          "title": "Форма",
+          "type": "form",
+          "size": 4,
+          "settings": {
+            "object": "contacts",
+            "command": "update",
+            "areas": [{
+              "size": 2,
+              "blocks": [{
+                "title": "",
+                "fields": [ "photo", "title" ]
+              }, {
+                "title": "",
+                "fields": [ "contactCategory_id", "company_id", "user_id" ]
+              },{
+                "title": "",
+                "fields": [ "job_title", "is_main" ]
+              }]
+            }, {
+              "size": 2,
+              "blocks": [{
+                "title": "",
+                "fields": [ "address", "state", "zip" ]
+              },{
+                "title": "",
+                "fields": [ "credentials", "tax_id_number" ]
+              },{
+                "title": "",
+                "fields": [ "phone", "email" ]
+              } ]
+            }, {
+              "size": 4,
+              "blocks": [{
+                "title": "",
+                "fields": [ "note" ]
+              }]
+            }]
+          },
+          "components": {
+            "buttons": [{
+              "type": "submit",
+              "settings": {
+                "title": "Сохранить",
+                "background": "dark",
+                "icon": "",
+                "href": "contacts"
+              }
+            }]
+          }
+        }]
+      }, {
+        "title": "Сделки",
+        "body": []
+      },{
+        "title": "Задачи",
+        "body": []
+      }, {
+        "title": "Напоминания",
+        "body": []
+      }, {
+        "title": "Документы",
+        "body": []
+      }, {
+        "title": "Файлы",
+        "body": []
+      }, {
+        "title": "Счета",
+        "body": []
+      }, {
+        "title": "Платежи",
+        "body": []
+      }, {
+        "title": "Выписка по счету",
+        "body": []
+      }, {
+        "title": "Компании",
+        "body": [
+          {
+            "title": "Компании",
+            "type": "list",
+            "size": 4,
+            "settings": {
+              "object": "companies",
+              "filters": [{
+                "property": "contact_id",
+                "value": ":id"
+              }]
+            },
+            "components": []
+          }
+        ]
+      }, {
+        "title": "Лента событий",
+        "body": [
+          {
+            "title": "История логов",
+            "type": "list",
+            "size": 4,
+            "settings": {
+              "object": "logs",
+              "filters": [{
+                "property": "table_name",
+                "value": "contacts"
+              }, {
+                "property": "row_id",
+                "value": ":id"
+              }]
+            },
+            "components": []
+          }
+        ]
+      } ]
+  }]
+}

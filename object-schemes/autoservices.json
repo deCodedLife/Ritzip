@@ -1,1 +1,43 @@
-{"title":"Автосервисы","table":"autoservices","is_trash":true,"properties":[{"title":"Название","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Адрес","article":"address","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Координаты","article":"coordinates","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]}]}
+{
+  "title": "Автосервисы",
+  "table": "autoservices",
+  "is_trash": true,
+  "properties": [{
+    "title": "Название",
+    "article": "title",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": ["add"]
+  }, {
+    "title": "Адрес",
+    "article": "address",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Описание",
+    "article": "description",
+    "data_type": "string",
+    "field_type": "textarea",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }, {
+    "title": "Координаты",
+    "article": "coordinates",
+    "data_type": "string",
+    "field_type": "string",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"]
+  }]
+}

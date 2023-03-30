@@ -1,1 +1,31 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Доска объявлений","title":["Доска объявлений"]},"components":[]}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Доска объявлений",
+      "title": ["Доска объявлений"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "ads"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить объявление",
+          "background": "dark",
+          "page": "ads/add"
+        }
+      }]
+    }
+  }]
+}

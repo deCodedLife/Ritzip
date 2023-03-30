@@ -1,8 +1,8 @@
 {
   "title": "Персональные сообщения",
   "properties": [{
-    "title": "Ключ чата",
-    "article": "chat_key",
+    "title": "Чат",
+    "article": "chat_id",
     "type": "int",
     "default": null,
     "is_required": "Y"

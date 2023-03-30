@@ -1,0 +1,31 @@
+{
+  "title": "Категории расходов",
+  "properties": [{
+    "title": "Название",
+    "article": "title",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }, {
+    "title": "Активность (Y/N)",
+    "article": "is_active",
+    "type": "char(1)",
+    "default": "Y",
+    "is_required": "Y"
+  }],
+  "rows_key": "title",
+  "rows": [
+    {
+      "title": "Административные расходы"
+    },
+    {
+      "title": "Заработная плата"
+    },
+    {
+      "title": "Техническое обслуживание"
+    },
+    {
+      "title": "Расходы на топливо"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <?php
 
 /**
- * Авто заполение автора
+ * Авто-заполнение автора
  */
 $requestData->author_id = $API::$userDetail->id;

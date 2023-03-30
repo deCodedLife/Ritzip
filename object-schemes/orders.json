@@ -45,6 +45,22 @@
       "properties_title": "last_name"
     }
   }, {
+    "title": "Транспортные средства",
+    "article": "vehicles_id",
+    "data_type": "array",
+    "field_type": "list",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update", "get"],
+    "join": {
+      "connection_table": "orders_vehicles",
+      "donor_table": "vehicles",
+      "property_article": "vin",
+      "insert_property": "order_id",
+      "filter_property": "vehicle_id"
+    }
+  }, {
     "title": "Город отправки",
     "article": "origin_city",
     "data_type": "string",

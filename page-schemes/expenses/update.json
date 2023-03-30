@@ -11,44 +11,80 @@
     },
     "components": []
   }, {
-    "title": "Форма",
-    "type": "form",
+    "title": "Табы",
+    "type": "tabs",
     "size": 4,
-    "settings": {
-      "object": "expenses",
-      "command": "update",
-      "areas": [{
-        "size": 2,
-        "blocks": [{
-          "title": "",
-          "fields": ["type_id", "cost", "status"]
-        }]
-      },
-        {
-          "size": 2,
-          "blocks": [{
-            "title": "",
-            "fields": ["maintenance_id"]
-          }]
-        },
-        {
+    "settings": [
+      {
+        "title": "Основная информация",
+        "body": [{
+          "title": "Форма",
+          "type": "form",
           "size": 4,
-          "blocks": [{
-            "title": "",
-            "fields": ["description"]
-          }]
+          "settings": {
+            "object": "expenses",
+            "command": "update",
+            "areas": [{
+              "size": 2,
+              "blocks": [{
+                "title": "",
+                "fields": ["type_id", "cost", "status"]
+              }]
+            },
+              {
+                "size": 2,
+                "blocks": [{
+                  "title": "",
+                  "fields": ["maintenance_id"]
+                }]
+              },
+              {
+                "size": 4,
+                "blocks": [{
+                  "title": "",
+                  "fields": ["description"]
+                }]
+              }]
+          },
+          "components": {
+            "buttons": [{
+              "type": "submit",
+              "settings": {
+                "title": "Сохранить",
+                "background": "dark",
+                "icon": "",
+                "href": "expenses"
+              }
+            }]
+          }
         }]
-    },
-    "components": {
-      "buttons": [{
-        "type": "submit",
-        "settings": {
-          "title": "Сохранить",
-          "background": "dark",
-          "icon": "",
-          "href": "expenses"
-        }
-      }]
-    }
+      }, {
+        "title": "Задачи",
+        "body": []
+      }, {
+        "title": "Напоминания",
+        "body": []
+      }, {
+        "title": "Лента событий",
+        "body": [
+          {
+            "title": "История логов",
+            "type": "list",
+            "size": 4,
+            "settings": {
+              "object": "logs",
+              "filters": [{
+                "property": "table_name",
+                "value": "expenses"
+              }, {
+                "property": "row_id",
+                "value": ":id"
+              }]
+            },
+            "components": []
+          }
+        ]
+      }
+    ]
   }]
 }

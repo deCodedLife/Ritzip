@@ -1,0 +1,31 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Способы оплаты",
+      "title": ["Способы оплаты"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "paymentTypes"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить способ оплаты",
+          "background": "dark",
+          "page": "paymentTypes/add"
+        }
+      }]
+    }
+  }]
+}

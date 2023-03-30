@@ -23,6 +23,7 @@
       }]
     },
     "components": {
+      "search": true,
       "buttons": [{
         "type": "href",
         "settings": {

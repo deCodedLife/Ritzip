@@ -1,0 +1,67 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "title": ["Добавление компании"],
+      "description": "Компании - Добавление"
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "companies",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основное",
+          "fields": [ "logo", "title" ]
+        }, {
+          "title": "",
+          "fields": [ "companyCategory_id", "contact_id", "user_id" ]
+        },{
+          "title": "",
+          "fields": [ "driver_id", "vehicles_id" ]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "Адрес",
+          "fields": [ "state", "zip" ]
+        },{
+          "title": "",
+          "fields": [ "credentials", "tax_id_number" ]
+        },{
+          "title": "",
+          "fields": [ "phone", "email" ]
+        }, {
+          "title": "",
+          "fields": [ "website" ]
+        } ]
+      }, {
+        "size": 4,
+        "blocks": [{
+          "title": "",
+          "fields": [ "note", "description" ]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "",
+          "href": "companies"
+        }
+      }]
+    }
+  }]
+}

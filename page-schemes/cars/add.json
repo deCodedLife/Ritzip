@@ -27,7 +27,7 @@
           "fields": [ "insurance", "owner_id"]
         }, {
           "title": "Дополнительно",
-          "fields": ["coordinates", "last_maintenance"]
+          "fields": [ "coordinates", "last_maintenance" ]
         }]
       }, {
         "size": 2,

@@ -1,0 +1,31 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Категории расходов",
+      "title": ["Категории расходов"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "expenseCategories"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить категорию расходов",
+          "background": "dark",
+          "page": "expenseCategories/add"
+        }
+      }]
+    }
+  }]
+}

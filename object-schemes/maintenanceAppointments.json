@@ -25,7 +25,10 @@
     "require_in_commands": ["add"],
     "list_donor": {
       "table": "users",
-      "properties_title": "last_name"
+      "properties_title": "last_name",
+      "filters": {
+        "role_id": 4
+      }
     }
   }, {
     "title": "Автосервис",
@@ -45,7 +48,7 @@
     "title": "Описание",
     "article": "description",
     "data_type": "string",
-    "field_type": "string",
+    "field_type": "textarea",
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
