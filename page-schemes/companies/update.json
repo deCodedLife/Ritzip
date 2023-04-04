@@ -35,12 +35,15 @@
               },{
                 "title": "",
                 "fields": [ "driver_id", "vehicles_id" ]
+              },{
+                "title": "",
+                "fields": [ "orders_count", "orders_cost" ]
               }]
             }, {
               "size": 2,
               "blocks": [{
                 "title": "Адрес",
-                "fields": [ "state", "zip" ]
+                "fields": [ "state_id", "zip" ]
               },{
                 "title": "",
                 "fields": [ "credentials", "tax_id_number" ]

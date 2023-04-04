@@ -21,14 +21,20 @@
         "size": 2,
         "blocks": [{
           "title": "",
-          "fields": ["type_id", "cost"]
+          "fields": ["type_id", "paymentType_id", "cost", "payment_receipt"]
+        }, {
+          "title": "",
+          "fields": ["driver_id", "car_id"]
         }]
       },
         {
           "size": 2,
           "blocks": [{
             "title": "",
-            "fields": ["maintenance_id"]
+            "fields": ["maintenance_id", "is_bill"]
+          }, {
+            "title": "",
+            "fields": ["company_id", "contact_id"]
           }]
         },
         {

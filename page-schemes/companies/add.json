@@ -33,7 +33,7 @@
         "size": 2,
         "blocks": [{
           "title": "Адрес",
-          "fields": [ "state", "zip" ]
+          "fields": [ "state_id", "zip" ]
         },{
           "title": "",
           "fields": [ "credentials", "tax_id_number" ]

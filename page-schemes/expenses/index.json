@@ -18,6 +18,169 @@
       "object": "expenses"
     },
     "components": {
+      "filters": [
+        {
+          "title": "Дата",
+          "type": "date",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "created_at"
+          }
+        },
+        {
+          "title": "Категория",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "type_id",
+            "donor_object": "expenseTypes",
+            "donor_property_title": "title",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Статус",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "status",
+            "list": [
+              {
+                "title": "Запланировано",
+                "value": "planned"
+              },
+              {
+                "title": "Завершено",
+                "value": "success"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Выставлен счет",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "is_bill",
+            "list": [
+              {
+                "title": "Да",
+                "value": "Y"
+              },
+              {
+                "title": "Нет",
+                "value": "N"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Способ оплаты",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "paymentType_id",
+            "donor_object": "paymentTypes",
+            "donor_property_title": "title",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Ответственный",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "author_id",
+            "donor_object": "users",
+            "donor_property_title": "last_name",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Сумма (от)",
+          "type": "price",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "cost_from"
+          }
+        },
+        {
+          "title": "Сумма (до)",
+          "type": "price",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "cost_to"
+          }
+        },
+        {
+          "title": "Водитель",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "driver_id",
+            "donor_object": "users",
+            "donor_property_title": "last_name",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Авто",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "car_id",
+            "donor_object": "cars",
+            "donor_property_title": "vin",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Компания",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "company_id",
+            "donor_object": "companies",
+            "donor_property_title": "title",
+            "donor_property_value": "id"
+          }
+        },
+        {
+          "title": "Контакт",
+          "type": "list",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "contact_id",
+            "donor_object": "contacts",
+            "donor_property_title": "title",
+            "donor_property_value": "id"
+          }
+        }
+      ],
       "buttons": [{
         "type": "href",
         "settings": {

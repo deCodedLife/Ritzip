@@ -1,0 +1,213 @@
+{
+  "title": "Объявления",
+  "properties": [{
+    "title": "Название",
+    "article": "title",
+    "type": "varchar(255)",
+    "default": null,
+    "is_required": "Y"
+  }],
+  "rows_key": "title",
+  "rows": [
+    {
+      "title": "Айдахо",
+      "is_system": "Y"
+    },
+    {
+      "title": "Айова",
+      "is_system": "Y"
+    },
+    {
+      "title": "Алабама",
+      "is_system": "Y"
+    },
+    {
+      "title": "Аляска",
+      "is_system": "Y"
+    },
+    {
+      "title": "Аризона",
+      "is_system": "Y"
+    },
+    {
+      "title": "Арканзас",
+      "is_system": "Y"
+    },
+    {
+      "title": "Вайоминг",
+      "is_system": "Y"
+    },
+    {
+      "title": "Вашингтон",
+      "is_system": "Y"
+    },
+    {
+      "title": "Вермонт",
+      "is_system": "Y"
+    },
+    {
+      "title": "Виргиния",
+      "is_system": "Y"
+    },
+    {
+      "title": "Висконсин",
+      "is_system": "Y"
+    },
+    {
+      "title": "Гавайи",
+      "is_system": "Y"
+    },
+    {
+      "title": "Делавэр",
+      "is_system": "Y"
+    },
+    {
+      "title": "Джорджия",
+      "is_system": "Y"
+    },
+    {
+      "title": "Западная Виргиния",
+      "is_system": "Y"
+    },
+    {
+      "title": "Иллинойс",
+      "is_system": "Y"
+    },
+    {
+      "title": "Индиана",
+      "is_system": "Y"
+    },
+    {
+      "title": "Калифорния",
+      "is_system": "Y"
+    },
+    {
+      "title": "Канзас",
+      "is_system": "Y"
+    },
+    {
+      "title": "Кентукки",
+      "is_system": "Y"
+    },
+    {
+      "title": "Колорадо",
+      "is_system": "Y"
+    },
+    {
+      "title": "Коннектикут",
+      "is_system": "Y"
+    },
+    {
+      "title": "Луизиана",
+      "is_system": "Y"
+    },
+    {
+      "title": "Массачусетс",
+      "is_system": "Y"
+    },
+    {
+      "title": "Миннесота",
+      "is_system": "Y"
+    },
+    {
+      "title": "Миссисипи",
+      "is_system": "Y"
+    },
+    {
+      "title": "Миссури",
+      "is_system": "Y"
+    },
+    {
+      "title": "Мичиган",
+      "is_system": "Y"
+    },
+    {
+      "title": "Монтана",
+      "is_system": "Y"
+    },
+    {
+      "title": "Мэн",
+      "is_system": "Y"
+    },
+    {
+      "title": "Мэриленд",
+      "is_system": "Y"
+    },
+    {
+      "title": "Небраска",
+      "is_system": "Y"
+    },
+    {
+      "title": "Невада",
+      "is_system": "Y"
+    },
+    {
+      "title": "Нью-Гэмпшир",
+      "is_system": "Y"
+    },
+    {
+      "title": "Нью-Джерси",
+      "is_system": "Y"
+    },
+    {
+      "title": "Нью-Йорк",
+      "is_system": "Y"
+    },
+    {
+      "title": "Нью-Мексико",
+      "is_system": "Y"
+    },
+    {
+      "title": "Огайо",
+      "is_system": "Y"
+    },
+    {
+      "title": "Оклахома",
+      "is_system": "Y"
+    },
+    {
+      "title": "Орегон",
+      "is_system": "Y"
+    },
+    {
+      "title": "Пенсильвания",
+      "is_system": "Y"
+    },
+    {
+      "title": "Род-Айленд",
+      "is_system": "Y"
+    },
+    {
+      "title": "Северная Дакота",
+      "is_system": "Y"
+    },
+    {
+      "title": "Северная Каролина",
+      "is_system": "Y"
+    },
+    {
+      "title": "Теннесси",
+      "is_system": "Y"
+    },
+    {
+      "title": "Техас",
+      "is_system": "Y"
+    },
+    {
+      "title": "Флорида",
+      "is_system": "Y"
+    },
+    {
+      "title": "Южная Дакота",
+      "is_system": "Y"
+    },
+    {
+      "title": "Южная Каролина",
+      "is_system": "Y"
+    },
+    {
+      "title": "Юта",
+      "is_system": "Y"
+    }
+  ]
+}

@@ -30,13 +30,6 @@
       "is_required": false
     },
     {
-      "title": "Штат",
-      "article": "state",
-      "type": "varchar(255)",
-      "default": null,
-      "is_required": false
-    },
-    {
       "title": "ZIP код",
       "article": "zip",
       "type": "varchar(255)",
@@ -79,6 +72,20 @@
       "is_required": false
     },
     {
+      "title": "Кол-во сделок",
+      "article": "orders_count",
+      "type": "int",
+      "is_required": false,
+      "default": 0
+    },
+    {
+      "title": "Сумма сделок",
+      "article": "orders_cost",
+      "type": "int",
+      "is_required": false,
+      "default": 0
+    },
+    {
       "title": "ID компании",
       "article": "company_id",
       "type": "int",
@@ -95,6 +102,13 @@
     {
       "title": "ID ответственного",
       "article": "user_id",
+      "type": "int",
+      "is_required": false,
+      "default": null
+    },
+    {
+      "title": "Штат",
+      "article": "state_id",
       "type": "int",
       "is_required": false,
       "default": null

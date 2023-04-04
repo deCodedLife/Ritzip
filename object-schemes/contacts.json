@@ -30,7 +30,7 @@
     "is_default_in_list": true,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"],
+    "use_in_commands": ["add", "update", "get"],
     "list_donor": {
       "table": "contactCategories",
       "properties_title": "title"
@@ -47,14 +47,18 @@
     "require_in_commands": []
   }, {
     "title": "Штат",
-    "article": "state",
-    "data_type": "string",
-    "field_type": "string",
+    "article": "state_id",
+    "data_type": "integer",
+    "field_type": "list",
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"],
-    "require_in_commands": []
+    "use_in_commands": ["add", "update", "get"],
+    "require_in_commands": [],
+    "list_donor": {
+      "table": "states",
+      "properties_title": "title"
+    }
   }, {
     "title": "ZIP код",
     "article": "zip",
@@ -149,7 +153,7 @@
     "is_default_in_list": true,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"],
+    "use_in_commands": ["add", "update", "get"],
     "list_donor": {
       "table": "users",
       "properties_title": "last_name"
@@ -165,6 +169,66 @@
     "use_in_commands": ["add", "update"],
     "require_in_commands": []
   }, {
+    "title": "Кол-во сделок",
+    "article": "orders_count",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
+    "title": "Кол-во сделок (from)",
+    "article": "orders_count_from",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
+    "title": "Кол-во сделок (to)",
+    "article": "orders_count_to",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
+    "title": "Сумма сделок",
+    "article": "orders_cost",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
+    "title": "Сумма сделок (from)",
+    "article": "orders_cost_from",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
+    "title": "Сумма сделок (to)",
+    "article": "orders_cost_to",
+    "data_type": "float",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["get"],
+    "require_in_commands": []
+  }, {
     "title": "Дата и время создания",
     "article": "created_at",
     "data_type": "datetime",
@@ -172,6 +236,6 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"]
+    "use_in_commands": ["add", "update", "get"]
   }]
 }

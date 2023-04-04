@@ -16,6 +16,20 @@
       "default": null
     },
     {
+      "title": "Кол-во сделок",
+      "article": "orders_count",
+      "type": "int",
+      "is_required": false,
+      "default": 0
+    },
+    {
+      "title": "Сумма сделок",
+      "article": "orders_cost",
+      "type": "int",
+      "is_required": false,
+      "default": 0
+    },
+    {
       "title": "ID категории",
       "article": "companyCategory_id",
       "type": "int",
@@ -31,10 +45,10 @@
     },
     {
       "title": "Штат",
-      "article": "state",
-      "type": "varchar(255)",
-      "default": null,
-      "is_required": false
+      "article": "state_id",
+      "type": "int",
+      "is_required": false,
+      "default": null
     },
     {
       "title": "ZIP код",
