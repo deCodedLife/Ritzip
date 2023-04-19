@@ -1,0 +1,14 @@
+{
+  "title": "Административные команды",
+  "table": "",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Поисковая строка",
+      "article": "search",
+      "data_type": "string",
+      "use_in_commands": [ "global-search" ],
+      "require_in_commands": [ "global-search" ]
+    }
+  ]
+}
