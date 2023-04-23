@@ -8,6 +8,24 @@
       "title": "Разделы",
       "description": "",
       "parent_id": null
+    },
+    {
+      "id": 2,
+      "title": "Компании",
+      "description": "",
+      "parent_id": null
+    },
+    {
+      "id": 3,
+      "title": "Контакты",
+      "description": "",
+      "parent_id": null
+    },
+    {
+      "id": 4,
+      "title": "Расходы",
+      "description": "",
+      "parent_id": null
     }
   ]
 }

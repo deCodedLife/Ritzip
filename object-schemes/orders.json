@@ -3,6 +3,16 @@
   "table": "orders",
   "is_trash": true,
   "properties": [{
+    "title": "Стоимость",
+    "article": "cost",
+    "data_type": "float",
+    "field_type": "price",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
+  }, {
     "title": "Автомобиль",
     "article": "car_id",
     "data_type": "integer",
@@ -43,6 +53,34 @@
     "list_donor": {
       "table": "users",
       "properties_title": "last_name"
+    }
+  }, {
+    "title": "Контакт",
+    "article": "contact_id",
+    "data_type": "integer",
+    "field_type": "list",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update", "get"],
+    "require_in_commands": [],
+    "list_donor": {
+      "table": "contacts",
+      "properties_title": "title"
+    }
+  }, {
+    "title": "Компания",
+    "article": "company_id",
+    "data_type": "integer",
+    "field_type": "list",
+    "is_default_in_list": true,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update", "get"],
+    "require_in_commands": [],
+    "list_donor": {
+      "table": "companies",
+      "properties_title": "title"
     }
   }, {
     "title": "Транспортные средства",

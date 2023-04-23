@@ -1,1 +1,1 @@
-{"title":"Добавление","type":"add","object_scheme":"companies","modules":[],"permissions":[]}
+{"title":"Добавление","type":"add","object_scheme":"companies","required_modules":[],"required_permissions":["companies_add"]}

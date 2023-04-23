@@ -18,6 +18,7 @@
       "object": "expenses"
     },
     "components": {
+      "search": true,
       "filters": [
         {
           "title": "Дата",

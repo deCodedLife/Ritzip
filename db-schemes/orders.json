@@ -19,6 +19,12 @@
     "default": null,
     "is_required": "N"
   }, {
+    "title": "Стоимость",
+    "article": "cost",
+    "type": "float",
+    "default": 0,
+    "is_required": "N"
+  }, {
     "title": "Город отправки",
     "article": "origin_city",
     "type": "varchar(255)",
@@ -81,6 +87,18 @@
   }, {
     "title": "Источник заявки",
     "article": "source_id",
+    "type": "int",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Компания",
+    "article": "company_id",
+    "type": "int",
+    "default": null,
+    "is_required": "N"
+  }, {
+    "title": "Контакт",
+    "article": "contact_id",
     "type": "int",
     "default": null,
     "is_required": "N"

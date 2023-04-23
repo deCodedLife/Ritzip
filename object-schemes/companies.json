@@ -128,6 +128,7 @@
     "article": "contact_id",
     "data_type": "integer",
     "field_type": "list",
+    "search": "contacts",
     "is_default_in_list": true,
     "is_unique": false,
     "is_autofill": true,

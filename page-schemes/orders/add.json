@@ -22,7 +22,7 @@
           "size": 2,
           "blocks": [{
             "title": "Общее",
-            "fields": ["employee_id", "client_id", "car_id", "vehicles_id", "source_id"]
+            "fields": ["cost", "employee_id", "client_id", "car_id", "vehicles_id", "source_id"]
           }]
         },{
         "size": 2,
@@ -36,6 +36,9 @@
           "blocks": [{
             "title": "Получение",
             "fields": ["destination_city", "destination_state", "destination_zip", "destination_coordinates"]
+          }, {
+            "title": "Источник",
+            "fields": ["company_id", "contact_id"]
           }]
         }]
     },

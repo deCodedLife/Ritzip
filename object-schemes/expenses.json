@@ -29,6 +29,21 @@
       "properties_title": "autoservice_id"
     }
   }, {
+    "title": "Заявка",
+    "article": "order_id",
+    "data_type": "integer",
+    "field_type": "list",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "is_hook": true,
+    "max_value": 0,
+    "use_in_commands": ["add", "update", "hook"],
+    "list_donor": {
+      "table": "orders",
+      "properties_title": "id"
+    }
+  }, {
     "title": "Ответственный",
     "article": "author_id",
     "data_type": "integer",
@@ -49,7 +64,8 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update", "get"],
+    "is_hook": true,
+    "use_in_commands": ["add", "update", "get", "hook"],
     "list_donor": {
       "table": "users",
       "properties_title": "last_name"
@@ -62,7 +78,8 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update", "get"],
+    "is_hook": true,
+    "use_in_commands": ["add", "update", "get", "hook"],
     "list_donor": {
       "table": "cars",
       "properties_title": "vin"
@@ -75,7 +92,8 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update", "get"],
+    "is_hook": true,
+    "use_in_commands": ["add", "update", "get", "hook"],
     "list_donor": {
       "table": "companies",
       "properties_title": "title"
@@ -88,7 +106,8 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true,
-    "use_in_commands": ["add", "update", "get"],
+    "is_hook": true,
+    "use_in_commands": ["add", "update", "get", "hook"],
     "list_donor": {
       "table": "contacts",
       "properties_title": "title"
@@ -177,6 +196,69 @@
     "is_default_in_list": false,
     "is_unique": false,
     "is_autofill": true
+  }, {
+    "title": "Шаблоны",
+    "article": "repeat_templates",
+    "data_type": "string",
+    "field_type": "list",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "is_hook": true,
+    "use_in_commands": ["add", "update", "hook"],
+    "require_in_commands": [],
+    "custom_list": [{
+      "title": "Неделя",
+      "value": "week"
+    }, {
+      "title": "2 недели",
+      "value": "two_weeks"
+    }, {
+      "title": "Месяц",
+      "value": "month"
+    }, {
+      "title": "3 месяца",
+      "value": "three_month"
+    }, {
+      "title": "Полгода",
+      "value": "half_year"
+    }, {
+      "title": "Год",
+      "value": "year"
+    }, {
+      "title": "Произвольно",
+      "value": "custom"
+    }]
+  }, {
+    "title": "Кол-во дней",
+    "article": "repeat_days",
+    "data_type": "integer",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
+  }, {
+    "title": "Кол-во циклов",
+    "article": "cycles_count",
+    "data_type": "integer",
+    "field_type": "integer",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
+  }, {
+    "title": "Бесконечно",
+    "article": "is_endlessly",
+    "data_type": "boolean",
+    "field_type": "checkbox",
+    "is_default_in_list": false,
+    "is_unique": false,
+    "is_autofill": true,
+    "use_in_commands": ["add", "update"],
+    "require_in_commands": []
   }, {
     "title": "Оплачено",
     "article": "is_payed",

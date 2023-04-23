@@ -1,1 +1,1 @@
-{"title":"Редактирование","type":"update","object_scheme":"contacts","modules":[],"permissions":[]}
+{"title":"Редактирование","type":"update","object_scheme":"contacts","required_modules":[],"required_permissions":["contacts_update"]}

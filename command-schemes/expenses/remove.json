@@ -1,1 +1,1 @@
-{"title":"Удаление","type":"remove","object_scheme":"expenses","modules":[],"permissions":[]}
+{"title":"Удаление","type":"remove","object_scheme":"expenses","required_modules":[],"required_permissions":["expenses_remove"]}

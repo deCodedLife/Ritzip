@@ -1,1 +1,1 @@
-{"title":"Редактирование","type":"update","object_scheme":"expenses","modules":[],"permissions":[]}
+{"title":"Редактирование","type":"update","object_scheme":"expenses","required_modules":[],"required_permissions":["expenses_update"]}

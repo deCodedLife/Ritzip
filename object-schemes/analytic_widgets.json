@@ -40,6 +40,36 @@
         "table": "orderSources",
         "properties_title": "title"
       }
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["contact_statistic"],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "contacts",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["company_statistic"],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      }
     }
   ]
 }

@@ -1,1 +1,1 @@
-{"title":"Добавление","type":"add","object_scheme":"contacts","modules":[],"permissions":[]}
+{"title":"Добавление","type":"add","object_scheme":"contacts","required_modules":[],"required_permissions":["contacts_add"]}

@@ -1,1 +1,1 @@
-{"title":"Добавление","type":"add","object_scheme":"expenses","modules":[],"permissions":[]}
+{"title":"Добавление","type":"add","object_scheme":"expenses","required_modules":[],"required_permissions":["expenses_add"]}

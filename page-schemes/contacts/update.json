@@ -61,6 +61,15 @@
           },
           "components": {
             "buttons": [{
+              "type": "add_to_form",
+              "settings": {
+                "title": "Добавить компанию",
+                "background": "dark",
+                "icon": "",
+                "page": "companies/add",
+                "field": "company_id"
+              }
+            },{
               "type": "submit",
               "settings": {
                 "title": "Сохранить",
@@ -73,7 +82,33 @@
         }]
       }, {
         "title": "Сделки",
-        "body": []
+        "body": [
+          {
+            "title": "Статистика контактов",
+            "type": "analytic_widgets",
+            "size": 4,
+            "settings": {
+              "widgets_group": "contact_statistic",
+              "filters": [{
+                "property": "contact_id",
+                "value": ":id"
+              }]
+            },
+            "components": []
+          },
+          {
+          "title": "Сделки",
+          "type": "list",
+          "size": 4,
+          "settings": {
+            "object": "orders",
+            "filters": [{
+              "property": "contact_id",
+              "value": ":id"
+            }]
+          },
+          "components": []
+        }]
       },{
         "title": "Задачи",
         "body": []
