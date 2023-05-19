@@ -177,10 +177,6 @@
           "href": "maintenanceSchedules"
         },
         {
-          "title": "Типы расходов",
-          "href": "expenseTypes"
-        },
-        {
           "title": "Статусы заявок",
           "href": "orderStatuses"
         },

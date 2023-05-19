@@ -52,7 +52,10 @@ if ( $searchIdList[ "matches" ] ) {
     foreach ( $searchIdList[ "matches" ] as $searchId ) $findRowsId[] = $searchId[ "id" ];
 
     $rows = $API->DB->from( "users" )
-        ->where( "id", $findRowsId )
+        ->where( [
+            "id" => $findRowsId,
+            "is_active" => "Y"
+        ] )
         ->limit( 5 );
 
 
@@ -74,6 +77,118 @@ if ( $searchIdList[ "matches" ] ) {
             "title" => $row[ "last_name" ] . " " . $row[ "first_name" ] . " " . $row[ "patronymic" ],
             "description" => $userRole[ "title" ],
             "href" => "/" . $userRole[ "article" ] . "/update/" . $userRole[ "id" ]
+        ];
+
+    } // foreach. $rows
+
+
+    if ( $searchCategory[ "rows" ] ) $resultMatches[] = $searchCategory;
+
+} // if. $searchIdList[ "matches" ]
+
+
+/**
+ * Поиск совпадения - Компании
+ */
+
+$searchIdList = $Sphinx->Query(
+    $requestData->search,
+    str_replace( "-", "_", $API::$configs[ "db" ][ "name" ] ) . "_companies"
+);
+
+if ( $searchIdList[ "matches" ] ) {
+
+    /**
+     * Категория поиска
+     */
+    $searchCategory = [
+        "title" => "Компании",
+        "rows" => []
+    ];
+
+
+    /**
+     * Поиск записей
+     */
+
+    $findRowsId = [];
+
+    foreach ( $searchIdList[ "matches" ] as $searchId ) $findRowsId[] = $searchId[ "id" ];
+
+    $rows = $API->DB->from( "companies" )
+        ->where( [
+            "id" => $findRowsId,
+            "is_active" => "Y"
+        ] )
+        ->limit( 5 );
+
+
+    /**
+     * Вывод найденных записей
+     */
+
+    foreach ( $rows as $row ) {
+
+        $searchCategory[ "rows" ][] = [
+            "title" => $row[ "title" ],
+            "description" => $row[ "description" ],
+            "href" => "/companies/update/" . $row[ "id" ]
+        ];
+
+    } // foreach. $rows
+
+
+    if ( $searchCategory[ "rows" ] ) $resultMatches[] = $searchCategory;
+
+} // if. $searchIdList[ "matches" ]
+
+
+/**
+ * Поиск совпадения - Контакты
+ */
+
+$searchIdList = $Sphinx->Query(
+    $requestData->search,
+    str_replace( "-", "_", $API::$configs[ "db" ][ "name" ] ) . "_contacts"
+);
+
+if ( $searchIdList[ "matches" ] ) {
+
+    /**
+     * Категория поиска
+     */
+    $searchCategory = [
+        "title" => "Контакты",
+        "rows" => []
+    ];
+
+
+    /**
+     * Поиск записей
+     */
+
+    $findRowsId = [];
+
+    foreach ( $searchIdList[ "matches" ] as $searchId ) $findRowsId[] = $searchId[ "id" ];
+
+    $rows = $API->DB->from( "contacts" )
+        ->where( [
+            "id" => $findRowsId,
+            "is_active" => "Y"
+        ] )
+        ->limit( 5 );
+
+
+    /**
+     * Вывод найденных записей
+     */
+
+    foreach ( $rows as $row ) {
+
+        $searchCategory[ "rows" ][] = [
+            "title" => $row[ "title" ],
+            "description" => $row[ "phone" ],
+            "href" => "/contacts/update/" . $row[ "id" ]
         ];
 
     } // foreach. $rows
@@ -113,7 +228,10 @@ if ( $searchIdList[ "matches" ] ) {
     foreach ( $searchIdList[ "matches" ] as $searchId ) $findRowsId[] = $searchId[ "id" ];
 
     $rows = $API->DB->from( "cars" )
-        ->where( "id", $findRowsId )
+        ->where( [
+            "id" => $findRowsId,
+            "is_active" => "Y"
+        ] )
         ->limit( 5 );
 
 
@@ -166,7 +284,10 @@ if ( $searchIdList[ "matches" ] ) {
     foreach ( $searchIdList[ "matches" ] as $searchId ) $findRowsId[] = $searchId[ "id" ];
 
     $rows = $API->DB->from( "vehicles" )
-        ->where( "id", $findRowsId )
+        ->where( [
+            "id" => $findRowsId,
+            "is_active" => "Y"
+        ] )
         ->limit( 5 );
 
 

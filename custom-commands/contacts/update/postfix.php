@@ -1,16 +1,25 @@
 <?php
 
 /**
- * Подстановка контакта в компанию
+ * Основной контакт
  */
-if ( $requestData->company_id ) {
 
-    $API->DB->update( "companies" )
-        ->set( "contact_id", $requestData->id )
+if ( $requestData->is_main === "Y" ) {
+
+    $companyId = $requestData->company_id;
+
+    if ( !$companyId ) $companyId = $API->DB->from( "contacts" )
+        ->where( "id", $requestData->id )
+        ->limit( 1 )
+        ->fetch()[ "company_id" ];
+
+
+    if ( $companyId ) $API->DB->update( "companies" )
+        ->set( "main_contact_id", $requestData->id )
         ->where( [
-            "id" => $requestData->id,
+            "id" => $companyId,
             "is_system" => "N"
         ] )
         ->execute();
 
-} // if. $requestData->company_id
+} // if. $requestData->is_main === "Y"

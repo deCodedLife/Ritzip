@@ -28,7 +28,7 @@
               "size": 2,
               "blocks": [{
                 "title": "Основная информация",
-                "fields": ["type_id", "paymentType_id", "cost", "status", "is_payed", "payment_receipt"]
+                "fields": ["category_id", "paymentType_id", "cost", "status", "is_bill", "is_payed", "payment_receipt"]
               }, {
                 "title": "Повторять каждые",
                 "fields": ["repeat_templates", "repeat_days", "cycles_count", "is_endlessly"]
@@ -37,13 +37,7 @@
               {
                 "size": 2,
                 "blocks": [{
-                  "title": " Связка",
-                  "fields": ["maintenance_id", "is_bill"]
-                }, {
-                  "title": "",
-                  "fields": ["order_id"]
-                }, {
-                  "title": "",
+                  "title": "Связка",
                   "fields": ["driver_id", "car_id"]
                 }, {
                   "title": "",

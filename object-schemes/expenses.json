@@ -114,7 +114,7 @@
     }
   }, {
     "title": "Категория",
-    "article": "type_id",
+    "article": "category_id",
     "data_type": "integer",
     "field_type": "list",
     "is_default_in_list": true,
@@ -123,7 +123,7 @@
     "use_in_commands": ["add", "update", "get"],
     "require_in_commands": ["add"],
     "list_donor": {
-      "table": "expenseTypes",
+      "table": "expenseCategories",
       "properties_title": "title"
     }
   }, {

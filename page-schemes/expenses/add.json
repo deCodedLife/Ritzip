@@ -21,7 +21,7 @@
         "size": 2,
         "blocks": [{
           "title": "Основная информация",
-          "fields": ["type_id", "paymentType_id", "cost", "payment_receipt"]
+          "fields": ["category_id", "paymentType_id", "cost", "payment_receipt", "is_bill"]
         },
           {
             "title": "Повторять каждые",
@@ -36,13 +36,7 @@
         {
           "size": 2,
           "blocks": [{
-            "title": "",
-            "fields": ["maintenance_id", "is_bill"]
-          }, {
-            "title": "",
-            "fields": ["order_id"]
-          },{
-            "title": "",
+            "title": "Связка",
             "fields": ["driver_id", "car_id"]
           }, {
             "title": "",

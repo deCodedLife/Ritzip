@@ -37,8 +37,8 @@
           "required_modules": [],
           "settings": {
             "is_search": false,
-            "recipient_property": "type_id",
-            "donor_object": "expenseTypes",
+            "recipient_property": "category_id",
+            "donor_object": "expenseCategories",
             "donor_property_title": "title",
             "donor_property_value": "id"
           }
