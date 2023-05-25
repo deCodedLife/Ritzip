@@ -11,6 +11,15 @@ $roleDetail = $API->DB->from( "roles" )
     ->limit( 1 )
     ->fetch();
 
-if ( $roleDetail ) $formFieldValues = [
-    "role_id" => (int) $roleDetail[ "id" ],
-];
+if ( $roleDetail ) {
+
+    $formFieldValues = [
+        "role_id" => (int) $roleDetail[ "id" ],
+    ];
+
+} 
+
+
+    
+
+

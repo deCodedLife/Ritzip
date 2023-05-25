@@ -1,0 +1,76 @@
+{
+    "title": "Статусы оплаты",
+    "table": "orderPayStatuses",
+    "is_trash": false,
+    "properties": [{
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": ["add", "update"],
+      "require_in_commands": ["add"]
+    }, {
+      "title": "Артикул",
+      "article": "article",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": ["add", "update"],
+      "require_in_commands": ["add"]
+    }, {
+      "title": "Цвет",
+      "article": "color",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["add", "update"],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "title": "Синий",
+          "value": "primary"
+        },
+        {
+          "title": "Серый",
+          "value": "secondary"
+        },
+        {
+          "title": "Зеленый",
+          "value": "success"
+        },
+        {
+          "title": "Красный",
+          "value": "danger"
+        },
+        {
+          "title": "Желтый",
+          "value": "warning"
+        },
+        {
+          "title": "Голубой",
+          "value": "info"
+        },
+        {
+          "title": "Черный",
+          "value": "dark"
+        }
+      ]
+    }, {
+      "title": "Приоритет",
+      "article": "priority",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": ["add", "update"],
+      "require_in_commands": []
+    }]
+  }

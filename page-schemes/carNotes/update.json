@@ -1,0 +1,1 @@
+{"required_modules":[],"required_permissions":[],"structure":[{"title":"Форма","type":"form","size":4,"settings":{"object":"carNotes","command":"update","areas":[{"size":4,"blocks":[{"title":"","fields":["title","description","car_id"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Изменить","background":"dark","href":"carNotes"}}]}}]}

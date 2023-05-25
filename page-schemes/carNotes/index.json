@@ -1,0 +1,1 @@
+{"required_modules":[],"required_permissions":[],"structure":[{"title":"Список","type":"list","size":4,"settings":{"object":"carNotes"},"components":{"buttons":[{"type":"href","settings":{"page":"carNotes/add","title":"Создать примечание"}}]}}]}

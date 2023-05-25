@@ -1,0 +1,1 @@
+{"title":"Примечания","properties":[{"title":"Название","article":"title","type":"varchar(75)","default":null,"is_required":"Y"},{"title":"Описание","article":"description","type":"text","default":null,"is_required":"N"},{"title":"ID заявки","article":"order_id","type":"int","default":null,"is_required":"Y"}]}

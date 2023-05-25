@@ -1,0 +1,7 @@
+{
+    "title": "Поиск",
+    "type": "search",
+    "object_scheme": "orders",
+    "modules": [],
+    "permissions": []
+}

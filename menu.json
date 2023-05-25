@@ -177,6 +177,10 @@
           "href": "maintenanceSchedules"
         },
         {
+          "title": "Статусы оплаты",
+          "href": "orderPayStatuses"
+        },
+        {
           "title": "Статусы заявок",
           "href": "orderStatuses"
         },
@@ -207,6 +211,14 @@
         {
           "title": "Роли",
           "href": "roles"
+        },
+        {
+          "title": "Примечания",
+          "href": "notes"
+        },
+        {
+          "title": "Примечания для авто",
+          "href": "carNotes"
         },
         {
           "title": "Общие",

@@ -1,0 +1,48 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Статусы оплаты - Редактирование",
+      "title": [":title"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "orderPayStatuses",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": [
+            "title", "article"
+          ]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["priority", "color"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Сохранить",
+          "background": "dark",
+          "icon": "",
+          "href": "orderPayStatuses"
+        }
+      }]
+    }
+  }]
+}

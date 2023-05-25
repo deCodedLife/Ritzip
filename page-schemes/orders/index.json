@@ -1,24 +1,85 @@
 {
-  "required_modules": [],
-  "required_permissions": [],
-  "structure": [{
-    "title": "Воронка продаж",
-    "type": "funnel",
-    "size": 4,
-    "settings": {
-      "object": "orders",
-      "property": "status_id",
-      "filter": "orderStatuses"
-    },
-    "components": {
-      "buttons": [{
-        "type": "href",
+    "required_modules": [],
+    "required_permissions": [],
+    "structure": [{
+        "title": "Список",
+        "type": "list",
+        "size": 4,
         "settings": {
-          "title": "Добавить заявку",
-          "background": "dark",
-          "page": "orders/add"
+            "object": "orders"
+        },
+        "components": {
+            "search": true,
+            "buttons": [{
+                "type": "href",
+                "settings": {
+                    "title": "Добавить заявку",
+                    "background": "dark",
+                    "page": "orders/add"
+                }
+            }],
+            "filters": [
+                {
+                    "title": "Источник",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "orderSources",
+                        "recipient_property": "source_id",
+                        "donor_property_title": "title",
+                        "donor_property_value": "id"
+                    }
+                }, 
+                {
+                    "title": "Компания",
+                    "type": "list",
+                    "settings": {
+                        "recipient_property": "company_id",
+                        "donor_property_value": "id",
+                        "donor_property_title": "title",
+                        "donor_object": "companies"
+                    }
+                },
+                {
+                    "title": "Клиент",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "users",
+                        "recipient_property": "client_id",
+                        "donor_property_title": "last_name",
+                        "donor_property_value": "id"
+                    }
+                },
+                {
+                    "title": "Статусы оплат",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "orderPayStatuses",
+                        "recipient_property": "pay_status",
+                        "donor_property_title": "title",
+                        "donor_property_value": "id"
+                    }
+                },
+                {
+                    "title": "Авто",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "cars",
+                        "recipient_property": "car_id",
+                        "donor_property_title": "vin",
+                        "donor_property_value": "id"
+                    }
+                },
+                {
+                    "title": "Ответственный",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "users",
+                        "recipient_property": "responsible_id",
+                        "donor_property_title": "last_name",
+                        "donor_property_value": "id"
+                    }
+                }
+            ]
         }
-      }]
-    }
-  }]
+    }]
 }

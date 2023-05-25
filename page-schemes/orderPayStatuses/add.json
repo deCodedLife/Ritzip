@@ -1,0 +1,48 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "title": ["Добавление статуса оплаты"],
+      "description": "Статусы оплаты - Добавление"
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "",
+      "command": "add",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": [
+            "title", "article"
+          ]
+        }]
+      }, {
+        "size": 2,
+        "blocks": [{
+          "title": "",
+          "fields": ["priority", "color"]
+        }]
+      }]
+    },
+    "components": {
+      "buttons": [{
+        "type": "submit",
+        "settings": {
+          "title": "Добавить",
+          "background": "dark",
+          "icon": "",
+          "href": "orderPayStatuses"
+        }
+      }]
+    }
+  }]
+}
