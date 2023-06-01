@@ -9,7 +9,7 @@
             "object": "orders"
         },
         "components": {
-            "search": true,
+            "search": false,
             "buttons": [{
                 "type": "href",
                 "settings": {
@@ -20,6 +20,96 @@
             }],
             "filters": [
                 {
+                    "title": "Дата (от)",
+                    "type": "date",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "created_at_from"
+                        }
+                },
+                {
+                    "title": "Дата (до)",
+                    "type": "date",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "created_at_to"
+                        }
+                },
+                {
+                    "title": "Сумма (от)",
+                    "type": "price",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "cost_from"
+                        }
+                },
+                {
+                    "title": "Сумма (до)",
+                    "type": "price",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "cost_to"
+                        }
+                },
+                {
+                    "title": "Водитель",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "users",
+                        "recipient_property": "employee_id",
+                        "donor_property_title": "last_name",
+                        "donor_property_value": "id"
+                    }
+                },
+                {
+                    "title": "Расстояние (от)",
+                    "type": "integer",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "miles_from"
+                        }
+                },
+                {
+                    "title": "Расстояние (до)",
+                    "type": "integer",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "miles_to"
+                        }
+                },
+                {
+                    "title": "Позиции  (от)",
+                    "type": "integer",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "placeOccupied_from"
+                        }
+                },
+                {
+                    "title": "Позиции (до)",
+                    "type": "integer",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                        "is_search": false,
+                        "recipient_property": "placeOccupied_to"
+                        }
+                },
+                {
                     "title": "Источник",
                     "type": "list",
                     "settings": {
@@ -28,7 +118,7 @@
                         "donor_property_title": "title",
                         "donor_property_value": "id"
                     }
-                }, 
+                },
                 {
                     "title": "Компания",
                     "type": "list",
@@ -55,6 +145,16 @@
                     "settings": {
                         "donor_object": "orderPayStatuses",
                         "recipient_property": "pay_status",
+                        "donor_property_title": "title",
+                        "donor_property_value": "id"
+                    }
+                },
+                {
+                    "title": "Статусы заказа",
+                    "type": "list",
+                    "settings": {
+                        "donor_object": "orderStatuses",
+                        "recipient_property": "status_id",
                         "donor_property_title": "title",
                         "donor_property_value": "id"
                     }

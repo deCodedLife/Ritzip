@@ -1,17 +1,18 @@
 <?php
 
+$driverPreviousValue = $API->DB->from( "users" )
+->where( [
+    "id" => $requestData->employee_id
+] )
+->limit( 1 )
+->fetch();
+
 /**
- * Изменение колличество поеханых миль при измменения заявок
+ * Изменение колличество проеханых миль при измменения заявок
  */
 if ( $requestData->miles && $requestData->employee_id ) {
     
     // start update miles in driver
-    $driverPreviousValue = $API->DB->from( "users" )
-    ->where( [
-        "id" => $requestData->employee_id
-    ] )
-    ->limit( 1 )
-    ->fetch();
   
     $API->DB->update( "users" )
     ->set( [
@@ -40,3 +41,43 @@ if ( $requestData->miles && $requestData->employee_id ) {
 
 } // if. isset ( $requestData->miles ) && isset ( $requestData->employee_id )
 
+
+/**
+ * Заполнение поля "Нужно оплатить"
+ */
+$API->DB->update( "orders" )
+->set( [
+    "needPay" => $requestData->cost
+] )
+->where( "id", $requestData->id )
+->execute();
+
+
+/**
+ * Изменение полей выбранных водителя и авто "Кол-во заказов" и сумма заказов
+ */
+
+if ( $requestData->cost ){
+    $API->DB->update( "users" )
+    ->set( [
+        "sumOrder" => $driverPreviousValue['sumOrder'] + $requestData->cost,
+        "countOrder" => $driverPreviousValue['countOrder'] + 1
+    ] )
+    ->where( "id", $requestData->employee_id )
+    ->execute();
+    
+    $API->DB->update( "cars" )
+    ->set( [
+        "sumOrder" => $driverPreviousValue['sumOrder'] + $requestData->cost,
+        "countOrder" => $driverPreviousValue['countOrder'] + 1
+    ] )
+    ->where( "id", $requestData->car_id )
+    ->execute();
+} else {
+    $API->DB->update( "cars" )
+    ->set( [
+    "countOrder" => $driverPreviousValue['countOrder'] + 1
+    ] )
+    ->where( "id", $requestData->car_id )
+    ->execute();
+}

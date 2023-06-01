@@ -1,0 +1,1 @@
+{"title":"Файлы авто","properties":[{"title":"Заголовок","article":"title","type":"varchar(75)","default":null,"is_required":"N"},{"title":"Файл","article":"file","type":"varchar(255)","default":null,"is_required":"N"},{"title":"Авто","article":"car_id","type":"int","default":null,"is_required":"N"}]}

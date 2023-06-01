@@ -1,162 +1,344 @@
 {
     "required_permissions": [],
     "required_modules": [],
-    "structure": [{
-        "title": "Шапка",
-        "type": "header",
-        "size": 4,
-        "settings": {
-            "title": ["№ ", ":id", " ", ":last_name", " ", ":first_name", " ", ":patronymic"],
-            "description": "Водители - Редактирование"
+    "structure": [
+        {
+            "title": "Шапка",
+            "type": "header",
+            "size": 4,
+            "settings": {
+                "title": [
+                    "№ ",
+                    ":id",
+                    " ",
+                    ":last_name",
+                    " ",
+                    ":first_name",
+                    " ",
+                    ":patronymic"
+                ],
+                "description": "Водители - Редактирование"
+            },
+            "components": []
         },
-        "components": []
-    }, {
-        "title": "Табы",
-        "type": "tabs",
-        "size": 4,
-        "settings": [{
-            "title": "Основная информация",
-            "body": [{
-                "title": "Форма",
-                "type": "form",
-                "size": 4,
-                "settings": {
-                    "object": "users",
-                    "command": "update",
-                    "joined_property": "",
-                    "areas": [{
-                        "size": 2,
-                        "blocks": [{
-                            "title": "Основное",
-                            "fields": ["first_name", "last_name", "patronymic", "miles"]
-                        }, {
-                            "title": "Документы",
-                            "fields": ["license_number", "license_from", "license_to", "license_address", "address"]
-                        }]
-                    }, {
-                        "size": 2,
-                        "blocks": [{
-                            "title": "Доступ",
-                            "fields": ["role_id", "email", "password", "phone"]
-                        }, {
-                            "title": "Компания",
-                            "fields": ["company_title", "company_ein", "swift", "responsible_id"]
-                        }]
-                    }]
-                },
-                "components": {
-                    "buttons": [{
-                        "type": "submit",
-                        "settings": {
-                            "title": "Сохранить",
-                            "href": "drivers",
-                            "icon": "",
-                            "background": "dark"
-                        },
-                        "required_permissions": [],
-                        "required_modules": []
-                    }]
-                }
-            }]
-        }, {
-            "title": "Привязанные автомобили",
-            "body": [{
-                "title": "Привязанные автомобили",
-                "type": "list",
-                "size": 4,
-                "settings": {
-                    "object": "cars",
-                    "filters": [{
-                        "property": "employees_id",
-                        "value": ":id"
-                    }]
-                },
-                "components": {
-                    "buttons": [{
-                        "type": "modal",
-                        "settings": {
-                            "title": "Добавить авто",
-                            "background": "dark",
-                            "page": "cars/add",
-                            "context": {
-                                "form": "cars",
-                                "row_id": ":id"
+        {
+            "title": "Табы",
+            "type": "tabs",
+            "size": 4,
+            "settings": [
+                {
+                    "title": "Основная информация",
+                    "body": [
+                        {
+                            "title": "Форма",
+                            "type": "form",
+                            "size": 4,
+                            "settings": {
+                                "object": "users",
+                                "command": "update",
+                                "joined_property": "",
+                                "areas": [
+                                    {
+                                        "size": 2,
+                                        "blocks": [
+                                            {
+                                                "title": "Основное",
+                                                "fields": [
+                                                    "first_name",
+                                                    "last_name",
+                                                    "patronymic",
+                                                    "miles",
+                                                    "responsible_id",
+                                                    "countOrder",
+                                                    "sumOrder"
+                                                ]
+                                            },
+                                            {
+                                                "title": "Документы",
+                                                "fields": [
+                                                    "license_number",
+                                                    "license_from",
+                                                    "license_to",
+                                                    "license_address",
+                                                    "address"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "size": 2,
+                                        "blocks": [
+                                            {
+                                                "title": "Доступ",
+                                                "fields": [
+                                                    "role_id",
+                                                    "email",
+                                                    "password",
+                                                    "phone"
+                                                ]
+                                            },
+                                            {
+                                                "title": "Компания",
+                                                "fields": [
+                                                    "company_title",
+                                                    "company_ein",
+                                                    "swift"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "size": 2,
+                                        "blocks": [
+                                            {
+                                                "title": "Реквизиты",
+                                                "fields": [
+                                                    "w9",
+                                                    "businessName",
+                                                    "businessType",
+                                                    "payeeCode",
+                                                    "fatcaCode",
+                                                    "labelAddress",
+                                                    "labelCity",
+                                                    "state",
+                                                    "zipCode",
+                                                    "accountNumber",
+                                                    "requestersNameAddress",
+                                                    "insuranceNumber",
+                                                    "idNumberEmployer"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "submit",
+                                        "settings": {
+                                            "title": "Сохранить",
+                                            "href": "drivers",
+                                            "icon": "",
+                                            "background": "dark"
+                                        },
+                                        "required_permissions": [],
+                                        "required_modules": []
+                                    },
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить компанию",
+                                            "background": "dark",
+                                            "page": "companies/add",
+                                            "context": {
+                                                "form": "companies",
+                                                "row_id": ":id"
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
-                    }]
-                }
-            }]
-        }, {
-            "title": "Заказы",
-            "body": [{
-                "title": "Список заказов",
-                "type": "list",
-                "size": 4,
-                "settings": {
-                    "object": "orders",
-                    "filters": [{
-                        "property": "employee_id",
-                        "value": ":id"
-                    }]
+                    ]
                 },
-                "components": {
-                    "buttons": [{
-                        "type": "modal",
-                        "settings": {
-                            "title": "Добавить заказ",
-                            "background": "dark",
-                            "page": "orders/add",
-                            "context": {
-                                "form": "orders",
-                                "row_id": ":id"
+                {
+                    "title": "Привязанные автомобили",
+                    "body": [
+                        {
+                            "title": "Привязанные автомобили",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "cars",
+                                "filters": [
+                                    {
+                                        "property": "employees_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить авто",
+                                            "background": "dark",
+                                            "page": "cars/add",
+                                            "context": {
+                                                "form": "cars",
+                                                "row_id": ":id"
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
-                    }]
-                }
-            }]
-        }, {
-            "title": "Задачи",
-            "body": [{
-                "title": "Список задач",
-                "type": "list",
-                "size": 4,
-                "settings": {
-                    "object": "tasks",
-                    "filters": [{
-                        "property": "employee_id",
-                        "value": ":id"
-                    }]
+                    ]
                 },
-                "components": {
-                    "buttons": [{
-                        "type": "modal",
-                        "settings": {
-                            "title": "Добавить задачу",
-                            "background": "dark",
-                            "page": "tasks/add",
-                            "context": {
-                                "form": "tasks",
-                                "row_id": ":id"
+                {
+                    "title": "Заказы",
+                    "body": [
+                        {
+                            "title": "Список заказов",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "orders",
+                                "filters": [
+                                    {
+                                        "property": "employee_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить заказ",
+                                            "background": "dark",
+                                            "page": "orders/add",
+                                            "context": {
+                                                "form": "orders",
+                                                "row_id": ":id"
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
-                    }]
-                }
-            }]
-        }, {
-            "title": "История действий",
-            "body": [{
-                "title": "Логи",
-                "type": "list",
-                "size": 4,
-                "settings": {
-                    "object": "logs",
-                    "filters": [{
-                        "property": "users_id",
-                        "value": ":id"
-                    }]
+                    ]
                 },
-                "components": []
-            }]
-        }]
-    }]
+                {
+                    "title": "Примечания",
+                    "body": [
+                        {
+                            "title": "Список примечаний",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "driverNotes",
+                                "filters": [
+                                    {
+                                        "property": "driver_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить примечания",
+                                            "background": "dark",
+                                            "page": "driverNotes/add",
+                                            "context": {
+                                                "form": "driverNotes",
+                                                "row_id": ":id"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "Задачи",
+                    "body": [
+                        {
+                            "title": "Список задач",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "tasks",
+                                "filters": [
+                                    {
+                                        "property": "employee_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить задачу",
+                                            "background": "dark",
+                                            "page": "tasks/add",
+                                            "context": {
+                                                "form": "tasks",
+                                                "row_id": ":id"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "Напоминания",
+                    "body": [
+                        {
+                            "title": "Список напоминаний",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "reminders",
+                                "filters": [
+                                    {
+                                        "property": "user_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "modal",
+                                        "settings": {
+                                            "title": "Добавить напоминание",
+                                            "context": {
+                                                "form": "reminders",
+                                                "row_id": ":id"
+                                            },
+                                            "page": "reminders/add",
+                                            "background": "dark",
+                                            "modal_size": "lg"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "История действий",
+                    "body": [
+                        {
+                            "title": "Логи",
+                            "type": "list",
+                            "size": 4,
+                            "settings": {
+                                "object": "logs",
+                                "filters": [
+                                    {
+                                        "property": "users_id",
+                                        "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

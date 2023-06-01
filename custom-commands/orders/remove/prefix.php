@@ -11,8 +11,6 @@ $previousValue = $API->DB->from( "orders" ) // get order info
 ->limit( 1 )
 ->fetch();
 
-// start update miles in driver
-
 $driver = $API->DB->from( "users" )
 ->where( [
     "id" => $previousValue['employee_id']
@@ -20,16 +18,6 @@ $driver = $API->DB->from( "users" )
 ->limit( 1 )
 ->fetch();
 
-$API->DB->update( "users" )
-->set( [
-    "miles" => (float)$driver['miles'] - (float)$previousValue['miles']
-] )
-->where( "id", $driver['id'] )
-->execute();
-// end update miles in driver
-
-
-// start update miles in car
 $car = $API->DB->from( "cars" )
 ->where( [
     "id" => $previousValue['car_id']
@@ -37,13 +25,27 @@ $car = $API->DB->from( "cars" )
 ->limit( 1 )
 ->fetch();
 
-$API->DB->update( "cars" )
-->set( [
-    "miles" => (float)$car['miles'] - (float)$previousValue['miles']
-] )
-->where( "id", $car['id'] )
-->execute();
-// end update miles in car
 
 
 
+/**
+ * Изменение поей выбраных водителя и авто "Мили", "Кол-во заказов" и "Сумма заказов" 
+ */
+
+ $API->DB->update( "users" )
+ ->set( [
+     "sumOrder" => $driver['sumOrder'] - $previousValue['cost'],
+     "countOrder" => $driver['countOrder'] - 1,
+     "miles" => (float)$driver['miles'] - (float)$previousValue['miles']
+ ] )
+ ->where( "id", $driver['id'] )
+ ->execute();
+
+ $API->DB->update( "cars" )
+ ->set( [
+     "sumOrder" => $car['sumOrder'] - $previousValue['cost'],
+     "countOrder" => $car['countOrder'] - 1,
+     "miles" => (float)$car['miles'] - (float)$previousValue['miles']
+ ] )
+ ->where( "id", $car['id'] )
+ ->execute();

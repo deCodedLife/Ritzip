@@ -1,37 +1,79 @@
 {
-  "required_modules": [],
-  "required_permissions": [],
-  "structure": [{
-    "title": "Шапка",
-    "type": "header",
-    "size": 4,
-    "settings": {
-      "description": "Водители",
-      "title": ["Водители"]
-    },
-    "components": []
-  }, {
-    "title": "Список",
-    "type": "list",
-    "size": 4,
-    "settings": {
-      "object": "users",
-      "link": "drivers",
-      "filters": [{
-        "property": "role_id",
-        "value": 4
-      }]
-    },
-    "components": {
-      "search": true,
-      "buttons": [{
-        "type": "href",
-        "settings": {
-          "title": "Добавить водителя",
-          "background": "dark",
-          "page": "/drivers/add"
+    "required_modules": [],
+    "required_permissions": [],
+    "structure": [
+        {
+            "title": "Шапка",
+            "type": "header",
+            "size": 4,
+            "settings": {
+                "description": "Водители",
+                "title": [
+                    "Водители"
+                ]
+            },
+            "components": []
+        },
+        {
+            "title": "Список",
+            "type": "list",
+            "size": 4,
+            "settings": {
+                "object": "users",
+                "link": "drivers",
+                "filters": [
+                    {
+                        "property": "role_id",
+                        "value": 4
+                    }
+                ]
+            },
+            "components": {
+                "buttons": [
+                    {
+                        "type": "href",
+                        "settings": {
+                            "title": "Добавить водителя",
+                            "background": "dark",
+                            "page": "/drivers/add"
+                        }
+                    }
+                ],
+                "filters": [
+                    {
+                        "title": "Дата",
+                        "type": "date",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "created_at"
+                        }
+                    },
+                    {
+                        "title": "Кол-во заказов",
+                        "type": "integer",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "countOrder"
+                        }
+                    },
+                    {
+                        "title": "Сумма заказов",
+                        "type": "integer",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "sumOrder"
+                        }
+                    }
+                ]
+            }
         }
-      }]
-    }
-  }]
+    ]
 }
+
+
