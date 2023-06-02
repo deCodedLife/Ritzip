@@ -38,8 +38,7 @@ if ( $requestData->context === "list" ) {
      * Получение списка задач, где текущий пользователь является Автором
      */
     $authorTasks = $API->sendRequest( "tasks", "get", [ "author_id" => (int) $API::$userDetail->id ] );
-
-    $API->returnResponse( $authorTasks );
+    
 
     /**
      * Добавление поставленных задач в список
