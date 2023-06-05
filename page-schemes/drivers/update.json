@@ -30,6 +30,21 @@
                     "title": "Основная информация",
                     "body": [
                         {
+                            "title": "Виджеты",
+                            "type": "analytic_widgets",
+                            "size": 4,
+                            "settings": {
+                                "widgets_group": "driver_statistic",
+                                "filters": [
+                                    {
+                                      "property": "employee_id",
+                                      "value": ":id"
+                                    }
+                                ]
+                            },
+                            "components": []
+                        },
+                        {
                             "title": "Форма",
                             "type": "form",
                             "size": 4,
@@ -47,7 +62,6 @@
                                                     "first_name",
                                                     "last_name",
                                                     "patronymic",
-                                                    "miles",
                                                     "responsible_id",
                                                     "countOrder",
                                                     "sumOrder"

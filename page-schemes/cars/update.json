@@ -23,6 +23,21 @@
           "title": "Основная информация",
           "body": [
             {
+              "title": "Виджеты",
+              "type": "analytic_widgets",
+              "size": 4,
+              "settings": {
+                  "widgets_group": "car_statistic",
+                  "filters": [
+                      {
+                        "property": "car_id",
+                        "value": ":id"
+                      }
+                  ]
+              },
+              "components": []
+          },
+            {
               "title": "Форма",
               "type": "form",
               "size": 4,
