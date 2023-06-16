@@ -1,9 +1,7 @@
 <?php
-
 /**
- * Изменение колличество поеханых миль при измменения заявок
+ * Получение информации о заказе перед удалением
  */
-
 $previousValue = $API->DB->from( "orders" ) // get order info
 ->where( [
     "id" => $requestData->id
@@ -11,41 +9,45 @@ $previousValue = $API->DB->from( "orders" ) // get order info
 ->limit( 1 )
 ->fetch();
 
-$driver = $API->DB->from( "users" )
-->where( [
-    "id" => $previousValue['employee_id']
-] )
-->limit( 1 )
-->fetch();
+/**
+ * Получение детальной информации о водителе
+ */
+$driverDetail = $API->DB->from( "users" )
+    ->where( [
+        "id" => $requestData->employee_id
+    ] )
+    ->limit( 1 )
+    ->fetch();
 
-$car = $API->DB->from( "cars" )
-->where( [
-    "id" => $previousValue['car_id']
-] )
-->limit( 1 )
-->fetch();
-
-
+/**
+ * Получение детальной информации об автомобиле
+ */
+$carDetail = $API->DB->from( "cars" )
+    ->where( [
+        "id" => $requestData->car_id
+    ] )
+    ->limit( 1 )
+    ->fetch();
 
 
 /**
- * Изменение поей выбраных водителя и авто "Мили", "Кол-во заказов" и "Сумма заказов" 
+ * Обновление полей у водителя и авто
  */
 
- $API->DB->update( "users" )
- ->set( [
-     "sumOrder" => $driver['sumOrder'] - $previousValue['cost'],
-     "countOrder" => $driver['countOrder'] - 1,
-     "miles" => (float)$driver['miles'] - (float)$previousValue['miles']
- ] )
- ->where( "id", $driver['id'] )
- ->execute();
+$API->DB->update( "users" )
+    ->set( [
+     "sumOrder" => $driverDetail['sumOrder'] - $previousValue['cost'],
+     "countOrder" => $driverDetail['countOrder'] - 1,
+     "miles" => (float)$driverDetail['miles'] - (float)$previousValue['miles']
+    ] )
+    ->where( "id", $driverDetail['id'] )
+    ->execute();
 
- $API->DB->update( "cars" )
- ->set( [
-     "sumOrder" => $car['sumOrder'] - $previousValue['cost'],
-     "countOrder" => $car['countOrder'] - 1,
-     "miles" => (float)$car['miles'] - (float)$previousValue['miles']
- ] )
- ->where( "id", $car['id'] )
- ->execute();
+$API->DB->update( "cars" )
+    ->set( [
+     "sumOrder" => $carDetail['sumOrder'] - $previousValue['cost'],
+     "countOrder" => $carDetail['countOrder'] - 1,
+     "miles" => (float)$carDetail['miles'] - (float)$previousValue['miles']
+    ] )
+    ->where( "id", $carDetail['id'] )
+    ->execute();

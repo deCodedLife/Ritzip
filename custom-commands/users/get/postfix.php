@@ -3,7 +3,7 @@
 /**
  * Вывод списка пользователей в Чате
  */
-if ( $requestData->context === "chat" ) {
+if ( $requestData->context->block === "chat" ) {
 
     /**
      * Сформированный список пользователей
@@ -27,4 +27,4 @@ if ( $requestData->context === "chat" ) {
      */
     $response[ "data" ] = $returnUsers;
 
-} // if. $requestData->context === "chat"
+} // if. $requestData->context->block === "chat"

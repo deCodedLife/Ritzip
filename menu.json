@@ -166,7 +166,11 @@
         {
           "title": "Автосервисы",
           "href": "autoservices"
-        }, 
+        },
+        {
+          "title": "Напоминания",
+          "href": "reminders"
+        },
         {
           "title": "Пункты",
           "href": "points"

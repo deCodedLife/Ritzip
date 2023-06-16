@@ -3,7 +3,7 @@
 /**
  * Формирование заголовков и описания заявок для воронки
  */
-if ( $requestData->context === "funnel" ) {
+if ( $requestData->context->block === "funnel" ) {
 
     /**
      * Сформированный список заявок
@@ -28,4 +28,4 @@ if ( $requestData->context === "funnel" ) {
 
     $response[ "data" ] = $returnOrders;
 
-} // if. $requestData->context === "funnel"
+} // if. $requestData->context->block === "funnel"

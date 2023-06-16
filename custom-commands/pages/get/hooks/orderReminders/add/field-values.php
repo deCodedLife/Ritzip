@@ -1,9 +1,8 @@
 <?php
+
 /**
- * Автоподстановка водителя
+ * Автоподстановка заявки
  */
 
- if ( ( $requestData->context->form == "orderReminders" ) && $requestData->context->row_id )
- $formFieldValues[ "order_id" ] = $requestData->context->row_id;
-
-
+if ( ( $requestData->context->form == "orderReminders" ) && $requestData->context->row_id )
+    $formFieldValues[ "order_id" ] = $requestData->context->row_id;

@@ -1,293 +1,312 @@
 {
-    "required_modules": [],
-    "required_permissions": [],
-    "structure": [
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Заявки - Редактирование",
+        "title": [
+          "№",
+          ":id"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Табы",
+      "type": "tabs",
+      "size": 4,
+      "settings": [
         {
-            "title": "Шапка",
-            "type": "header",
-            "size": 4,
-            "settings": {
-                "description": "Заявки - Редактирование",
-                "title": [
-                    "№",
-                    ":id"
+          "title": "Основная информация",
+          "body": [
+            {
+              "title": "Виджет учета мест",
+              "type": "analytic_widgets",
+              "size": 4,
+              "settings": {
+                "widgets_group": "accounting_places",
+                "filters": [
+                  {
+                    "property": "id",
+                    "value": ":id"
+                  }
                 ]
+              },
+              "components": []
             },
-            "components": []
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "orders",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Общее",
+                        "fields": [
+                          "cost",
+                          "employee_id",
+                          "client_id",
+                          "car_id",
+                          "vehicles_id",
+                          "source_id",
+                          "responsible_id",
+                          "title",
+                          "pay_status",
+                          "miles",
+                          "placeCount"
+                        ]
+                      },
+                      {
+                        "title": "Отправка",
+                        "fields": [
+                          "origin_city",
+                          "origin_state",
+                          "origin_zip",
+                          "origin_coordinates"
+                        ]
+                      },
+                      {
+                        "title": "Получение",
+                        "fields": [
+                          "destination_city",
+                          "destination_state",
+                          "destination_zip",
+                          "destination_coordinates",
+                          "certified_at"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Основное",
+                        "fields": [
+                          "status_id",
+                          "cancellationReason"
+                        ]
+                      },
+                      {
+                        "title": "Источник",
+                        "fields": [
+                          "company_id",
+                          "contact_id"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "orders"
+                    }
+                  },
+                  {
+                    "type": "modal",
+                    "required_permissions": [
+                      "manager_schedule"
+                    ],
+                    "settings": {
+                      "title": "Отменить",
+                      "background": "dark",
+                      "page": "orders/cancel",
+                      "close_previous_modal": true,
+                      "modal_size": "sm",
+                      "context": {
+                        "form": "orders",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
-            "title": "Табы",
-            "type": "tabs",
-            "size": 4,
-            "settings": [
-                {
-                    "title": "Основная информация",
-                    "body": [
-                        {
-                            "title": "Форма",
-                            "type": "form",
-                            "size": 4,
-                            "settings": {
-                                "object": "orders",
-                                "command": "update",
-                                "areas": [
-                                    {
-                                        "size": 2,
-                                        "blocks": [
-                                            {
-                                                "title": "Общее",
-                                                "fields": [
-                                                    "cost",
-                                                    "employee_id",
-                                                    "client_id",
-                                                    "car_id",
-                                                    "vehicles_id",
-                                                    "source_id",
-                                                    "responsible_id",
-                                                    "title",
-                                                    "pay_status",
-                                                    "miles",
-                                                    "placeCount",
-                                                    "placeOccupied",
-                                                    "placeFree"
-                                                ]
-                                            },
-                                            {
-                                                "title": "Отправка",
-                                                "fields": [
-                                                    "origin_city",
-                                                    "origin_state",
-                                                    "origin_zip",
-                                                    "origin_coordinates"
-                                                ]
-                                            },
-                                            {
-                                                "title": "Получение",
-                                                "fields": [
-                                                    "destination_city",
-                                                    "destination_state",
-                                                    "destination_zip",
-                                                    "destination_coordinates",
-                                                    "certified_at"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "size": 2,
-                                        "blocks": [
-                                            {
-                                                "title": "Основное",
-                                                "fields": [
-                                                    "status_id"
-                                                ]
-                                            },
-                                            {
-                                                "title": "Источник",
-                                                "fields": [
-                                                    "company_id",
-                                                    "contact_id"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            "components": {
-                                "buttons": [
-                                    {
-                                        "type": "submit",
-                                        "settings": {
-                                            "title": "Сохранить",
-                                            "background": "dark",
-                                            "icon": "",
-                                            "href": "orders"
-                                        }
-                                    },
-                                    {
-                                        "type": "modal",
-                                        "required_permissions": [
-                                            "manager_schedule"
-                                        ],
-                                        "settings": {
-                                            "title": "Отменить",
-                                            "background": "dark",
-                                            "page": "orders/cancel",
-                                            "close_previous_modal": true,
-                                            "modal_size": "sm",
-                                            "context": {
-                                                "form": "orders",
-                                                "row_id": ":id"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "title": "Перевозимые авто",
-                    "body": [
-                        {
-                            "title": "Список",
-                            "type": "list",
-                            "size": 4,
-                            "settings": {
-                                "object": "vehicles"
-                            },
-                            "components": {
-                                "buttons": [
-                                    {
-                                        "type": "href",
-                                        "settings": {
-                                            "title": "Добавить ТС на отправку",
-                                            "background": "dark",
-                                            "page": "vehicles/add"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "title": "Примечания",
-                    "body": [
-                        {
-                            "title": "Список",
-                            "type": "list",
-                            "size": 4,
-                            "settings": {
-                                "object": "notes",
-                                "filters": [
-                                    {
-                                        "property": "order_id",
-                                        "value": ":id"
-                                    }
-                                ]
-                            },
-                            "components": {
-                                "buttons": [
-                                    {
-                                        "type": "href",
-                                        "settings": {
-                                            "title": "Создать примечание",
-                                            "page": "notes/add"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "title": "Оплата",
-                    "body": [
-                        {
-                            "title": "Форма",
-                            "type": "form",
-                            "size": 4,
-                            "settings": {
-                                "areas": [
-                                    {
-                                        "size": 2,
-                                        "blocks": [
-                                            {
-                                                "title": "Оплата",
-                                                "fields": [
-                                                    "cost",
-                                                    "paidFor",
-                                                    "needPay"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "object": "orders",
-                                "command": "update"
-                            },
-                            "components": {
-                                "buttons": [
-                                    {
-                                        "type": "modal",
-                                        "settings": {
-                                            "title": "Оплатить",
-                                            "background": "dark",
-                                            "page": "payment/add",
-                                            "context": {
-                                                "form": "payment",
-                                                "row_id": ":needPay"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "title": "Напоминания",
-                    "body": [
-                        {
-                            "title": "Список напоминаний",
-                            "type": "list",
-                            "size": 4,
-                            "settings": {
-                                "object": "orderReminders",
-                                "filters": [
-                                    {
-                                        "property": "order_id",
-                                        "value": ":id"
-                                    }
-                                ]
-                            },
-                            "components": {
-                                "buttons": [
-                                    {
-                                        "type": "modal",
-                                        "settings": {
-                                            "context": {
-                                                "form": "orderReminders",
-                                                "row_id": ":id"
-                                            },
-                                            "title": "Добавить напоминание",
-                                            "page": "orderReminders/add"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "title": "История изменений",
-                    "body": [
-                        {
-                            "title": "Логи",
-                            "type": "logs",
-                            "size": 4,
-                            "settings": {
-                                "object": "logs",
-                                "filters": [
-                                    {
-                                        "property": "table_name",
-                                        "value": "orders"
-                                    },
-                                    {
-                                        "property": "row_id",
-                                        "value": ":id"
-                                    }
-                                ]
-                            },
-                            "components": []
-                        }
-                    ]
-                }
-            ],
-            "components": {
-                "buttons": []
+          "title": "Перевозимые авто",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "vehicles"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "href",
+                    "settings": {
+                      "title": "Добавить ТС на отправку",
+                      "background": "dark",
+                      "page": "vehicles/add"
+                    }
+                  }
+                ]
+              }
             }
+          ]
+        },
+        {
+          "title": "Примечания",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "notes",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить примечание",
+                      "background": "dark",
+                      "page": "notes/add",
+                      "context": {
+                        "form": "notes",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Оплата",
+          "body": [
+            {
+              "title": "Виджет информации об оплате",
+              "type": "analytic_widgets",
+              "size": 4,
+              "settings": {
+                "widgets_group": "payment_info",
+                "filters": [
+                  {
+                    "property": "id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            },
+            {
+              "title": "Список транзакций",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "orderPayHistory"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Оплатить",
+                      "background": "dark",
+                      "page": "payment/add",
+                      "context": {
+                        "form": "payment",
+                        "row_id": ":needPay"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Напоминания",
+          "body": [
+            {
+              "title": "Список напоминаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "orderReminders",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить напоминание",
+                      "background": "dark",
+                      "page": "orderReminders/add",
+                      "context": {
+                        "form": "orderReminders",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "История изменений",
+          "body": [
+            {
+              "title": "Логи",
+              "type": "logs",
+              "size": 4,
+              "settings": {
+                "object": "logs",
+                "filters": [
+                  {
+                    "property": "table_name",
+                    "value": "orders"
+                  },
+                  {
+                    "property": "row_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
         }
-    ]
+      ],
+      "components": {
+        "buttons": []
+      }
+    }
+  ]
 }

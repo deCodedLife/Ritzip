@@ -3,7 +3,7 @@
 /**
  * Принудительный фильтр раздела "Остальные пользователи"
  */
-if ( ( $requestData->context === "list" ) && !$requestData->role_id )
+if ( ( $requestData->context->block === "list" ) && !$requestData->role_id )
     $requestSettings[ "filter" ][ "role_id > ?" ] = 10;
 
 
@@ -18,6 +18,6 @@ if ( $requestData->created_at ) {
 
     unset( $requestData->created_at );
 
-} // if. $requestData->created_at
+} // if. $requestData->created_at->block
 
 

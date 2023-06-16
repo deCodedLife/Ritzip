@@ -32,24 +32,38 @@ function arrayUniqueByKey ( $array, $key ) {
 } // function. arrayUniqueByKey
 
 
-if ( $requestData->context === "list" ) {
+if (
+    ( $requestData->context->block === "list" ) &&
+    ( $requestData->context->page !== "drivers" ) &&
+    ( $requestData->context->page !== "cars" )
+) {
 
     /**
      * Получение списка задач, где текущий пользователь является Автором
      */
     $authorTasks = $API->sendRequest( "tasks", "get", [ "author_id" => (int) $API::$userDetail->id ] );
-    
+
 
     /**
      * Добавление поставленных задач в список
      */
-    foreach ( $authorTasks as $authorTask ) {
-
+    foreach ( $authorTasks as $authorTask )
         $response[ "data" ][] = (array) $authorTask;
 
-    } // foreach. $authorTasks
+
+    /**
+     * Фильтр дубликатов
+     */
+    $filteredTasks = arrayUniqueByKey( $response[ "data" ], "id" );
 
 
-    $response[ "data" ] = arrayUniqueByKey( $response[ "data" ], "id" );
+    /**
+     * Перевод задач в массив
+     */
+
+    $response[ "data" ] = [];
+
+    foreach ( $filteredTasks as $filteredTask )
+        $response[ "data" ][] = (array) $filteredTask;
 
 } // if. $requestData->context === "list"

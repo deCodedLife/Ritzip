@@ -1,18 +1,28 @@
 <?php
-
+/**
+ * Получение информации о заказе перед изменением
+ */
 $previousValue = $API->DB->from( "orders" )
     ->where( [
         "id" => $requestData->id
     ] )
     ->limit( 1 )
     ->fetch();
-$driver = $API->DB->from( "users" )
+
+/**
+ * Получение детальной информации о водителе
+ */
+$driverDetail = $API->DB->from( "users" )
     ->where( [
         "id" => $previousValue['employee_id']
     ] )
     ->limit( 1 )
     ->fetch();
-$car = $API->DB->from( "cars" )
+
+/**
+ * Получение детальной информации об автомобиле
+ */
+$carDetail = $API->DB->from( "cars" )
     ->where( [
         "id" => $previousValue['car_id']
     ] )
@@ -20,8 +30,8 @@ $car = $API->DB->from( "cars" )
     ->fetch();
 
 /**
- * обновление водителя и авто, поле"сумма заказов" при изменении цены водителя или авто в заказе
- */   
+ * Получение детальной информации о автомобиле после изменения поля "Автомобиль" у заказа
+ */
 $newCar = $API->DB->from( "cars" )
 ->where( [
     "id" => $requestData->car_id
@@ -29,6 +39,9 @@ $newCar = $API->DB->from( "cars" )
 ->limit( 1 )
 ->fetch();
 
+/**
+ * Получение детальной информации о водителее после изменения поля "Водитель" у заказа
+ */
 $newDriver = $API->DB->from( "users" )
 ->where( [
     "id" => $requestData->employee_id
@@ -36,16 +49,22 @@ $newDriver = $API->DB->from( "users" )
 ->limit( 1 )
 ->fetch();
 
-if ( $requestData->cost ) {   
-      
-    if ( $requestData->car_id && $requestData->car_id != $car['id'] ){ // если изменяется цена и авто
-    
+/**
+ * Изменение суммы заказов водителя и автомобилья
+ */
+if ( $requestData->cost ) {
+
+    /**
+     * Изменение суммы заказов авто если изменяется цена и авто
+     */
+    if ( $requestData->car_id && $requestData->car_id != $carDetail['id'] ){
+
         $API->DB->update( "cars" )
             ->set( [
-                "sumOrder" => $car['sumOrder'] - $previousValue['cost'],
-                "countOrder" => $car['countOrder'] - 1
+                "sumOrder" => $carDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $carDetail['countOrder'] - 1
             ] )
-            ->where( "id", $car['id'] )
+            ->where( "id", $carDetail['id'] )
             ->execute();
 
         $API->DB->update( "cars" )
@@ -56,28 +75,34 @@ if ( $requestData->cost ) {
             ->where( "id", $newCar['id'] )
             ->execute();
 
-    } 
+    }
 
+    /**
+     * Изменение суммы заказов авто если изменяется только цена
+     */
     if ( ! $requestData->car_id ) {
-       
+
         $API->DB->update( "cars" )
         ->set( [
-        "sumOrder" => $car['sumOrder'] - $previousValue['cost'] + $requestData->cost
+        "sumOrder" => $carDetail['sumOrder'] - $previousValue['cost'] + $requestData->cost
         ] )
-        ->where( "id", $car['id'])
+        ->where( "id", $carDetail['id'])
         ->execute();
     }
 
-    if (  $requestData->employee_id && $requestData->employee_id != $driver['id'] ) { // если изменяется цена и водитель 
-    
+    /**
+     * Изменение суммы заказов водителя если изменяется цена и водитель
+     */
+    if (  $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+
         $API->DB->update( "users" )
             ->set( [
-                "sumOrder" => $driver['sumOrder'] - $previousValue['cost'],
-                "countOrder" => $driver['countOrder'] - 1
+                "sumOrder" => $driverDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $driverDetail['countOrder'] - 1
             ] )
-            ->where( "id", $driver['id'] )
+            ->where( "id", $driverDetail['id'] )
             ->execute();
-        
+
         $API->DB->update( "users" )
             ->set( [
                 "sumOrder" => $newDriver['sumOrder'] + $requestData->cost,
@@ -85,30 +110,35 @@ if ( $requestData->cost ) {
             ] )
             ->where( "id", $newDriver['id'] )
             ->execute();
-    
-    } 
-    
+
+    }
+
+    /**
+     * Изменение суммы заказов воджителя если изменяется только цена
+     */
     if ( ! $requestData->employee_id ) {
 
         $API->DB->update( "users" )
         ->set( [
-        "sumOrder" => $driver['sumOrder'] - $previousValue['cost'] + $requestData->cost
+        "sumOrder" => $driverDetail['sumOrder'] - $previousValue['cost'] + $requestData->cost
         ] )
-        ->where( "id", $driver['id'])
+        ->where( "id", $driverDetail['id'])
         ->execute();
 
     }
 
 } else {
 
-    if ( $requestData->car_id && $requestData->car_id != $car['id'] ){ // если изменяется авто а цена та же
-    
+    /**
+     * Изменение суммы заказов авто если изменяется только авто а цена заказа остается прежней
+     */
+    if ( $requestData->car_id && $requestData->car_id != $carDetail['id'] ){
         $API->DB->update( "cars" )
             ->set( [
-                "sumOrder" => $car['sumOrder'] - $previousValue['cost'],
-                "countOrder" => $car['countOrder'] - 1
+                "sumOrder" => $carDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $carDetail['countOrder'] - 1
             ] )
-            ->where( "id", $car['id'] )
+            ->where( "id", $carDetail['id'] )
             ->execute();
 
         $API->DB->update( "cars" )
@@ -119,18 +149,21 @@ if ( $requestData->cost ) {
             ->where( "id", $newCar['id'] )
             ->execute();
 
-    } 
+    }
 
-    if ( $requestData->employee_id && $requestData->employee_id != $driver['id'] ) { // если изменяется водитель а цена та же
-    
+    /**
+     * Изменение суммы заказов водителя если изменяется только водитель а цена заказа остается прежней
+     */
+    if ( $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+
         $API->DB->update( "users" )
             ->set( [
-                "sumOrder" => $driver['sumOrder'] - $previousValue['cost'],
-                "countOrder" => $driver['countOrder'] - 1
+                "sumOrder" => $driverDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $driverDetail['countOrder'] - 1
             ] )
-            ->where( "id", $driver['id'] )
+            ->where( "id", $driverDetail['id'] )
             ->execute();
-        
+
         $API->DB->update( "users" )
             ->set( [
                 "sumOrder" => $newDriver['sumOrder'] + $previousValue['cost'],
@@ -138,30 +171,40 @@ if ( $requestData->cost ) {
             ] )
             ->where( "id", $newDriver['id'] )
             ->execute();
-    
+
     }
 
 }
 
+/**
+ * Изменение количество пройденных миль водителя
+ */
 if ( $requestData->miles ) {
-  
-    if ( ! $requestData->car_id ) { // если изменяется мили но авто то же
-       
+
+    /**
+     * Изменение количество пройденных миль авто если изменяется мили но авто то же
+     */
+    if ( ! $requestData->car_id ) {
+
         $API->DB->update( "cars" )
             ->set( [
-                "miles" => (float)$car['miles'] - (float)$previousValue['miles'] + (float)$requestData->miles
+                "miles" => (float)$carDetail['miles'] - (float)$previousValue['miles'] + (float)$requestData->miles
             ] )
-            ->where( "id", $car['id'] )
+            ->where( "id", $carDetail['id'] )
             ->execute();
 
-    } 
-    if ( $requestData->car_id && $requestData->car_id != $car['id'] ){ // если изменяется мили и авто
-        
+    }
+
+    /**
+     * Изменение количество пройденных миль авто если изменяется мили и авто
+     */
+    if ( $requestData->car_id && $requestData->car_id != $carDetail['id'] ){
+
         $API->DB->update( "cars" )
             ->set( [
-                "miles" => $car['miles'] - $previousValue['miles'],
+                "miles" => $carDetail['miles'] - $previousValue['miles'],
             ] )
-            ->where( "id", $car['id'] )
+            ->where( "id", $carDetail['id'] )
             ->execute();
 
         $API->DB->update( "cars" )
@@ -171,28 +214,34 @@ if ( $requestData->miles ) {
             ->where( "id", $newCar['id'] )
             ->execute();
 
-        } 
+        }
 
-    if ( ! $requestData->employee_id ) {  // если изменяется мили но водитель то же
-    
+    /**
+     * Изменение количество пройденных миль водителя если изменяются мили но водитель то же
+     */
+    if ( ! $requestData->employee_id ) {
+
         $API->DB->update( "users" )
             ->set( [
-                "miles" => (float)$driver['miles'] - (float)$previousValue['miles'] + (float)$requestData->miles
+                "miles" => (float)$driverDetail['miles'] - (float)$previousValue['miles'] + (float)$requestData->miles
             ] )
-            ->where( "id", $driver['id'] )
+            ->where( "id", $driverDetail['id'] )
             ->execute();
 
-    } 
-    
-    if ( $requestData->employee_id && $requestData->employee_id != $driver['id'] ) { // если изменяется мили и водитель 
-    
+    }
+
+    /**
+     * Изменение количество пройденных миль водителя если изменяется мили и водитель
+     */
+    if ( $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+
         $API->DB->update( "users" )
             ->set( [
-                "miles" => $driver['miles'] - $previousValue['miles'],
+                "miles" => $driverDetail['miles'] - $previousValue['miles'],
             ] )
-            ->where( "id", $driver['id'] )
+            ->where( "id", $driverDetail['id'] )
             ->execute();
-    
+
         $API->DB->update( "users" )
             ->set( [
                 "miles" => $newDriver['miles'] + $requestData->miles,
@@ -205,13 +254,16 @@ if ( $requestData->miles ) {
 
 } else {
 
-    if ( $requestData->car_id != $car['id'] ){ // если изменяется авто а мили нет
-    
+    /**
+     * Изменение количество пройденных миль авто если изменяется авто а мили нет
+     */
+    if ( $requestData->car_id != $carDetail['id'] ){
+
         $API->DB->update( "cars" )
             ->set( [
-                "miles" => $car['miles'] - $previousValue['miles'],
+                "miles" => $carDetail['miles'] - $previousValue['miles'],
             ] )
-            ->where( "id", $car['id'] )
+            ->where( "id", $carDetail['id'] )
             ->execute();
 
         $API->DB->update( "cars" )
@@ -221,32 +273,37 @@ if ( $requestData->miles ) {
             ->where( "id", $newCar['id'] )
             ->execute();
 
-    } 
+    }
 
-    if ( $requestData->employee_id != $driver['id'] ) { // если изменяется водитель а мили нет
-    
+    /**
+     * Изменение количество пройденных миль водителя если изменяется водитель а мили нет
+     */
+    if ( $requestData->employee_id != $driverDetail['id'] ) {
+
         $API->DB->update( "users" )
             ->set( [
-                "miles" => $driver['miles'] - $previousValue['miles'],
+                "miles" => $driverDetail['miles'] - $previousValue['miles'],
             ] )
-            ->where( "id", $driver['id'] )
+            ->where( "id", $driverDetail['id'] )
             ->execute();
-    
+
         $API->DB->update( "users" )
             ->set( [
                 "miles" => $newDriver['miles'] + $previousValue['miles'],
-            
+
             ] )
             ->where( "id", $newDriver['id'] )
             ->execute();
-            
+
     }
 
 
 }
 
 
-
+/**
+ * Запись в таблицу истории заказов, при изменении статуса
+ */
 if ( $requestData->status_id ) {
     $API->DB->insertInto( "ordersHistory" )
         ->values( [

@@ -16,9 +16,7 @@
                 "update",
                 "get"
             ],
-            "require_in_commands": [
-                "add"
-            ],
+            "require_in_commands": [],
             "list_donor": {
                 "table": "users",
                 "properties_title": "last_name"
@@ -98,6 +96,10 @@
                 {
                     "value": "processing",
                     "title": "В работе"
+                },
+                {
+                    "value": "overdue",
+                    "title": "Просрочено"
                 },
                 {
                     "value": "completed",

@@ -1,628 +1,631 @@
 {
-    "title": "Заявки",
-    "table": "orders",
-    "is_trash": true,
-    "properties": [
-        {
-            "title": "ID",
-            "article": "id",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Источник",
-            "article": "source_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "list_donor": {
-                "table": "orderSources",
-                "properties_title": "title"
-            }
-        },
-        {
-            "title": "Клиент",
-            "article": "client_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "require_in_commands": [],
-            "list_donor": {
-                "table": "users",
-                "properties_title": "last_name"
-            }
-        },
-        {
-            "title": "Компания",
-            "article": "company_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "require_in_commands": [],
-            "list_donor": {
-                "table": "companies",
-                "properties_title": "title"
-            }
-        },
-        {
-            "title": "Статус",
-            "article": "status_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "list_donor": {
-                "table": "orderStatuses",
-                "properties_title": "title"
-            }
-        },
-        {
-            "title": "Город отправки",
-            "article": "origin_city",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Город получения",
-            "article": "destination_city",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Дата и время оформления",
-            "article": "created_at",
-            "data_type": "datetime",
-            "field_type": "datetime",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": false,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ]
-        },
-        {
-            "title": "Дата и время завершения",
-            "article": "certified_at",
-            "data_type": "datetime",
-            "field_type": "datetime",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Ответственный",
-            "article": "responsible_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "list_donor": {
-                "table": "users",
-                "properties_title": "last_name"
-            },
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Водитель",
-            "article": "employee_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get",
-                "search"
-            ],
-            "require_in_commands": [
-                "add"
-            ],
-            "list_donor": {
-                "table": "users",
-                "properties_title": "last_name"
-            },
-            "is_in_search": true
-        },
-        {
-            "title": "Автомобиль",
-            "article": "car_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ],
-            "require_in_commands": [
-                "add"
-            ],
-            "list_donor": {
-                "table": "cars",
-                "properties_title": "vin"
-            }
-        },
-        {
-            "title": "Перевозимые авто",
-            "article": "vehicles_id",
-            "data_type": "array",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "join": {
-                "connection_table": "orders_vehicles",
-                "donor_table": "vehicles",
-                "property_article": "vin",
-                "insert_property": "order_id",
-                "filter_property": "vehicle_id"
-            }
-        },
-        {
-            "title": "Общая стоимость",
-            "article": "cost",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "require_in_commands": []
-        },
-        {
-            "title": "Контакт",
-            "article": "contact_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "require_in_commands": [],
-            "list_donor": {
-                "table": "contacts",
-                "properties_title": "title"
-            }
-        },
-        {
-            "title": "Штат отправки",
-            "article": "origin_state",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "ZIP код отправки",
-            "article": "origin_zip",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Координаты отправки",
-            "article": "origin_coordinates",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Штат получения",
-            "article": "destination_state",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "ZIP код получения",
-            "article": "destination_zip",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Координаты получения",
-            "article": "destination_coordinates",
-            "data_type": "string",
-            "field_type": "string",
-            "min_value": 0,
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "add",
-                "update"
-            ],
-            "require_in_commands": [
-                "add"
-            ]
-        },
-        {
-            "title": "Статус оплаты",
-            "article": "pay_status",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "custom_list": [],
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ],
-            "list_donor": {
-                "table": "orderPayStatuses",
-                "properties_title": "title"
-            }
-        },
-        {
-            "title": "Название",
-            "article": "title",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Дистанция (миль)",
-            "article": "miles",
-            "data_type": "float",
-            "field_type": "integer",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Оплачено",
-            "article": "paidFor",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Осталось оплатить",
-            "article": "needPay",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Способ оплаты",
-            "article": "paymentType_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "list_donor": {
-                "table": "paymentTypes",
-                "properties_title": "title"
-            },
-            "use_in_commands": [
-                "update",
-                "add",
-                "get"
-            ]
-        },
-        {
-            "title": "Причина отмены",
-            "article": "cancellationReason",
-            "data_type": "string",
-            "field_type": "textarea",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Сумма к оплате",
-            "article": "payNow",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get",
-                "update",
-                "add"
-            ]
-        },
-        {
-            "title": "Мест (всего)",
-            "article": "placeCount",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Мест (занято)",
-            "article": "placeOccupied",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        },
-        {
-            "title": "Сумма (от)",
-            "article": "cost_from",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Сумма (до)",
-            "article": "cost_to",
-            "data_type": "float",
-            "field_type": "price",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Дата (от)",
-            "article": "created_at_from",
-            "data_type": "datetime",
-            "field_type": "datetime",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Дата (до)",
-            "article": "created_at_to",
-            "data_type": "datetime",
-            "field_type": "datetime",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Расстояние (от)",
-            "article": "miles_from",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Расстояние (до)",
-            "article": "miles_to",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Позиции  (от)",
-            "article": "placeOccupied_from",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Позиции (до)",
-            "article": "placeOccupied_to",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get"
-            ]
-        },
-        {
-            "title": "Мест (свободно)",
-            "article": "placeFree",
-            "data_type": "integer",
-            "field_type": "integer",
-            "is_default_in_list": false,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ]
-        }
-    ]
+  "title": "Заявки",
+  "table": "orders",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "ID",
+      "article": "id",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Источник",
+      "article": "source_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "orderSources",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Клиент",
+      "article": "client_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Статус",
+      "article": "status_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "orderStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Город отправки",
+      "article": "origin_city",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Город получения",
+      "article": "destination_city",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Дата и время оформления",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Дата и время завершения",
+      "article": "certified_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Ответственный",
+      "article": "responsible_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      },
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Водитель",
+      "article": "employee_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "search"
+      ],
+      "require_in_commands": [
+        "add"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      },
+      "is_in_search": true
+    },
+    {
+      "title": "Автомобиль",
+      "article": "car_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "require_in_commands": [
+        "add"
+      ],
+      "list_donor": {
+        "table": "cars",
+        "properties_title": "vin"
+      }
+    },
+    {
+      "title": "Перевозимые авто",
+      "article": "vehicles_id",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "join": {
+        "connection_table": "orders_vehicles",
+        "donor_table": "vehicles",
+        "property_article": "vin",
+        "insert_property": "order_id",
+        "filter_property": "vehicle_id"
+      }
+    },
+    {
+      "title": "Общая стоимость",
+      "article": "cost",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "contacts",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Штат отправки",
+      "article": "origin_state",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "ZIP код отправки",
+      "article": "origin_zip",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Координаты отправки",
+      "article": "origin_coordinates",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Штат получения",
+      "article": "destination_state",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "ZIP код получения",
+      "article": "destination_zip",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Координаты получения",
+      "article": "destination_coordinates",
+      "data_type": "string",
+      "field_type": "string",
+      "min_value": 0,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Статус оплаты",
+      "article": "pay_status",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "custom_list": [],
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "orderPayStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Дистанция (миль)",
+      "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Оплачено",
+      "article": "paidFor",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Осталось оплатить",
+      "article": "needPay",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
+      },
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Причина отмены",
+      "article": "cancellationReason",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false,
+      "is_disabled": false
+    },
+    {
+      "title": "Сумма к оплате",
+      "article": "payNow",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Мест (всего)",
+      "article": "placeCount",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Мест (занято)",
+      "article": "placeOccupied",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Сумма (от)",
+      "article": "cost_from",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Сумма (до)",
+      "article": "cost_to",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Дата (от)",
+      "article": "created_at_from",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Дата (до)",
+      "article": "created_at_to",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Расстояние (от)",
+      "article": "miles_from",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Расстояние (до)",
+      "article": "miles_to",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Позиции  (от)",
+      "article": "placeOccupied_from",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Позиции (до)",
+      "article": "placeOccupied_to",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Мест (свободно)",
+      "article": "placeFree",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    }
+  ]
 }

@@ -14,7 +14,19 @@
       "is_hook": false,
       "use_in_commands": ["sales_funnel"],
       "require_in_commands": []
-    }, {
+    },
+    {
+      "title": "ID",
+      "article": "id",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": false,
+      "use_in_commands": ["accounting_places"],
+      "require_in_commands": []
+    },{
       "title": "Период до",
       "article": "end_at",
       "data_type": "date",

@@ -60,9 +60,10 @@
                           "employees_id",
                           "address",
                           "tax_id_number",
-                          "company",
+                          "company_id",
                           "positionCount",
                           "responsible_id",
+                          "driver_id",
                           "miles",
                           "countOrder",
                           "sumOrder"
@@ -222,6 +223,7 @@
               "size": 4,
               "settings": {
                 "object": "orders",
+
                 "filters": [
                   {
                     "property": "car_id",
@@ -257,6 +259,9 @@
               "size": 4,
               "settings": {
                 "object": "tasks",
+                "context": {
+                  "page": "cars"
+                },
                 "filters": [
                   {
                     "property": "car_id",

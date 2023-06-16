@@ -1,18 +1,20 @@
 <?php
-
-$orderDetail = $API->DB->from( "orders" ) // получение информации о заявке
+/**
+ * Детальная информация заказа
+ */
+$orderDetail = $API->DB->from( "orders" )
     ->where( "id", $requestData->id )
     ->limit( 1 )
     ->fetch();
 
 /**
  * Подсчет свободных мест
- */ 
+ */
 $vehicles = $API->DB->from( "orders_vehicles" )
     ->where( "order_id", $requestData->id )
     ->limit( 20 );
 
-$API->DB->update( "orders" ) 
+$API->DB->update( "orders" )
     ->set( [
         "placeOccupied" => count( $vehicles ),
         "placeFree" => (int) $orderDetail['placeCount'] - count( $vehicles )
@@ -20,10 +22,10 @@ $API->DB->update( "orders" )
     ->where( "id", $requestData->id )
     ->execute();
 
-    
+
 /**
  * Изменение остатка при оплате
- */  
+ */
 if ( $requestData->paymentType_id && $requestData->payNow ) {
 
     $API->DB->update( "orders" ) // обновление полей "Оплачено" и "остатка по оплате"
@@ -35,14 +37,13 @@ if ( $requestData->paymentType_id && $requestData->payNow ) {
         ->where( "id", $requestData->id )
         ->execute();
 
-    $API->returnResponse($orderDetail);
-    
     $API->DB->insertInto( "orderPayHistory" ) // Запись в таблицу истории оплат
     ->values( [
         "cost" => (float) $orderDetail['cost'],
         "needPay" => (float) $orderDetail['cost'] - (float) $orderDetail['paidFor'] - (float) $requestData->payNow,
         "paidFor" => (float) $requestData->payNow + (float) $orderDetail['paidFor'],
         "order_id" => (int) $requestData->id,
+        "payNow" => (int) $requestData->payNow,
         "paymentType_id" => (int) $requestData->paymentType_id
     ] )
     ->execute();
@@ -64,15 +65,15 @@ if ( $requestData->cost ) {
         ->execute();
 
 }
-    
+
 
 /**
  * Смена статуса при отмене заявки
  */
 
 if ( $requestData->cancellationReason) {
-    
-    $API->DB->update( "orders" ) 
+
+    $API->DB->update( "orders" )
     ->set( [
     "status_id" => 3
     ] )
@@ -81,9 +82,5 @@ if ( $requestData->cancellationReason) {
 
 }
 
-
-/**
- * Подсчет свободных мест в заявке
- */
 
 

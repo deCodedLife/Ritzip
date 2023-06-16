@@ -39,8 +39,8 @@ foreach ( $orders as $order ) {
 
 
 $returnReport[] = [
-    "value" => "Кол-во заказов",
-    "description" => number_format ( count( $orders ), 0, '.', ' ' ) . " шт",
+    "value" => number_format ( count( $orders ), 0, '.', ' ' ) . " шт",
+    "description" => "Кол-во заказов",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -49,8 +49,8 @@ $returnReport[] = [
 ];
 
 $returnReport[] = [
-    "value" => "Сумма заказов",
-    "description" => "\$". number_format ( $ordersPrice, 0, '.', ' ' ),
+    "value" => "\$". number_format ( $ordersPrice, 0, '.', ' ' ),
+    "description" => "Сумма заказов",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -58,8 +58,8 @@ $returnReport[] = [
     "detail" => []
 ];
 $returnReport[] = [
-    "value" => "Расстояние",
-    "description" => number_format ( $ordersMiles, 0, '.', ' ' ) . " миль",
+    "value" => number_format ( $ordersMiles, 0, '.', ' ' ) . " миль",
+    "description" => "Расстояние",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
