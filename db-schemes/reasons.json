@@ -1,0 +1,14 @@
+{
+  "title": "Причины отмены",
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "Y"
+    }
+  ],
+  "rows_key": "",
+  "rows": []
+}

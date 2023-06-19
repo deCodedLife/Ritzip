@@ -460,20 +460,24 @@
     },
     {
       "title": "Причина отмены",
-      "article": "cancellationReason",
-      "data_type": "string",
-      "field_type": "textarea",
+      "article": "reason_id",
+      "data_type": "integer",
+      "field_type": "list",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
+      "is_hook": true,
+      "is_visible": false,
+      "is_disabled": false,
       "use_in_commands": [
         "update",
         "add",
         "hook"
       ],
-      "is_hook": true,
-      "is_visible": false,
-      "is_disabled": false
+      "list_donor": {
+        "table": "reasons",
+        "properties_title": "title"
+      }
     },
     {
       "title": "Сумма к оплате",

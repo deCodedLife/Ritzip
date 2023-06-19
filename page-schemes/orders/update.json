@@ -93,7 +93,7 @@
                         "title": "Основное",
                         "fields": [
                           "status_id",
-                          "cancellationReason"
+                          "reason_id"
                         ]
                       },
                       {
@@ -223,7 +223,11 @@
               "type": "list",
               "size": 4,
               "settings": {
-                "object": "orderPayHistory"
+                "object": "orderPayHistory",
+                "filters": [ {
+                  "property": "order_id",
+                  "value": ":id"
+                } ]
               },
               "components": {
                 "buttons": [
@@ -278,6 +282,10 @@
               }
             }
           ]
+        },
+        {
+          "title": "Документы",
+          "body": []
         },
         {
           "title": "История изменений",

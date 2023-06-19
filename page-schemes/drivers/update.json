@@ -37,7 +37,7 @@
                                 "widgets_group": "driver_statistic",
                                 "filters": [
                                     {
-                                      "property": "employee_id",
+                                      "property": "id",
                                       "value": ":id"
                                     }
                                 ]
@@ -62,6 +62,7 @@
                                                     "first_name",
                                                     "last_name",
                                                     "patronymic",
+                                                    "company_id",
                                                     "responsible_id",
                                                     "countOrder",
                                                     "sumOrder"
@@ -89,12 +90,6 @@
                                                     "email",
                                                     "password",
                                                     "phone"
-                                                ]
-                                            },
-                                            {
-                                                "title": "Компания",
-                                                "fields": [
-                                                    "company_id"
                                                 ]
                                             }
                                         ]
@@ -326,6 +321,48 @@
                                             "page": "reminders/add",
                                             "background": "dark",
                                             "modal_size": "lg"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "Документы",
+                    "body": []
+                },
+                {
+                    "title": "Файлы",
+                    "body": [
+                        {
+                            "title": "Список файлов",
+                            "type": "form",
+                            "size": 4,
+                            "settings": {
+                                "object": "users",
+                                "command": "update",
+                                "areas": [
+                                    {
+                                        "size": 4,
+                                        "blocks": [
+                                            {
+                                                "title": "",
+                                                "fields": [ "files" ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "components": {
+                                "buttons": [
+                                    {
+                                        "type": "submit",
+                                        "settings": {
+                                            "title": "Сохранить",
+                                            "background": "dark",
+                                            "icon": "",
+                                            "href": "drivers"
                                         }
                                     }
                                 ]

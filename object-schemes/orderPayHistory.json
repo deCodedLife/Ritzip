@@ -1,1 +1,93 @@
-{"title":"История оплат заказа","table":"orderPayHistory","is_trash":false,"properties":[{"title":"Общая стоимость","article":"cost","data_type":"float","field_type":"price","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get","add","update"]},{"title":"Оплачено","article":"paidFor","data_type":"float","field_type":"price","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get","add","update"]},{"title":"Осталось оплатить","article":"needPay","data_type":"float","field_type":"price","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","get"]},{"title":"Способ оплаты","article":"paymentType_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"list_donor":{"table":"paymentTypes","properties_title":"title"},"use_in_commands":["add","get","update"]},{"title":"ID заказа","article":"order_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_unique":true,"is_autofill":true,"list_donor":{"table":"orders","properties_title":"id"},"use_in_commands":["add","get","update"]},{"title":"Сумма к оплате","article":"payNow","data_type":"float","field_type":"price","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["get","add","update"]}]}
+{
+  "title": "История оплат заказа",
+  "table": "orderPayHistory",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Общая стоимость",
+      "article": "cost",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Оплачено",
+      "article": "paidFor",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Осталось оплатить",
+      "article": "needPay",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
+      },
+      "use_in_commands": [
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "ID заказа",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      },
+      "use_in_commands": [
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Сумма к оплате",
+      "article": "payNow",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    }
+  ]
+}

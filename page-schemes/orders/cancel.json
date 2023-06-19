@@ -21,7 +21,7 @@
           "size": 4,
           "blocks": [{
             "title": "",
-            "fields": ["cancellationReason"]
+            "fields": ["reason_id"]
           }]
         }]
       },

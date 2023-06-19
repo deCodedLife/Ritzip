@@ -7,9 +7,9 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "description": "Напоминания",
+        "description": "Причины отмены",
         "title": [
-          "Напоминания"
+          "Причины отмены"
         ]
       },
       "components": []
@@ -19,16 +19,16 @@
       "type": "list",
       "size": 4,
       "settings": {
-        "object": "reminders"
+        "object": "reasons"
       },
       "components": {
         "buttons": [
           {
             "type": "href",
             "settings": {
-              "title": "Добавить напоминание",
+              "title": "Добавить причину отмены",
               "background": "dark",
-              "page": "reminders/add"
+              "page": "reasons/add"
             }
           }
         ]

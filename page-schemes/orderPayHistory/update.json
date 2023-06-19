@@ -1,0 +1,30 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Оплата - Редактирование",
+      "title": ["№ ", ":id"]
+    },
+    "components": []
+  }, {
+    "title": "Форма",
+    "type": "form",
+    "size": 4,
+    "settings": {
+      "object": "orderPayHistory",
+      "command": "update",
+      "areas": [{
+        "size": 2,
+        "blocks": [{
+          "title": "Основная информация",
+          "fields": ["order_id", "paidFor", "paymentType_id"]
+        }]
+      }]
+    },
+    "components": {}
+  }]
+}

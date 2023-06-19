@@ -4,9 +4,9 @@
  */
 $formFieldsUpdate = [];
 
-if ( ! empty ( $requestData->cancellationReason ) ) {
+if ( !empty ( $requestData->reason_id ) ) {
 
-    $formFieldsUpdate[ "cancellationReason" ] = [ "is_visible" => true ];
+    $formFieldsUpdate[ "reason_id" ] = [ "is_visible" => true ];
 
 }
 $API->returnResponse( $formFieldsUpdate );

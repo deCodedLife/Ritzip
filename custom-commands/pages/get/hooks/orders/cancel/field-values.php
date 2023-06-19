@@ -1,3 +1,3 @@
 <?php
 
-$formFieldValues[ "cancellationReason" ][ "is_visible" ] = true;
+$formFieldValues[ "reason_id" ][ "is_visible" ] = true;

@@ -223,7 +223,6 @@
               "size": 4,
               "settings": {
                 "object": "orders",
-
                 "filters": [
                   {
                     "property": "car_id",
@@ -324,27 +323,40 @@
           ]
         },
         {
+          "title": "Документы",
+          "body": []
+        },
+        {
           "title": "Файлы",
           "body": [
             {
               "title": "Список файлов",
-              "type": "list",
+              "type": "form",
               "size": 4,
               "settings": {
-                "object": "carFiles"
+                "object": "cars",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 4,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [ "files" ]
+                      }
+                    ]
+                  }
+                ]
               },
               "components": {
                 "buttons": [
                   {
-                    "type": "modal",
+                    "type": "submit",
                     "settings": {
-                      "title": "Добавить файл",
-                      "page": "carFiles/add",
+                      "title": "Сохранить",
                       "background": "dark",
-                      "context": {
-                        "form": "carFiles",
-                        "row_id": ":id"
-                      }
+                      "icon": "",
+                      "href": "cars"
                     }
                   }
                 ]

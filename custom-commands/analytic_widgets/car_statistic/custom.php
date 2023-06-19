@@ -11,35 +11,18 @@
  */
 $returnReport = [];
 
-/**
- * Сумма заказов
- */
-$ordersPrice = 0;
 
 /**
- * Сумма миль
+ * Получение детальной информации об автомобиле
  */
-$ordersMiles = 0;
-
-/**
- * Получение заказов
- */
-$orders = $API->DB->from( "orders" )
-    ->where( "car_id", $requestData->car_id )
-    ->limit( 1000 );
-
-/**
- * Получение суммы заказов
- */
-foreach ( $orders as $order ) {
-
-    $ordersPrice += $order[ "cost" ];
-    $ordersMiles += $order[ "miles" ];
-}
+$carDetail = $API->DB->from( "cars" )
+    ->where( "id", $requestData->car_id )
+    ->limit( 1 )
+    ->fetch();
 
 
 $returnReport[] = [
-    "value" => number_format ( count( $orders ), 0, '.', ' ' ) . " шт",
+    "value" => number_format ( $carDetail[ "countOrder" ], 0, '.', ' ' ) . " шт",
     "description" => "Кол-во заказов",
     "icon" => "",
     "prefix" => "",
@@ -49,7 +32,7 @@ $returnReport[] = [
 ];
 
 $returnReport[] = [
-    "value" => "\$". number_format ( $ordersPrice, 0, '.', ' ' ),
+    "value" => "\$". number_format ( $carDetail[ "sumOrder" ], 0, '.', ' ' ),
     "description" => "Сумма заказов",
     "icon" => "",
     "prefix" => "",
@@ -58,7 +41,7 @@ $returnReport[] = [
     "detail" => []
 ];
 $returnReport[] = [
-    "value" => number_format ( $ordersMiles, 0, '.', ' ' ) . " миль",
+    "value" => number_format ( $carDetail[ "miles" ], 0, '.', ' ' ) . " миль",
     "description" => "Расстояние",
     "icon" => "",
     "prefix" => "",

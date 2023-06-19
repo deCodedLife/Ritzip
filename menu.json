@@ -2,58 +2,22 @@
   "top": [],
   "side": [
     {
-      "title": "Панель управления",
+      "title": "Рабочий стол",
       "href": "dashboard",
       "children": [],
       "icon": "garage"
     },
-
     {
-      "title": "Пользователи",
-      "href": "users",
-      "children": [
-        {
-          "title": "Клиенты",
-          "href": "clients"
-        },
-        {
-          "title": "Водители",
-          "href": "drivers"
-        },
-        {
-          "title": "Менеджеры",
-          "href": "managers"
-        },
-        {
-          "title": "Брокеры",
-          "href": "brokers"
-        },
-        {
-          "title": "Сотрудники ТО",
-          "href": "desk-stuff"
-        },
-        {
-          "title": "Диспетчеры",
-          "href": "dispatchers"
-        },
-        {
-          "title": "Инвесторы",
-          "href": "investors"
-        },
-        {
-          "title": "Директора",
-          "href": "directors"
-        },
-        {
-          "title": "Дилеры",
-          "href": "dealers"
-        },
-        {
-          "title": "Остальные",
-          "href": "custom_users"
-        }
-      ],
-      "icon": "user"
+      "title": "Заказы",
+      "href": "orders",
+      "children": [],
+      "icon": "delivery"
+    },
+    {
+      "title": "Задачи",
+      "href": "tasks",
+      "children": [],
+      "icon": "bullet-list"
     },
     {
       "title": "Списки",
@@ -71,34 +35,22 @@
       "icon": "bullet-list"
     },
     {
-      "title": "Автомобили",
+      "title": "Парк авто",
       "href": "cars",
       "children": [],
       "icon": "shipping-van"
     },
     {
-      "title": "Транспортные средства на отправку",
-      "href": "vehicles",
+      "title": "Документы",
+      "href": "documents",
       "children": [],
-      "icon": "shipping-van"
+      "icon": "reading"
     },
     {
-      "title": "Записи на ТО",
-      "href": "maintenanceAppointments",
+      "title": "Продажи",
+      "href": "sales",
       "children": [],
-      "icon": "schedule"
-    },
-    {
-      "title": "Задачи",
-      "href": "tasks",
-      "children": [],
-      "icon": "bullet-list"
-    },
-    {
-      "title": "Заявки",
-      "href": "orders",
-      "children": [],
-      "icon": "delivery"
+      "icon": "reading"
     },
     {
       "title": "Расходы",
@@ -107,13 +59,19 @@
       "icon": "reading"
     },
     {
-      "title": "Объявления",
+      "title": "Утилиты",
       "href": "ads",
       "children": [],
       "icon": "conversation"
     },
     {
-      "title": "Отчеты",
+      "title": "Онлайн чат",
+      "href": "chat",
+      "children": [],
+      "icon": "reading"
+    },
+    {
+      "title": "Аналитика",
       "href": "reports",
       "children": [
         {
@@ -163,6 +121,58 @@
       "title": "Настройки",
       "href": "settings",
       "children": [
+        {
+          "title": "Клиенты",
+          "href": "clients"
+        },
+        {
+          "title": "Водители",
+          "href": "drivers"
+        },
+        {
+          "title": "Менеджеры",
+          "href": "managers"
+        },
+        {
+          "title": "Брокеры",
+          "href": "brokers"
+        },
+        {
+          "title": "Сотрудники ТО",
+          "href": "desk-stuff"
+        },
+        {
+          "title": "Диспетчеры",
+          "href": "dispatchers"
+        },
+        {
+          "title": "Инвесторы",
+          "href": "investors"
+        },
+        {
+          "title": "Директора",
+          "href": "directors"
+        },
+        {
+          "title": "Дилеры",
+          "href": "dealers"
+        },
+        {
+          "title": "Остальные пользователи",
+          "href": "custom_users"
+        },
+        {
+          "title": "Транспортные средства на отправку",
+          "href": "vehicles",
+          "children": [],
+          "icon": "shipping-van"
+        },
+        {
+          "title": "Записи на ТО",
+          "href": "maintenanceAppointments",
+          "children": [],
+          "icon": "schedule"
+        },
         {
           "title": "Автосервисы",
           "href": "autoservices"
@@ -216,16 +226,8 @@
           "href": "roles"
         },
         {
-          "title": "Примечания",
-          "href": "notes"
-        },
-        {
-          "title": "Примечания для авто",
-          "href": "carNotes"
-        },
-        {
-          "title": "Примечания для водителей",
-          "href": "driverNotes"
+          "title": "Причины отмены заявок",
+          "href": "reasons"
         },
         {
           "title": "Общие",

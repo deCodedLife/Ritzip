@@ -7,9 +7,9 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "description": "Напоминания - Добавление",
+        "description": "Причина отмены - Редактирование",
         "title": [
-          "Добавление напоминания"
+          ":title"
         ]
       },
       "components": []
@@ -19,8 +19,8 @@
       "type": "form",
       "size": 4,
       "settings": {
-        "object": "reminders",
-        "command": "add",
+        "object": "reasons",
+        "command": "update",
         "areas": [
           {
             "size": 2,
@@ -28,29 +28,8 @@
               {
                 "title": "",
                 "fields": [
-                  "title",
-                  "user_id"
+                  "title"
                 ]
-              }
-            ]
-          },
-          {
-            "size": 2,
-            "blocks": [
-              {
-                "title": "",
-                "fields": [
-                  "notification_at"
-                ]
-              }
-            ]
-          },
-          {
-            "size": 4,
-            "blocks": [
-              {
-                "title": "",
-                "fields": [ "description" ]
               }
             ]
           }
@@ -61,10 +40,10 @@
           {
             "type": "submit",
             "settings": {
-              "title": "Добавить",
+              "title": "Сохранить",
               "background": "dark",
               "icon": "",
-              "href": "reminders"
+              "href": "reasons"
             }
           }
         ]

@@ -7,9 +7,9 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "description": "Напоминания - Добавление",
+        "description": "Причины отмены - Добавление",
         "title": [
-          "Добавление напоминания"
+          "Добавление причины отмены"
         ]
       },
       "components": []
@@ -19,7 +19,7 @@
       "type": "form",
       "size": 4,
       "settings": {
-        "object": "reminders",
+        "object": "reasons",
         "command": "add",
         "areas": [
           {
@@ -28,29 +28,8 @@
               {
                 "title": "",
                 "fields": [
-                  "title",
-                  "user_id"
+                  "title"
                 ]
-              }
-            ]
-          },
-          {
-            "size": 2,
-            "blocks": [
-              {
-                "title": "",
-                "fields": [
-                  "notification_at"
-                ]
-              }
-            ]
-          },
-          {
-            "size": 4,
-            "blocks": [
-              {
-                "title": "",
-                "fields": [ "description" ]
               }
             ]
           }
@@ -64,7 +43,7 @@
               "title": "Добавить",
               "background": "dark",
               "icon": "",
-              "href": "reminders"
+              "href": "reasons"
             }
           }
         ]
