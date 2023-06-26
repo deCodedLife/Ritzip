@@ -36,8 +36,17 @@
     },
     {
       "title": "Парк авто",
-      "href": "cars",
-      "children": [],
+      "href": "",
+      "children": [
+        {
+          "title": "Водители",
+          "href": "drivers"
+        },
+        {
+          "title": "Автомобили",
+          "href": "cars"
+        }
+      ],
       "icon": "shipping-van"
     },
     {
@@ -124,10 +133,6 @@
         {
           "title": "Клиенты",
           "href": "clients"
-        },
-        {
-          "title": "Водители",
-          "href": "drivers"
         },
         {
           "title": "Менеджеры",

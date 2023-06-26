@@ -15,7 +15,7 @@
     "type": "form",
     "size": 4,
     "settings": {
-      "object": "",
+      "object": "orderPayStatuses",
       "command": "add",
       "areas": [{
         "size": 2,
@@ -37,7 +37,7 @@
       "buttons": [{
         "type": "submit",
         "settings": {
-          "title": "Добавить",
+          "title": "Сохранить",
           "background": "dark",
           "icon": "",
           "href": "orderPayStatuses"
