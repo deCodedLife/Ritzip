@@ -7,105 +7,183 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "title": [ "№ ", ":id", " ", ":last_name", " ", ":first_name", " ", ":patronymic" ],
+        "title": [
+          "№ ",
+          ":id",
+          " ",
+          ":last_name",
+          " ",
+          ":first_name",
+          " ",
+          ":patronymic"
+        ],
         "description": "Клиенты - Редактирование"
       },
-      "components": {}
+      "components": []
     },
     {
       "title": "Табы",
       "type": "tabs",
       "size": 4,
-      "settings": [{
-        "title": "Основная информация",
-        "body": [{
-          "title": "Форма",
-          "type": "form",
-          "size": 4,
-          "settings": {
-            "object": "users",
-            "command": "update",
-            "joined_property": "",
-            "areas": [
-              {
-                "size": 2,
-                "blocks": [
+      "settings": [
+        {
+          "title": "Основная информация",
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "joined_property": "",
+                "areas": [
                   {
-                    "title": "Основное",
-                    "fields": [ "avatar", "first_name", "last_name", "patronymic", "type" ]
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Основное",
+                        "fields": [
+                          "avatar",
+                          "first_name",
+                          "last_name",
+                          "patronymic",
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Документы",
+                        "fields": [
+                          "license_number",
+                          "license_from",
+                          "license_to",
+                          "license_address",
+                          "address"
+                        ]
+                      }
+                    ]
                   },
                   {
-                    "title": "Документы",
-                    "fields": [
-                      "license_number", "license_from", "license_to", "license_address", "address"
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Доступ",
+                        "fields": [
+                          "role_id",
+                          "email",
+                          "password",
+                          "phone"
+                        ]
+                      },
+                      {
+                        "title": "Компания",
+                        "fields": [
+                          "company_title",
+                          "company_ein",
+                          "swift"
+                        ]
+                      }
                     ]
                   }
                 ]
               },
-              {
-                "size": 2,
-                "blocks": [
+              "components": {
+                "buttons": [
                   {
-                    "title": "Доступ",
-                    "fields": [ "role_id", "email", "password", "phone" ]
-                  },
-                  {
-                    "title": "Компания",
-                    "fields": [
-                      "company_title", "company_ein", "swift"
-                    ]
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "href": "clients",
+                      "icon": "",
+                      "background": "dark"
+                    },
+                    "required_permissions": [],
+                    "required_modules": []
                   }
                 ]
               }
-            ]
-          },
-          "components": {
-            "buttons": [
-              {
-                "type": "submit",
-                "settings": {
-                  "title": "Сохранить",
-                  "href": "clients",
-                  "icon": "",
-                  "background": "dark"
+            }
+          ]
+        },
+        {
+          "title": "Задачи",
+          "body": [
+            {
+              "title": "Список задач",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "tasks",
+                "context": {
+                  "page": "clients"
                 },
-                "required_permissions": [],
-                "required_modules": []
+                "filters": [
+                  {
+                    "property": "client_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "clientTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
               }
-            ]
-          }
-        } ]
-      }, {
-        "title": "История заявок",
-        "body": [{
+            }
+          ]
+        },
+        {
           "title": "История заявок",
-          "type": "list",
-          "size": 4,
-          "settings": {
-            "object": "orders",
-            "filters": [{
-              "property": "client_id",
-              "value": ":id"
-            }]
-          },
-          "components": []
-        }]
-      },{
-        "title": "История действий",
-        "body": [{
-          "title": "Логи",
-          "type": "list",
-          "size": 4,
-          "settings": {
-            "object": "logs",
-            "filters": [{
-              "property": "users_id",
-              "value": ":id"
-            }]
-          },
-          "components": []
-        }]
-      } ]
+          "body": [
+            {
+              "title": "История заявок",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "orders",
+                "filters": [
+                  {
+                    "property": "client_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        },
+        {
+          "title": "История действий",
+          "body": [
+            {
+              "title": "Логи",
+              "type": "logs",
+              "size": 4,
+              "settings": {
+                "object": "logs",
+                "filters": [
+                  {
+                    "property": "users_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }

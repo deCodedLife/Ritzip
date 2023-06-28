@@ -1,1 +1,383 @@
-{"title":"Компании","table":"companies","is_trash":true,"properties":[{"title":"Название","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":true,"is_autofill":true,"use_in_commands":["add","update","get"],"require_in_commands":["add"]},{"title":"Логотип","article":"logo","data_type":"image","field_type":"image","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Категория","article":"companyCategory_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"list_donor":{"table":"companyCategories","properties_title":"title"}},{"title":"Описание","article":"description","data_type":"string","field_type":"textarea","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Штат","article":"state_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"require_in_commands":[],"list_donor":{"table":"states","properties_title":"title"}},{"title":"ZIP код","article":"zip","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Реквизиты","article":"credentials","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Tax ID","article":"tax_id_number","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Телефон","article":"phone","data_type":"phone","field_type":"phone","is_default_in_list":true,"is_unique":true,"is_autofill":true,"required_permissions":[],"required_modules":[],"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Email","article":"email","data_type":"email","field_type":"email","is_default_in_list":true,"is_unique":true,"is_autofill":true,"required_permissions":[],"required_modules":[],"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Сайт","article":"website","data_type":"string","field_type":"string","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Основной контакт","article":"main_contact_id","data_type":"integer","field_type":"list","search":"contacts","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"list_donor":{"table":"contacts","properties_title":"title"}},{"title":"Ответственный","article":"user_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"list_donor":{"table":"users","properties_title":"last_name"}},{"title":"Водитель","article":"driver_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"list_donor":{"table":"users","properties_title":"last_name"}},{"title":"Кол-во сделок","article":"orders_count","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Кол-во сделок (from)","article":"orders_count_from","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Кол-во сделок (to)","article":"orders_count_to","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Сумма сделок","article":"orders_cost","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Сумма сделок (from)","article":"orders_cost_from","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Сумма сделок (to)","article":"orders_cost_to","data_type":"float","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get"],"require_in_commands":[]},{"title":"Примечание","article":"note","data_type":"string","field_type":"textarea","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Транспортные средства","article":"vehicles_id","data_type":"array","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"join":{"connection_table":"companies_vehicles","donor_table":"vehicles","property_article":"vin","insert_property":"company_id","filter_property":"vehicle_id"}},{"title":"Дата и время создания","article":"created_at","data_type":"datetime","field_type":"datetime","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"]},{"title":"Контакты","article":"contacts_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"join":{"connection_table":"companies_contacts","donor_table":"contacts","property_article":"title","insert_property":"company_id","filter_property":"contact_id"}}]}
+{
+  "title": "Компании",
+  "table": "companies",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Логотип",
+      "article": "logo",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Категория",
+      "article": "companyCategory_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "companyCategories",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Описание",
+      "article": "description",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Штат",
+      "article": "state_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "states",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "ZIP код",
+      "article": "zip",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Реквизиты",
+      "article": "credentials",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Tax ID",
+      "article": "tax_id_number",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Телефон",
+      "article": "phone",
+      "data_type": "phone",
+      "field_type": "phone",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Email",
+      "article": "email",
+      "data_type": "email",
+      "field_type": "email",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сайт",
+      "article": "website",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Основной контакт",
+      "article": "main_contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "search": "contacts",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "list_donor": {
+        "table": "contacts",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Ответственный",
+      "article": "user_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 3
+        }
+      }
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 4
+        }
+      }
+    },
+    {
+      "title": "Кол-во сделок",
+      "article": "orders_count",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Кол-во сделок (from)",
+      "article": "orders_count_from",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Кол-во сделок (to)",
+      "article": "orders_count_to",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сумма сделок",
+      "article": "orders_cost",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сумма сделок (from)",
+      "article": "orders_cost_from",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сумма сделок (to)",
+      "article": "orders_cost_to",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Примечание",
+      "article": "note",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Транспортные средства",
+      "article": "vehicles_id",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "join": {
+        "connection_table": "companies_vehicles",
+        "donor_table": "vehicles",
+        "property_article": "vin",
+        "insert_property": "company_id",
+        "filter_property": "vehicle_id"
+      }
+    },
+    {
+      "title": "Дата и время создания",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Контакты",
+      "article": "contacts_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "join": {
+        "connection_table": "companies_contacts",
+        "donor_table": "contacts",
+        "property_article": "title",
+        "insert_property": "company_id",
+        "filter_property": "contact_id"
+      }
+    }
+  ]
+}

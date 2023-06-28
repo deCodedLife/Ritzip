@@ -1,0 +1,61 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Сотрудники",
+        "title": [
+          "Сотрудники"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "users"
+      },
+      "components": {
+        "search": true,
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить сотрудника",
+              "background": "dark",
+              "page": "/employees/add"
+            }
+          }
+        ],
+        "filters": [
+          {
+            "title": "Дата",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at"
+            }
+          },
+          {
+            "title": "Роль",
+            "type": "list",
+            "settings": {
+              "donor_object": "roles",
+              "recipient_property": "role_id",
+              "donor_property_title": "title",
+              "donor_property_value": "id"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

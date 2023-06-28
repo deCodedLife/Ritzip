@@ -35,17 +35,52 @@
         "is_system": "Y"
       },
       {
-        "title": "Завершено",
+        "title": "Ожидает оплаты",
+        "article": "waiting",
+        "priority": 20,
+        "color": "warning",
+        "is_system": "Y"
+      },
+      {
+        "title": "Ожидает оплаты после выполнения",
+        "article": "waiting_after_success",
+        "priority": 30,
+        "color": "warning",
+        "is_system": "Y"
+      },
+      {
+        "title": "Частично оплачено",
+        "article": "part_pay",
+        "priority": 40,
+        "color": "warning",
+        "is_system": "Y"
+      },
+      {
+        "title": "Оплачено",
         "article": "completed",
         "priority": 50,
         "color": "success",
         "is_system": "Y"
       },
       {
+        "title": "Возврат",
+        "article": "return",
+        "priority": 60,
+        "color": "danger",
+        "is_system": "Y"
+      },
+      {
+        "title": "Частично возврат",
+        "article": "part_return",
+        "priority": 70,
+        "color": "danger",
+        "is_system": "Y"
+      },
+      {
         "title": "Отклонено",
         "article": "canceled",
         "priority": 100,
-        "color": "canceled",
+        "color": "secondary",
         "is_system": "Y"
       }
     ]

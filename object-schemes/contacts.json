@@ -156,7 +156,10 @@
     "use_in_commands": ["add", "update", "get"],
     "list_donor": {
       "table": "users",
-      "properties_title": "last_name"
+      "properties_title": "last_name",
+      "filters": {
+        "role_id": 3
+      }
     }
   }, {
     "title": "Примечание",

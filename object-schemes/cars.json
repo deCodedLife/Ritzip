@@ -209,7 +209,10 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name"
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 3
+        }
       }
     },
     {
@@ -230,7 +233,10 @@
         "donor_table": "users",
         "property_article": "last_name",
         "insert_property": "car_id",
-        "filter_property": "user_id"
+        "filter_property": "user_id",
+        "filters": {
+          "role_id != ?": 5
+        }
       }
     },
     {

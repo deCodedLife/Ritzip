@@ -39,16 +39,14 @@
             "article": "first_name",
             "data_type": "string",
             "field_type": "string",
-            "is_default_in_list": true,
+            "is_default_in_list": false,
             "is_unique": false,
             "is_autofill": true,
             "use_in_commands": [
                 "add",
                 "update"
             ],
-            "require_in_commands": [
-                "add"
-            ]
+            "require_in_commands": []
         },
         {
             "title": "Фамилия",
@@ -62,9 +60,7 @@
                 "add",
                 "update"
             ],
-            "require_in_commands": [
-                "add"
-            ]
+            "require_in_commands": []
         },
         {
             "title": "Отчество",
@@ -617,6 +613,220 @@
                 "update",
                 "add"
             ]
+        }, {
+            "title": "Название",
+            "article": "title",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": true,
+            "is_unique": true,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": ["add"]
+        }, {
+            "title": "Фото",
+            "article": "photo",
+            "data_type": "image",
+            "field_type": "image",
+            "is_default_in_list": true,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Категория",
+            "article": "contactCategory_id",
+            "data_type": "integer",
+            "field_type": "list",
+            "is_default_in_list": true,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update", "get"],
+            "list_donor": {
+                "table": "companyCategories",
+                "properties_title": "title"
+            }
+        }, {
+            "title": "Адрес",
+            "article": "address",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Штат",
+            "article": "state_id",
+            "data_type": "integer",
+            "field_type": "list",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update", "get"],
+            "require_in_commands": [],
+            "list_donor": {
+                "table": "states",
+                "properties_title": "title"
+            }
+        }, {
+            "title": "ZIP код",
+            "article": "zip",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Реквизиты",
+            "article": "credentials",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Tax ID",
+            "article": "tax_id_number",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Должность",
+            "article": "job_title",
+            "data_type": "string",
+            "field_type": "string",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Компания",
+            "article": "company_id",
+            "data_type": "integer",
+            "field_type": "list",
+            "is_default_in_list": true,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update", "get"],
+            "list_donor": {
+                "table": "companies",
+                "properties_title": "title"
+            }
+        }, {
+            "title": "Основной контакт",
+            "article": "is_main",
+            "data_type": "boolean",
+            "field_type": "checkbox",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"]
+        }, {
+            "title": "Ответственный",
+            "article": "user_id",
+            "data_type": "integer",
+            "field_type": "list",
+            "is_default_in_list": true,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update", "get"],
+            "list_donor": {
+                "table": "users",
+                "properties_title": "last_name",
+                "filters": {
+                    "role_id": 3
+                }
+            }
+        }, {
+            "title": "Примечание",
+            "article": "note",
+            "data_type": "string",
+            "field_type": "textarea",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update"],
+            "require_in_commands": []
+        }, {
+            "title": "Кол-во сделок",
+            "article": "orders_count",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Кол-во сделок (from)",
+            "article": "orders_count_from",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Кол-во сделок (to)",
+            "article": "orders_count_to",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Сумма сделок",
+            "article": "orders_cost",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Сумма сделок (from)",
+            "article": "orders_cost_from",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Сумма сделок (to)",
+            "article": "orders_cost_to",
+            "data_type": "float",
+            "field_type": "integer",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["get"],
+            "require_in_commands": []
+        }, {
+            "title": "Дата и время создания",
+            "article": "created_at",
+            "data_type": "datetime",
+            "field_type": "datetime",
+            "is_default_in_list": false,
+            "is_unique": false,
+            "is_autofill": true,
+            "use_in_commands": ["add", "update", "get"]
         }
     ]
 }

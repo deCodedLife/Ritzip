@@ -1,13 +1,6 @@
 <?php
 
 /**
- * Принудительный фильтр раздела "Остальные пользователи"
- */
-if ( ( $requestData->context->block === "list" ) && !$requestData->role_id )
-    $requestSettings[ "filter" ][ "role_id > ?" ] = 10;
-
-
-/**
  * Фильтр по дате
  */
 

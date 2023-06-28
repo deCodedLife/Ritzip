@@ -68,7 +68,10 @@
     "use_in_commands": ["add", "update", "get", "hook"],
     "list_donor": {
       "table": "users",
-      "properties_title": "last_name"
+      "properties_title": "last_name",
+      "filters": {
+        "role_id": 4
+      }
     }
   }, {
     "title": "Авто",

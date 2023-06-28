@@ -54,13 +54,6 @@
                           "job_title",
                           "is_main"
                         ]
-                      },
-                      {
-                        "title": "",
-                        "fields": [
-                          "orders_count",
-                          "orders_cost"
-                        ]
                       }
                     ]
                   },
@@ -220,7 +213,7 @@
           "body": [
             {
               "title": "История логов",
-              "type": "list",
+              "type": "logs",
               "size": 4,
               "settings": {
                 "object": "logs",
