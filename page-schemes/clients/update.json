@@ -50,16 +50,6 @@
                           "patronymic",
                           "type"
                         ]
-                      },
-                      {
-                        "title": "Документы",
-                        "fields": [
-                          "license_number",
-                          "license_from",
-                          "license_to",
-                          "license_address",
-                          "address"
-                        ]
                       }
                     ]
                   },
@@ -73,14 +63,6 @@
                           "email",
                           "password",
                           "phone"
-                        ]
-                      },
-                      {
-                        "title": "Компания",
-                        "fields": [
-                          "company_title",
-                          "company_ein",
-                          "swift"
                         ]
                       }
                     ]
@@ -107,6 +89,7 @@
         },
         {
           "title": "Задачи",
+          "is_counter": true,
           "body": [
             {
               "title": "Список задач",
@@ -145,6 +128,7 @@
         },
         {
           "title": "История заявок",
+          "is_counter": true,
           "body": [
             {
               "title": "История заявок",

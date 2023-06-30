@@ -19,7 +19,7 @@
       "type": "form",
       "size": 4,
       "settings": {
-        "object": "users",
+        "object": "contacts",
         "command": "add",
         "areas": [
           {
@@ -29,13 +29,14 @@
                 "title": "",
                 "fields": [
                   "photo",
-                  "title"
+                  "title",
+                  "role_id"
                 ]
               },
               {
                 "title": "",
                 "fields": [
-                  "contactCategory_id",
+                  "companyCategory_id",
                   "company_id",
                   "user_id"
                 ]

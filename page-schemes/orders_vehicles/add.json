@@ -1,0 +1,54 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Добавление транспортного средства"
+        ],
+        "description": "Транспортные средства - Добавление"
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "orders_vehicles",
+        "command": "add",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [
+                  "order_id",
+                  "vehicle_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "orders"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

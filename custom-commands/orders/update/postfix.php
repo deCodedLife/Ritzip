@@ -8,22 +8,6 @@ $orderDetail = $API->DB->from( "orders" )
     ->fetch();
 
 /**
- * Подсчет свободных мест
- */
-$vehicles = $API->DB->from( "orders_vehicles" )
-    ->where( "order_id", $requestData->id )
-    ->limit( 20 );
-
-$API->DB->update( "orders" )
-    ->set( [
-        "placeOccupied" => count( $vehicles ),
-        "placeFree" => (int) $orderDetail['placeCount'] - count( $vehicles )
-    ] )
-    ->where( "id", $requestData->id )
-    ->execute();
-
-
-/**
  * Изменение остатка при оплате
  */
 if ( $requestData->paymentType_id && $requestData->payNow ) {

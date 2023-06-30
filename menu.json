@@ -219,10 +219,6 @@
           "href": "companyCategories"
         },
         {
-          "title": "Категории контактов",
-          "href": "contactCategories"
-        },
-        {
           "title": "Категории расходов",
           "href": "expenseCategories"
         },

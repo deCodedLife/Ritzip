@@ -66,9 +66,11 @@
         }]
       }, {
         "title": "Задачи",
+        "is_counter": true,
         "body": []
       }, {
         "title": "Напоминания",
+        "is_counter": true,
         "body": []
       }, {
         "title": "Лента событий",

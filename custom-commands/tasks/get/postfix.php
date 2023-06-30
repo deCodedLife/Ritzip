@@ -35,7 +35,9 @@ function arrayUniqueByKey ( $array, $key ) {
 if (
     ( $requestData->context->block === "list" ) &&
     ( $requestData->context->page !== "drivers" ) &&
+    ( $requestData->context->page !== "contacts" ) &&
     ( $requestData->context->page !== "cars" ) &&
+    ( $requestData->context->page !== "companies" ) &&
     ( $requestData->context->page !== "clients" )
 ) {
 

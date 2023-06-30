@@ -27,12 +27,6 @@
               {
                 "title": "Основное",
                 "fields": [ "avatar", "first_name", "last_name", "patronymic" ]
-              },
-              {
-                "title": "Документы",
-                "fields": [
-                  "license_number", "license_from", "license_to", "license_address", "address"
-                ]
               }
             ]
           },
@@ -42,12 +36,6 @@
               {
                 "title": "Доступ",
                 "fields": [ "role_id", "email", "password", "phone" ]
-              },
-              {
-                "title": "Компания",
-                "fields": [
-                  "company_title", "company_ein", "swift"
-                ]
               }
             ]
           }

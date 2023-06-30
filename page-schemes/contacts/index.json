@@ -1,4 +1,4 @@
-{
+ {
     "required_modules": [],
     "required_permissions": [],
     "structure": [
@@ -19,7 +19,7 @@
             "type": "list",
             "size": 4,
             "settings": {
-                "object": "users",
+                "object": "contacts",
                 "filters": [
                     {
                         "property": "role_id",
@@ -56,8 +56,8 @@
                         "required_modules": [],
                         "settings": {
                             "is_search": false,
-                            "recipient_property": "contactCategory_id",
-                            "donor_object": "contactCategories",
+                            "recipient_property": "companyCategory_id",
+                            "donor_object": "companyCategories",
                             "donor_property_title": "title",
                             "donor_property_value": "id"
                         }

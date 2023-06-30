@@ -124,6 +124,7 @@
         } ]
       },{
         "title": "История действий",
+        "is_counter": true,
         "body": [{
           "title": "Логи",
           "type": "list",

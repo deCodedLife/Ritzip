@@ -1,1 +1,103 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Заявки - Добавление","title":["Добавление заявки"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"orders","command":"add","areas":[{"size":2,"blocks":[{"title":"Общее","fields":["cost","employee_id","car_id","vehicles_id","responsible_id","title","miles","placeCount","placeOccupied","status_id","contact_id","comment","source_id"]}]},{"size":2,"blocks":[{"title":"Отправка","fields":["sender_id","origin_state","origin_zip","origin_coordinates","origin_city"]}]},{"size":2,"blocks":[{"title":"Получение","fields":["recipient_id","destination_state","destination_zip","destination_coordinates","certified_at","destination_city"]},{"title":"Источник","fields":["sourceType","company_id","client_id"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"","href":"orders"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Заявки - Добавление",
+        "title": [
+          "Добавление заявки"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "orders",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Общее",
+                "fields": [
+                  "cost",
+                  "employee_id",
+                  "car_id",
+                  "responsible_id",
+                  "title",
+                  "miles",
+                  "placeCount",
+                  "placeOccupied",
+                  "status_id",
+                  "contact_id",
+                  "comment",
+                  "source_id"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Отправка",
+                "fields": [
+                  "sender_id",
+                  "origin_state",
+                  "origin_zip",
+                  "origin_coordinates",
+                  "origin_city"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Получение",
+                "fields": [
+                  "recipient_id",
+                  "destination_state",
+                  "destination_zip",
+                  "destination_coordinates",
+                  "certified_at",
+                  "destination_city"
+                ]
+              },
+              {
+                "title": "Источник",
+                "fields": [
+                  "sourceType",
+                  "company_id",
+                  "client_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "orders"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

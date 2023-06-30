@@ -27,3 +27,18 @@ if ( ( $requestData->context->form == "clientTasks" ) && $requestData->context->
     $formFieldValues[ "client_id" ][ "value" ] = $requestData->context->row_id;
 
 }
+
+if ( ( $requestData->context->form == "contactTasks" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "employee_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "employee_id" ][ "value" ] = $requestData->context->row_id;
+
+}
+
+if ( ( $requestData->context->form == "companyTasks" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "company_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "company_id" ][ "value" ] = $requestData->context->row_id;
+
+}
+

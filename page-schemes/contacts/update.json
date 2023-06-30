@@ -79,7 +79,8 @@
                         "title": "",
                         "fields": [
                           "phone",
-                          "email"
+                          "email",
+                          "password"
                         ]
                       }
                     ]
@@ -127,6 +128,7 @@
         },
         {
           "title": "Сделки",
+          "is_counter": true,
           "body": [
             {
               "title": "Статистика контактов",
@@ -162,19 +164,119 @@
         },
         {
           "title": "Задачи",
-          "body": []
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список задач",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "tasks",
+                "context": {
+                  "page": "contacts"
+                },
+                "filters": [
+                  {
+                    "property": "employee_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "contactTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Напоминания",
-          "body": []
-        },
-        {
-          "title": "Документы",
-          "body": []
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список напоминаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "reminders",
+                "filters": [
+                  {
+                    "property": "user_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить напоминание",
+                      "context": {
+                        "form": "reminders",
+                        "row_id": ":id"
+                      },
+                      "page": "reminders/add",
+                      "background": "dark",
+                      "modal_size": "lg"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Файлы",
-          "body": []
+          "body": [
+            {
+              "title": "Список файлов",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 4,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "files"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "contacts"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Счета",
@@ -190,6 +292,7 @@
         },
         {
           "title": "Компании",
+          "is_counter": true,
           "body": [
             {
               "title": "Компании",
@@ -210,6 +313,7 @@
         },
         {
           "title": "Лента событий",
+          "is_counter": true,
           "body": [
             {
               "title": "История логов",

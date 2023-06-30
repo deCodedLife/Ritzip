@@ -1,1 +1,411 @@
-{"required_permissions":[],"required_modules":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"title":["№ ",":id"," ",":last_name"," ",":first_name"," ",":patronymic"],"description":"Водители - Редактирование"},"components":[]},{"title":"Табы","type":"tabs","size":4,"settings":[{"title":"Основная информация","body":[{"title":"Виджеты","type":"analytic_widgets","size":4,"settings":{"widgets_group":"driver_statistic","filters":[{"property":"id","value":":id"}]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"users","command":"update","joined_property":"","areas":[{"size":2,"blocks":[{"title":"Основное","fields":["first_name","last_name","patronymic","company_id","responsible_id","countOrder","sumOrder"]},{"title":"Документы","fields":["license_number","license_from","license_to","license_address","address"]}]},{"size":2,"blocks":[{"title":"Доступ","fields":["role_id","email","password","phone"]}]},{"size":2,"blocks":[{"title":"Реквизиты","fields":["w9","businessName","businessType","payeeCode","fatcaCode","labelAddress","labelCity","state","zipCode","accountNumber","requestersNameAddress","insuranceNumber","idNumberEmployer"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Сохранить","href":"drivers","icon":"","background":"dark"},"required_permissions":[],"required_modules":[]},{"type":"modal","settings":{"title":"Добавить компанию","background":"dark","page":"companies/add","context":{"form":"companies","row_id":":id"}}}]}}]},{"title":"Привязанные автомобили","body":[{"title":"Привязанные автомобили","type":"list","size":4,"settings":{"object":"cars","filters":[{"property":"driver_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить авто","background":"dark","page":"cars/add","context":{"form":"cars","row_id":":id"}}},{"type":"href","settings":{"title":"Добавить существующее авто","page":"cars"}}]}}]},{"title":"Заказы","body":[{"title":"Список заказов","type":"list","size":4,"settings":{"object":"orders","filters":[{"property":"employee_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить заказ","background":"dark","page":"orders/add","context":{"form":"orders","row_id":":id"}}}]}}]},{"title":"Примечания","body":[{"title":"Список примечаний","type":"list","size":4,"settings":{"object":"driverNotes","filters":[{"property":"driver_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить примечания","background":"dark","page":"driverNotes/add","context":{"form":"driverNotes","row_id":":id"}}}]}}]},{"title":"Задачи","body":[{"title":"Список задач","type":"list","size":4,"settings":{"object":"tasks","context":{"page":"drivers"},"filters":[{"property":"employee_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить задачу","background":"dark","page":"tasks/add","context":{"form":"driverTasks","row_id":":id"}}}]}}]},{"title":"Напоминания","body":[{"title":"Список напоминаний","type":"list","size":4,"settings":{"object":"reminders","filters":[{"property":"user_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить напоминание","context":{"form":"reminders","row_id":":id"},"page":"reminders/add","background":"dark","modal_size":"lg"}}]}}]},{"title":"Документы","body":[]},{"title":"Файлы","body":[{"title":"Список файлов","type":"form","size":4,"settings":{"object":"users","command":"update","areas":[{"size":4,"blocks":[{"title":"","fields":["files"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Сохранить","background":"dark","icon":"","href":"drivers"}}]}}]},{"title":"История действий","body":[{"title":"Логи","type":"logs","size":4,"settings":{"object":"logs","filters":[{"property":"users_id","value":":id"}]},"components":[]}]}]}]}
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "№ ",
+          ":id",
+          " ",
+          ":last_name",
+          " ",
+          ":first_name",
+          " ",
+          ":patronymic"
+        ],
+        "description": "Водители - Редактирование"
+      },
+      "components": []
+    },
+    {
+      "title": "Табы",
+      "type": "tabs",
+      "size": 4,
+      "settings": [
+        {
+          "title": "Основная информация",
+          "body": [
+            {
+              "title": "Виджеты",
+              "type": "analytic_widgets",
+              "size": 4,
+              "settings": {
+                "widgets_group": "driver_statistic",
+                "filters": [
+                  {
+                    "property": "id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            },
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "joined_property": "",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Основное",
+                        "fields": [
+                          "first_name",
+                          "last_name",
+                          "patronymic",
+                          "company_id",
+                          "responsible_id",
+                          "countOrder",
+                          "sumOrder"
+                        ]
+                      },
+                      {
+                        "title": "Документы",
+                        "fields": [
+                          "license_number",
+                          "license_from",
+                          "license_to",
+                          "license_address",
+                          "address"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Доступ",
+                        "fields": [
+                          "role_id",
+                          "email",
+                          "password",
+                          "phone"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Реквизиты",
+                        "fields": [
+                          "w9",
+                          "businessName",
+                          "businessType",
+                          "payeeCode",
+                          "fatcaCode",
+                          "labelAddress",
+                          "labelCity",
+                          "state",
+                          "zipCode",
+                          "accountNumber",
+                          "requestersNameAddress",
+                          "insuranceNumber",
+                          "idNumberEmployer"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "href": "drivers",
+                      "icon": "",
+                      "background": "dark"
+                    },
+                    "required_permissions": [],
+                    "required_modules": []
+                  },
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить компанию",
+                      "background": "dark",
+                      "page": "companies/add",
+                      "context": {
+                        "form": "companies",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Привязанные автомобили",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Привязанные автомобили",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "cars",
+                "filters": [
+                  {
+                    "property": "driver_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить авто",
+                      "background": "dark",
+                      "page": "cars/add",
+                      "context": {
+                        "form": "cars",
+                        "row_id": ":id"
+                      }
+                    }
+                  },
+                  {
+                    "type": "href",
+                    "settings": {
+                      "title": "Добавить существующее авто",
+                      "background": "dark",
+                      "page": "cars"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Заказы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список заказов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "orders",
+                "filters": [
+                  {
+                    "property": "employee_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить заказ",
+                      "background": "dark",
+                      "page": "orders/add",
+                      "context": {
+                        "form": "orders",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Примечания",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список примечаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "driverNotes",
+                "filters": [
+                  {
+                    "property": "driver_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить примечания",
+                      "background": "dark",
+                      "page": "driverNotes/add",
+                      "context": {
+                        "form": "driverNotes",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Задачи",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список задач",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "tasks",
+                "context": {
+                  "page": "drivers"
+                },
+                "filters": [
+                  {
+                    "property": "employee_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "driverTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Напоминания",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список напоминаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "reminders",
+                "filters": [
+                  {
+                    "property": "user_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить напоминание",
+                      "context": {
+                        "form": "reminders",
+                        "row_id": ":id"
+                      },
+                      "page": "reminders/add",
+                      "background": "dark",
+                      "modal_size": "lg"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Документы",
+          "body": []
+        },
+        {
+          "title": "Файлы",
+          "body": [
+            {
+              "title": "Список файлов",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 4,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "files"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "drivers"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "История действий",
+          "body": [
+            {
+              "title": "Логи",
+              "type": "logs",
+              "size": 4,
+              "settings": {
+                "object": "logs",
+                "filters": [
+                  {
+                    "property": "users_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
