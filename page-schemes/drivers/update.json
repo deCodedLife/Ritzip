@@ -138,6 +138,7 @@
                       "title": "Добавить компанию",
                       "background": "dark",
                       "page": "companies/add",
+                      "field_place": "company_id",
                       "context": {
                         "form": "companies",
                         "row_id": ":id"

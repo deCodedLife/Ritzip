@@ -4,6 +4,10 @@
  * Автоподстановка
  */
 
+$formFieldValues[ "author_id" ] = $API::$userDetail->id;
+$formFieldValues[ "watcher_id" ] = $API::$userDetail->id;
+
+
 if ( ( $requestData->context->form == "tasks" ) && $requestData->context->employee_id )
     $formFieldValues[ "car_id" ] = $requestData->context->row_id;
 

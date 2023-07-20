@@ -46,12 +46,27 @@ if (
      */
     $authorTasks = $API->sendRequest( "tasks", "get", [ "author_id" => (int) $API::$userDetail->id ] );
 
+    /**
+     * Получение списка задач, где текущий пользователь является Автором
+     */
+    $everyoneTasks = $API->DB->from( "tasks" )
+        ->where( [
+            "is_active" => "Y",
+            "is_visible_everyone" => "Y"
+        ] );
 
     /**
      * Добавление поставленных задач в список
      */
     foreach ( $authorTasks as $authorTask )
         $response[ "data" ][] = (array) $authorTask;
+
+    /**
+     * Добавление общих задач в список
+     */
+    foreach ( $everyoneTasks as $everyoneTask )
+        $response[ "data" ][] = (array) $everyoneTask;
+
 
 
     /**
