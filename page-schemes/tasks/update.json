@@ -37,6 +37,7 @@
                       {
                         "title": "Основное",
                         "fields": [
+                          "title",
                           "employee_id",
                           "author_id",
                           "watcher_id",

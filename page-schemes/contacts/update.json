@@ -43,7 +43,7 @@
                       {
                         "title": "",
                         "fields": [
-                          "contactCategory_id",
+                          "companyCategory_id",
                           "company_id",
                           "user_id"
                         ]

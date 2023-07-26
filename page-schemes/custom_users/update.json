@@ -112,9 +112,10 @@
         } ]
       },{
         "title": "История действий",
+        "is_counter": true,
         "body": [{
           "title": "Логи",
-          "type": "list",
+          "type": "logs",
           "size": 4,
           "settings": {
             "object": "logs",

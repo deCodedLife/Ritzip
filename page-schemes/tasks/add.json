@@ -28,6 +28,7 @@
               {
                 "title": "Основное",
                 "fields": [
+                  "title",
                   "employee_id",
                   "watcher_id",
                   "title",
