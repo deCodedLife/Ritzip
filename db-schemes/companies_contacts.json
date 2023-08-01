@@ -1,1 +1,19 @@
-{"title":"Компании - Контакты","properties":[{"title":"Компания","article":"company_id","type":"int","default":null,"is_required":"Y"},{"title":"Контакт","article":"contact_id","type":"int","default":null,"is_required":"Y"}]}
+{
+  "title": "Компании - Контакты",
+  "properties": [
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    }
+  ]
+}

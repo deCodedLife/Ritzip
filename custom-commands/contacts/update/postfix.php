@@ -26,26 +26,6 @@ if ( $requestData->is_main === "Y" ) {
 
 
 /**
- * Автоподстановка категории
- */
-if ( $requestData->company_id ) {
-
-    $companyDetail = $API->DB->from( "companies" )
-        ->where( "id", $requestData->company_id )
-        ->limit( 1 )
-        ->fetch();
-
-    $API->DB->update( "users" )
-        ->set( "companyCategory_id", $companyDetail[ "companyCategory_id" ] )
-        ->where( [
-            "id" => $insertId
-        ] )
-        ->execute();
-
-
-}
-
-/**
  * Автоподстановка фамилии
  */
 if ( $requestData->title ) {

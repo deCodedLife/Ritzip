@@ -159,7 +159,7 @@
               "type": "list",
               "size": 4,
               "settings": {
-                "object": "cars",
+                "object": "driver_cars",
                 "filters": [
                   {
                     "property": "driver_id",
@@ -182,11 +182,15 @@
                     }
                   },
                   {
-                    "type": "href",
+                    "type": "modal",
                     "settings": {
                       "title": "Добавить существующее авто",
                       "background": "dark",
-                      "page": "cars"
+                      "page": "driver_cars/add",
+                      "context": {
+                        "form": "driver",
+                        "row_id": ":id"
+                      }
                     }
                   }
                 ]

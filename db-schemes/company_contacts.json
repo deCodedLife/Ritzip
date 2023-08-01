@@ -1,0 +1,1 @@
+{"title":"Контакты компании","properties":[{"title":"Компания","article":"company_id","type":"int","default":null,"is_required":"N"},{"title":"Контакт","article":"contacts_id","type":"int","default":null,"is_required":"N"}]}

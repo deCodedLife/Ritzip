@@ -172,7 +172,7 @@
     {
       "title": "Компания",
       "article": "company_id",
-      "data_type": "integer",
+      "data_type": "array",
       "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
@@ -186,6 +186,13 @@
       "list_donor": {
         "table": "companies",
         "properties_title": "title"
+      },
+      "join": {
+        "connection_table": "company_contacts",
+        "donor_table": "companies",
+        "property_article": "title",
+        "filter_property": "company_id",
+        "insert_property": "contacts_id"
       }
     },
     {
@@ -483,20 +490,14 @@
     {
       "title": "Категория",
       "article": "companyCategory_id",
-      "data_type": "integer",
-      "field_type": "list",
+      "data_type": "array",
+      "field_type": "info_strings",
       "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": true,
+      "is_autofill": false,
       "use_in_commands": [
-        "add",
-        "update",
         "get"
       ],
-      "list_donor": {
-        "table": "companyCategories",
-        "properties_title": "title"
-      },
       "is_hook": false,
       "is_visible": true,
       "is_disabled": false
@@ -589,24 +590,6 @@
         "update"
       ],
       "require_in_commands": []
-    },
-    {
-      "title": "Компания",
-      "article": "company_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "list_donor": {
-        "table": "companies",
-        "properties_title": "title"
-      }
     },
     {
       "title": "Основной контакт",

@@ -291,27 +291,6 @@
           "body": []
         },
         {
-          "title": "Компании",
-          "is_counter": true,
-          "body": [
-            {
-              "title": "Компании",
-              "type": "list",
-              "size": 4,
-              "settings": {
-                "object": "companies",
-                "filters": [
-                  {
-                    "property": "contact_id",
-                    "value": ":id"
-                  }
-                ]
-              },
-              "components": []
-            }
-          ]
-        },
-        {
           "title": "Лента событий",
           "is_counter": true,
           "body": [

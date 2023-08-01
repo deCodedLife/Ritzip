@@ -195,17 +195,21 @@
       "article": "main_contact_id",
       "data_type": "integer",
       "field_type": "list",
-      "search": "contacts",
+      "search": "users",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "add",
-        "update"
+        "update",
+        "get"
       ],
       "list_donor": {
-        "table": "contacts",
-        "properties_title": "title"
+        "table": "users",
+        "properties_title": "title",
+        "filters": {
+          "role_id": 13
+        }
       }
     },
     {
@@ -378,7 +382,7 @@
     {
       "title": "Контакты",
       "article": "contacts_id",
-      "data_type": "integer",
+      "data_type": "array",
       "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
@@ -389,11 +393,14 @@
         "get"
       ],
       "join": {
-        "connection_table": "companies_contacts",
-        "donor_table": "contacts",
+        "connection_table": "company_contacts",
+        "donor_table": "users",
         "property_article": "title",
         "insert_property": "company_id",
-        "filter_property": "contact_id"
+        "filter_property": "contacts_id",
+        "filters": {
+          "role_id": 13
+        }
       }
     }
   ]

@@ -44,6 +44,7 @@
                         "title": "",
                         "fields": [
                           "companyCategory_id",
+                          "contacts_id",
                           "main_contact_id",
                           "user_id"
                         ]
@@ -317,7 +318,7 @@
               "type": "list",
               "size": 4,
               "settings": {
-                "object": "contacts",
+                "object": "company_contacts",
                 "filters": [
                   {
                     "property": "company_id",
@@ -337,10 +338,15 @@
                     }
                   },
                   {
-                    "type": "href",
+                    "type": "modal",
                     "settings": {
                       "title": "Добавить существующий контакт",
-                      "page": "contacts"
+                      "background": "dark",
+                      "page": "company_contacts/add",
+                      "context": {
+                        "form": "contact",
+                        "row_id": ":id"
+                      }
                     }
                   }
                 ]

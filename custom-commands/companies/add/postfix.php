@@ -1,16 +1,23 @@
 <?php
 
 /**
- * Подстановка компании в контакт
+ * Изменение категории контакта при изменении категории компании
  */
-if ( $requestData->contact_id ) {
+if ( $requestData->companyCategory_id || $requestData->contacts_id ) {
 
-    $API->DB->update( "contacts" )
-        ->set( "company_id", $insertId )
-        ->where( [
-            "id" => $insertId,
-            "is_system" => "N"
-        ] )
-        ->execute();
+    $companyContacts = $API->DB->from( "company_contacts" )
+        ->where( "company_id", $requestData->id );
 
-} // if. $requestData->contact_id
+    /**
+     * Обход контактов компании
+     */
+    foreach ( $companyContacts as $companyContact ) {
+
+        $API->DB->update( "users" )
+            ->set( "companyCategory_id", $requestData->companyCategory_id )
+            ->where( "id", $companyContact[ "contacts_id" ])
+            ->execute();
+
+    } // foreach .$companyContacts
+
+} // if. $requestData->companyCategory_id

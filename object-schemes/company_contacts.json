@@ -1,0 +1,45 @@
+{
+  "title": "Контакты компании",
+  "table": "company_contacts",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      },
+      "min_value": 0,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Контакты",
+      "article": "contacts_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "title",
+        "filters": {
+          "role_id": "13"
+        }
+      },
+      "use_in_commands": [
+        "add",
+        "get"
+      ]
+    }
+  ]
+}
