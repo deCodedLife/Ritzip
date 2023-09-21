@@ -1,12 +1,5 @@
 <?php
 
-$API->DB->update( "users" )
-    ->set( "last_name", $requestData->title )
-    ->where( [
-        "id" => $insertId
-    ] )
-    ->execute();
-
 /**
  * Подстановка контакта в компанию
  */

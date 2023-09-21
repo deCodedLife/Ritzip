@@ -1,1 +1,28 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Документы","title":["Документы"]},"components":[]}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Документы",
+        "title": [
+          "Документы"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "documents"
+      },
+      "components": []
+    }
+
+  ]
+}

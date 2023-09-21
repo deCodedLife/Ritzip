@@ -1,8 +1,9 @@
 {
-    "title": "Пункты",
-    "table": "points",
-    "is_trash": true,
-    "properties": [{
+  "title": "Пункты",
+  "table": "points",
+  "is_trash": true,
+  "properties": [
+    {
       "title": "Название",
       "article": "title",
       "data_type": "string",
@@ -10,9 +11,15 @@
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
-      "use_in_commands": ["add", "update"],
-      "require_in_commands": ["add"]
-    }, {
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
       "title": "Адрес",
       "article": "address",
       "data_type": "string",
@@ -20,8 +27,12 @@
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
-      "use_in_commands": ["add", "update"]
-    }, {
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
       "title": "Описание",
       "article": "description",
       "data_type": "string",
@@ -29,8 +40,12 @@
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
-      "use_in_commands": ["add", "update"]
-    }, {
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
       "title": "Координаты",
       "article": "coordinates",
       "data_type": "string",
@@ -38,6 +53,24 @@
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
-      "use_in_commands": ["add", "update"]
-    }]
-  }
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "points/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
+}

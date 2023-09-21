@@ -10,9 +10,9 @@ $formFieldsUpdate = [];
  */
 switch ( $requestData->sourceType ) {
 
-    case "client":
+    case "sourse_contact":
 
-        $formFieldsUpdate[ "client_id" ] = [
+        $formFieldsUpdate[ "sourse_contact" ] = [
             "is_visible" => true
         ];
 
@@ -29,7 +29,7 @@ switch ( $requestData->sourceType ) {
             "is_visible" => true,
         ];
 
-        $formFieldsUpdate[ "client_id" ] = [
+        $formFieldsUpdate[ "sourse_contact" ] = [
             "is_visible" => false,
             "value" => ""
         ];
@@ -37,5 +37,19 @@ switch ( $requestData->sourceType ) {
         break;
 
 } // switch. $requestData->purchaseType
+
+if ( $requestData->car_id ) {
+
+    $carDetail = $API->DB->from( "cars" )
+        ->where( "id", $requestData->car_id )
+        ->limit( 1 )
+        ->fetch();
+
+
+    $formFieldsUpdate[ "trailerType" ] = [
+        "value" => $carDetail[ "trailerType" ]
+    ];
+
+}
 
 $API->returnResponse( $formFieldsUpdate );

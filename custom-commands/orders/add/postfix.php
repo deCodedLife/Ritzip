@@ -88,3 +88,22 @@ $API->DB->update( "cars" )
     ->set( $driverUpdateFields )
     ->where( "id", $requestData->car_id )
     ->execute();
+
+if ( $requestData->sender_id ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_sender", "Y"  )
+        ->where( "id", $requestData->sender_id )
+        ->execute();
+
+}
+
+
+if ( $requestData->recipient_id  ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_recipient", "Y" )
+        ->where( "id", $requestData->recipient_id )
+        ->execute();
+
+}

@@ -358,11 +358,11 @@
         "update"
       ],
       "join": {
-        "connection_table": "companies_vehicles",
-        "donor_table": "vehicles",
+        "connection_table": "company_cars",
+        "donor_table": "cars",
         "property_article": "vin",
         "insert_property": "company_id",
-        "filter_property": "vehicle_id"
+        "filter_property": "car_id"
       }
     },
     {
@@ -401,6 +401,20 @@
         "filters": {
           "role_id": 13
         }
+      }
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "companies/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
       }
     }
   ]

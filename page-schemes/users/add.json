@@ -7,18 +7,18 @@
       "type": "header",
       "size": 4,
       "settings": {
-        "title": [ "Сотрудники" ],
-        "description": ""
+        "title": "Добавление",
+        "description": "Сотрудники - добавление"
       },
-      "components": {}
+      "components": []
     },
     {
-      "title": "Форма добавления сотрудника",
+      "title": "Форма",
       "type": "form",
       "size": 4,
       "settings": {
         "object": "users",
-        "command": "add",
+        "command": "update",
         "joined_property": "",
         "areas": [
           {
@@ -26,12 +26,20 @@
             "blocks": [
               {
                 "title": "Основное",
-                "fields": [ "first_name", "last_name", "patronymic" ]
+                "fields": [
+                  "first_name",
+                  "last_name",
+                  "patronymic"
+                ]
               },
               {
                 "title": "Документы",
                 "fields": [
-                  "license_number", "license_from", "license_to", "license_address", "address"
+                  "license_number",
+                  "license_from",
+                  "license_to",
+                  "license_address",
+                  "address"
                 ]
               }
             ]
@@ -41,12 +49,21 @@
             "blocks": [
               {
                 "title": "Доступ",
-                "fields": [ "role_id", "email", "password", "phone" ]
+                "fields": [
+                  "role_id",
+                  "position",
+                  "email",
+                  "password",
+                  "phone",
+                  "is_allTasks"
+                ]
               },
               {
                 "title": "Компания",
                 "fields": [
-                  "company_title", "company_ein", "swift"
+                  "company_title",
+                  "company_ein",
+                  "swift"
                 ]
               }
             ]
@@ -58,7 +75,7 @@
           {
             "type": "submit",
             "settings": {
-              "title": "Добавить",
+              "title": "Сохранить",
               "href": "users",
               "icon": "",
               "background": "dark"

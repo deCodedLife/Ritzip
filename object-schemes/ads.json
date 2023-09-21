@@ -2,45 +2,82 @@
   "title": "Объявления",
   "table": "ads",
   "is_trash": false,
-  "properties": [{
-    "title": "Название",
-    "article": "title",
-    "data_type": "string",
-    "field_type": "string",
-    "is_default_in_list": true,
-    "is_unique": false,
-    "is_autofill": true,
-    "use_in_commands": ["add", "update"],
-    "require_in_commands": ["add"]
-  }, {
-    "title": "Содержание",
-    "article": "body",
-    "data_type": "string",
-    "field_type": "editor",
-    "is_default_in_list": false,
-    "is_unique": false,
-    "is_autofill": true,
-    "use_in_commands": ["add", "update"],
-    "require_in_commands": ["add"]
-  }, {
-    "title": "Краткое содержание",
-    "article": "preview_body",
-    "data_type": "string",
-    "field_type": "textarea",
-    "is_default_in_list": false,
-    "is_unique": false,
-    "is_autofill": true,
-    "use_in_commands": ["add", "update"],
-    "require_in_commands": ["add"]
-  }, {
-    "title": "Изображение",
-    "article": "image",
-    "data_type": "image",
-    "field_type": "image",
-    "is_default_in_list": false,
-    "is_unique": false,
-    "is_autofill": true,
-    "use_in_commands": ["add", "update"],
-    "require_in_commands": []
-  }]
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Содержание",
+      "article": "body",
+      "data_type": "string",
+      "field_type": "editor",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Краткое содержание",
+      "article": "preview_body",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Изображение",
+      "article": "image",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "ads/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
 }

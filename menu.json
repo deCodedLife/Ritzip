@@ -8,22 +8,10 @@
       "icon": "garage"
     },
     {
-      "title": "Сотрудники",
-      "href": "employees",
-      "children": [],
-      "icon": "customers"
-    },
-    {
       "title": "Заказы",
       "href": "orders",
       "children": [],
       "icon": "delivery"
-    },
-    {
-      "title": "Клиенты",
-      "href": "clients",
-      "children": [],
-      "icon": "customers"
     },
     {
       "title": "Задачи",
@@ -42,6 +30,10 @@
         {
           "title": "Контакты",
           "href": "contacts"
+        },
+        {
+          "title": "Перевозимые авто",
+          "href": "vehicles"
         }
       ],
       "icon": "bullet-list"
@@ -68,12 +60,6 @@
       "icon": "reading"
     },
     {
-      "title": "Продажи",
-      "href": "sales",
-      "children": [],
-      "icon": "reading"
-    },
-    {
       "title": "Расходы",
       "href": "expenses",
       "children": [],
@@ -95,6 +81,10 @@
       "title": "Аналитика",
       "href": "reports",
       "children": [
+        {
+          "title": "Продажи",
+          "href": "sales"
+        },
         {
           "title": "Воронка продаж",
           "href": "report_sales_funnel"
@@ -143,52 +133,8 @@
       "href": "settings",
       "children": [
         {
-          "title": "Менеджеры",
-          "href": "managers"
-        },
-        {
-          "title": "Брокеры",
-          "href": "brokers"
-        },
-        {
-          "title": "Сотрудники ТО",
-          "href": "desk-stuff"
-        },
-        {
-          "title": "Диспетчеры",
-          "href": "dispatchers"
-        },
-        {
-          "title": "Инвесторы",
-          "href": "investors"
-        },
-        {
-          "title": "Директора",
-          "href": "directors"
-        },
-        {
-          "title": "Дилеры",
-          "href": "dealers"
-        },
-        {
-          "title": "Остальные пользователи",
-          "href": "custom_users"
-        },
-        {
-          "title": "Перевозимые авто",
-          "href": "vehicles",
-          "children": [],
-          "icon": "shipping-van"
-        },
-        {
-          "title": "Записи на ТО",
-          "href": "maintenanceAppointments",
-          "children": [],
-          "icon": "schedule"
-        },
-        {
-          "title": "Автосервисы",
-          "href": "autoservices"
+          "title": "Доска объявлений",
+          "href": "notice_board"
         },
         {
           "title": "Напоминания",
@@ -203,7 +149,7 @@
           "href": "orderPayStatuses"
         },
         {
-          "title": "Статусы заявок",
+          "title": "Статусы заказов",
           "href": "orderStatuses"
         },
         {

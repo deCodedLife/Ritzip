@@ -13,13 +13,14 @@ $roleDetail = $API->DB->from( "roles" )
 
 if ( $roleDetail ) {
 
-    $formFieldValues = [
-        "role_id" => (int) $roleDetail[ "id" ],
+    $formFieldValues[ "role_id" ] = [
+        "is_visible" => false,
+        "value" => (int) $roleDetail[ "id" ]
     ];
 
-} 
+}
 
 
-    
+
 
 

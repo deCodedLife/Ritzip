@@ -1,1 +1,76 @@
-{"title":"Примчания","table":"notes","is_trash":false,"properties":[{"title":"Название","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"list_donor":{"table":null},"use_in_commands":["update","remove","add"],"require_in_commands":["add"]},{"title":"Описание","article":"description","data_type":"string","field_type":"textarea","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["update","get","add"]},{"title":"Заявка","article":"order_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"list_donor":{"table":"orders","properties_title":"id"},"use_in_commands":["update","add","get"],"require_in_commands":["add"]}]}
+{
+  "title": "Примечания",
+  "table": "notes",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": null
+      },
+      "use_in_commands": [
+        "update",
+        "remove",
+        "add"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Описание",
+      "article": "description",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Заявка",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      },
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "notes/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
+}

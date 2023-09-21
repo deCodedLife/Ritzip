@@ -1,1 +1,139 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Заявки - Добавление","title":["Добавление заявки"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"orders","command":"add","areas":[{"size":2,"blocks":[{"title":"Общее","fields":["cost","employee_id","car_id","responsible_id","title","miles","placeCount","placeOccupied","status_id","contact_id","comment","source_id"]}]},{"size":2,"blocks":[{"title":"Отправка","fields":["sendingAddress","origin_zip","origin_coordinates","sender_id"]}]},{"size":2,"blocks":[{"title":"Получение","fields":["receivingAddress","destination_zip","destination_coordinates","certified_at","recipient_id"]},{"title":"Источник","fields":["sourceType","company_id","client_id"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"","href":"orders"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Заявки - Добавление",
+        "title": [
+          "Добавление заявки"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "orders",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Общее",
+                "fields": [
+                  "cost",
+                  "employee_id",
+                  "car_id",
+                  "responsible_id",
+                  "miles",
+                  "placeCount",
+                  "placeOccupied",
+                  "status_id",
+                  "pay_status",
+                  "comment",
+                  "source_id",
+                  "sourse_contact",
+                  "approximatelyTime",
+                  "trailerType"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Отправка",
+                "fields": [
+                  "sendingAddress",
+                  "sender_id"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Получение",
+                "fields": [
+                  "receivingAddress",
+                  "certified_at",
+                  "recipient_id"
+                ]
+              },
+              {
+                "title": "Источник",
+                "fields": [
+                  "sourceType",
+                  "company_id",
+                  "sourse_contact"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "orders"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "title": "Добавить ТС на отправку",
+              "background": "dark",
+              "page": "vehicles/add"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "title": "Добавить получателя",
+              "background": "dark",
+              "page": "contacts/add"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "title": "Добавить отправителя",
+              "background": "dark",
+              "page": "contacts/add"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "title": "Добавить контакт",
+              "background": "dark",
+              "page": "contacts/add"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "title": "Добавить компанию",
+              "background": "dark",
+              "page": "companies/add"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

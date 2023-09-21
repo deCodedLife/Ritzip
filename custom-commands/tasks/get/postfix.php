@@ -1,87 +1,116 @@
 <?php
 
-/**
- * Игнорирование повторяющихся элементов многомерного массива по ключу
- *
- * @param  $array  array   Входящий массив
- * @param  $key    string  Ключ, по которому сверяются элементы
- *
- * @return array
- */
-function arrayUniqueByKey ( $array, $key ) {
 
-    global $API;
+if ( $requestData->is_repeatable == "Y" ) {
 
-    $filteredArray = [];
-    $checkedKeys = [];
-    $i = 0;
+    $return = [];
 
-    foreach( $array as $arrayItem ) {
+    $tasks = mysqli_query(
+        $API->DB_connection,
+        "SELECT * FROM `tasks` WHERE is_active = 'Y' GROUP BY title HAVING COUNT(title) > 1;"
+    );
 
-        if ( !in_array( $arrayItem[ $key ], $checkedKeys ) ) {
-            $checkedKeys[ $i ] = $arrayItem[ $key ];
-            $filteredArray[ $i ] = $arrayItem;
-        }
+    foreach ( $tasks as $task ){
 
-        $i++;
+        $tasksUpdated = $API->DB->from( "tasks" )
+            ->where( "title", $task[ "title" ] );
 
-    } // foreach. $array
+       foreach ( $tasksUpdated as $taskUpdated ) {
 
-    return $filteredArray;
+           $employee = $API->DB->from( "users" )
+               ->where( "id", $taskUpdated[ "employee_id" ] )
+               ->limit( 1 )
+               ->fetch( );
 
-} // function. arrayUniqueByKey
+           $author = $API->DB->from( "users" )
+               ->where( "id", $taskUpdated[ "author_id" ] )
+               ->limit( 1 )
+               ->fetch( );
+           $priorities = [
+                [
+                    "value" =>"low",
+                    "title" =>"Низкий"
+                ],
+                [
+                    "value" => "middle",
+                    "title" => "Средний"
+                ],
+                [
+                    "value" => "height",
+                    "title" => "Высокий"
+                ],
+                [
+                    "value" => "urgent",
+                    "title" => "Неотложный"
+                ]
+           ];
+
+           $statuses = [
+               [
+                   "value" =>  "not_read",
+                   "title" =>  "Не начата"
+               ],
+               [
+                   "value" => "processing",
+                   "title" => "В процессе"
+               ],
+               [
+                   "value" => "read",
+                   "title" => "В ожидании ответа"
+               ],
+               [
+                   "value" => "completed",
+                   "title" => "Завершена"
+               ]
+           ];
+
+           foreach ( $statuses as $status ) {
+
+               if ( $status[ "value" ] == $taskUpdated[ "status" ] ) $taskUpdated[ "status_title" ] = $status[ "title" ];
+
+           }
+
+           foreach ( $priorities as $priority ) {
+
+               if ( $priority[ "value" ] == $taskUpdated[ "priority" ] ) $taskUpdated[ "priority_title" ] = $priority[ "title" ];
 
 
-if (
-    ( $requestData->context->block === "list" ) &&
-    ( $requestData->context->page !== "drivers" ) &&
-    ( $requestData->context->page !== "contacts" ) &&
-    ( $requestData->context->page !== "cars" ) &&
-    ( $requestData->context->page !== "companies" ) &&
-    ( $requestData->context->page !== "clients" )
-) {
+           }
 
-    /**
-     * Получение списка задач, где текущий пользователь является Автором
-     */
-    $authorTasks = $API->sendRequest( "tasks", "get", [ "author_id" => (int) $API::$userDetail->id ] );
+           $taskUpdated = [
+               "title" => $taskUpdated[ "title" ],
+                "employee_id" => [
+                    "title" => $employee[ "last_name" ],
+                    "value" => $taskUpdated[ "employee_id" ]
+                ],
+                "author_id" => [
+                    "title" => $author[ "last_name" ],
+                    "value" => $taskUpdated[ "author_id" ]
+                ],
+                "description" => $taskUpdated[ "description" ],
+                "status" => [
+                    "title" => $taskUpdated[ "status_title" ],
+                    "value" => $taskUpdated[ "status" ]
+                ],
+                "priority" => [
+                    "title" => $taskUpdated[ "priority_title" ],
+                    "value" => $taskUpdated[ "priority" ]
+                ],
+                "deadline" => $taskUpdated[ "deadline" ]
+           ];
+           $return[] = $taskUpdated;
 
-    /**
-     * Получение списка задач, где текущий пользователь является Автором
-     */
-    $everyoneTasks = $API->DB->from( "tasks" )
-        ->where( [
-            "is_active" => "Y",
-            "is_visible_everyone" => "Y"
-        ] );
+       }
 
-    /**
-     * Добавление поставленных задач в список
-     */
-    foreach ( $authorTasks as $authorTask )
-        $response[ "data" ][] = (array) $authorTask;
+    }
 
-    /**
-     * Добавление общих задач в список
-     */
-    foreach ( $everyoneTasks as $everyoneTask )
-        $response[ "data" ][] = (array) $everyoneTask;
+    $response[ "data" ] = $return;
 
+}
 
+$response[ "detail" ] = [
 
-    /**
-     * Фильтр дубликатов
-     */
-    $filteredTasks = arrayUniqueByKey( $response[ "data" ], "id" );
+    "pages_count" => ceil(count($response[ "data" ]) / $requestData->limit),
+    "rows_count" => count($response[ "data" ])
 
-
-    /**
-     * Перевод задач в массив
-     */
-
-    $response[ "data" ] = [];
-
-    foreach ( $filteredTasks as $filteredTask )
-        $response[ "data" ][] = (array) $filteredTask;
-
-} // if. $requestData->context === "list"
+];

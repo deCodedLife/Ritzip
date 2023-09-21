@@ -6,7 +6,7 @@
     "type": "header",
     "size": 4,
     "settings": {
-      "description": "Статусы заявок - Редактирование",
+      "description": "Статусы заказов - Редактирование",
       "title": [":title"]
     },
     "components": []

@@ -128,7 +128,8 @@
       "is_autofill": true,
       "use_in_commands": [
         "add",
-        "update"
+        "update",
+        "get"
       ],
       "require_in_commands": [],
       "custom_list": [
@@ -192,17 +193,9 @@
       "is_autofill": true,
       "use_in_commands": [
         "add",
-        "update"
+        "update",
+        "get"
       ]
-    },
-    {
-      "title": "Дата и время создания",
-      "article": "created_at",
-      "data_type": "datetime",
-      "field_type": "datetime",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true
     },
     {
       "title": "Привязать к ",
@@ -217,13 +210,10 @@
       "use_in_commands": [
         "update",
         "add",
-        "hook"
+        "hook",
+        "get"
       ],
       "custom_list": [
-        {
-          "title": "Клиент",
-          "value": "client"
-        },
         {
           "title": "Контакт",
           "value": "contact"
@@ -474,6 +464,118 @@
         "update"
       ],
       "require_in_commands": []
+    },
+    {
+      "title": "Дата начала",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Сегодняшние задачи",
+      "article": "is_today",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Предстоящие задачи",
+      "article": "is_future",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Просроченные задачи",
+      "article": "is_overdue",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Задачи закрепленные за мной",
+      "article": "is_assigned",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Задачи, которые я отслеживаю",
+      "article": "is_observer",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Не назначены",
+      "article": "is_notAssigned",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Повторяющиеся",
+      "article": "is_repeatable",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "tasks/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
     }
   ]
 }

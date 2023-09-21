@@ -19,3 +19,20 @@ if ( ( $requestData->context->form == "companies" ) && $requestData->context->ro
     $formFieldValues[ "driver_id" ][ "value" ] = $requestData->context->row_id;
 
 }
+
+/**
+ * Автоподстановка водителя
+ */
+if ( ( $requestData->context->form == "cars" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "vehicles_id" ] = $requestData->context->row_id;
+
+}
+
+
+/**
+ * Автоподстановка ответственного
+ */
+
+$formFieldValues[ "user_id" ][ "value" ] = $API::$userDetail->id;
+

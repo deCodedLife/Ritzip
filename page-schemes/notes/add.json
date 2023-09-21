@@ -1,1 +1,42 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Форма","type":"form","size":4,"settings":{"object":"notes","command":"add","areas":[{"size":4,"blocks":[{"title":"","fields":["title","description","order_id"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","href":"notes"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "notes",
+        "command": "add",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "title",
+                  "description",
+                  "order_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "href": "notes"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

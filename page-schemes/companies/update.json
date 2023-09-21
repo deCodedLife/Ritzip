@@ -128,6 +128,19 @@
                     }
                   },
                   {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить транспортное средство",
+                      "background": "dark",
+                      "icon": "",
+                      "page": "cars/add",
+                      "context": {
+                        "form": "companies",
+                        "row_id": ":id"
+                      }
+                    }
+                  },
+                  {
                     "type": "submit",
                     "settings": {
                       "title": "Сохранить",

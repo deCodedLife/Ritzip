@@ -15,3 +15,4 @@ if ( ( $requestData->context->form == "orders" ) && $requestData->context->row_i
  $formFieldValues[ "employee_id" ] = $requestData->context->row_id;
 
 
+$formFieldValues[ "responsible_id" ][ "value" ] = $API::$userDetail->id;

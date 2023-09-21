@@ -53,5 +53,19 @@
             ],
             "require_in_commands": []
         }
+    ],
+    "action_buttons": [
+        {
+            "type": "href",
+            "settings": {
+                "title": "Изменить",
+                "page": [
+                    "carFiles/update/",
+                    ":id"
+                ],
+                "icon": "gear",
+                "background": "dark"
+            }
+        }
     ]
 }

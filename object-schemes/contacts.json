@@ -39,12 +39,26 @@
       "article": "first_name",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "add",
         "update"
+      ]
+    },
+    {
+      "title": "Фамилия",
+      "article": "last_name",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
       ]
     },
     {
@@ -177,10 +191,12 @@
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
+      "is_hook": true,
       "use_in_commands": [
         "add",
         "update",
-        "get"
+        "get",
+        "hook"
       ],
       "require_in_commands": [],
       "list_donor": {
@@ -462,15 +478,12 @@
       "article": "title",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": true,
-      "is_autofill": true,
+      "is_autofill": false,
       "use_in_commands": [
         "add",
         "update"
-      ],
-      "require_in_commands": [
-        "add"
       ]
     },
     {
@@ -496,10 +509,13 @@
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "get",
+        "update",
+        "add",
+        "hook"
       ],
-      "is_hook": false,
       "is_visible": true,
+      "is_hook": true,
       "is_disabled": false
     },
     {
@@ -730,6 +746,66 @@
         "update",
         "get"
       ]
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Отправитель",
+      "article": "is_sender",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Получатель",
+      "article": "is_recipient",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "contacts/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
     }
   ]
 }

@@ -28,3 +28,4 @@ if ( $roleDetail ) {
 
 }
 
+$formFieldValues[ "user_id" ][ "value" ] = $API::$userDetail->id;

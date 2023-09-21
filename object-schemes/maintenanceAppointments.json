@@ -126,5 +126,19 @@
     "is_unique": false,
     "is_autofill": false,
     "use_in_commands": []
-  }]
+  }],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "maintenanceSchedules/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
 }

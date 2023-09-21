@@ -21,3 +21,10 @@ if ( $requestData->companyCategory_id || $requestData->contacts_id ) {
     } // foreach .$companyContacts
 
 } // if. $requestData->companyCategory_id
+
+
+if ($requestData->driver_id) $API->addLog([
+    "table_name" => "orders",
+    "description" => "Привязана компания: " . $requestData->title,
+    "row_id" => $requestData->driver_id
+], $requestData);

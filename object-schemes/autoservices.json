@@ -39,5 +39,19 @@
     "is_unique": false,
     "is_autofill": true,
     "use_in_commands": ["add", "update"]
-  }]
+  }],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "autoservices/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
 }

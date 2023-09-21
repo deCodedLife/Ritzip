@@ -314,3 +314,22 @@ if ( $requestData->status_id ) {
         ->execute();
 
 } // if. $requestData->status_id
+
+if ( $requestData->sender_id ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_sender", "N"  )
+        ->where( "id", $previousValue[ "sender_id" ] )
+        ->execute();
+
+}
+
+
+if ( $requestData->recipient_id  ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_recipient", "N"  )
+        ->where( "id", $previousValue[ "recipient_id" ] )
+        ->execute();
+
+}

@@ -553,7 +553,7 @@
       ]
     },
     {
-      "title": "Ответственный (менеджер)",
+      "title": "Ответственный",
       "article": "responsible_id",
       "data_type": "integer",
       "field_type": "list",
@@ -628,6 +628,20 @@
         "get",
         "add"
       ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "cars/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
     }
   ]
 }

@@ -61,7 +61,6 @@
                         "fields": [
                           "first_name",
                           "last_name",
-                          "patronymic",
                           "company_id",
                           "responsible_id",
                           "countOrder",
@@ -75,7 +74,8 @@
                           "license_from",
                           "license_to",
                           "license_address",
-                          "address"
+                          "address",
+                          "licensePhoto"
                         ]
                       }
                     ]
@@ -112,6 +112,7 @@
                           "accountNumber",
                           "requestersNameAddress",
                           "insuranceNumber",
+                          "insurancePhoto",
                           "idNumberEmployer"
                         ]
                       }
@@ -349,6 +350,26 @@
         {
           "title": "Документы",
           "body": []
+        },
+        {
+          "title": "Расходы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список расходов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "filters": [
+                  {
+                    "property": "driver_id",
+                    "value": ":id"
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Файлы",

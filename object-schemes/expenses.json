@@ -50,7 +50,8 @@
       "use_in_commands": [
         "add",
         "update",
-        "hook"
+        "hook",
+        "get"
       ],
       "list_donor": {
         "table": "orders",
@@ -406,6 +407,20 @@
         "get"
       ],
       "require_in_commands": []
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "expenses/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
     }
   ]
 }

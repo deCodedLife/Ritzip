@@ -19,15 +19,122 @@
       "type": "list",
       "size": 4,
       "settings": {
-        "object": "tasks",
-        "filters": [
-          {
-            "property": "employee_id",
-            "value": ":id"
-          }
-        ]
+        "object": "tasks"
       },
       "components": {
+        "filters": [
+          {
+            "title": "Ответственный",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "object": "users",
+              "recipient_property": "employee_id",
+              "donor_object": "users",
+              "donor_property_title": "last_name",
+              "donor_property_value": "id"
+            }
+          },
+          {
+            "title": "Статус",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "status",
+              "list": [
+                {
+                  "value": "not_read",
+                  "title": "Не начата"
+                },
+                {
+                  "value": "processing",
+                  "title": "В процессе"
+                },
+                {
+                  "value": "read",
+                  "title": "В ожидании ответа"
+                },
+                {
+                  "value": "completed",
+                  "title": "Завершена"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Сегодняшние задачи",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_today"
+            }
+          },
+          {
+            "title": "Предстоящие задачи",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_future"
+            }
+          },
+          {
+            "title": "Просроченные задачи",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_overdue"
+            }
+          },
+          {
+            "title": "Задачи закрепленные за мной",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_assigned"
+            }
+          },
+          {
+            "title": "Задачи, которые я отслеживаю",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_observer"
+            }
+          },
+          {
+            "title": "Не назначены",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_notAssigned"
+            }
+          },
+          {
+            "title": "Повторяющиеся",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_repeatable"
+            }
+          }
+        ],
         "buttons": [
           {
             "type": "href",

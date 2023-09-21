@@ -10,6 +10,7 @@
  */
 $returnReport = [];
 
+
 /**
  * Получение заказа
  */
@@ -18,10 +19,25 @@ $order = $API->DB->from( "orders" )
     ->limit( 1 )
     ->fetch();
 
+$company = $API->DB->from( "companies" )
+    ->where( "id", $order[ "company_id" ] )
+    ->limit( 1 )
+    ->fetch();
+
+$sender = $API->DB->from( "users" )
+    ->where( "id", $order[ "sender_id" ] )
+    ->limit( 1 )
+    ->fetch();
+
+$recipient = $API->DB->from( "users" )
+    ->where( "id", $order[ "recipient_id" ] )
+    ->limit( 1 )
+    ->fetch();
 
 $returnReport[] = [
     "value" => $order["placeCount"],
     "description" => "Мест ( всего )",
+    "size" => "2",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -32,15 +48,7 @@ $returnReport[] = [
 $returnReport[] = [
     "value" => $order["placeOccupied"],
     "description" => "Мест ( занято )",
-    "icon" => "",
-    "prefix" => "",
-    "postfix" => [],
-    "background" => "info",
-    "detail" => []
-];
-$returnReport[] = [
-    "value" => $order["placeFree"],
-    "description" => "Мест ( Свободно )",
+    "size" => "1",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -48,5 +56,76 @@ $returnReport[] = [
     "detail" => []
 ];
 
+$returnReport[] = [
+    "value" => $order["placeFree"],
+    "description" => "Мест ( Свободно )",
+    "size" => "1",
+    "icon" => "",
+    "prefix" => "",
+    "postfix" => [],
+    "background" => "info",
+    "detail" => []
+];
+
+if ( $company ) {
+
+    $phoneFormat = "+" . sprintf("(%s) %s-%s",
+            substr($company [ "phone" ], 0, 3),
+            substr($company [ "phone" ], 2, 3),
+            substr($company [ "phone" ], 5, 4),
+        );
+
+    $returnReport[] = [
+        "value" => $company["title"] . ", " . $sender["email"] . ", " . $phoneFormat,
+        "description" => "Компания",
+        "size" => "4",
+        "icon" => "",
+        "prefix" => "",
+        "postfix" => [],
+        "background" => "info",
+        "detail" => []
+    ];
+
+}
+
+if ( $sender ) {
+
+    $phoneFormat = "+" . sprintf("(%s) %s-%s",
+            substr($recipient [ "phone" ], 0, 3),
+            substr($recipient [ "phone" ], 2, 3),
+            substr($recipient [ "phone" ], 5, 4),
+        );
+
+    $returnReport[] = [
+        "value" => $sender["first_name"] . " " . $sender["first_name"] . " " . $sender["patronymic"] . ", " . $sender["email"] . ", " . $phoneFormat,
+        "description" => "Отправитель",
+        "size" => "2",
+        "icon" => "",
+        "prefix" => "",
+        "postfix" => [],
+        "background" => "info",
+        "detail" => []
+    ];
+}
+if ( $recipient ) {
+
+    $phoneFormat = "+" . sprintf("(%s) %s-%s",
+            substr($recipient [ "phone" ], 0, 3),
+            substr($recipient [ "phone" ], 2, 3),
+            substr($recipient [ "phone" ], 5, 4),
+        );
+
+    $returnReport[] = [
+        "value" => $recipient[ "first_name" ] . " " .  $recipient[ "first_name" ] . " " .  $recipient[ "patronymic" ] . ", " .  $recipient[ "email" ]  . ", " .  $phoneFormat ,
+        "description" => "Получатель",
+        "size" => "2",
+        "icon" => "",
+        "prefix" => "",
+        "postfix" => [],
+        "background" => "info",
+        "detail" => []
+    ];
+
+}
 
 $API->returnResponse( $returnReport );

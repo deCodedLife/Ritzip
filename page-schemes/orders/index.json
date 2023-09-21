@@ -13,7 +13,7 @@
             "buttons": [{
                 "type": "href",
                 "settings": {
-                    "title": "Добавить заявку",
+                    "title": "Добавить заказ",
                     "background": "dark",
                     "page": "orders/add"
                 }

@@ -12,5 +12,19 @@
     "is_autofill": true,
     "use_in_commands": ["add", "update"],
     "require_in_commands": ["add"]
-  }]
+  }],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "companyCategories/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
 }

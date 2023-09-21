@@ -82,12 +82,7 @@
                           "coordinates",
                           "last_maintenance"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
                         "title": "Характеристики",
                         "fields": [
@@ -108,24 +103,14 @@
                           "trailerRegPhoto",
                           "trailerRegNumber"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
                         "title": "Документ регистрации авто",
                         "fields": [
                           "avtoRegPhoto",
                           "avtoRegNumber"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
                         "title": "Фото",
                         "fields": [
@@ -134,12 +119,7 @@
                           "avtoPhotoRight",
                           "avtoPhotoBack"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
                         "title": "Параметры прицепа",
                         "fields": [
@@ -149,14 +129,9 @@
                           "trailerWeight",
                           "trailerType"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
-                        "title": "Параметры прицепа",
+                        "title": "Фото прицепа",
                         "fields": [
                           "trailerPhotoLeft",
                           "trailerPhotoRight"
@@ -188,30 +163,21 @@
                         "row_id": ":id"
                       }
                     }
+                  },
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить компанию",
+                      "background": "dark",
+                      "page": "companies/add",
+                      "context": {
+                        "form": "cars",
+                        "row_id": ":id"
+                      }
+                    }
                   }
                 ]
               }
-            }
-          ]
-        },
-        {
-          "title": "Проведенные ТО",
-          "is_counter": true,
-          "body": [
-            {
-              "title": "Проведенные ТО",
-              "type": "list",
-              "size": 4,
-              "settings": {
-                "object": "maintenanceAppointments",
-                "filters": [
-                  {
-                    "property": "car_id",
-                    "value": ":id"
-                  }
-                ]
-              },
-              "components": []
             }
           ]
         },
@@ -329,6 +295,26 @@
         {
           "title": "Документы",
           "body": []
+        },
+        {
+          "title": "Расходы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список расходов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "filters": [
+                  {
+                    "property": "car_id",
+                    "value": ":id"
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Файлы",
