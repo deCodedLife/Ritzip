@@ -28,24 +28,11 @@
               {
                 "title": "Основное",
                 "fields": [
+                  "title",
                   "logo",
-                  "title"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
                   "companyCategory_id",
-                  "contacts_id",
-                  "main_contact_id",
-                  "user_id"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
-                  "driver_id",
-                  "vehicles_id"
+                  "state_id",
+                  "zip"
                 ]
               }
             ]
@@ -54,30 +41,19 @@
             "size": 2,
             "blocks": [
               {
-                "title": "Адрес",
-                "fields": [
-                  "state_id",
-                  "zip"
-                ]
-              },
-              {
                 "title": "",
                 "fields": [
-                  "credentials",
-                  "tax_id_number"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
+                  "sender_id",
+                  "recipient_id",
                   "phone",
-                  "email"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
-                  "website"
+                  "email",
+                  "website",
+                  "contacts_id",
+                  "user_id",
+                  "driver_id",
+                  "vehicles_id",
+                  "note",
+                  "paymentType"
                 ]
               }
             ]
@@ -86,10 +62,15 @@
             "size": 4,
             "blocks": [
               {
-                "title": "",
+                "title": "Реквизиты",
                 "fields": [
-                  "note",
-                  "description"
+                  "w9",
+                  "coi",
+                  "mca",
+                  "dot",
+                  "bankTitle",
+                  "bankCode",
+                  "bankNumber"
                 ]
               }
             ]

@@ -114,3 +114,5 @@ $response[ "detail" ] = [
     "rows_count" => count($response[ "data" ])
 
 ];
+
+$response[ "data" ] = array_slice($response[ "data" ], $requestData->limit * $requestData->page - $requestData->limit, $requestData->limit);

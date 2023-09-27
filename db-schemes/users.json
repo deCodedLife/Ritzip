@@ -177,8 +177,15 @@
       "is_required": "N"
     },
     {
-      "title": "Мили",
+      "title": "Мили (Заказы)",
       "article": "miles",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Мили",
+      "article": "milesAll",
       "type": "float",
       "default": null,
       "is_required": "N"
@@ -447,6 +454,13 @@
       "article": "is_sender",
       "type": "char(1)",
       "default": "N",
+      "is_required": "N"
+    },
+    {
+      "title": "Должность",
+      "article": "post",
+      "type": "varchar(255)",
+      "default": null,
       "is_required": "N"
     }
   ]

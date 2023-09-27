@@ -76,8 +76,8 @@ if ( $company ) {
         );
 
     $returnReport[] = [
-        "value" => $company["title"] . ", " . $sender["email"] . ", " . $phoneFormat,
-        "description" => "Компания",
+        "value" => "Компания",
+        "description" => $company["title"] . ", " . $sender["email"] . ", " . $phoneFormat,
         "size" => "4",
         "icon" => "",
         "prefix" => "",
@@ -97,8 +97,8 @@ if ( $sender ) {
         );
 
     $returnReport[] = [
-        "value" => $sender["first_name"] . " " . $sender["first_name"] . " " . $sender["patronymic"] . ", " . $sender["email"] . ", " . $phoneFormat,
-        "description" => "Отправитель",
+        "value" => "Отправитель",
+        "description" => $sender["first_name"] . " " . $sender["first_name"] . " " . $sender["patronymic"] . ", " . $sender["email"] . ", " . $phoneFormat,
         "size" => "2",
         "icon" => "",
         "prefix" => "",
@@ -116,8 +116,8 @@ if ( $recipient ) {
         );
 
     $returnReport[] = [
-        "value" => $recipient[ "first_name" ] . " " .  $recipient[ "first_name" ] . " " .  $recipient[ "patronymic" ] . ", " .  $recipient[ "email" ]  . ", " .  $phoneFormat ,
-        "description" => "Получатель",
+        "value" => "Получатель",
+        "description" => $recipient[ "first_name" ] . " " .  $recipient[ "first_name" ] . " " .  $recipient[ "patronymic" ] . ", " .  $recipient[ "email" ]  . ", " .  $phoneFormat,
         "size" => "2",
         "icon" => "",
         "prefix" => "",

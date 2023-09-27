@@ -4,8 +4,8 @@
   "rows_key": "article",
   "rows": [
     {
-      "title": "Менеджеры",
-      "article": "managers",
+      "title": "Сотрудники",
+      "article": "employees",
       "is_system": "Y"
     },
     {
@@ -14,38 +14,8 @@
       "is_system": "Y"
     },
     {
-      "title": "Клиенты",
-      "article": "clients",
-      "is_system": "Y"
-    },
-    {
-      "title": "Сотрудники ТО",
-      "article": "desk-stuff",
-      "is_system": "Y"
-    },
-    {
-      "title": "Диспетчеры",
-      "article": "dispatchers",
-      "is_system": "Y"
-    },
-    {
-      "title": "Брокеры",
-      "article": "brokers",
-      "is_system": "Y"
-    },
-    {
-      "title": "Инвесторы",
-      "article": "investors",
-      "is_system": "Y"
-    },
-    {
-      "title": "Клиенты",
-      "article": "clients",
-      "is_system": "Y"
-    },
-    {
-      "title": "Дилеры",
-      "article": "dealers",
+      "title": "Контакты",
+      "article": "contacts",
       "is_system": "Y"
     }
   ]

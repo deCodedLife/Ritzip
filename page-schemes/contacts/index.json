@@ -90,7 +90,7 @@
                     },
                     {
                         "title": "Кол-во сделок (от)",
-                        "type": "orders_count_from",
+                        "type": "integer",
                         "required_permissions": [],
                         "required_modules": [],
                         "settings": {
@@ -100,7 +100,7 @@
                     },
                     {
                         "title": "Кол-во сделок (до)",
-                        "type": "orders_count_to",
+                        "type": "integer",
                         "required_permissions": [],
                         "required_modules": [],
                         "settings": {
@@ -110,7 +110,7 @@
                     },
                     {
                         "title": "Сумма сделок (от)",
-                        "type": "orders_cost_from",
+                        "type": "integer",
                         "required_permissions": [],
                         "required_modules": [],
                         "settings": {
@@ -120,7 +120,7 @@
                     },
                     {
                         "title": "Сумма сделок (до)",
-                        "type": "orders_cost_to",
+                        "type": "integer",
                         "required_permissions": [],
                         "required_modules": [],
                         "settings": {

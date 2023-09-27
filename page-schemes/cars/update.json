@@ -51,68 +51,16 @@
                       {
                         "title": "Основное",
                         "fields": [
-                          "photo",
-                          "vin",
-                          "license_plate",
-                          "license_plate_state",
-                          "trailer_license_plate",
-                          "trailer_license_plate_state",
-                          "employees_id",
-                          "address",
-                          "tax_id_number",
-                          "company_id",
-                          "positionCount",
-                          "responsible_id",
-                          "driver_id",
-                          "miles",
-                          "countOrder",
-                          "sumOrder"
-                        ]
-                      },
-                      {
-                        "title": "",
-                        "fields": [
-                          "insurance",
-                          "owner_id"
-                        ]
-                      },
-                      {
-                        "title": "Дополнительно",
-                        "fields": [
-                          "coordinates",
-                          "last_maintenance"
-                        ]
-                      },
-                      {
-                        "title": "Характеристики",
-                        "fields": [
-                          "color",
                           "brand",
                           "model",
-                          "mileage"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
-                      {
-                        "title": "Документ регистрации прицепа",
-                        "fields": [
-                          "trailerRegPhoto",
-                          "trailerRegNumber"
+                          "vin",
+                          "address",
+                          "mileage",
+                          "color"
                         ]
                       },
                       {
-                        "title": "Документ регистрации авто",
-                        "fields": [
-                          "avtoRegPhoto",
-                          "avtoRegNumber"
-                        ]
-                      },
-                      {
-                        "title": "Фото",
+                        "title": "Фото авто",
                         "fields": [
                           "avtoPhotoFront",
                           "avtoPhotoLeft",
@@ -121,20 +69,64 @@
                         ]
                       },
                       {
-                        "title": "Параметры прицепа",
+                        "title": "",
                         "fields": [
-                          "trailerLength",
-                          "trailerHeight",
-                          "trailerWidth",
-                          "trailerWeight",
-                          "trailerType"
+                          "license_plate",
+                          "license_plate_state",
+                          "insurance"
                         ]
                       },
                       {
-                        "title": "Фото прицепа",
+                        "title": "Прицеп",
                         "fields": [
                           "trailerPhotoLeft",
-                          "trailerPhotoRight"
+                          "trailerPhotoRight",
+                          "tax_id_number"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Документ регистрации авто",
+                        "fields": [
+                          "avtoRegPhoto",
+                          "avtoRegNumber"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "company_id"
+                        ]
+                      },
+                      {
+                        "title": "Документ регистрации прицепа",
+                        "fields": [
+                          "trailerRegPhoto",
+                          "trailerRegNumber"
+                        ]
+                      },
+                      {
+                        "title": "Параметры прицепа",
+                        "fields": [
+                          "trailerType",
+                          "positionCount",
+                          "trailerLength",
+                          "trailerHeight",
+                          "trailerWidth",
+                          "trailerWeight"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "responsible_id",
+                          "note",
+                          "miles",
+                          "milesAll"
                         ]
                       }
                     ]
@@ -155,6 +147,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "driver_id",
                       "title": "Привязать нового водителя",
                       "background": "dark",
                       "page": "drivers/add",
@@ -167,6 +160,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "company_id",
                       "title": "Добавить компанию",
                       "background": "dark",
                       "page": "companies/add",
@@ -310,6 +304,22 @@
                   {
                     "property": "car_id",
                     "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "carsExpenses",
+                        "row_id": ":id"
+                      }
+                    }
                   }
                 ]
               }

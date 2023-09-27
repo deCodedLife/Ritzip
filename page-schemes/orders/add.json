@@ -28,39 +28,31 @@
               {
                 "title": "Общее",
                 "fields": [
-                  "cost",
-                  "employee_id",
-                  "car_id",
-                  "responsible_id",
-                  "miles",
-                  "placeCount",
-                  "placeOccupied",
                   "status_id",
-                  "pay_status",
-                  "comment",
-                  "source_id",
-                  "sourse_contact",
+                  "created_at",
+                  "certified_at",
                   "approximatelyTime",
-                  "trailerType"
+                  "sendingAddress",
+                  "receivingAddress",
+                  "miles"
                 ]
-              }
-            ]
-          },
-          {
-            "size": 2,
-            "blocks": [
+              },
+              {
+                "title": "Источник",
+                "fields": [
+                  "source_id",
+                  "sourceType",
+                  "company_id",
+                  "sourse_contact"
+                ]
+              },
               {
                 "title": "Отправка",
                 "fields": [
                   "sendingAddress",
                   "sender_id"
                 ]
-              }
-            ]
-          },
-          {
-            "size": 2,
-            "blocks": [
+              },
               {
                 "title": "Получение",
                 "fields": [
@@ -68,13 +60,23 @@
                   "certified_at",
                   "recipient_id"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
               {
-                "title": "Источник",
+                "title": "",
                 "fields": [
-                  "sourceType",
-                  "company_id",
-                  "sourse_contact"
+                  "responsible_id",
+                  "employee_id",
+                  "recipient_id",
+                  "car_id",
+                  "trailerType",
+                  "cost",
+                  "pay_status",
+                  "comment"
                 ]
               }
             ]
@@ -103,6 +105,7 @@
           {
             "type": "modal",
             "settings": {
+              "field_place": "recipient_id",
               "title": "Добавить получателя",
               "background": "dark",
               "page": "contacts/add"
@@ -111,6 +114,7 @@
           {
             "type": "modal",
             "settings": {
+              "field_place": "sender_id",
               "title": "Добавить отправителя",
               "background": "dark",
               "page": "contacts/add"
@@ -119,6 +123,7 @@
           {
             "type": "modal",
             "settings": {
+              "field_place": "contact_id",
               "title": "Добавить контакт",
               "background": "dark",
               "page": "contacts/add"
@@ -127,6 +132,7 @@
           {
             "type": "modal",
             "settings": {
+              "field_place": "company_id",
               "title": "Добавить компанию",
               "background": "dark",
               "page": "companies/add"

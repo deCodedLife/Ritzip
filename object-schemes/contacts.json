@@ -191,12 +191,11 @@
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
-      "is_hook": true,
+      "is_hook": false,
       "use_in_commands": [
         "add",
         "update",
-        "get",
-        "hook"
+        "get"
       ],
       "require_in_commands": [],
       "list_donor": {
@@ -212,7 +211,7 @@
       }
     },
     {
-      "title": "Ответственный (менеджер)",
+      "title": "Ответственный",
       "article": "responsible_id",
       "data_type": "integer",
       "field_type": "list",
@@ -228,7 +227,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id": 21
         }
       }
     },
@@ -503,26 +502,26 @@
     {
       "title": "Категория",
       "article": "companyCategory_id",
-      "data_type": "array",
-      "field_type": "info_strings",
+      "data_type": "integer",
+      "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": false,
+      "is_autofill": true,
       "use_in_commands": [
-        "get",
-        "update",
         "add",
-        "hook"
+        "update",
+        "get"
       ],
-      "is_visible": true,
-      "is_hook": true,
-      "is_disabled": false
+      "list_donor": {
+        "table": "companyCategories",
+        "properties_title": "title"
+      }
     },
     {
       "title": "Адрес",
       "article": "address",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "dadata_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -792,6 +791,56 @@
         "update",
         "add"
       ]
+    },
+    {
+      "title": "Кол-во сделок (от)",
+      "article": "orders_count_from",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Кол-во сделок (до)",
+      "article": "orders_count_to",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Сумма сделок (от)",
+      "article": "orders_count_from",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Сумма сделок (до)",
+      "article": "orders_count_to",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "is_variable": false,
+      "is_hook": false
     }
   ],
   "action_buttons": [

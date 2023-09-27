@@ -133,6 +133,16 @@
               "is_search": false,
               "recipient_property": "is_repeatable"
             }
+          },
+          {
+            "title": "Вывести все задачи",
+            "type": "checkbox",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "is_all"
+            }
           }
         ],
         "buttons": [

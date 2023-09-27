@@ -16,6 +16,13 @@
       "is_required": "N"
     },
     {
+      "title": "Примечание",
+      "article": "note",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": false
+    },
+    {
       "title": "VIN номер",
       "article": "vin",
       "type": "varchar(255)",
@@ -268,8 +275,15 @@
       "is_required": "N"
     },
     {
-      "title": "Мили",
+      "title": "Мили (Заказы)",
       "article": "miles",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Мили",
+      "article": "milesAll",
       "type": "float",
       "default": null,
       "is_required": "N"

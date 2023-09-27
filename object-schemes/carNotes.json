@@ -4,7 +4,7 @@
   "is_trash": false,
   "properties": [
     {
-      "title": "Авто",
+      "title": "Автомобиль",
       "article": "car_id",
       "data_type": "integer",
       "field_type": "list",

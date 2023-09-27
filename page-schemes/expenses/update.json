@@ -1,1 +1,151 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Расходы - Редактирование","title":["№ ",":id"]},"components":[]},{"title":"Табы","type":"tabs","size":4,"settings":[{"title":"Основная информация","body":[{"title":"Форма","type":"form","size":4,"settings":{"object":"expenses","command":"update","areas":[{"size":2,"blocks":[{"title":"Основная информация","fields":["category_id","paymentType_id","cost","status","is_bill","is_payed","payment_receipt","order_id"]},{"title":"Повторять каждые","fields":["repeat_templates","repeat_days","cycles_count","is_endlessly"]}]},{"size":2,"blocks":[{"title":"Связка","fields":["driver_id","car_id"]},{"title":"","fields":["company_id","contact_id"]}]},{"size":4,"blocks":[{"title":"","fields":["description"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Сохранить","background":"dark","icon":"","href":"expenses"}}]}}]},{"title":"Задачи","is_counter":true,"body":[]},{"title":"Напоминания","is_counter":true,"body":[]},{"title":"Лента событий","body":[{"title":"История логов","type":"logs","size":4,"settings":{"object":"logs","filters":[{"property":"table_name","value":"expenses"},{"property":"row_id","value":":id"}]},"components":[]}]}]}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Расходы - Редактирование",
+        "title": [
+          "№ ",
+          ":id"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Табы",
+      "type": "tabs",
+      "size": 4,
+      "settings": [
+        {
+          "title": "Основная информация",
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Основная информация",
+                        "fields": [
+                          "title",
+                          "description",
+                          "category_id",
+                          "created_at",
+                          "cost",
+                          "order_id"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "company_id",
+                          "contact_id"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Связка",
+                        "fields": [
+                          "driver_id",
+                          "car_id"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "author_id",
+                          "status",
+                          "paymentType_id"
+                        ]
+                      },
+                      {
+                        "title": "Повторять каждые",
+                        "fields": [
+                          "repeat_templates",
+                          "repeat_days",
+                          "cycles_count",
+                          "is_endlessly"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "payment_receipt"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "expenses"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счет на оплату",
+          "body": []
+        },
+        {
+          "title": "Задачи",
+          "is_counter": true,
+          "body": []
+        },
+        {
+          "title": "Напоминания",
+          "is_counter": true,
+          "body": []
+        },
+        {
+          "title": "Лента событий",
+          "body": [
+            {
+              "title": "История логов",
+              "type": "logs",
+              "size": 4,
+              "settings": {
+                "object": "logs",
+                "filters": [
+                  {
+                    "property": "table_name",
+                    "value": "expenses"
+                  },
+                  {
+                    "property": "row_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

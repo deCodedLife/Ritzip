@@ -1,58 +1,136 @@
 {
   "required_modules": [],
   "required_permissions": [],
-  "structure": [{
-    "title": "Шапка",
-    "type": "header",
-    "size": 4,
-    "settings": {
-      "title": ["Добавление транспортного средства"],
-      "description": "Транспортные средства - Добавление"
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Добавление транспортного средства"
+        ],
+        "description": "Транспортные средства - Добавление"
+      },
+      "components": []
     },
-    "components": []
-  }, {
-    "title": "Форма",
-    "type": "form",
-    "size": 4,
-    "settings": {
-      "object": "vehicles",
-      "command": "add",
-      "areas": [{
-        "size": 2,
-        "blocks": [{
-          "title": "Основное",
-          "fields": [ "photo", "vin", "license_plate", "license_plate_state"]
-        }, {
-          "title": "",
-          "fields": [ "type", "lot_number", "count" ]
-        }]
-      }, {
-        "size": 2,
-        "blocks": [{
-          "title": "Характеристики",
-          "fields": ["color", "brand", "model", "year"]
-        }, {
-          "title": "",
-          "fields": ["is_wide_load", "width", "height", "length", "weight"]
-        }]
-      }, {
-        "size": 4,
-        "blocks": [{
-          "title": "",
-          "fields": ["comment"]
-        }]
-      }]
-    },
-    "components": {
-      "buttons": [{
-        "type": "submit",
-        "settings": {
-          "title": "Добавить",
-          "background": "dark",
-          "icon": "",
-          "href": "vehicles"
-        }
-      }]
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "vehicles",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [
+                  "photo",
+                  "vin",
+                  "license_plate",
+                  "license_plate_state"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "type",
+                  "lot_number",
+                  "count"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Характеристики",
+                "fields": [
+                  "color",
+                  "brand",
+                  "model",
+                  "year"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "is_wide_load",
+                  "width",
+                  "height",
+                  "length",
+                  "weight"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "Передняя сторона",
+                "fields": [
+                  "frontPhoto",
+                  "frontDamage",
+                  "frontDescription"
+                ]
+              },
+              {
+                "title": "Левая сторона",
+                "fields": [
+                  "leftPhoto",
+                  "leftDamage",
+                  "leftDescription"
+                ]
+              },
+              {
+                "title": "Правая сторона",
+                "fields": [
+                  "rightPhoto",
+                  "rightDamage",
+                  "backDescription"
+                ]
+              },
+              {
+                "title": "Задняя сторона",
+                "fields": [
+                  "backPhoto",
+                  "backDamage",
+                  "backDescription"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "comment"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "vehicles"
+            }
+          }
+        ]
+      }
     }
-  }]
+  ]
 }

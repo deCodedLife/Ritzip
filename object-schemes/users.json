@@ -287,6 +287,20 @@
       ]
     },
     {
+      "title": "Примечание",
+      "article": "note",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
       "title": "Компания",
       "article": "company_id",
       "data_type": "integer",
@@ -344,8 +358,22 @@
       }
     },
     {
-      "title": "Мили",
+      "title": "Мили (Заказы)",
       "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Мили",
+      "article": "milesAll",
       "data_type": "float",
       "field_type": "integer",
       "is_default_in_list": false,
@@ -624,6 +652,20 @@
       "use_in_commands": [
         "get",
         "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Должность",
+      "article": "post",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
         "add"
       ]
     }

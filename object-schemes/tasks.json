@@ -353,31 +353,6 @@
       "is_visible": false
     },
     {
-      "title": "Клиент",
-      "article": "client_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "is_hook": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "hook",
-        "get"
-      ],
-      "is_disabled": false,
-      "is_visible": false,
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 5
-        }
-      }
-    },
-    {
       "title": "Шаблоны",
       "article": "repeat_templates",
       "data_type": "string",
@@ -554,6 +529,18 @@
     {
       "title": "Повторяющиеся",
       "article": "is_repeatable",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Показать все задачи",
+      "article": "is_all",
       "data_type": "boolean",
       "field_type": "checkbox",
       "is_default_in_list": false,

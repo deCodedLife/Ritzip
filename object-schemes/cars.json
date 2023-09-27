@@ -84,6 +84,20 @@
       ]
     },
     {
+      "title": "Примечание",
+      "article": "note",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
       "title": "Номерной знак прицепа",
       "article": "trailer_license_plate",
       "data_type": "string",
@@ -564,7 +578,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id != ?": [ 4, 13 ]
         }
       },
       "use_in_commands": [
@@ -602,8 +616,22 @@
       ]
     },
     {
-      "title": "Мили",
+      "title": "Мили (Заказы)",
       "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Мили",
+      "article": "milesAll",
       "data_type": "float",
       "field_type": "integer",
       "is_default_in_list": true,

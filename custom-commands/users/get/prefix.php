@@ -14,3 +14,11 @@ if ( $requestData->created_at ) {
 } // if. $requestData->created_at->block
 
 
+if ( $requestData->context->page === "users" ) {
+
+    $requestSettings[ "filter" ][ "role_id != ?" ] = 13;
+    $requestSettings[ "filter" ][ "role_id != ?" ] = 3;
+
+} // if. $requestData->context->page === "users"
+
+

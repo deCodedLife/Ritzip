@@ -1,5 +1,5 @@
 {
-  "title": "Транспортные средства на отправку",
+  "title": "ТС на отправку",
   "table": "vehicles",
   "is_trash": true,
   "properties": [
@@ -34,19 +34,6 @@
       ]
     },
     {
-      "title": "Тип",
-      "article": "type",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ]
-    },
-    {
       "title": "Номерной знак",
       "article": "license_plate",
       "data_type": "string",
@@ -60,61 +47,6 @@
       ],
       "require_in_commands": [
         "add"
-      ]
-    },
-    {
-      "title": "Номерной знак (государство)",
-      "article": "license_plate_state",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": [
-        "add"
-      ]
-    },
-    {
-      "title": "Цвет",
-      "article": "color",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ]
-    },
-    {
-      "title": "Номер лота",
-      "article": "lot_number",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ]
-    },
-    {
-      "title": "Год",
-      "article": "year",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
       ]
     },
     {
@@ -144,32 +76,10 @@
       ]
     },
     {
-      "title": "Кол-во",
-      "article": "count",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true
-    },
-    {
       "title": "Комментарий",
       "article": "comment",
       "data_type": "string",
       "field_type": "textarea",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ]
-    },
-    {
-      "title": "Большая нагрузка",
-      "article": "is_wide_load",
-      "data_type": "boolean",
-      "field_type": "checkbox",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,

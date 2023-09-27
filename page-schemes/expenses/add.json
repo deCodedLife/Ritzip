@@ -1,1 +1,100 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Расходы - Добавление","title":["Добавление расхода"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"expenses","command":"add","areas":[{"size":2,"blocks":[{"title":"Основная информация","fields":["category_id","paymentType_id","cost","payment_receipt","is_bill","order_id"]},{"title":"Повторять каждые","fields":["repeat_templates","repeat_days","cycles_count","is_endlessly"]}]},{"size":2,"blocks":[{"title":"Связка","fields":["driver_id","car_id"]},{"title":"","fields":["company_id","contact_id"]}]},{"size":4,"blocks":[{"title":"","fields":["description"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"","href":"expenses"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Расходы - Добавление",
+        "title": [
+          "Добавление расхода"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "expenses",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основная информация",
+                "fields": [
+                  "title",
+                  "description",
+                  "category_id",
+                  "created_at",
+                  "cost",
+                  "order_id"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "company_id",
+                  "contact_id"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Связка",
+                "fields": [
+                  "driver_id",
+                  "car_id"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "author_id",
+                  "status",
+                  "paymentType_id"
+                ]
+              },
+              {
+                "title": "Повторять каждые",
+                "fields": [
+                  "repeat_templates",
+                  "repeat_days",
+                  "cycles_count",
+                  "is_endlessly"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "payment_receipt"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "expenses"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

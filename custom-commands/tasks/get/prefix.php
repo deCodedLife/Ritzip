@@ -74,6 +74,75 @@ if ( $userDetail[ "is_allTasks" ] == "N" ) {
 
 }
 
+if ( $userDetail[ "is_allTasks" ] == "Y" && $requestData->is_all == "N" ) {
+
+    $requestSettings[ "filter" ][ "author_id" ] = $API::$userDetail->id;
+    //    if ( $requestData->context->page === "drivers" ) {
+//
+//        /**
+//         * Получение списка задач, где текущий пользователь является
+//         */
+//        $driverTasks = $API->DB->from( "tasks" )
+//            ->where( [
+//                "driver_id" => $requestData->employee_id
+//            ] );
+//
+//        /**
+//         * Добавление поставленных задач в список
+//         */
+//        foreach ( $driverTasks as $driverTask )
+//            $response[ "data" ][] = (array) $driverTask;
+//
+//    } // if. $requestData->context->page === "drivers"
+//    if ( ( $requestData->context->page == "tasks" ) ) {
+//
+//        /**
+//         * Получение списка задач, где текущий пользователь является Автором
+//         */
+//        $authorTasks = $API->sendRequest( "tasks", "get", [ "author_id" => (int) $API::$userDetail->id ] );
+//
+//        /**
+//         * Получение списка задач, где текущий пользователь является Автором
+//         */
+//        $everyoneTasks = $API->DB->from( "tasks" )
+//            ->where( [
+//                "is_active" => "Y",
+//                "is_visible_everyone" => "Y"
+//            ] );
+//
+//        /**
+//         * Добавление поставленных задач в список
+//         */
+//        foreach ( $authorTasks as $authorTask )
+//            $response[ "data" ][] = (array) $authorTask;
+//
+//        /**
+//         * Добавление общих задач в список
+//         */
+//        foreach ( $everyoneTasks as $everyoneTask )
+//            $response[ "data" ][] = (array) $everyoneTask;
+//
+//
+//
+//        /**
+//         * Фильтр дубликатов
+//         */
+//        $filteredTasks = arrayUniqueByKey( $response[ "data" ], "id" );
+//
+//
+//        /**
+//         * Перевод задач в массив
+//         */
+//
+//        $response[ "data" ] = [];
+//
+//        foreach ( $filteredTasks as $filteredTask )
+//            $response[ "data" ][] = (array) $filteredTask;
+//
+//    } // if. $requestData->context === "list"
+
+}
+
 $today = date("Y-m-d");
 
 if ( $requestData->is_today == "Y" ) {

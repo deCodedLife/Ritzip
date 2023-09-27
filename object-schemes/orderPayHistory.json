@@ -60,7 +60,7 @@
       ]
     },
     {
-      "title": "ID заказа",
+      "title": "Заявка",
       "article": "order_id",
       "data_type": "integer",
       "field_type": "list",

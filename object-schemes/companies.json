@@ -21,6 +21,20 @@
       ]
     },
     {
+      "title": "Адрес",
+      "article": "address",
+      "data_type": "string",
+      "field_type": "dadata_address",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
       "title": "Логотип",
       "article": "logo",
       "data_type": "image",
@@ -114,20 +128,6 @@
       "require_in_commands": []
     },
     {
-      "title": "Tax ID",
-      "article": "tax_id_number",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": []
-    },
-    {
       "title": "Файлы",
       "article": "files",
       "data_type": "file",
@@ -145,7 +145,7 @@
       "require_in_commands": []
     },
     {
-      "title": "Телефон",
+      "title": "Рабочий телефон",
       "article": "phone",
       "data_type": "phone",
       "field_type": "phone",
@@ -161,7 +161,7 @@
       "require_in_commands": []
     },
     {
-      "title": "Email",
+      "title": "Рабочий Email",
       "article": "email",
       "data_type": "email",
       "field_type": "email",
@@ -229,7 +229,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id > ?": 13
         }
       }
     },
@@ -346,7 +346,7 @@
       "require_in_commands": []
     },
     {
-      "title": "Транспортные средства",
+      "title": "Автомобили",
       "article": "vehicles_id",
       "data_type": "array",
       "field_type": "list",
@@ -401,6 +401,187 @@
         "filters": {
           "role_id": 13
         }
+      }
+    },
+
+
+    {
+      "title": "W9 документ",
+      "article": "w9",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "COI - certificate of insurance",
+      "article": "coi",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Motor Carrier Authorization",
+      "article": "mca",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "DOT/MC",
+      "article": "dot",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Название банка",
+      "article": "bankTitle",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Код банка",
+      "article": "bankCode",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Номер счета",
+      "article": "bankNumber",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Tax ID number",
+      "article": "tax_id_number",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Отправитель",
+      "article": "sender_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id > ?": 13
+        }
+      }
+    },
+    {
+      "title": "Получатель",
+      "article": "recipient_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id > ?": 13
+        }
+      }
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
       }
     }
   ],

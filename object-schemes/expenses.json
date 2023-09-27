@@ -4,6 +4,23 @@
   "is_trash": true,
   "properties": [
     {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
       "title": "Квитанция",
       "article": "payment_receipt",
       "data_type": "file",
@@ -73,7 +90,10 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name"
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 21
+        }
       }
     },
     {
@@ -100,7 +120,7 @@
       }
     },
     {
-      "title": "Авто",
+      "title": "Автомобиль",
       "article": "car_id",
       "data_type": "integer",
       "field_type": "list",
@@ -155,8 +175,11 @@
         "hook"
       ],
       "list_donor": {
-        "table": "contacts",
-        "properties_title": "title"
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 13
+        }
       }
     },
     {

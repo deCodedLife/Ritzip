@@ -21,8 +21,13 @@
       "in_search": true,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "add", "update" ],
-      "require_in_commands": [ "add" ]
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
     },
     {
       "title": "Артикул",
@@ -34,8 +39,13 @@
       "is_autofill": true,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "add", "update" ],
-      "require_in_commands": [ "add" ]
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
     },
     {
       "title": "Доступы",
@@ -51,7 +61,10 @@
       "is_autofill": true,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "add", "update" ],
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
       "require_in_commands": [],
       "join": {
         "connection_table": "roles_permissions",
@@ -75,7 +88,10 @@
       "is_autofill": true,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "add", "update" ],
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
       "require_in_commands": [],
       "join": {
         "connection_table": "roles_notificationTypes",

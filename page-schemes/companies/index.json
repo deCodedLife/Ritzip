@@ -37,8 +37,8 @@
           "required_modules": [],
           "settings": {
             "is_search": false,
-            "recipient_property": "contactCategory_id",
-            "donor_object": "contactCategories",
+            "recipient_property": "companyCategory_id",
+            "donor_object": "companyCategories",
             "donor_property_title": "title",
             "donor_property_value": "id"
           }
@@ -71,7 +71,7 @@
         },
         {
           "title": "Кол-во сделок (от)",
-          "type": "orders_count_from",
+          "type": "integer",
           "required_permissions": [],
           "required_modules": [],
           "settings": {
@@ -81,7 +81,7 @@
         },
         {
           "title": "Кол-во сделок (до)",
-          "type": "orders_count_to",
+          "type": "integer",
           "required_permissions": [],
           "required_modules": [],
           "settings": {
@@ -91,7 +91,7 @@
         },
         {
           "title": "Сумма сделок (от)",
-          "type": "orders_cost_from",
+          "type": "integer",
           "required_permissions": [],
           "required_modules": [],
           "settings": {
@@ -101,7 +101,7 @@
         },
         {
           "title": "Сумма сделок (до)",
-          "type": "orders_cost_to",
+          "type": "integer",
           "required_permissions": [],
           "required_modules": [],
           "settings": {

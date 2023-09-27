@@ -15,7 +15,10 @@
     "type": "list",
     "size": 4,
     "settings": {
-      "object": "users"
+      "object": "users",
+      "context": {
+        "page": "users"
+      }
     },
     "components": {
       "buttons": [{

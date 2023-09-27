@@ -60,6 +60,12 @@
       "icon": "reading"
     },
     {
+      "title": "Продажи",
+      "href": "sales",
+      "children": [],
+      "icon": "e-commerce"
+    },
+    {
       "title": "Расходы",
       "href": "expenses",
       "children": [],
@@ -81,10 +87,6 @@
       "title": "Аналитика",
       "href": "reports",
       "children": [
-        {
-          "title": "Продажи",
-          "href": "sales"
-        },
         {
           "title": "Воронка продаж",
           "href": "report_sales_funnel"

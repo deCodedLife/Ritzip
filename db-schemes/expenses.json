@@ -2,6 +2,13 @@
   "title": "Расходы",
   "properties": [
     {
+      "title": "Название",
+      "article": "title",
+      "type": "varchar(255)",
+      "is_required": false,
+      "default": null
+    },
+    {
       "title": "Квитанция",
       "article": "payment_receipt",
       "type": "varchar(255)",

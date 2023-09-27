@@ -52,18 +52,22 @@
                       {
                         "title": "Общее",
                         "fields": [
-                          "cost",
-                          "employee_id",
-                          "car_id",
-                          "responsible_id",
-                          "title",
-                          "pay_status",
-                          "miles",
-                          "placeCount",
-                          "contact_id",
-                          "source_id",
+                          "status_id",
+                          "created_at",
+                          "certified_at",
                           "approximatelyTime",
-                          "trailerType"
+                          "sendingAddress",
+                          "receivingAddress",
+                          "miles"
+                        ]
+                      },
+                      {
+                        "title": "Источник",
+                        "fields": [
+                          "source_id",
+                          "sourceType",
+                          "company_id",
+                          "sourse_contact"
                         ]
                       },
                       {
@@ -87,19 +91,16 @@
                     "size": 2,
                     "blocks": [
                       {
-                        "title": "Основное",
+                        "title": "",
                         "fields": [
-                          "status_id",
-                          "reason_id",
+                          "responsible_id",
+                          "employee_id",
+                          "recipient_id",
+                          "car_id",
+                          "trailerType",
+                          "cost",
+                          "pay_status",
                           "comment"
-                        ]
-                      },
-                      {
-                        "title": "Клиент",
-                        "fields": [
-                          "sourceType",
-                          "sourse_contact",
-                          "company_id"
                         ]
                       }
                     ]
@@ -120,6 +121,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "recipient_id",
                       "title": "Добавить получателя",
                       "background": "dark",
                       "page": "contacts/add"
@@ -128,6 +130,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "sender_id",
                       "title": "Добавить отправителя",
                       "background": "dark",
                       "page": "contacts/add"
@@ -136,6 +139,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "sourse_contact",
                       "title": "Добавить контакт",
                       "background": "dark",
                       "page": "contacts/add"
@@ -144,6 +148,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "field_place": "company_id",
                       "title": "Добавить компанию",
                       "background": "dark",
                       "page": "companies/add"
@@ -172,7 +177,7 @@
           ]
         },
         {
-          "title": "Перевозимые авто",
+          "title": "ТС на отправку",
           "is_counter": true,
           "body": [
             {
@@ -218,6 +223,14 @@
               }
             }
           ]
+        },
+        {
+          "title": "Документы",
+          "body": []
+        },
+        {
+          "title": "Уведомления",
+          "body": []
         },
         {
           "title": "Примечания",
@@ -362,17 +375,25 @@
                     "value": "order"
                   }
                 ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "orderTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
               }
             }
           ]
-        },
-        {
-          "title": "Документы",
-          "body": []
-        },
-        {
-          "title": "Уведомления",
-          "body": []
         },
         {
           "title": "Расходы",
@@ -390,8 +411,25 @@
                     "value": ":id"
                   }
                 ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "orderExpenses",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
               }
             }
+
           ]
         },
         {

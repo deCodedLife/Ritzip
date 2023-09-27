@@ -1,1 +1,36 @@
-{"title":"Запчасти","table":"parts","is_trash":true,"properties":[{"title":"Название","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":["add"]},{"title":"Кол-во","article":"count","data_type":"integer","field_type":"integer","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]}]}
+{
+  "title": "Запчасти",
+  "table": "parts",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Кол-во",
+      "article": "count",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    }
+  ]
+}

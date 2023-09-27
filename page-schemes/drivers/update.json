@@ -59,44 +59,20 @@
                       {
                         "title": "Основное",
                         "fields": [
-                          "first_name",
-                          "last_name",
-                          "company_id",
-                          "responsible_id",
-                          "countOrder",
-                          "sumOrder"
+                          "address",
+                          "insuranceNumber"
                         ]
                       },
                       {
-                        "title": "Документы",
+                        "title": "Права",
                         "fields": [
                           "license_number",
                           "license_from",
                           "license_to",
                           "license_address",
-                          "address",
                           "licensePhoto"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
-                      {
-                        "title": "Доступ",
-                        "fields": [
-                          "role_id",
-                          "email",
-                          "password",
-                          "phone"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "size": 2,
-                    "blocks": [
+                      },
                       {
                         "title": "Реквизиты",
                         "fields": [
@@ -114,6 +90,28 @@
                           "insuranceNumber",
                           "insurancePhoto",
                           "idNumberEmployer"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "responsible_id",
+                          "company_id",
+                          "note",
+                          "miles",
+                          "milesAll"
+                        ]
+                      },
+                      {
+                        "title": "Доступ",
+                        "fields": [
+                          "email",
+                          "password"
                         ]
                       }
                     ]
@@ -365,6 +363,22 @@
                   {
                     "property": "driver_id",
                     "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "driverExpenses",
+                        "row_id": ":id"
+                      }
+                    }
                   }
                 ]
               }

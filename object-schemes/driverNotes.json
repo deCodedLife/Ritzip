@@ -1,5 +1,5 @@
 {
-  "title": "Примечания авто",
+  "title": "Примечания автомобиль",
   "table": "driverNotes",
   "is_trash": false,
   "properties": [
@@ -13,7 +13,10 @@
       "is_autofill": true,
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name"
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 4
+        }
       },
       "use_in_commands": [
         "update",

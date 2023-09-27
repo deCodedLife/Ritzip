@@ -9,6 +9,13 @@
       "is_required": "Y"
     },
     {
+      "title": "Адрес",
+      "article": "address",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
       "title": "Логотип",
       "article": "logo",
       "type": "varchar(255)",
@@ -144,6 +151,76 @@
     {
       "title": "Основной контакт",
       "article": "main_contact_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "W9 документ",
+      "article": "w9",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "COI - certificate of insurance",
+      "article": "coi",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Motor Carrier Authorization",
+      "article": "mca",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "DOT/MC",
+      "article": "dot",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Название банка",
+      "article": "bankTitle",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Код банка",
+      "article": "bankCode",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Номер счета",
+      "article": "bankNumber",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Отправитель",
+      "article": "sender_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Получатель",
+      "article": "recipient_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType",
       "type": "int",
       "default": null,
       "is_required": "N"

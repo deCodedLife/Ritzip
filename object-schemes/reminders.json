@@ -78,7 +78,8 @@
       "list_donor": {
         "table": "companies",
         "properties_title": "title"
-      }
+      },
+      "is_visible": false
     }
   ],
   "action_buttons": [

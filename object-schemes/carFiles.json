@@ -1,71 +1,71 @@
 {
-    "title": "Напоминания",
-    "table": "carFiles",
-    "is_trash": false,
-    "properties": [
-        {
-            "title": "Авто",
-            "article": "car_id",
-            "data_type": "integer",
-            "field_type": "list",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "update",
-                "get",
-                "add"
-            ],
-            "list_donor": {
-                "table": "cars",
-                "properties_title": "vin"
-            }
-        },
-        {
-            "title": "Заголовок",
-            "article": "title",
-            "data_type": "string",
-            "field_type": "string",
-            "is_default_in_list": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "use_in_commands": [
-                "get",
-                "update",
-                "add"
-            ]
-        },
-        {
-            "title": "Файл",
-            "article": "file",
-            "data_type": "file",
-            "field_type": "file",
-            "is_default_in_list": true,
-            "is_multiply": true,
-            "is_unique": false,
-            "is_autofill": true,
-            "required_permissions": [],
-            "required_modules": [],
-            "use_in_commands": [
-                "add",
-                "update",
-                "get"
-            ],
-            "require_in_commands": []
-        }
-    ],
-    "action_buttons": [
-        {
-            "type": "href",
-            "settings": {
-                "title": "Изменить",
-                "page": [
-                    "carFiles/update/",
-                    ":id"
-                ],
-                "icon": "gear",
-                "background": "dark"
-            }
-        }
-    ]
+  "title": "Напоминания",
+  "table": "carFiles",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Автомобиль",
+      "article": "car_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "cars",
+        "properties_title": "vin"
+      }
+    },
+    {
+      "title": "Заголовок",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Файл",
+      "article": "file",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": true,
+      "is_multiply": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "required_permissions": [],
+      "required_modules": [],
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "carFiles/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
 }

@@ -36,31 +36,6 @@
       }
     },
     {
-      "title": "Клиент",
-      "article": "client_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get",
-        "hook"
-      ],
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 5
-        }
-      },
-      "is_hook": true,
-      "is_disabled": false,
-      "is_visible": false
-    },
-    {
       "title": "Отправитель",
       "article": "sender_id",
       "data_type": "integer",
@@ -80,7 +55,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": "13"
+          "role_id": 13
         }
       }
     },
@@ -97,12 +72,14 @@
         "update",
         "get"
       ],
-      "require_in_commands": [],
+      "require_in_commands": [
+        "add"
+      ],
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": "13"
+          "role_id": 13
         }
       }
     },
@@ -187,7 +164,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id": 21
         }
       },
       "use_in_commands": [
@@ -209,9 +186,6 @@
         "update",
         "get",
         "search"
-      ],
-      "require_in_commands": [
-        "add"
       ],
       "list_donor": {
         "table": "users",
@@ -236,9 +210,6 @@
         "add",
         "hook"
       ],
-      "require_in_commands": [
-        "add"
-      ],
       "list_donor": {
         "table": "cars",
         "properties_title": "vin"
@@ -246,7 +217,7 @@
       "is_hook": true
     },
     {
-      "title": "Перевозимые авто",
+      "title": "ТС на отправку",
       "article": "vehicles_id",
       "data_type": "array",
       "field_type": "list",
@@ -299,7 +270,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": "13"
+          "role_id": 13
         }
       }
     },
@@ -701,7 +672,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": "13"
+          "role_id": 13
         }
       },
       "use_in_commands": [
@@ -709,7 +680,8 @@
         "get",
         "add",
         "hook"
-      ]
+      ],
+      "is_visible": false
     },
     {
       "title": "Тип прицепа",

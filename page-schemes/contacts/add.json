@@ -1,1 +1,81 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"title":["Добавление контакта"],"description":"Контакты - Добавление"},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"contacts","command":"add","areas":[{"size":2,"blocks":[{"title":"","fields":["photo","role_id","first_name","last_name","paymentType","is_sender","is_recipient"]},{"title":"","fields":["companyCategory_id","company_id","user_id"]},{"title":"","fields":["job_title","is_main"]}]},{"size":2,"blocks":[{"title":"","fields":["address","state_id","zip"]},{"title":"","fields":["credentials","tax_id_number"]},{"title":"","fields":["phone","email","password"]}]},{"size":4,"blocks":[{"title":"","fields":["note"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"","href":"contacts"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Добавление контакта"
+        ],
+        "description": "Контакты - Добавление"
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "contacts",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "first_name",
+                  "last_name",
+                  "photo",
+                  "companyCategory_id",
+                  "address",
+                  "state_id",
+                  "zipCode",
+                  "credentials",
+                  "paymentType"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "is_sender",
+                  "is_recipient"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "phone",
+                  "email",
+                  "password"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "contacts"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

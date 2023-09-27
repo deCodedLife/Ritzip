@@ -15,7 +15,9 @@
       "in_search": false,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "update" ],
+      "use_in_commands": [
+        "update"
+      ],
       "require_in_commands": []
     },
     {
@@ -29,7 +31,9 @@
       "in_search": false,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "update" ],
+      "use_in_commands": [
+        "update"
+      ],
       "require_in_commands": []
     },
     {
@@ -43,7 +47,9 @@
       "in_search": false,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "update" ],
+      "use_in_commands": [
+        "update"
+      ],
       "require_in_commands": []
     },
     {
@@ -57,7 +63,9 @@
       "in_search": false,
       "required_permissions": [],
       "required_modules": [],
-      "use_in_commands": [ "update" ],
+      "use_in_commands": [
+        "update"
+      ],
       "require_in_commands": []
     }
   ]

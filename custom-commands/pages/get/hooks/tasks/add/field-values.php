@@ -13,15 +13,17 @@ if ( ( $requestData->context->form == "tasks" ) && $requestData->context->employ
 
 if ( ( $requestData->context->form == "carTasks" ) && $requestData->context->row_id ) {
 
-    $formFieldValues[ "car_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "car_id" ][ "is_visible" ] = true;
     $formFieldValues[ "car_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "car";
 
 }
 
 if ( ( $requestData->context->form == "driverTasks" ) && $requestData->context->row_id ) {
 
-    $formFieldValues[ "employee_id" ][ "is_visible" ] = false;
-    $formFieldValues[ "employee_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "driver_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "driver_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "driver";
 
 }
 
@@ -34,15 +36,27 @@ if ( ( $requestData->context->form == "clientTasks" ) && $requestData->context->
 
 if ( ( $requestData->context->form == "contactTasks" ) && $requestData->context->row_id ) {
 
-    $formFieldValues[ "employee_id" ][ "is_visible" ] = false;
-    $formFieldValues[ "employee_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "contact_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "contact_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "contact";
 
 }
 
 if ( ( $requestData->context->form == "companyTasks" ) && $requestData->context->row_id ) {
 
-    $formFieldValues[ "company_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "company_id" ][ "is_visible" ] = true;
     $formFieldValues[ "company_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "company";
+
+}
+
+
+
+if ( ( $requestData->context->form == "orderTasks" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "order_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "order_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "order";
 
 }
 

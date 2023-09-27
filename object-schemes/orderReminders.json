@@ -1,1 +1,53 @@
-{"title":"Напоминания","table":"orderReminders","is_trash":false,"properties":[{"title":"Заявка","article":"order_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["update","get","add"],"list_donor":{"table":"orders","properties_title":"id"}},{"title":"Заголовок","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["get","update","add"]},{"title":"Пояснение","article":"description","data_type":"string","field_type":"textarea","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["get","add","update"]}]}
+{
+  "title": "Напоминания",
+  "table": "orderReminders",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Заявка",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      }
+    },
+    {
+      "title": "Заголовок",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Пояснение",
+      "article": "description",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "update"
+      ]
+    }
+  ]
+}
