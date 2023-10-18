@@ -52,8 +52,6 @@
                       {
                         "title": "",
                         "fields": [
-                          "sender_id",
-                          "recipient_id",
                           "phone",
                           "email",
                           "website",
@@ -91,16 +89,14 @@
                   {
                     "type": "modal",
                     "settings": {
-                      "field_place": "contacts_id",
-                      "title": "Добавить контакт",
+                      "field_place": "driver_id",
+                      "title": "Добавить водителя",
                       "background": "dark",
-                      "icon": "",
-                      "page": "contacts/add",
-                      "context": {
-                        "form": "companies",
-                        "row_id": ":id"
-                      },
-                      "insert_to_field": "contact_id"
+                      "page": "drivers/add"
+                    },
+                    "context": {
+                      "form": "companies",
+                      "row_id": ":id"
                     }
                   },
                   {
@@ -115,6 +111,21 @@
                         "form": "companies",
                         "row_id": ":id"
                       }
+                    }
+                  },
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "field_place": "contacts_id",
+                      "title": "Добавить контакт",
+                      "background": "dark",
+                      "icon": "",
+                      "page": "contacts/add",
+                      "context": {
+                        "form": "companies",
+                        "row_id": ":id"
+                      },
+                      "insert_to_field": "contact_id"
                     }
                   },
                   {
@@ -350,7 +361,7 @@
           "body": [
             {
               "title": "История логов",
-              "type": "list",
+              "type": "logs",
               "size": 4,
               "settings": {
                 "object": "logs",

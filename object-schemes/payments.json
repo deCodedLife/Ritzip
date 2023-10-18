@@ -1,0 +1,322 @@
+{
+  "title": "Автомобили",
+  "table": "payments",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Дата (от)",
+      "article": "created_at_from",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Дата (до)",
+      "article": "created_at_to",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Счет",
+      "article": "account",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сумма",
+      "article": "sum",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Дата создания",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Оплата до",
+      "article": "payBefore",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Статус",
+      "article": "status_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "orderStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Заказ",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "hook"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Ответственный",
+      "article": "responsible_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id > ?": 13
+        }
+      },
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "hook"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "search"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 4
+        }
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Автомобиль",
+      "article": "car_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ],
+      "list_donor": {
+        "table": "cars",
+        "properties_title": "vin"
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 13
+        }
+      },
+      "is_hook": true,
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Объект",
+      "article": "object",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Контакт",
+          "value": "contact"
+        },
+        {
+          "title": "Автомобиль",
+          "value": "car"
+        },
+        {
+          "title": "Водитель",
+          "value": "driver"
+        },
+        {
+          "title": "Заказ",
+          "value": "order"
+        },
+        {
+          "title": "Компания",
+          "value": "company"
+        }
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "payments/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
+}

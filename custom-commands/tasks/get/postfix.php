@@ -1,7 +1,44 @@
 <?php
 
-
 if ( $requestData->is_repeatable == "Y" ) {
+
+    $priorities = [
+        [
+            "value" =>"low",
+            "title" =>"Низкий"
+        ],
+        [
+            "value" => "middle",
+            "title" => "Средний"
+        ],
+        [
+            "value" => "height",
+            "title" => "Высокий"
+        ],
+        [
+            "value" => "urgent",
+            "title" => "Неотложный"
+        ]
+    ];
+
+    $statuses = [
+        [
+            "value" =>  "not_read",
+            "title" =>  "Не начата"
+        ],
+        [
+            "value" => "processing",
+            "title" => "В процессе"
+        ],
+        [
+            "value" => "read",
+            "title" => "В ожидании ответа"
+        ],
+        [
+            "value" => "completed",
+            "title" => "Завершена"
+        ]
+    ];
 
     $return = [];
 
@@ -10,7 +47,7 @@ if ( $requestData->is_repeatable == "Y" ) {
         "SELECT * FROM `tasks` WHERE is_active = 'Y' GROUP BY title HAVING COUNT(title) > 1;"
     );
 
-    foreach ( $tasks as $task ){
+    foreach ( $tasks as $task ) {
 
         $tasksUpdated = $API->DB->from( "tasks" )
             ->where( "title", $task[ "title" ] );
@@ -26,43 +63,6 @@ if ( $requestData->is_repeatable == "Y" ) {
                ->where( "id", $taskUpdated[ "author_id" ] )
                ->limit( 1 )
                ->fetch( );
-           $priorities = [
-                [
-                    "value" =>"low",
-                    "title" =>"Низкий"
-                ],
-                [
-                    "value" => "middle",
-                    "title" => "Средний"
-                ],
-                [
-                    "value" => "height",
-                    "title" => "Высокий"
-                ],
-                [
-                    "value" => "urgent",
-                    "title" => "Неотложный"
-                ]
-           ];
-
-           $statuses = [
-               [
-                   "value" =>  "not_read",
-                   "title" =>  "Не начата"
-               ],
-               [
-                   "value" => "processing",
-                   "title" => "В процессе"
-               ],
-               [
-                   "value" => "read",
-                   "title" => "В ожидании ответа"
-               ],
-               [
-                   "value" => "completed",
-                   "title" => "Завершена"
-               ]
-           ];
 
            foreach ( $statuses as $status ) {
 
@@ -96,6 +96,7 @@ if ( $requestData->is_repeatable == "Y" ) {
                     "title" => $taskUpdated[ "priority_title" ],
                     "value" => $taskUpdated[ "priority" ]
                 ],
+                "created_at" => $taskUpdated[ "created_at" ],
                 "deadline" => $taskUpdated[ "deadline" ]
            ];
            $return[] = $taskUpdated;
@@ -108,9 +109,36 @@ if ( $requestData->is_repeatable == "Y" ) {
 
 }
 
+$today = date("Y-m-d H:i:s");
+
+$return = [];
+
+foreach ( $response[ "data" ] as $task ) {
+
+
+    if ( !empty( $task[ "deadline" ] ) && $task[ "deadline" ] <= $today ) {
+
+        $task[ "deadline" ] = [
+
+            "color" => "danger",
+            "value" => $task[ "deadline" ]
+
+        ];
+
+    }
+
+    $return[] = $task;
+
+}
+
+
+$response[ "data" ] = $return;
+
+
+
 $response[ "detail" ] = [
 
-    "pages_count" => ceil(count($response[ "data" ]) / $requestData->limit),
+    "pages_count" => ceil(count($response[ "data" ]) / $requestSettings[ "limit" ]),
     "rows_count" => count($response[ "data" ])
 
 ];

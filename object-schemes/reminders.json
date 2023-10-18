@@ -18,7 +18,10 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name"
+        "properties_title": "last_name",
+        "filters": {
+          "role_id > ?": 13
+        }
       }
     },
     {
@@ -78,8 +81,25 @@
       "list_donor": {
         "table": "companies",
         "properties_title": "title"
-      },
-      "is_visible": false
+      }
+    },
+    {
+      "title": "Заказ",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      }
     }
   ],
   "action_buttons": [

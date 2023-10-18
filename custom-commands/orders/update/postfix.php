@@ -34,6 +34,23 @@ if ( $requestData->paymentType_id && $requestData->payNow ) {
 
 }
 
+if ( $requestData->paymentType_id == 1 ) {
+
+    $API->DB->insertInto( "expenses" ) // Запись в таблицу истории оплат
+        ->values( [
+            "category_id" => 2,
+            "cost" => $requestData->payNow,
+            "order_id" => $orderDetail[ "id" ],
+            "author_id" => $API::$userDetail->id,
+            "contact_id" => $orderDetail[ "contact_id" ],
+            "company_id" => $orderDetail[ "company_id" ],
+            "car_id" => $orderDetail[ "car_id" ],
+            "driver_id" => $orderDetail[ "driver_id" ],
+        ] )
+        ->execute();
+
+
+}
 
 /**
  * Изменение остатка при изменении цены

@@ -14,7 +14,7 @@ $previousValue = $API->DB->from( "orders" ) // get order info
  */
 $driverDetail = $API->DB->from( "users" )
     ->where( [
-        "id" => $requestData->employee_id
+        "id" => $requestData->driver_id
     ] )
     ->limit( 1 )
     ->fetch();

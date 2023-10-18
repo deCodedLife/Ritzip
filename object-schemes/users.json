@@ -186,7 +186,7 @@
       "title": "Права (адрес прописки)",
       "article": "license_address",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "dadata_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -353,7 +353,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id > ?": 4
         }
       }
     },
@@ -372,7 +372,7 @@
       ]
     },
     {
-      "title": "Мили",
+      "title": "Мили (Итого)",
       "article": "milesAll",
       "data_type": "float",
       "field_type": "integer",
@@ -668,6 +668,303 @@
         "get",
         "add"
       ]
+    },
+    {
+      "title": "Фото прав - передняя сторона",
+      "article": "driveLicenseFront",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото прав - задняя сторона",
+      "article": "driveLicenseBack",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото с правами в руках",
+      "article": "driveLicenseInHands",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото с правами в руках",
+      "article": "addressLicense",
+      "data_type": "string",
+      "field_type": "dadata_address",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Тип водителя",
+      "article": "driverType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Driver",
+          "value": "driver"
+        },
+        {
+          "title": "Driver Operator",
+          "value": "operator"
+        }
+      ]
+    },
+    {
+      "title": "Номер топливной карты",
+      "article": "fuelСardNumber",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "search",
+        "add"
+      ],
+      "is_in_search": true
+    },
+    {
+      "title": "Тип зарплаты",
+      "article": "salaryType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Процент",
+          "value": "percent"
+        },
+        {
+          "title": "Фиксированная",
+          "value": "fixed"
+        }
+      ]
+    },
+    {
+      "title": "Сумма зарплаты",
+      "article": "salarySum",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update"
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "Период",
+      "article": "period",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Неделя",
+          "value": "week"
+        },
+        {
+          "title": "Месяц",
+          "value": "month"
+        }
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "С учетом бензина",
+      "article": "includingGasoline",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Да",
+          "value": "yes"
+        },
+        {
+          "title": "Нет",
+          "value": "no"
+        }
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "Сумма страховки",
+      "article": "insuranceAmount",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "add",
+        "get"
+      ],
+      "is_visible": false,
+      "is_hook": true
+    },
+    {
+      "title": "Срок страховки (от)",
+      "article": "insurancePeriod_from",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Срок страховки (до)",
+      "article": "insurancePeriod_to",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_visible": false,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ]
+    },
+    {
+      "title": "Диспетчерский сбор (%)",
+      "article": "dispatchFee",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ]
+    },
+    {
+      "title": "Использование приложения",
+      "article": "usingApp",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ]
+    },
+    {
+      "title": "Look Book",
+      "article": "lookBook",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ],
+      "is_visible": false,
+      "is_hook": true
     }
   ]
 }

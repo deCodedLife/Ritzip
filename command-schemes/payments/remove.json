@@ -1,0 +1,9 @@
+{
+  "title": "Удаление",
+  "type": "remove",
+  "object_scheme": "payments",
+  "modules": [],
+  "required_permissions": [
+    "payments_remove"
+  ]
+}

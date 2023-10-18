@@ -1,0 +1,9 @@
+{
+  "title": "Вывод",
+  "type": "get",
+  "object_scheme": "payments",
+  "modules": [],
+  "required_permissions": [
+    "payments_get"
+  ]
+}

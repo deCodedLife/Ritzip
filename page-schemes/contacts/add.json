@@ -28,6 +28,7 @@
               {
                 "title": "",
                 "fields": [
+                  "role_id",
                   "first_name",
                   "last_name",
                   "photo",
@@ -44,13 +45,6 @@
           {
             "size": 2,
             "blocks": [
-              {
-                "title": "",
-                "fields": [
-                  "is_sender",
-                  "is_recipient"
-                ]
-              },
               {
                 "title": "",
                 "fields": [

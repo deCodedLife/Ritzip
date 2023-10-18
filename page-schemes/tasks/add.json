@@ -29,6 +29,7 @@
                 "title": "Основное",
                 "fields": [
                   "title",
+                  "status",
                   "created_at",
                   "deadline",
                   "priority"

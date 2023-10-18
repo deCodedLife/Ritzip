@@ -61,7 +61,8 @@
                         "title": "Связка",
                         "fields": [
                           "driver_id",
-                          "car_id"
+                          "car_id",
+                          "trailer_id"
                         ]
                       },
                       {

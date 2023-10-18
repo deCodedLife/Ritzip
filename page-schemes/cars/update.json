@@ -56,7 +56,10 @@
                           "vin",
                           "address",
                           "mileage",
-                          "color"
+                          "color",
+                          "yearRelease",
+                          "regEnd",
+                          "type"
                         ]
                       },
                       {
@@ -79,6 +82,8 @@
                       {
                         "title": "Прицеп",
                         "fields": [
+                          "trailer_license_plate",
+                          "trailer_license_plate_state",
                           "trailerPhotoLeft",
                           "trailerPhotoRight",
                           "tax_id_number"
@@ -166,6 +171,41 @@
                       "page": "companies/add",
                       "context": {
                         "form": "cars",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "car_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "carPayments",
                         "row_id": ":id"
                       }
                     }

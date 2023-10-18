@@ -33,7 +33,10 @@
                   "vin",
                   "address",
                   "mileage",
-                  "color"
+                  "color",
+                  "yearRelease",
+                  "regEnd",
+                  "type"
                 ]
               },
               {
@@ -56,6 +59,8 @@
               {
                 "title": "Прицеп",
                 "fields": [
+                  "trailer_license_plate",
+                  "trailer_license_plate_state",
                   "trailerPhotoLeft",
                   "trailerPhotoRight",
                   "tax_id_number"

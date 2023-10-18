@@ -1,0 +1,60 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Пригласить водителя"
+        ],
+        "description": "Водители - Приглашение"
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "users",
+        "command": "add",
+        "joined_property": "",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "Доступ",
+                "fields": [
+                  "email",
+                  "password",
+                  "first_name",
+                  "last_name",
+                  "role_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "href": "users",
+              "icon": "",
+              "background": "dark"
+            },
+            "required_permissions": [],
+            "required_modules": []
+          }
+        ]
+      }
+    }
+  ]
+}

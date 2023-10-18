@@ -49,15 +49,12 @@
               {
                 "title": "Отправка",
                 "fields": [
-                  "sendingAddress",
                   "sender_id"
                 ]
               },
               {
                 "title": "Получение",
                 "fields": [
-                  "receivingAddress",
-                  "certified_at",
                   "recipient_id"
                 ]
               }
@@ -70,8 +67,7 @@
                 "title": "",
                 "fields": [
                   "responsible_id",
-                  "employee_id",
-                  "recipient_id",
+                  "driver_id",
                   "car_id",
                   "trailerType",
                   "cost",

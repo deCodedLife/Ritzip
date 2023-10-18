@@ -1,0 +1,74 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Отчет Owner Operator",
+        "title": [
+          "Отчет Owner Operator"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Виджеты",
+      "type": "analytic_widgets",
+      "size": 4,
+      "settings": {
+        "widgets_group": "ownerReport"
+      },
+      "components": {
+        "filters": [
+          {
+            "title": "Дата (от)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_from"
+            }
+          },
+          {
+            "title": "Дата (до)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_to"
+            }
+          },
+          {
+            "title": "Статус",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "status_id",
+              "donor_object": "orderStatuses",
+              "donor_property_title": "title",
+              "donor_property_value": "id"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "driverReport",
+        "linked_filter": "analytic_widgets_ownerReport",
+        "link": "orders",
+        "is_exel": true
+      }
+    }
+  ]
+}

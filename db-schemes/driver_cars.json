@@ -1,1 +1,19 @@
-{"title":"Авто водителя","properties":[{"title":"Водитель","article":"driver_id","type":"int","default":null,"is_required":"N"},{"title":"Автомобиль","article":"car_id","type":"int","default":null,"is_required":"N"}]}
+{
+  "title": "Авто водителя",
+  "properties": [
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Автомобиль",
+      "article": "car_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    }
+  ]
+}

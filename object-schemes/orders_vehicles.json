@@ -18,6 +18,7 @@
       "min_value": 0,
       "use_in_commands": [
         "get",
+        "update",
         "add"
       ]
     },
@@ -35,8 +36,23 @@
       },
       "use_in_commands": [
         "add",
+        "update",
         "get"
       ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "vehicles/update/",
+          ":vehicle_id{value}"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
     }
   ]
 }

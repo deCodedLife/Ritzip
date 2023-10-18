@@ -1,0 +1,38 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Позиции",
+        "title": [
+          "Позиции"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "positions"
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить автосервис",
+              "background": "dark",
+              "page": "positions/add"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

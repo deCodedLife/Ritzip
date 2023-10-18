@@ -1,0 +1,31 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Типы бонусов для водителей",
+      "title": ["Типы бонусов для водителей"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "bonusDrivers"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить тип",
+          "background": "dark",
+          "page": "bonusDrivers/add"
+        }
+      }]
+    }
+  }]
+}

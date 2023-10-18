@@ -1,0 +1,35 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Шаблоны документов - Редактирование",
+        "title": [
+          "№",
+          ":id",
+          " ",
+          ":title"
+        ]
+      },
+      "components": {
+        "buttons": []
+      }
+    },
+    {
+      "title": "Документы",
+      "type": "documents",
+      "size": 4,
+      "settings": {
+        "object": "documents",
+        "command": "update",
+        "fields_list": [
+          "owners_id"
+        ]
+      }
+    }
+  ]
+}

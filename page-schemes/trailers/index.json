@@ -1,0 +1,38 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Прицепы",
+        "title": [
+          "Прицепы"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "trailers"
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить прицеп",
+              "background": "dark",
+              "page": "trailers/add"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

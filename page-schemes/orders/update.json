@@ -73,15 +73,12 @@
                       {
                         "title": "Отправка",
                         "fields": [
-                          "sendingAddress",
                           "sender_id"
                         ]
                       },
                       {
                         "title": "Получение",
                         "fields": [
-                          "receivingAddress",
-                          "certified_at",
                           "recipient_id"
                         ]
                       }
@@ -94,8 +91,7 @@
                         "title": "",
                         "fields": [
                           "responsible_id",
-                          "employee_id",
-                          "recipient_id",
+                          "driver_id",
                           "car_id",
                           "trailerType",
                           "cost",
@@ -124,7 +120,11 @@
                       "field_place": "recipient_id",
                       "title": "Добавить получателя",
                       "background": "dark",
-                      "page": "contacts/add"
+                      "page": "contacts/add",
+                      "context": {
+                        "form": "recipient",
+                        "row_id": ":id"
+                      }
                     }
                   },
                   {
@@ -133,7 +133,11 @@
                       "field_place": "sender_id",
                       "title": "Добавить отправителя",
                       "background": "dark",
-                      "page": "contacts/add"
+                      "page": "contacts/add",
+                      "context": {
+                        "form": "sender",
+                        "row_id": ":id"
+                      }
                     }
                   },
                   {
@@ -177,6 +181,76 @@
           ]
         },
         {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "orderPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Штрафы и бонусы",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "finesAndBonuses",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить штраф или бонус",
+                      "background": "dark",
+                      "page": "finesAndBonuses/add",
+                      "context": {
+                        "form": "order",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "title": "ТС на отправку",
           "is_counter": true,
           "body": [
@@ -186,6 +260,7 @@
               "size": 4,
               "settings": {
                 "object": "orders_vehicles",
+                "link": "vehicles",
                 "filters": [
                   {
                     "property": "order_id",
@@ -331,8 +406,8 @@
                 "object": "reminders",
                 "filters": [
                   {
-                    "property": "user_id",
-                    "value": ":responsible_id"
+                    "property": "order_id",
+                    "value": ":id"
                   }
                 ]
               },
@@ -346,7 +421,7 @@
                       "page": "reminders/add",
                       "context": {
                         "form": "order",
-                        "row_id": ":responsible_id"
+                        "row_id": ":id"
                       }
                     }
                   }
@@ -429,11 +504,11 @@
                 ]
               }
             }
-
           ]
         },
         {
-          "title": "История изменений",
+          "title": "Лента событий",
+          "is_counter": true,
           "body": [
             {
               "title": "Логи",

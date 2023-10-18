@@ -1,0 +1,241 @@
+{
+  "title": "Штрафы и бонусы",
+  "table": "finesAndBonuses",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Дата и время",
+      "article": "startDate",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Бонус/Штраф",
+      "article": "bonusOrFine",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "custom_list": [
+        {
+          "title": "Бонус",
+          "value": "bonus"
+        },
+        {
+          "title": "Штраф",
+          "value": "fine"
+        }
+      ],
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true
+    },
+    {
+      "title": "Тип сотрудника",
+      "article": "userType",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "custom_list": [
+        {
+          "title": "Водитель",
+          "value": "driver"
+        },
+        {
+          "title": "Диспетчер",
+          "value": "dispatcher"
+        }
+      ],
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true
+    },
+    {
+      "title": "Сумма",
+      "article": "sum",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Примечание",
+      "article": "note",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Заказ",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      },
+      "is_visible": false
+    },
+    {
+      "title": "Тип бонуса водителя",
+      "article": "driverBonusType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "bonusDrivers",
+        "properties_title": "title"
+      },
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false
+    },
+    {
+      "title": "Тип штрафа водителя",
+      "article": "driverFineType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false,
+      "list_donor": {
+        "table": "finesDrivers",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": "4"
+        }
+      },
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false
+    },
+    {
+      "title": "Диспетчер",
+      "article": "dispatcher_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": "3"
+        }
+      },
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false
+    },
+    {
+      "title": "Тип штрафа диспетчера",
+      "article": "dispatcherFineType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false,
+      "list_donor": {
+        "table": "finesDispatchers",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Тип бонуса диспетчера",
+      "article": "dispatcherBonusType",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "bonusDispatchers",
+        "properties_title": "title"
+      },
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_hook": true,
+      "is_visible": false
+    }
+  ]
+}

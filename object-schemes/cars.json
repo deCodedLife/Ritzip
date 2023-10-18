@@ -68,7 +68,7 @@
       ]
     },
     {
-      "title": "Номерной знак (государство)",
+      "title": "Парковочный номер",
       "article": "license_plate_state",
       "data_type": "string",
       "field_type": "string",
@@ -98,7 +98,7 @@
       "require_in_commands": []
     },
     {
-      "title": "Номерной знак прицепа",
+      "title": "Парковочный номер прицепа",
       "article": "trailer_license_plate",
       "data_type": "string",
       "field_type": "string",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "title": "Номерной знак прицепа (государство)",
+      "title": "Парковочный номер прицепа (государство)",
       "article": "trailer_license_plate_state",
       "data_type": "string",
       "field_type": "string",
@@ -225,7 +225,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 3
+          "role_id > ?": 4
         }
       }
     },
@@ -249,7 +249,7 @@
         "insert_property": "car_id",
         "filter_property": "user_id",
         "filters": {
-          "role_id != ?": 5
+          "role_id > ?": 4
         }
       }
     },
@@ -350,7 +350,7 @@
       ]
     },
     {
-      "title": "Длина прицепа (метров)",
+      "title": "Длина прицепа (дюймы)",
       "article": "trailerLength",
       "data_type": "float",
       "field_type": "integer",
@@ -364,7 +364,7 @@
       ]
     },
     {
-      "title": "Высота прицепа (метров)",
+      "title": "Высота прицепа (дюймы)",
       "article": "trailerHeight",
       "data_type": "float",
       "field_type": "integer",
@@ -378,7 +378,7 @@
       ]
     },
     {
-      "title": "Ширина прицепа (метров)",
+      "title": "Ширина прицепа (дюймы)",
       "article": "trailerWidth",
       "data_type": "float",
       "field_type": "integer",
@@ -392,7 +392,7 @@
       ]
     },
     {
-      "title": "Вес прицепа (килограммов)",
+      "title": "Вес прицепа (фунты)",
       "article": "trailerWeight",
       "data_type": "float",
       "field_type": "integer",
@@ -420,7 +420,7 @@
       ]
     },
     {
-      "title": "Документ регистрации прицепа - номер",
+      "title": "Парковочный номер",
       "article": "trailerRegNumber",
       "data_type": "string",
       "field_type": "string",
@@ -578,7 +578,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id != ?": [ 4, 13 ]
+          "role_id > ?": 13
         }
       },
       "use_in_commands": [
@@ -630,7 +630,7 @@
       ]
     },
     {
-      "title": "Мили",
+      "title": "Мили (Итого)",
       "article": "milesAll",
       "data_type": "float",
       "field_type": "integer",
@@ -651,6 +651,58 @@
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Год выпуска",
+      "article": "yearRelease",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Дата окончания регистрации",
+      "article": "regEnd",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Тип",
+      "article": "type",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "custom_list": [
+        {
+          "title": "Pickup",
+          "value": "pickup"
+        },
+        {
+          "title": "Semitrack",
+          "value": "semitrack"
+        }
+      ],
       "use_in_commands": [
         "update",
         "get",

@@ -1,11 +1,23 @@
 <?php
+/**
+ * Создание платежа
+ */
+$API->DB->insertInto( "payments" )
+    ->values( [
+        "sum" => $requestData->cost,
+        "created_at" => date("Y-m-d H:i:s"),
+        "status_id" => 1,
+        "responsible_id" => $requestData->responsible_id,
+        "object" => "order",
+    ] )
+    ->execute();
 
 /**
  * Получение детальной информации о водителе
  */
 $driverDetail = $API->DB->from( "users" )
     ->where( [
-        "id" => $requestData->employee_id
+        "id" => $requestData->driver_id
     ] )
     ->limit( 1 )
     ->fetch();
@@ -24,7 +36,7 @@ $carDetail = $API->DB->from( "cars" )
 /**
  * Изменение количество пройденных миль водителя
  */
-if ( $requestData->miles && $requestData->employee_id ) {
+if ( $requestData->miles && $requestData->driver_id ) {
 
     /**
      * Обновление миль водителя
@@ -33,7 +45,7 @@ if ( $requestData->miles && $requestData->employee_id ) {
         ->set( [
             "miles" => $requestData->miles + $driverDetail[ "miles" ]
         ] )
-        ->where( "id", $requestData->employee_id )
+        ->where( "id", $requestData->driver_id )
         ->execute();
 
     /**
@@ -46,7 +58,7 @@ if ( $requestData->miles && $requestData->employee_id ) {
         ->where( "id", $requestData->car_id )
         ->execute();
 
-} // if. $requestData->miles && $requestData->employee_id
+} // if. $requestData->miles && $requestData->driver_id
 
 
 /**
@@ -81,7 +93,7 @@ if ( $requestData->cost ) {
 
 $API->DB->update( "users" )
     ->set( $carUpdateFields )
-    ->where( "id", $requestData->employee_id )
+    ->where( "id", $requestData->driver_id )
     ->execute();
 
 $API->DB->update( "cars" )

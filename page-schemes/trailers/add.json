@@ -1,0 +1,58 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Прицепы- Добавление",
+        "title": [
+          "Добавление прицепа"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "trailers",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "vin",
+                  "yearOfRelease",
+                  "brand",
+                  "registrationEndDate",
+                  "dateOfInspection",
+                  "car_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "trailers"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

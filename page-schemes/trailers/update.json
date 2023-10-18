@@ -1,0 +1,106 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Прицепы - Редактирование",
+        "title": [
+          "Редактирование прицепа"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Табы",
+      "type": "tabs",
+      "size": 4,
+      "settings": [
+        {
+          "title": "Основная информаци",
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "trailers",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "vin",
+                          "yearOfRelease",
+                          "brand",
+                          "registrationEndDate",
+                          "dateOfInspection",
+                          "car_id"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "trailers"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Расходы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список расходов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "filters": [
+                  {
+                    "property": "trailer_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "trailerExpenses",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

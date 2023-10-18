@@ -43,8 +43,6 @@
               {
                 "title": "",
                 "fields": [
-                  "sender_id",
-                  "recipient_id",
                   "phone",
                   "email",
                   "website",
@@ -86,6 +84,25 @@
               "background": "dark",
               "icon": "",
               "href": "companies"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "field_place": "driver_id",
+              "title": "Добавить водителя",
+              "background": "dark",
+              "page": "drivers/add"
+            }
+          },
+          {
+            "type": "modal",
+            "settings": {
+              "field_place": "vehicles_id",
+              "title": "Добавить транспортное средство",
+              "background": "dark",
+              "icon": "",
+              "page": "cars/add"
             }
           }
         ]

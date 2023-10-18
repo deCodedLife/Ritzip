@@ -14,7 +14,7 @@ $previousValue = $API->DB->from( "orders" )
  */
 $driverDetail = $API->DB->from( "users" )
     ->where( [
-        "id" => $previousValue['employee_id']
+        "id" => $previousValue['driver_id']
     ] )
     ->limit( 1 )
     ->fetch();
@@ -44,7 +44,7 @@ $newCar = $API->DB->from( "cars" )
  */
 $newDriver = $API->DB->from( "users" )
 ->where( [
-    "id" => $requestData->employee_id
+    "id" => $requestData->driver_id
 ] )
 ->limit( 1 )
 ->fetch();
@@ -93,7 +93,7 @@ if ( $requestData->cost ) {
     /**
      * Изменение суммы заказов водителя если изменяется цена и водитель
      */
-    if (  $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+    if (  $requestData->driver_id && $requestData->driver_id != $driverDetail['id'] ) {
 
         $API->DB->update( "users" )
             ->set( [
@@ -116,7 +116,7 @@ if ( $requestData->cost ) {
     /**
      * Изменение суммы заказов воджителя если изменяется только цена
      */
-    if ( ! $requestData->employee_id ) {
+    if ( ! $requestData->driver_id ) {
 
         $API->DB->update( "users" )
         ->set( [
@@ -154,7 +154,7 @@ if ( $requestData->cost ) {
     /**
      * Изменение суммы заказов водителя если изменяется только водитель а цена заказа остается прежней
      */
-    if ( $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+    if ( $requestData->driver_id && $requestData->driver_id != $driverDetail['id'] ) {
 
         $API->DB->update( "users" )
             ->set( [
@@ -219,7 +219,7 @@ if ( $requestData->miles ) {
     /**
      * Изменение количество пройденных миль водителя если изменяются мили но водитель то же
      */
-    if ( ! $requestData->employee_id ) {
+    if ( ! $requestData->driver_id ) {
 
         $API->DB->update( "users" )
             ->set( [
@@ -233,7 +233,7 @@ if ( $requestData->miles ) {
     /**
      * Изменение количество пройденных миль водителя если изменяется мили и водитель
      */
-    if ( $requestData->employee_id && $requestData->employee_id != $driverDetail['id'] ) {
+    if ( $requestData->driver_id && $requestData->driver_id != $driverDetail['id'] ) {
 
         $API->DB->update( "users" )
             ->set( [
@@ -278,7 +278,7 @@ if ( $requestData->miles ) {
     /**
      * Изменение количество пройденных миль водителя если изменяется водитель а мили нет
      */
-    if ( $requestData->employee_id != $driverDetail['id'] ) {
+    if ( $requestData->driver_id != $driverDetail['id'] ) {
 
         $API->DB->update( "users" )
             ->set( [

@@ -1,0 +1,47 @@
+{
+  "title": "Прицепы",
+  "properties": [
+    {
+      "title": "VIN Номер",
+      "article": "vin",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Год выпуска",
+      "article": "yearOfRelease",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
+      "title": "Марка",
+      "article": "brand",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Дата окончания регистрации",
+      "article": "registrationEndDate",
+      "type": "date",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Дата прохождения инспекции",
+      "article": "dateOfInspection",
+      "type": "date",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Автомобить",
+      "article": "car_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    }
+  ]
+}

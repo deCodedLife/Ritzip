@@ -43,7 +43,7 @@ switch ( $requestData->repeat_templates ) {
  * Связки
  */
 
-$linkedFields = [ "contact_id", "company_id", "car_id", "driver_id", "order_id" ];
+$linkedFields = [ "contact_id", "trailer_id", "company_id", "car_id", "driver_id", "order_id" ];
 $disabledFields = [];
 
 foreach ( $linkedFields as $linkedFieldKey => $linkedField )

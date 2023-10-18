@@ -23,3 +23,9 @@ if ( ( $requestData->context->form == "orderExpenses" ) && $requestData->context
     $formFieldValues[ "order_id" ][ "value" ] = $requestData->context->row_id;
 
 }
+
+if ( ( $requestData->context->form == "trailerExpenses" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "trailer_id" ][ "value" ] = $requestData->context->row_id;
+
+}

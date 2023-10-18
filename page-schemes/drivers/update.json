@@ -13,9 +13,7 @@
           " ",
           ":last_name",
           " ",
-          ":first_name",
-          " ",
-          ":patronymic"
+          ":first_name"
         ],
         "description": "Водители - Редактирование"
       },
@@ -59,8 +57,19 @@
                       {
                         "title": "Основное",
                         "fields": [
+                          "role_id",
+                          "first_name",
+                          "last_name",
                           "address",
-                          "insuranceNumber"
+                          "insuranceNumber",
+                          "fuelСardNumber",
+                          "driverType",
+                          "insuranceAmount",
+                          "insurancePeriod_from",
+                          "insurancePeriod_to",
+                          "dispatchFee",
+                          "usingApp",
+                          "lookBook"
                         ]
                       },
                       {
@@ -70,7 +79,10 @@
                           "license_from",
                           "license_to",
                           "license_address",
-                          "licensePhoto"
+                          "addressLicense",
+                          "driveLicenseFront",
+                          "driveLicenseBack",
+                          "driveLicenseInHands"
                         ]
                       },
                       {
@@ -150,6 +162,41 @@
           ]
         },
         {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "driver_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "driverPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "title": "Привязанные автомобили",
           "is_counter": true,
           "body": [
@@ -159,6 +206,7 @@
               "size": 4,
               "settings": {
                 "object": "driver_cars",
+                "link": "cars",
                 "filters": [
                   {
                     "property": "driver_id",
@@ -209,7 +257,7 @@
                 "object": "orders",
                 "filters": [
                   {
-                    "property": "employee_id",
+                    "property": "driver_id",
                     "value": ":id"
                   }
                 ]
@@ -426,7 +474,8 @@
           ]
         },
         {
-          "title": "История действий",
+          "title": "История изменений",
+          "is_counter": true,
           "body": [
             {
               "title": "Логи",
@@ -436,7 +485,11 @@
                 "object": "logs",
                 "filters": [
                   {
-                    "property": "users_id",
+                    "property": "table_name",
+                    "value": "users"
+                  },
+                  {
+                    "property": "row_id",
                     "value": ":id"
                   }
                 ]

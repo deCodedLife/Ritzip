@@ -4,6 +4,52 @@
   "is_trash": false,
   "properties": [
     {
+      "title": "Дата (от)",
+      "article": "created_at_from",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "dispatcherReport",
+        "driverReport",
+        "ownerReport"
+      ]
+    },
+    {
+      "title": "Дата (до)",
+      "article": "created_at_to",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "dispatcherReport",
+        "driverReport",
+        "ownerReport"
+      ]
+    },
+    {
+      "title": "Статус",
+      "article": "status_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "dispatcherReport",
+        "driverReport",
+        "ownerReport"
+      ],
+      "list_donor": {
+        "table": "orderStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
       "title": "Период с",
       "article": "start_at",
       "data_type": "date",

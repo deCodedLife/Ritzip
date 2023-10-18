@@ -1,0 +1,64 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Платежи - Редактирование",
+        "title": [
+          ":id"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "payments",
+        "command": "update",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основные данные",
+                "fields": [
+                  "account",
+                  "sum",
+                  "created_at",
+                  "object",
+                  "order_id",
+                  "driver_id",
+                  "company_id",
+                  "car_id",
+                  "contact_id",
+                  "payBefore",
+                  "status_id",
+                  "responsible_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "background": "dark",
+              "icon": "",
+              "href": "payments"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

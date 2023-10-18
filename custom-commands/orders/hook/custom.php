@@ -40,11 +40,15 @@ switch ( $requestData->sourceType ) {
 
 if ( $requestData->car_id ) {
 
-    $carDetail = $API->DB->from( "cars" )
+    $driverCar = $API->DB->from( "driver_cars" )
         ->where( "id", $requestData->car_id )
         ->limit( 1 )
         ->fetch();
 
+    $carDetail = $API->DB->from( "cars" )
+        ->where( "id", $driverCar[ "car_id" ] )
+        ->limit( 1 )
+        ->fetch();
 
     $formFieldsUpdate[ "trailerType" ] = [
         "value" => $carDetail[ "trailerType" ]

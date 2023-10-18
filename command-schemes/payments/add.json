@@ -1,0 +1,9 @@
+{
+  "title": "Добавление",
+  "type": "add",
+  "object_scheme": "payments",
+  "modules": [],
+  "required_permissions": [
+    "payments_add"
+  ]
+}

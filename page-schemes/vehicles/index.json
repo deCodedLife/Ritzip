@@ -1,32 +1,39 @@
 {
   "required_modules": [],
   "required_permissions": [],
-  "structure": [{
-    "title": "Шапка",
-    "type": "header",
-    "size": 4,
-    "settings": {
-      "description": "Транспортные средства на отправку",
-      "title": ["Транспортные средства на отправку"]
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Транспортные средства на отправку",
+        "title": [
+          "Транспортные средства на отправку"
+        ]
+      },
+      "components": []
     },
-    "components": []
-  }, {
-    "title": "Список",
-    "type": "list",
-    "size": 4,
-    "settings": {
-      "object": "vehicles"
-    },
-    "components": {
-      "search": true,
-      "buttons": [{
-        "type": "href",
-        "settings": {
-          "title": "Добавить транспортное средство",
-          "background": "dark",
-          "page": "vehicles/add"
-        }
-      }]
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "vehicles"
+      },
+      "components": {
+        "search": true,
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить транспортное средство",
+              "background": "dark",
+              "page": "vehicles/add"
+            }
+          }
+        ]
+      }
     }
-  }]
+  ]
 }

@@ -1,0 +1,31 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Типы штрафов для диспетчеров",
+      "title": ["Типы штрафов для диспетчеров"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "finesDispatchers"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить тип",
+          "background": "dark",
+          "page": "finesDispatchers/add"
+        }
+      }]
+    }
+  }]
+}

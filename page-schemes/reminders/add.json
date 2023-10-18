@@ -1,1 +1,78 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Напоминания - Добавление","title":["Добавление напоминания"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"reminders","command":"add","areas":[{"size":2,"blocks":[{"title":"","fields":["title","user_id","company_id"]}]},{"size":2,"blocks":[{"title":"","fields":["notification_at"]}]},{"size":4,"blocks":[{"title":"","fields":["description"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","background":"dark","icon":"","href":"reminders"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Напоминания - Добавление",
+        "title": [
+          "Добавление напоминания"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "reminders",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "title",
+                  "user_id",
+                  "company_id",
+                  "order_id"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "notification_at"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "description"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "reminders"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

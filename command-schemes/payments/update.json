@@ -1,0 +1,9 @@
+{
+  "title": "Редактирование",
+  "type": "update",
+  "object_scheme": "payments",
+  "modules": [],
+  "required_permissions": [
+    "payments_update"
+  ]
+}

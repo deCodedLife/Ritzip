@@ -92,7 +92,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": 21
+          "role_id > ?": 4
         }
       }
     },
@@ -136,6 +136,26 @@
       ],
       "list_donor": {
         "table": "cars",
+        "properties_title": "vin"
+      }
+    },
+    {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "hook"
+      ],
+      "list_donor": {
+        "table": "trailers",
         "properties_title": "vin"
       }
     },

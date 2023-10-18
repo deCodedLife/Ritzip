@@ -1,1 +1,41 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Форма оплаты","type":"form","size":4,"settings":{"object":"orders","command":"update","areas":[{"size":4,"blocks":[{"title":"Оплата","fields":["paymentType_id","payNow"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Оплатить","href":"orders","background":"dark"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Форма оплаты",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "orders",
+        "command": "update",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "Оплата",
+                "fields": [
+                  "paymentType_id",
+                  "payNow"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Оплатить",
+              "href": "orders",
+              "background": "dark"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

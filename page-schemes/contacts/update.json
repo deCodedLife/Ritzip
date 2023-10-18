@@ -100,6 +100,41 @@
           ]
         },
         {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "contact_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "contactPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "title": "Сделки",
           "is_counter": true,
           "body": [

@@ -1,0 +1,57 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Позиции - Редактирование",
+        "title": [
+          ":title"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "positions",
+        "command": "update",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основные данные",
+                "fields": [
+                  "article",
+                  "title",
+                  "unit",
+                  "count",
+                  "cost"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "background": "dark",
+              "icon": "",
+              "href": "positions"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

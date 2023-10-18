@@ -1,0 +1,24 @@
+{
+  "title": "Типы штрафов для водителей",
+  "table": "finesDrivers",
+  "is_trash": false,
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    }
+  ]
+}

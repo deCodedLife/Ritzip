@@ -1,0 +1,31 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [{
+    "title": "Шапка",
+    "type": "header",
+    "size": 4,
+    "settings": {
+      "description": "Типы бонусов для диспетчеров",
+      "title": ["Типы бонусов для диспетчеров"]
+    },
+    "components": []
+  }, {
+    "title": "Список",
+    "type": "list",
+    "size": 4,
+    "settings": {
+      "object": "bonusDispatchers"
+    },
+    "components": {
+      "buttons": [{
+        "type": "href",
+        "settings": {
+          "title": "Добавить тип",
+          "background": "dark",
+          "page": "bonusDispatchers/add"
+        }
+      }]
+    }
+  }]
+}

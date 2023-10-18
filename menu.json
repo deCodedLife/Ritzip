@@ -14,10 +14,25 @@
       "icon": "delivery"
     },
     {
-      "title": "Задачи",
-      "href": "tasks",
+      "title": "Сотрудники",
+      "href": "users",
       "children": [],
-      "icon": "bullet-list"
+      "icon": "customers"
+    },
+    {
+      "title": "Должности",
+      "href": "roles",
+      "children": [],
+      "icon": "id-card"
+    },
+    {
+      "title": "Платежи",
+      "href": "payments",
+      "children": [],
+      "icon": "tag",
+      "required_permissions": [
+        "payments_get"
+      ]
     },
     {
       "title": "Списки",
@@ -49,6 +64,10 @@
         {
           "title": "Автомобили",
           "href": "cars"
+        },
+        {
+          "title": "Прицепы",
+          "href": "trailers"
         }
       ],
       "icon": "shipping-van"
@@ -88,44 +107,48 @@
       "href": "reports",
       "children": [
         {
-          "title": "Воронка продаж",
-          "href": "report_sales_funnel"
+          "title": "Отчет диспетчера",
+          "href": "dispatcherReport"
         },
         {
-          "title": "Работа с брокерами",
-          "href": "report_brokers"
+          "title": "Отчет Driver",
+          "href": "driverReport"
         },
         {
-          "title": "Заказы",
-          "href": "report_orders"
+          "title": "Отчет Owner Operator",
+          "href": "ownerReport"
         },
         {
-          "title": "Расходы водителей",
-          "href": "report_driver_expenses"
+          "title": "Отчет администратора",
+          "href": "adminReport"
         },
         {
-          "title": "Расходы на ТО",
-          "href": "report_ma_expenses"
+          "title": "Отчет руководителя",
+          "href": "directorReport"
         },
         {
-          "title": "Расходы по топливу",
-          "href": "report_fuel_expenses"
+          "title": "Отчет бухгалтера",
+          "href": "accountantReport"
         },
         {
-          "title": "Выплаты",
-          "href": "report_transactions"
+          "title": "Отчет инвестора",
+          "href": "investorReport"
         },
         {
-          "title": "Аналитика отказов",
-          "href": "report_canceled_orders"
+          "title": "Отчет брокера",
+          "href": "brokerReport"
         },
         {
-          "title": "Хоз расходы",
-          "href": "report_company_expenses"
+          "title": "Отчет технического специалиста",
+          "href": "technicalReport"
         },
         {
-          "title": "Расчет предстоящих расходов",
-          "href": "report_future_expenses"
+          "title": "Расходы",
+          "href": "expenses"
+        },
+        {
+          "title": "Задачи",
+          "href": "tasks"
         }
       ],
       "icon": "performance"
@@ -135,12 +158,32 @@
       "href": "settings",
       "children": [
         {
+          "title": "Список позиций",
+          "href": "positions"
+        },
+        {
           "title": "Доска объявлений",
           "href": "notice_board"
         },
         {
           "title": "Напоминания",
           "href": "reminders"
+        },
+        {
+          "title": "Типы штрафов для диспетчеров",
+          "href": "finesDispatchers"
+        },
+        {
+          "title": "Типы штрафов для водителей",
+          "href": "finesDrivers"
+        },
+        {
+          "title": "Типы бонусов для диспетчеров",
+          "href": "bonusDispatchers"
+        },
+        {
+          "title": "Типы бонусов для водителей",
+          "href": "bonusDrivers"
         },
         {
           "title": "Плановые ТО",

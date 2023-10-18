@@ -1,0 +1,81 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": "Добавление штрафа/бонуса",
+        "description": "Добавление штрафа/бонуса"
+      },
+      "components": {}
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "finesAndBonuses",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "startDate",
+                  "bonusOrFine",
+                  "userType"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "driver_id",
+                  "dispatcher_id",
+                  "order_id",
+                  "driverFineType",
+                  "driverBonusType",
+                  "dispatcherFineType",
+                  "dispatcherBonusType",
+                  "sum"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "note"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Оплатить",
+              "background": "dark",
+              "href": "[return]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

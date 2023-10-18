@@ -1,6 +1,6 @@
 {
-  "required_modules": [],
   "required_permissions": [],
+  "required_modules": ["documents_get"],
   "structure": [
     {
       "title": "Шапка",
@@ -9,7 +9,7 @@
       "settings": {
         "description": "Документы",
         "title": [
-          "Документы"
+          "Шаблоны документов"
         ]
       },
       "components": []
@@ -21,8 +21,19 @@
       "settings": {
         "object": "documents"
       },
-      "components": []
+      "components": {
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить документ",
+              "background": "dark",
+              "page": "documents/add"
+            }
+          }
+        ]
+      }
     }
-
-  ]
+  ],
+  "subpages": []
 }

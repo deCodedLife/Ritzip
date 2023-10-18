@@ -29,6 +29,7 @@
                 ]
             },
             "components": {
+                "search": true,
                 "buttons": [
                     {
                         "type": "href",
@@ -36,6 +37,19 @@
                             "title": "Добавить водителя",
                             "background": "dark",
                             "page": "/drivers/add"
+                        }
+                    },
+                    {
+                        "type": "modal",
+                        "settings": {
+                            "field_place": "recipient_id",
+                            "title": "Пригласить водителя",
+                            "background": "dark",
+                            "page": "drivers/invite",
+                            "context": {
+                                "form": "invite",
+                                "row_id": "invite"
+                            }
                         }
                     }
                 ],
