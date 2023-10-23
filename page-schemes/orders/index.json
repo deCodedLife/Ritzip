@@ -64,7 +64,7 @@
                     "type": "list",
                     "settings": {
                         "donor_object": "users",
-                        "recipient_property": "employee_id",
+                        "recipient_property": "driver_id",
                         "donor_property_title": "last_name",
                         "donor_property_value": "id"
                     }
@@ -130,23 +130,13 @@
                     }
                 },
                 {
-                    "title": "Клиент",
-                    "type": "list",
-                    "settings": {
-                        "donor_object": "users",
-                        "recipient_property": "client_id",
-                        "donor_property_title": "last_name",
-                        "donor_property_value": "id"
-                    }
-                },
-                {
                     "title": "Статусы оплат",
                     "type": "list",
                     "settings": {
-                        "donor_object": "orderPayStatuses",
                         "recipient_property": "pay_status",
+                        "donor_property_value": "id",
                         "donor_property_title": "title",
-                        "donor_property_value": "id"
+                        "donor_object": "orderPayStatuses"
                     }
                 },
                 {

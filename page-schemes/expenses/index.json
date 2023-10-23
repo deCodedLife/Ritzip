@@ -176,8 +176,8 @@
           "settings": {
             "is_search": false,
             "recipient_property": "contact_id",
-            "donor_object": "contacts",
-            "donor_property_title": "title",
+            "donor_object": "users",
+            "donor_property_title": "last_name",
             "donor_property_value": "id"
           }
         }

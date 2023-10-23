@@ -45,19 +45,6 @@
                         }
                     },
                     {
-                        "title": "Владелец",
-                        "type": "list",
-                        "required_permissions": [],
-                        "required_modules": [],
-                        "settings": {
-                            "object": "users",
-                            "recipient_property": "owner_id",
-                            "donor_object": "users",
-                            "donor_property_title": "last_name",
-                            "donor_property_value": "id"
-                        }
-                    },
-                    {
                         "title": "Кол-во заказов",
                         "type": "integer",
                         "required_permissions": [],

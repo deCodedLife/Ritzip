@@ -7,8 +7,7 @@
 
 if ( $requestData->cost_from ) {
 
-    $requestData->cost_from = 0;
-    $requestSettings[ "filter" ][ "cost >= ?" ] = 0;
+    $requestSettings[ "filter" ][ "cost >= ?" ] = $requestData->cost_from;
     unset( $requestData->cost_from );
 
 } // if. $requestData->cost_from
@@ -77,4 +76,14 @@ if ( $requestData->placeOccupied_to ) {
     unset( $requestData->placeOccupied_to );
 
 } // if. $requestData->miles
+
+if ( $requestData->car_id ) {
+
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    $carId = $requestData->car_id;
+    unset( $requestData->car_id );
+
+} // if. $requestData->car_id
 

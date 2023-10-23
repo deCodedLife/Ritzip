@@ -59,6 +59,7 @@ foreach ( $response[ "data" ] as $order ) {
         ];
 
     }
+    
     $order[ "finesAndBonuses" ] = $finesAndBonusesFormated;
 
 
@@ -66,8 +67,15 @@ foreach ( $response[ "data" ] as $order ) {
         ->where( "id", $order[ "driver_id" ] )
         ->limit( 1 )
         ->fetch();
+    if ( $driverDetail ) {
 
-    $order[ "tachometer" ] = $driverDetail[ "lookBook" ];
+        $order[ "tachometer" ] = $driverDetail[ "lookBook" ];
+
+    } else {
+
+        $order[ "tachometer" ] = "0";
+
+    }
 
     $expenses = $API->DB->from( "expenses" )
         ->where( [
@@ -77,7 +85,7 @@ foreach ( $response[ "data" ] as $order ) {
 
         ] );
 
-    $order[ "fuelConsumption" ] = 0;
+    $order[ "fuelConsumption" ] = "0";
 
     foreach ( $expenses as $expense ) {
 

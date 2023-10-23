@@ -96,7 +96,7 @@
           "required_modules": [],
           "settings": {
             "is_search": false,
-            "recipient_property": "orders_count_from"
+            "recipient_property": "orders_cost_from"
           }
         },
         {
@@ -106,7 +106,7 @@
           "required_modules": [],
           "settings": {
             "is_search": false,
-            "recipient_property": "orders_count_to"
+            "recipient_property": "orders_cost_to"
           }
         }
       ],
