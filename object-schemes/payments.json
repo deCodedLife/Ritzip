@@ -1,5 +1,5 @@
 {
-  "title": "Автомобили",
+  "title": "Платежи",
   "table": "payments",
   "is_trash": true,
   "properties": [
@@ -160,8 +160,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 13
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       },
       "use_in_commands": [

@@ -13,21 +13,24 @@ if ( $requestData->created_at ) {
 
 } // if. $requestData->created_at
 
-
 /**
  * Фильтр по кол-ву сделок
  */
 
+$limit = $requestData->limit;
+
 if ( $requestData->orders_count_from ) {
 
-    $requestSettings[ "filter" ][ "orders_count >= ?" ] = $requestData->orders_count_from;
+    $requestData->limit = 0;
+    $orders_count_from = $requestData->orders_count_from;
     unset( $requestData->orders_count_from );
 
 } // if. $requestData->orders_count_from
 
 if ( $requestData->orders_count_to ) {
 
-    $requestSettings[ "filter" ][ "orders_count <= ?" ] = $requestData->orders_count_to;
+    $requestData->limit = 0;
+    $orders_count_to = $requestData->orders_count_to;
     unset( $requestData->orders_count_to );
 
 } // if. $requestData->orders_count_to
@@ -39,14 +42,16 @@ if ( $requestData->orders_count_to ) {
 
 if ( $requestData->orders_cost_from ) {
 
-    $requestSettings[ "filter" ][ "orders_cost >= ?" ] = $requestData->orders_cost_from;
+    $requestData->limit = 0;
+    $orders_cost_from = $requestData->orders_cost_from;
     unset( $requestData->orders_cost_from );
 
 } // if. $requestData->orders_cost_from
 
 if ( $requestData->orders_cost_to ) {
 
-    $requestSettings[ "filter" ][ "orders_cost <= ?" ] = $requestData->orders_cost_to;
+    $requestData->limit = 0;
+    $orders_cost_to = $requestData->orders_cost_to;
     unset( $requestData->orders_cost_to );
 
 } // if. $requestData->orders_cost_to

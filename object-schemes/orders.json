@@ -107,6 +107,51 @@
       "is_visible": false
     },
     {
+      "title": "Контакт",
+      "article": "contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 13
+        }
+      }
+    },
+    {
+      "title": "Контакт",
+      "article": "sourse_contact",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name",
+        "filters": {
+          "role_id": 13
+        }
+      },
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ],
+      "is_visible": false
+    },
+    {
       "title": "Статус",
       "article": "status_id",
       "data_type": "integer",
@@ -163,8 +208,11 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 13
+        "multiply_filter": {
+          "role_id != ?": [
+            4,
+            13
+          ]
         }
       },
       "use_in_commands": [
@@ -188,11 +236,9 @@
         "search"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 4
-        }
+        "object": "users",
+        "table": "drivers",
+        "properties_title": "last_name"
       },
       "is_in_search": true
     },
@@ -219,6 +265,26 @@
       "is_hook": true
     },
     {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ],
+      "list_donor": {
+        "table": "trailers",
+        "properties_title": "vin"
+      },
+      "is_hook": true
+    },
+    {
       "title": "ТС на отправку",
       "article": "vehicles_id",
       "data_type": "array",
@@ -229,7 +295,8 @@
       "use_in_commands": [
         "add",
         "update",
-        "get"
+        "get",
+        "hook"
       ],
       "join": {
         "connection_table": "orders_vehicles",
@@ -237,7 +304,8 @@
         "property_article": "vin",
         "insert_property": "order_id",
         "filter_property": "vehicle_id"
-      }
+      },
+      "is_hook": true
     },
     {
       "title": "Общая стоимость",
@@ -253,28 +321,6 @@
         "get"
       ],
       "require_in_commands": []
-    },
-    {
-      "title": "Контакт",
-      "article": "contact_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 13
-        }
-      }
     },
     {
       "title": "ZIP код отправки",
@@ -468,8 +514,10 @@
       "use_in_commands": [
         "update",
         "get",
-        "add"
-      ]
+        "add",
+        "hook"
+      ],
+      "is_hook": true
     },
     {
       "title": "Мест (занято)",
@@ -639,7 +687,7 @@
       "title": "Адрес отправления",
       "article": "sendingAddress",
       "data_type": "string",
-      "field_type": "dadata_address",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -652,7 +700,7 @@
       "title": "Адрес получения",
       "article": "receivingAddress",
       "data_type": "string",
-      "field_type": "dadata_address",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -661,29 +709,6 @@
         "add"
       ],
       "min_value": 0
-    },
-    {
-      "title": "Контакт",
-      "article": "sourse_contact",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 13
-        }
-      },
-      "use_in_commands": [
-        "update",
-        "get",
-        "add",
-        "hook"
-      ],
-      "is_visible": false
     },
     {
       "title": "Тип прицепа",

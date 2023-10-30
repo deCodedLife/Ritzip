@@ -5,10 +5,10 @@ if ( $orders_count_from ) {
 
     $filteredOrders = [];
 
-    foreach ( $response[ "data" ] as $contact ) {
+    foreach ( $response[ "data" ] as $company ) {
 
         $orders = $API->DB->from( "orders" )
-            ->where( "sourse_contact", $contact[ "id" ] );
+            ->where( "company_id", $company[ "id" ] );
 
         $count = 0;
 
@@ -20,7 +20,7 @@ if ( $orders_count_from ) {
 
         if ( $orders_count_from <= $count ) {
 
-            $filteredOrders[] = $contact;
+            $filteredOrders[] = $company;
 
         }
 
@@ -37,10 +37,10 @@ if ( $orders_count_to ) {
 
     $filteredOrders = [];
 
-    foreach ( $response[ "data" ] as $contact ) {
+    foreach ( $response[ "data" ] as $company ) {
 
         $orders = $API->DB->from( "orders" )
-            ->where( "sourse_contact", $contact[ "id" ] );
+            ->where( "company_id", $company[ "id" ] );
 
         $count = 0;
 
@@ -52,7 +52,7 @@ if ( $orders_count_to ) {
 
         if ( $orders_count_to >= $count ) {
 
-            $filteredOrders[] = $contact;
+            $filteredOrders[] = $company;
 
         }
 
@@ -69,10 +69,10 @@ if ( $orders_cost_from ) {
 
     $filteredOrders = [];
 
-    foreach ( $response[ "data" ] as $contact ) {
+    foreach ( $response[ "data" ] as $company ) {
 
         $orders = $API->DB->from( "orders" )
-            ->where( "sourse_contact", $contact[ "id" ] );
+            ->where( "company_id", $company[ "id" ] );
 
         $cost = 0;
 
@@ -84,7 +84,7 @@ if ( $orders_cost_from ) {
 
         if ( $orders_cost_from <= $cost ) {
 
-            $filteredOrders[] = $contact;
+            $filteredOrders[] = $company;
 
         }
 
@@ -101,10 +101,10 @@ if ( $orders_cost_to ) {
 
     $filteredOrders = [];
 
-    foreach ( $response[ "data" ] as $contact ) {
+    foreach ( $response[ "data" ] as $company ) {
 
         $orders = $API->DB->from( "orders" )
-            ->where( "sourse_contact", $contact[ "id" ] );
+            ->where( "company_id", $company[ "id" ] );
 
         $cost = 0;
 
@@ -116,7 +116,7 @@ if ( $orders_cost_to ) {
 
         if ( $orders_cost_to >= $cost ) {
 
-            $filteredOrders[] = $contact;
+            $filteredOrders[] = $company;
 
         }
 

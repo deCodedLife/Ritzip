@@ -147,7 +147,7 @@
           "is_counter": true,
           "body": [
             {
-              "title": "Статистика контактов",
+              "title": "Статистика компаний",
               "type": "analytic_widgets",
               "size": 4,
               "settings": {

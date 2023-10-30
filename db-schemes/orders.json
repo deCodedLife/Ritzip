@@ -23,6 +23,13 @@
       "is_required": "Y"
     },
     {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
       "title": "Получатель",
       "article": "recipient_id",
       "type": "int",
@@ -243,7 +250,7 @@
       "title": "Тип источника",
       "article": "sourceType",
       "type": "varchar(75)",
-      "default": "client",
+      "default": "company",
       "is_required": "N"
     },
     {

@@ -52,7 +52,6 @@ if ( $carId ) {
 }  // if. $carId
 
 
-
 /**
  * Вывод vin авто в список
  */
@@ -66,14 +65,18 @@ foreach ( $response[ "data" ] as $order ) {
         ->limit( 1 )
         ->fetch();
 
-    /**
-     * Заменя значения поля
-     */
-    $order[ "car_id" ] =
-        [
-            "value" => $order[ "car_id" ][ "value" ],
-            "title" => $carDetail[ "vin" ]
-        ];
+    if ($carDetail) {
+
+        /**
+         * Заменя значения поля
+         */
+        $order[ "car_id" ] =
+            [
+                "value" => $order[ "car_id" ][ "value" ],
+                "title" => $carDetail[ "vin" ]
+            ];
+
+    }
 
     $returnOrders[] = $order;
 

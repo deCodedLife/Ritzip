@@ -34,7 +34,9 @@
                   "approximatelyTime",
                   "sendingAddress",
                   "receivingAddress",
-                  "miles"
+                  "miles",
+                  "placeCount",
+                  "placeOccupied"
                 ]
               },
               {
@@ -69,7 +71,9 @@
                   "responsible_id",
                   "driver_id",
                   "car_id",
+                  "trailer_id",
                   "trailerType",
+                  "vehicles_id",
                   "cost",
                   "pay_status",
                   "comment"

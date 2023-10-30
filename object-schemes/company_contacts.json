@@ -33,7 +33,7 @@
         "table": "users",
         "properties_title": "last_name",
         "filters": {
-          "role_id": "13"
+          "role_id": 13
         }
       },
       "use_in_commands": [

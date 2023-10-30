@@ -186,7 +186,7 @@
       "title": "Права (адрес прописки)",
       "article": "license_address",
       "data_type": "string",
-      "field_type": "dadata_address",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -199,7 +199,7 @@
       "title": "Адрес проживания",
       "article": "address",
       "data_type": "string",
-      "field_type": "dadata_address",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -351,10 +351,7 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 4
-        }
+        "properties_title": "last_name"
       }
     },
     {

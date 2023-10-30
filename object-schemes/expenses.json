@@ -91,8 +91,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 4
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       }
     },
@@ -122,6 +122,8 @@
     {
       "title": "Автомобиль",
       "article": "car_id",
+      "joined_field": "driver_id",
+      "joined_field_filter": "driver_id",
       "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": false,

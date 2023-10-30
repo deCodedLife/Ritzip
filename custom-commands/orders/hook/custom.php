@@ -38,21 +38,28 @@ switch ( $requestData->sourceType ) {
 
 } // switch. $requestData->purchaseType
 
-if ( $requestData->car_id ) {
+if ( $requestData->trailer_id ) {
 
-    $driverCar = $API->DB->from( "driver_cars" )
-        ->where( "id", $requestData->car_id )
-        ->limit( 1 )
-        ->fetch();
-
-    $carDetail = $API->DB->from( "cars" )
-        ->where( "id", $driverCar[ "car_id" ] )
+    $trailerDetail = $API->DB->from( "trailers" )
+        ->where( "id", $requestData->trailer_id )
         ->limit( 1 )
         ->fetch();
 
     $formFieldsUpdate[ "trailerType" ] = [
-        "value" => $carDetail[ "trailerType" ]
+        "value" => $trailerDetail[ "trailerType" ]
     ];
+    $formFieldsUpdate[ "placeCount" ] = [
+        "value" => $trailerDetail[ "positionCount" ]
+    ];
+
+}
+
+if ( $requestData->vehicles_id ) {
+
+    $formFieldsUpdate[ "placeOccupied" ] = [
+        "value" => count($requestData->vehicles_id)
+    ];
+
 
 }
 

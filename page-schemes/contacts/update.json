@@ -146,7 +146,7 @@
                 "widgets_group": "contact_statistic",
                 "filters": [
                   {
-                    "property": "contact_id",
+                    "property": "sourse_contact",
                     "value": ":id"
                   }
                 ]
@@ -161,7 +161,7 @@
                 "object": "orders",
                 "filters": [
                   {
-                    "property": "contact_id",
+                    "property": "sourse_contact",
                     "value": ":id"
                   }
                 ]

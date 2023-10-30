@@ -36,12 +36,43 @@
                       {
                         "title": "",
                         "fields": [
+                          "trailerType",
+                          "positionCount",
+                          "trailerLength",
+                          "trailerWidth",
+                          "trailerWeight",
+                          "trailerRegPhoto",
+                          "trailerRegNumber"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
                           "vin",
+                          "trailer_license_plate",
+                          "trailer_license_plate_state",
                           "yearOfRelease",
                           "brand",
                           "registrationEndDate",
                           "dateOfInspection",
                           "car_id"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "trailerPhotoLeft",
+                          "trailerPhotoRight"
                         ]
                       }
                     ]

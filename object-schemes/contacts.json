@@ -226,8 +226,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 13
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       }
     },
@@ -635,8 +635,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 13
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       }
     },

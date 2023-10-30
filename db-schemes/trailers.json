@@ -42,6 +42,90 @@
       "type": "int",
       "default": null,
       "is_required": "N"
+    },
+    {
+      "title": "Тип прицепа",
+      "article": "trailerType",
+      "type": "varchar(255)",
+      "default": "opened",
+      "is_required": "N"
+    },
+    {
+      "title": "Длина прицепа (метров)",
+      "article": "trailerLength",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Высота прицепа (метров)",
+      "article": "trailerHeight",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Ширина прицепа (метров)",
+      "article": "trailerWidth",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Вес прицепа (килограммов)",
+      "article": "trailerWeight",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Документ регистрации прицепа - фото",
+      "article": "trailerRegPhoto",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Документ регистрации прицепа - номер",
+      "article": "trailerRegNumber",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Фото прицепа - левая сторона",
+      "article": "trailerPhotoLeft",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Фото прицепа - правая сторона",
+      "article": "trailerPhotoRight",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Номерной знак прицепа",
+      "article": "trailer_license_plate",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Номерной знак прицепа (государство)",
+      "article": "trailer_license_plate_state",
+      "type": "varchar(255)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Кол-во позиций",
+      "article": "positionCount",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
     }
   ]
 }

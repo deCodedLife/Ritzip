@@ -109,9 +109,7 @@
         "add",
         "update"
       ],
-      "require_in_commands": [
-        "add"
-      ]
+      "require_in_commands": []
     },
     {
       "title": "Парковочный номер прицепа (государство)",
@@ -125,9 +123,7 @@
         "add",
         "update"
       ],
-      "require_in_commands": [
-        "add"
-      ]
+      "require_in_commands": []
     },
     {
       "title": "Цвет",
@@ -224,8 +220,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 4
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       }
     },
@@ -248,8 +244,8 @@
         "property_article": "last_name",
         "insert_property": "car_id",
         "filter_property": "user_id",
-        "filters": {
-          "role_id > ?": 4
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       }
     },
@@ -577,8 +573,8 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 13
+        "multiply_filter": {
+          "role_id != ?": [ 4, 13 ]
         }
       },
       "use_in_commands": [

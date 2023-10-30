@@ -109,32 +109,33 @@ if ( $requestData->is_repeatable == "Y" ) {
 
 }
 
-$today = date("Y-m-d H:i:s");
+if ( $requestData->block == "list" ) {
 
-$return = [];
+    $today = date("Y-m-d H:i:s");
 
-foreach ( $response[ "data" ] as $task ) {
+    $return = [];
+
+    foreach ( $response[ "data" ] as $task ) {
 
 
-    if ( !empty( $task[ "deadline" ] ) && $task[ "deadline" ] <= $today ) {
+        if ( !empty( $task[ "deadline" ] ) && $task[ "deadline" ] <= $today ) {
 
-        $task[ "deadline" ] = [
+            $task[ "deadline" ] = [
 
-            "color" => "danger",
-            "value" => $task[ "deadline" ]
+                "color" => "danger",
+                "value" => $task[ "deadline" ]
 
-        ];
+            ];
+
+        }
+
+        $return[] = $task;
 
     }
 
-    $return[] = $task;
+    $response[ "data" ] = $return;
 
 }
-
-
-$response[ "data" ] = $return;
-
-
 
 $response[ "detail" ] = [
 

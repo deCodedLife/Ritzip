@@ -21,7 +21,7 @@ $ordersPrice = 0;
  * Получение заказов
  */
 $orders = $API->DB->from( "orders" )
-    ->where( "contact_id", $requestData->contact_id )
+    ->where( "sourse_contact", $requestData->contact_id )
     ->limit( 1000 );
 
 /**

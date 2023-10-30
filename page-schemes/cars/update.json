@@ -78,16 +78,6 @@
                           "license_plate_state",
                           "insurance"
                         ]
-                      },
-                      {
-                        "title": "Прицеп",
-                        "fields": [
-                          "trailer_license_plate",
-                          "trailer_license_plate_state",
-                          "trailerPhotoLeft",
-                          "trailerPhotoRight",
-                          "tax_id_number"
-                        ]
                       }
                     ]
                   },
@@ -105,24 +95,6 @@
                         "title": "",
                         "fields": [
                           "company_id"
-                        ]
-                      },
-                      {
-                        "title": "Документ регистрации прицепа",
-                        "fields": [
-                          "trailerRegPhoto",
-                          "trailerRegNumber"
-                        ]
-                      },
-                      {
-                        "title": "Параметры прицепа",
-                        "fields": [
-                          "trailerType",
-                          "positionCount",
-                          "trailerLength",
-                          "trailerHeight",
-                          "trailerWidth",
-                          "trailerWeight"
                         ]
                       },
                       {

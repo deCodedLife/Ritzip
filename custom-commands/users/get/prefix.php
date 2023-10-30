@@ -16,8 +16,7 @@ if ( $requestData->created_at ) {
 
 if ( $requestData->context->page === "users" ) {
 
-    $requestSettings[ "filter" ][ "role_id != ?" ] = 13;
-    $requestSettings[ "filter" ][ "role_id != ?" ] = 3;
+    $requestSettings[ "multiply_filter" ][ "role_id != ?" ] = [ 4, 13 ];
 
 } // if. $requestData->context->page === "users"
 

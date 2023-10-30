@@ -21,7 +21,7 @@
       "list_donor": {
         "table": "users",
         "properties_title": "last_name",
-        "filters": {
+        "multiply_filter": {
           "role_id != ?": [ 4, 13 ]
         }
       }

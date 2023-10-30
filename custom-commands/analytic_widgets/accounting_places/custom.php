@@ -57,7 +57,7 @@ $returnReport[] = [
 ];
 
 $returnReport[] = [
-    "value" => $order["placeFree"],
+    "value" => $order["placeCount"] - $order["placeOccupied"],
     "description" => "Мест ( Свободно )",
     "size" => "1",
     "icon" => "",
