@@ -19,7 +19,7 @@
             "type": "list",
             "size": 4,
             "settings": {
-                "object": "users",
+                "object": "drivers",
                 "link": "drivers",
                 "filters": [
                     {

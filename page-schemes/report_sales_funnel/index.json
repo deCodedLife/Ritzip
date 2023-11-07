@@ -36,6 +36,7 @@
           "required_modules": [],
           "settings": {
             "is_search": false,
+            "is_excel": true,
             "recipient_property": "source_id",
             "donor_object": "orderSources",
             "donor_property_title": "title",

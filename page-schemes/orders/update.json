@@ -110,6 +110,19 @@
               "components": {
                 "buttons": [
                   {
+                    "type": "print",
+                    "required_permissions": [],
+                    "settings": {
+                      "title": "Печать документов",
+                      "background": "dark",
+                      "data": {
+                        "is_edit": true,
+                        "scheme_name": "orders",
+                        "row_id": ":id"
+                      }
+                    }
+                  },
+                  {
                     "type": "submit",
                     "settings": {
                       "title": "Сохранить",

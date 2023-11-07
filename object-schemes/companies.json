@@ -196,7 +196,7 @@
       "data_type": "integer",
       "field_type": "list",
       "search": "users",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -205,11 +205,8 @@
         "get"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "title",
-        "filters": {
-          "role_id": 13
-        }
+        "table": "contacts",
+        "properties_title": "last_name"
       }
     },
     {
@@ -227,10 +224,7 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name",
-        "multiply_filter": {
-          "role_id != ?": [ 4, 13 ]
-        }
+        "properties_title": "last_name"
       }
     },
     {
@@ -534,7 +528,7 @@
       "article": "sender_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -543,11 +537,8 @@
         "get"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 4
-        }
+        "table": "contacts",
+        "properties_title": "last_name"
       }
     },
     {
@@ -555,7 +546,7 @@
       "article": "recipient_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -564,11 +555,8 @@
         "get"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id > ?": 4
-        }
+        "table": "contacts",
+        "properties_title": "last_name"
       }
     },
     {

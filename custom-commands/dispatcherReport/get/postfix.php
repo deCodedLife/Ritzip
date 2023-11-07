@@ -9,6 +9,43 @@
  */
 $returnOrders = [];
 
+/**
+ * Функция сортировки
+ */
+function array_sort ( $array, $on, $order=SORT_ASC )
+{
+    $new_array = array();
+    $sortable_array = array();
+
+    if (count($array) > 0) {
+        foreach ($array as $k => $v) {
+            if (is_array($v)) {
+                foreach ($v as $k2 => $v2) {
+                    if ($k2 == $on) {
+                        $sortable_array[$k] = $v2;
+                    }
+                }
+            } else {
+                $sortable_array[$k] = $v;
+            }
+        }
+
+        switch ($order) {
+            case SORT_ASC:
+                asort($sortable_array);
+                break;
+            case SORT_DESC:
+                arsort($sortable_array);
+                break;
+        }
+
+        foreach ($sortable_array as $k => $v) {
+            $new_array[$k] = $array[$k];
+        }
+    }
+
+    return $new_array;
+}
 
 /**
  * Обход заявок
@@ -29,6 +66,10 @@ foreach ( $response[ "data" ] as $order ) {
     if ( $carDetail ) {
 
         $order[ "parkingNumber" ] = $carDetail[ "license_plate_state" ];
+
+    } else {
+
+        $order[ "parkingNumber" ] = "0";
 
     }
 
@@ -61,6 +102,17 @@ foreach ( $response[ "data" ] as $order ) {
     }
     $order[ "finesAndBonuses" ] = $finesAndBonusesFormated;
 
+    if ( !$order[ "milePrice" ] ) {
+
+        $order[ "milePrice" ] = "0";
+
+    }
+
+    if ( !$order[ "dispatcherPercent" ] ) {
+
+        $order[ "dispatcherPercent" ] = "0";
+
+    }
 
     $returnOrders[] = $order;
 
@@ -68,3 +120,54 @@ foreach ( $response[ "data" ] as $order ) {
 
 
 $response[ "data" ] = $returnOrders;
+
+if ( $limit ) {
+
+    if ( $sort_by == "tachometer" ) {
+
+        if ( $sort_order == "desc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "tachometer", SORT_DESC ) );
+        if ( $sort_order == "asc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "tachometer", SORT_ASC ) );
+
+    }
+
+
+    if ( $sort_by == "dispatcherPercent" ) {
+
+        if ( $sort_order == "desc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "dispatcherPercent", SORT_DESC ) );
+        if ( $sort_order == "asc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "dispatcherPercent", SORT_ASC ) );
+
+    }
+
+
+    if ( $sort_by == "parkingNumber" ) {
+
+        if ( $sort_order == "desc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "parkingNumber", SORT_DESC ) );
+        if ( $sort_order == "asc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "parkingNumber", SORT_ASC ) );
+
+    }
+
+
+    if ( $sort_by == "milePrice" ) {
+
+        if ( $sort_order == "desc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "milePrice", SORT_DESC ) );
+        if ( $sort_order == "asc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "milePrice", SORT_ASC ) );
+
+    }
+
+    if ( $sort_by == "fuelConsumption" ) {
+
+        if ( $sort_order == "desc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "fuelConsumption", SORT_DESC ) );
+        if ( $sort_order == "asc" ) $response[ "data" ] = array_values( array_sort( $response[ "data" ], "fuelConsumption", SORT_ASC ) );
+
+    }
+
+    $response[ "detail" ] = [
+
+        "pages_count" => ceil(count($response[ "data" ]) / $limit ),
+        "rows_count" => count($response[ "data" ])
+
+    ];
+
+    $response[ "data" ] = array_slice($response[ "data" ], $limit * $requestData->page - $limit, $limit);
+
+}

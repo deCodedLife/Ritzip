@@ -40,7 +40,11 @@
                                                     "photo",
                                                     "vin",
                                                     "license_plate",
-                                                    "license_plate_state"
+                                                    "license_plate_state",
+                                                    "color",
+                                                    "brand",
+                                                    "model",
+                                                    "year"
                                                 ]
                                             },
                                             {
@@ -57,16 +61,7 @@
                                         "size": 2,
                                         "blocks": [
                                             {
-                                                "title": "Характеристики",
-                                                "fields": [
-                                                    "color",
-                                                    "brand",
-                                                    "model",
-                                                    "year"
-                                                ]
-                                            },
-                                            {
-                                                "title": "",
+                                                "title": "Размер",
                                                 "fields": [
                                                     "is_wide_load",
                                                     "width",
@@ -75,6 +70,8 @@
                                                     "weight"
                                                 ]
                                             }
+                                            
+
                                         ]
                                     },
                                     {

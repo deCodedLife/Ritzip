@@ -37,11 +37,8 @@
         "add"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 4
-        }
+        "table": "drivers",
+        "properties_title": "last_name"
       }
     },
     {

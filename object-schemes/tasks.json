@@ -1,1 +1,574 @@
-{"title":"Задачи","table":"tasks","is_trash":true,"properties":[{"title":"Название","article":"title","data_type":"string","field_type":"string","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"]},{"title":"Наблюдатель","article":"watcher_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"list_donor":{"table":"users","properties_title":"last_name"}},{"title":"Видна для всех","article":"is_visible_everyone","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","get","update"],"require_in_commands":[]},{"title":"Связанный файл","article":"files","data_type":"file","field_type":"file","is_default_in_list":false,"is_unique":false,"is_autofill":true,"settings":{"is_multiply":true},"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Исполнитель","article":"employee_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"require_in_commands":[],"list_donor":{"table":"users","properties_title":"last_name"}},{"title":"Автор","article":"author_id","data_type":"integer","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"require_in_commands":[],"list_donor":{"table":"users","properties_title":"last_name"}},{"title":"Описание","article":"description","data_type":"string","field_type":"textarea","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"]},{"title":"Статус","article":"status","data_type":"string","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"],"require_in_commands":[],"custom_list":[{"value":"not_read","title":"Не начата"},{"value":"processing","title":"В процессе"},{"value":"read","title":"В ожидании ответа"},{"value":"completed","title":"Завершена"}]},{"title":"Приоритет","article":"priority","data_type":"string","field_type":"list","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[],"custom_list":[{"value":"low","title":"Низкий"},{"value":"middle","title":"Средний"},{"value":"height","title":"Высокий"},{"value":"urgent","title":"Неотложный"}]},{"title":"Дата начала","article":"created_at","data_type":"datetime","field_type":"datetime","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["update","get","add"]},{"title":"Выполнить до","article":"deadline","data_type":"datetime","field_type":"datetime","is_default_in_list":true,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update","get"]},{"title":"Привязать к ","article":"binding","data_type":"string","field_type":"radio","is_default_in_list":false,"is_unique":false,"is_autofill":true,"is_hook":true,"is_disabled":false,"use_in_commands":["update","add","hook","get"],"custom_list":[{"title":"Контакт","value":"contact"},{"title":"Компания","value":"company"},{"title":"Заказ","value":"order"},{"title":"Транспортное средство","value":"car"},{"title":"Водитель","value":"driver"}]},{"title":"Контакт","article":"contact_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_hook":true,"is_unique":false,"is_autofill":true,"use_in_commands":["hook","add","update","get"],"list_donor":{"table":"users","properties_title":"last_name","filters":{"role_id":13}},"is_disabled":false,"is_visible":false},{"title":"Заказ","article":"order_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_hook":true,"is_unique":false,"is_autofill":true,"use_in_commands":["hook","add","update","get"],"list_donor":{"table":"orders","properties_title":"id"},"is_disabled":false,"is_visible":false},{"title":"Автомобиль","article":"car_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_hook":true,"is_unique":false,"is_autofill":true,"use_in_commands":["hook","update","get","add"],"list_donor":{"table":"cars","properties_title":"vin"},"is_disabled":false,"is_visible":false},{"title":"Компания","article":"company_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_hook":true,"is_unique":false,"is_autofill":true,"use_in_commands":["update","hook","get","add"],"list_donor":{"table":"companies","properties_title":"title"},"is_disabled":false,"is_visible":false},{"title":"Водитель","article":"driver_id","data_type":"integer","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"is_hook":true,"use_in_commands":["update","get","hook","add"],"list_donor":{"table":"users","properties_title":"last_name","filters":{"role_id":4}},"is_disabled":false,"is_visible":false},{"title":"Шаблоны","article":"repeat_templates","data_type":"string","field_type":"list","is_default_in_list":false,"is_unique":false,"is_autofill":true,"is_hook":true,"use_in_commands":["add","update","hook"],"require_in_commands":[],"custom_list":[{"title":"Неделя","value":"week"},{"title":"2 недели","value":"two_weeks"},{"title":"Месяц","value":"month"},{"title":"3 месяца","value":"three_month"},{"title":"Полгода","value":"half_year"},{"title":"Год","value":"year"},{"title":"Произвольно","value":"custom"}]},{"title":"Кол-во дней","article":"repeat_days","data_type":"integer","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Кол-во циклов","article":"cycles_count","data_type":"integer","field_type":"integer","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Бесконечно","article":"is_endlessly","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["add","update"],"require_in_commands":[]},{"title":"Сегодняшние задачи","article":"is_today","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Предстоящие задачи","article":"is_future","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Просроченные задачи","article":"is_overdue","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Задачи закрепленные за мной","article":"is_assigned","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Задачи, которые я отслеживаю","article":"is_observer","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Не назначены","article":"is_notAssigned","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Повторяющиеся","article":"is_repeatable","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Показать все задачи","article":"is_all","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":false,"use_in_commands":["get"]},{"title":"Завершение задачи","article":"is_end","data_type":"boolean","field_type":"checkbox","is_default_in_list":false,"is_unique":false,"is_autofill":true,"use_in_commands":["update"]}],"action_buttons":[{"type":"href","settings":{"title":"Изменить","page":["tasks/update/",":id"],"icon":"gear","background":"dark"}}]}
+{
+  "title": "Задачи",
+  "table": "tasks",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Название",
+      "article": "title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Наблюдатель",
+      "article": "watcher_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Видна для всех",
+      "article": "is_visible_everyone",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Связанный файл",
+      "article": "files",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "settings": {
+        "is_multiply": true
+      },
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Исполнитель",
+      "article": "employee_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Автор",
+      "article": "author_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Описание",
+      "article": "description",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Статус",
+      "article": "status",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "value": "not_read",
+          "title": "Не начата"
+        },
+        {
+          "value": "processing",
+          "title": "В процессе"
+        },
+        {
+          "value": "read",
+          "title": "В ожидании ответа"
+        },
+        {
+          "value": "completed",
+          "title": "Завершена"
+        }
+      ]
+    },
+    {
+      "title": "Приоритет",
+      "article": "priority",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "value": "low",
+          "title": "Низкий"
+        },
+        {
+          "value": "middle",
+          "title": "Средний"
+        },
+        {
+          "value": "height",
+          "title": "Высокий"
+        },
+        {
+          "value": "urgent",
+          "title": "Неотложный"
+        }
+      ]
+    },
+    {
+      "title": "Дата начала",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Выполнить до",
+      "article": "deadline",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Привязать к ",
+      "article": "binding",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "Контакт",
+          "value": "contact"
+        },
+        {
+          "title": "Компания",
+          "value": "company"
+        },
+        {
+          "title": "Заказ",
+          "value": "order"
+        },
+        {
+          "title": "Транспортное средство",
+          "value": "car"
+        },
+        {
+          "title": "Водитель",
+          "value": "driver"
+        }
+      ]
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_hook": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "hook",
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "contacts",
+        "properties_title": "last_name"
+      },
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Заказ",
+      "article": "order_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_hook": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "hook",
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "orders",
+        "properties_title": "id"
+      },
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Автомобиль",
+      "article": "car_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_hook": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "hook",
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "cars",
+        "properties_title": "vin"
+      },
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_hook": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      },
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ],
+      "list_donor": {
+        "table": "drivers",
+        "properties_title": "last_name"
+      },
+      "is_disabled": false,
+      "is_visible": false
+    },
+    {
+      "title": "Шаблоны",
+      "article": "repeat_templates",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "hook"
+      ],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "title": "Неделя",
+          "value": "week"
+        },
+        {
+          "title": "2 недели",
+          "value": "two_weeks"
+        },
+        {
+          "title": "Месяц",
+          "value": "month"
+        },
+        {
+          "title": "3 месяца",
+          "value": "three_month"
+        },
+        {
+          "title": "Полгода",
+          "value": "half_year"
+        },
+        {
+          "title": "Год",
+          "value": "year"
+        },
+        {
+          "title": "Произвольно",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "title": "Кол-во дней",
+      "article": "repeat_days",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Кол-во циклов",
+      "article": "cycles_count",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Бесконечно",
+      "article": "is_endlessly",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сегодняшние задачи",
+      "article": "is_today",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Предстоящие задачи",
+      "article": "is_future",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Просроченные задачи",
+      "article": "is_overdue",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Задачи закрепленные за мной",
+      "article": "is_assigned",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Задачи, которые я отслеживаю",
+      "article": "is_observer",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Не назначены",
+      "article": "is_notAssigned",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Повторяющиеся",
+      "article": "is_repeatable",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Показать все задачи",
+      "article": "is_all",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Завершение задачи",
+      "article": "is_end",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update"
+      ]
+    }
+  ],
+  "action_buttons": [
+    {
+      "type": "href",
+      "settings": {
+        "title": "Изменить",
+        "page": [
+          "tasks/update/",
+          ":id"
+        ],
+        "icon": "gear",
+        "background": "dark"
+      }
+    }
+  ]
+}

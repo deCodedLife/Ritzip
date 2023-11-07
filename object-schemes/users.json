@@ -57,7 +57,8 @@
       "is_autofill": true,
       "use_in_commands": [
         "add",
-        "update"
+        "update",
+        "get"
       ]
     },
     {
@@ -159,8 +160,8 @@
     {
       "title": "Права (дата получения)",
       "article": "license_from",
-      "data_type": "string",
-      "field_type": "string",
+      "data_type": "date",
+      "field_type": "date",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -172,8 +173,8 @@
     {
       "title": "Права (дата окончания)",
       "article": "license_to",
-      "data_type": "string",
-      "field_type": "string",
+      "data_type": "date",
+      "field_type": "date",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -305,7 +306,7 @@
       "article": "company_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -332,7 +333,7 @@
         "update"
       ],
       "list_donor": {
-        "table": "users",
+        "table": "drivers",
         "properties_title": "last_name"
       }
     },
@@ -962,6 +963,18 @@
       ],
       "is_visible": false,
       "is_hook": true
+    },
+    {
+      "title": "Пароль для инвайта",
+      "article": "invitePassword",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add"
+      ]
     }
   ]
 }

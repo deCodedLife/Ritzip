@@ -3,6 +3,7 @@
 /**
  * Фильтр по дате
  */
+$requestSettings[ "filter" ][ "role_id" ] = 13;
 
 if ( $requestData->created_at ) {
 
@@ -13,45 +14,10 @@ if ( $requestData->created_at ) {
 
 } // if. $requestData->created_at
 
-/**
- * Фильтр по кол-ву сделок
- */
+if ( $requestData->companyCategory_id ) {
 
-$limit = $requestData->limit;
+    $requestSettings[ "filter" ][ "companyCategory_id" ] = (int)$requestData->companyCategory_id;
 
-if ( $requestData->orders_count_from ) {
+    unset( $requestData->companyCategory_id );
 
-    $requestData->limit = 0;
-    $orders_count_from = $requestData->orders_count_from;
-    unset( $requestData->orders_count_from );
-
-} // if. $requestData->orders_count_from
-
-if ( $requestData->orders_count_to ) {
-
-    $requestData->limit = 0;
-    $orders_count_to = $requestData->orders_count_to;
-    unset( $requestData->orders_count_to );
-
-} // if. $requestData->orders_count_to
-
-
-/**
- * Фильтр по сумме сделок
- */
-
-if ( $requestData->orders_cost_from ) {
-
-    $requestData->limit = 0;
-    $orders_cost_from = $requestData->orders_cost_from;
-    unset( $requestData->orders_cost_from );
-
-} // if. $requestData->orders_cost_from
-
-if ( $requestData->orders_cost_to ) {
-
-    $requestData->limit = 0;
-    $orders_cost_to = $requestData->orders_cost_to;
-    unset( $requestData->orders_cost_to );
-
-} // if. $requestData->orders_cost_to
+} // if. $requestData->created_a

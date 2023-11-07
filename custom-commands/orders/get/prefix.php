@@ -4,7 +4,6 @@
  * Фильтр по сумме
  */
 
-
 if ( $requestData->cost_from ) {
 
     $requestSettings[ "filter" ][ "cost >= ?" ] = $requestData->cost_from;

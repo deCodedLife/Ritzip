@@ -14,10 +14,6 @@ if ( $requestData->created_at ) {
 } // if. $requestData->created_at->block
 
 
-if ( $requestData->context->page === "users" ) {
 
-    $requestSettings[ "multiply_filter" ][ "role_id != ?" ] = [ 4, 13 ];
-
-} // if. $requestData->context->page === "users"
-
+$requestSettings[ "multiply_filter" ][ "not role_id" ] = [ 4, 13 ];
 

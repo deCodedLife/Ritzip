@@ -31,25 +31,7 @@
                   "photo",
                   "vin",
                   "license_plate",
-                  "license_plate_state"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
-                  "type",
-                  "lot_number",
-                  "count"
-                ]
-              }
-            ]
-          },
-          {
-            "size": 2,
-            "blocks": [
-              {
-                "title": "Характеристики",
-                "fields": [
+                  "license_plate_state",
                   "color",
                   "brand",
                   "model",
@@ -59,18 +41,11 @@
               {
                 "title": "",
                 "fields": [
-                  "is_wide_load",
-                  "width",
-                  "height",
-                  "length",
-                  "weight"
+                  "type",
+                  "lot_number",
+                  "count"
                 ]
-              }
-            ]
-          },
-          {
-            "size": 4,
-            "blocks": [
+              },
               {
                 "title": "Передняя сторона",
                 "fields": [
@@ -85,6 +60,21 @@
                   "leftPhoto",
                   "leftDamage",
                   "leftDescription"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Размер",
+                "fields": [
+                  "is_wide_load",
+                  "width",
+                  "height",
+                  "length",
+                  "weight"
                 ]
               },
               {

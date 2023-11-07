@@ -1,11 +1,12 @@
 <?php
 
-
 if ( $orders_count_from ) {
 
     $filteredOrders = [];
 
     foreach ( $response[ "data" ] as $contact ) {
+
+        $API->returnResponse($contact);
 
         $orders = $API->DB->from( "orders" )
             ->where( "sourse_contact", $contact[ "id" ] );

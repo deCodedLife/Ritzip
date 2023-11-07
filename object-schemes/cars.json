@@ -98,34 +98,6 @@
       "require_in_commands": []
     },
     {
-      "title": "Парковочный номер прицепа",
-      "article": "trailer_license_plate",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": []
-    },
-    {
-      "title": "Парковочный номер прицепа (государство)",
-      "article": "trailer_license_plate_state",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": []
-    },
-    {
       "title": "Цвет",
       "article": "color",
       "data_type": "string",
@@ -209,7 +181,7 @@
       "article": "owner_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -219,10 +191,7 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name",
-        "multiply_filter": {
-          "role_id != ?": [ 4, 13 ]
-        }
+        "properties_title": "last_name"
       }
     },
     {
@@ -243,10 +212,7 @@
         "donor_table": "users",
         "property_article": "last_name",
         "insert_property": "car_id",
-        "filter_property": "user_id",
-        "multiply_filter": {
-          "role_id != ?": [ 4, 13 ]
-        }
+        "filter_property": "user_id"
       }
     },
     {
@@ -266,7 +232,7 @@
       "title": "Адрес",
       "article": "address",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -346,90 +312,6 @@
       ]
     },
     {
-      "title": "Длина прицепа (дюймы)",
-      "article": "trailerLength",
-      "data_type": "float",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
-      "title": "Высота прицепа (дюймы)",
-      "article": "trailerHeight",
-      "data_type": "float",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
-      ]
-    },
-    {
-      "title": "Ширина прицепа (дюймы)",
-      "article": "trailerWidth",
-      "data_type": "float",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
-      "title": "Вес прицепа (фунты)",
-      "article": "trailerWeight",
-      "data_type": "float",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
-      "title": "Документ регистрации прицепа - фото",
-      "article": "trailerRegPhoto",
-      "data_type": "image",
-      "field_type": "image",
-      "is_default_in_list": false,
-      "is_unique": true,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "add",
-        "get"
-      ]
-    },
-    {
-      "title": "Парковочный номер",
-      "article": "trailerRegNumber",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": true,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
-      ]
-    },
-    {
       "title": "Документ регистрации авто - фото",
       "article": "avtoRegPhoto",
       "data_type": "image",
@@ -450,7 +332,7 @@
       "field_type": "string",
       "is_default_in_list": false,
       "is_unique": true,
-      "is_autofill": false,
+      "is_autofill": true,
       "use_in_commands": [
         "update",
         "add",
@@ -514,34 +396,6 @@
       ]
     },
     {
-      "title": "Фото прицепа - левая сторона",
-      "article": "trailerPhotoLeft",
-      "data_type": "image",
-      "field_type": "image",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "add",
-        "get"
-      ]
-    },
-    {
-      "title": "Фото прицепа - правая сторона",
-      "article": "trailerPhotoRight",
-      "data_type": "image",
-      "field_type": "image",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
-      ]
-    },
-    {
       "title": "Ответственный (водитель)",
       "article": "driver_id",
       "data_type": "integer",
@@ -550,11 +404,8 @@
       "is_unique": false,
       "is_autofill": true,
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 4
-        }
+        "table": "drivers",
+        "properties_title": "last_name"
       },
       "use_in_commands": [
         "update",
@@ -572,10 +423,7 @@
       "is_autofill": true,
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name",
-        "multiply_filter": {
-          "role_id != ?": [ 4, 13 ]
-        }
+        "properties_title": "last_name"
       },
       "use_in_commands": [
         "update",
@@ -704,6 +552,24 @@
         "get",
         "add"
       ]
+    },
+    {
+      "title": "Прицеп",
+      "article": "trailer",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "trailers",
+        "properties_title": "vin"
+      }
     }
   ],
   "action_buttons": [

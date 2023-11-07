@@ -1,0 +1,980 @@
+{
+  "title": "Пользователи",
+  "table": "users",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Аватар",
+      "article": "avatar",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Файлы",
+      "article": "files",
+      "data_type": "file",
+      "field_type": "file",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "settings": {
+        "is_multiply": true
+      },
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Имя",
+      "article": "first_name",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Фамилия",
+      "article": "last_name",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Отчество",
+      "article": "patronymic",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Email",
+      "article": "email",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "sign-in"
+      ],
+      "require_in_commands": [
+        "add",
+        "sign-in"
+      ]
+    },
+    {
+      "title": "Пароль",
+      "article": "password",
+      "data_type": "password",
+      "field_type": "password",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "sign-in"
+      ],
+      "require_in_commands": [
+        "add",
+        "sign-in"
+      ]
+    },
+    {
+      "title": "Роль",
+      "article": "role_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [
+        "add"
+      ],
+      "list_donor": {
+        "table": "roles",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Контактный телефон",
+      "article": "phone",
+      "data_type": "phone",
+      "field_type": "phone",
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true
+    },
+    {
+      "title": "Права (номер)",
+      "article": "license_number",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Права (дата получения)",
+      "article": "license_from",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Права (дата окончания)",
+      "article": "license_to",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Права (адрес прописки)",
+      "article": "license_address",
+      "data_type": "string",
+      "field_type": "google_address",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Адрес проживания",
+      "article": "address",
+      "data_type": "string",
+      "field_type": "google_address",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Название компании",
+      "article": "company_title",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "EIN номер компании",
+      "article": "company_ein",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Номер SWIFT",
+      "article": "swift",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Контракт с электронной подписью",
+      "article": "contract",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Оклад в месяц",
+      "article": "salary",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Бонусы за милю",
+      "article": "bonus_per_mile",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Примечание",
+      "article": "note",
+      "data_type": "string",
+      "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "companies",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Рекомендуемый водитель",
+      "article": "recommended_driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "list_donor": {
+        "table": "drivers",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Ответственный (менеджер)",
+      "article": "responsible_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "remove"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Мили (Заказы)",
+      "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Мили (Итого)",
+      "article": "milesAll",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "W9 документ",
+      "article": "w9",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Доступен просмотр всех задач",
+      "article": "is_allTasks",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Business name",
+      "article": "businessName",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Type of business",
+      "article": "businessType",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Individual/sole proprietor or single-member LLC",
+          "value": "individualSoleProprietorOrSingleMemberLLC"
+        },
+        {
+          "title": "C Corporation",
+          "value": "cCorporation"
+        },
+        {
+          "title": "S Corporation",
+          "value": "sCorporation"
+        },
+        {
+          "title": "Partnership Trust/estate",
+          "value": "partnershipTrustEstate"
+        },
+        {
+          "title": "Limited Liability company C corporation",
+          "value": "limitedLiabilityCompanyC"
+        },
+        {
+          "value": "limitedLiabilityCompanyS",
+          "title": "Limited liability company S corporation"
+        },
+        {
+          "title": "Limited liability company Partnership",
+          "value": "limitedLiabilityCompanyp"
+        }
+      ]
+    },
+    {
+      "title": "Label Exempt payee code",
+      "article": "payeeCode",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Label Exemption from FATCA reporting code",
+      "article": "fatcaCode",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Label Address (number, street, and apt. or suite no.)",
+      "article": "labelAddress",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Label City",
+      "article": "labelCity",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "State",
+      "article": "state",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "ZIP code",
+      "article": "zipCode",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Label List account number(s) here",
+      "article": "accountNumber",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Label Requester’s name and address",
+      "article": "requestersNameAddress",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Номер социального страхования ",
+      "article": "insuranceNumber",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Идентификационный номер работодателя",
+      "article": "idNumberEmployer",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Сумма заказов",
+      "article": "sumOrder",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Кол-во заказов",
+      "article": "countOrder",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Дата регистрации",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Должность",
+      "article": "post",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Фото прав - передняя сторона",
+      "article": "driveLicenseFront",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото прав - задняя сторона",
+      "article": "driveLicenseBack",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото с правами в руках",
+      "article": "driveLicenseInHands",
+      "data_type": "image",
+      "field_type": "image",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Фото с правами в руках",
+      "article": "addressLicense",
+      "data_type": "string",
+      "field_type": "dadata_address",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Тип водителя",
+      "article": "driverType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Driver",
+          "value": "driver"
+        },
+        {
+          "title": "Driver Operator",
+          "value": "operator"
+        }
+      ]
+    },
+    {
+      "title": "Номер топливной карты",
+      "article": "fuelСardNumber",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "search",
+        "add"
+      ],
+      "is_in_search": true
+    },
+    {
+      "title": "Тип зарплаты",
+      "article": "salaryType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Процент",
+          "value": "percent"
+        },
+        {
+          "title": "Фиксированная",
+          "value": "fixed"
+        }
+      ]
+    },
+    {
+      "title": "Сумма зарплаты",
+      "article": "salarySum",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update"
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "Период",
+      "article": "period",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Неделя",
+          "value": "week"
+        },
+        {
+          "title": "Месяц",
+          "value": "month"
+        }
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "С учетом бензина",
+      "article": "includingGasoline",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Да",
+          "value": "yes"
+        },
+        {
+          "title": "Нет",
+          "value": "no"
+        }
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "Сумма страховки",
+      "article": "insuranceAmount",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "add",
+        "get"
+      ],
+      "is_visible": false,
+      "is_hook": true
+    },
+    {
+      "title": "Срок страховки (от)",
+      "article": "insurancePeriod_from",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Срок страховки (до)",
+      "article": "insurancePeriod_to",
+      "data_type": "date",
+      "field_type": "date",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_visible": false,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ]
+    },
+    {
+      "title": "Диспетчерский сбор (%)",
+      "article": "dispatchFee",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ]
+    },
+    {
+      "title": "Использование приложения",
+      "article": "usingApp",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ]
+    },
+    {
+      "title": "Look Book",
+      "article": "lookBook",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook",
+        "add"
+      ],
+      "is_visible": false,
+      "is_hook": true
+    },
+    {
+      "title": "Пароль для инвайта",
+      "article": "invitePassword",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add"
+      ]
+    }
+  ]
+}

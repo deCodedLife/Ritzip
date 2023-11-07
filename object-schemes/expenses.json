@@ -90,10 +90,7 @@
       ],
       "list_donor": {
         "table": "users",
-        "properties_title": "last_name",
-        "multiply_filter": {
-          "role_id != ?": [ 4, 13 ]
-        }
+        "properties_title": "last_name"
       }
     },
     {
@@ -112,11 +109,8 @@
         "hook"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 4
-        }
+        "table": "drivers",
+        "properties_title": "last_name"
       }
     },
     {
@@ -197,11 +191,8 @@
         "hook"
       ],
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": 13
-        }
+        "table": "contacts",
+        "properties_title": "last_name"
       }
     },
     {

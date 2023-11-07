@@ -159,11 +159,8 @@
       "is_unique": false,
       "is_autofill": true,
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": "4"
-        }
+        "table": "drivers",
+        "properties_title": "last_name"
       },
       "use_in_commands": [
         "get",
@@ -182,11 +179,8 @@
       "is_unique": false,
       "is_autofill": true,
       "list_donor": {
-        "table": "users",
-        "properties_title": "last_name",
-        "filters": {
-          "role_id": "3"
-        }
+        "table": "dispatchers",
+        "properties_title": "last_name"
       },
       "use_in_commands": [
         "update",

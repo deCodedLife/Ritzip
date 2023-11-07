@@ -32,15 +32,19 @@ if ( $requestData->context->form == "invite" ) {
         return $password;
     }
 
+    $invitePassword = generatePassword007( $length = 8, $availableSets = 'lud' );
+
     $formFieldValues[ "role_id" ][ "value" ] = 4;
     $formFieldValues[ "first_name" ][ "value" ] = "Заполните поле";
     $formFieldValues[ "last_name" ][ "value" ] = "Заполните поле";
-    $formFieldValues[ "password" ][ "value" ] = generatePassword007( $length = 8, $availableSets = 'lud' );
+    $formFieldValues[ "password" ][ "value" ] = $invitePassword;
+    $formFieldValues[ "invitePassword" ][ "value" ] = $invitePassword;
 
     $formFieldValues[ "role_id" ][ "is_visible" ] = false;
     $formFieldValues[ "first_name" ][ "is_visible" ] = false;
     $formFieldValues[ "last_name" ][ "is_visible" ] = false;
     $formFieldValues[ "password" ][ "is_visible" ] = false;
+    $formFieldValues[ "invitePassword" ][ "is_visible" ] = false;
 
 
 }
