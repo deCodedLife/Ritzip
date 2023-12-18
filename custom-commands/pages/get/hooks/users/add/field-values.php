@@ -1,24 +1,36 @@
 <?php
 
-/**
- * Автоподстановка роли
- */
+$formFieldValues[ "responsible_id" ][ "value" ] = $API::$userDetail->id;
 
-/**
- * Автоподстановка роли
- */
-$roleArticle = substr( $requestData->page, 0, strpos( $requestData->page, "/" ) );
-
-$roleDetail = $API->DB->from( "roles" )
-    ->where( "article", $roleArticle )
+$costInsurance = $API->DB->from( "costInsurance" )
     ->limit( 1 )
     ->fetch();
 
-if ( $roleDetail ) {
+$formFieldValues[ "insuranceAmount" ][ "value" ] = $costInsurance[ "sum" ];
+$formFieldValues[ "insurancePeriod" ][ "value" ] = $costInsurance[ "period" ];
 
-    $formFieldValues[ "role_id" ][ "is_visible" ] = false;
-    $formFieldValues[ "role_id" ][ "value" ] = (int) $roleDetail[ "id" ];
+$lookBookValues = $API->DB->from( "lookBookValues" )
+    ->limit( 1 )
+    ->fetch();
+$formFieldValues[ "lookBook" ] = $lookBookValues[ "sum" ];
+
+
+$dispatchCollection = $API->DB->from( "dispatchCollection" )
+    ->limit( 1 )
+    ->fetch();
+
+$formFieldValues[ "dispatchFeeType" ][ "value" ] = $dispatchCollection[ "salaryType" ];
+$formFieldValues[ "dispatchFeeSum" ][ "value" ] = $dispatchCollection[ "salarySum" ];
+$formFieldValues[ "dispatchFeePercent" ][ "value" ] = $dispatchCollection[ "salaryPercent" ];
+
+if ( $formFieldValues[ "dispatchFeeType" ] == "percent" ) {
+
+    $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = true;
+    $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = false;
+
+} else {
+
+    $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = false;
+    $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = true;
 
 }
-
-$formFieldValues[ "responsible_id" ][ "value" ] = $API::$userDetail->id;

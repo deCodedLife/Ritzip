@@ -12,7 +12,7 @@ if ( $requestData->context->form == "order" ) {
 
 
     $formFieldValues[ "user_id" ][ "value" ] = $order[ "responsible_id" ];
-    $formFieldValues[ "user_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "user_id" ][ "is_visible" ] = true;
 
     $formFieldValues[ "order_id" ][ "value" ] = $requestData->context->row_id;
     $formFieldValues[ "order_id" ][ "is_visible" ] = false;

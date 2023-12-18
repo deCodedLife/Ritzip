@@ -1,0 +1,178 @@
+{
+  "title": "Заявки",
+  "table": "orders",
+  "is_trash": true,
+  "properties": [
+    {
+      "title": "Дата (от)",
+      "article": "created_at_from",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Дата (до)",
+      "article": "created_at_to",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "ID заказа",
+      "article": "id",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "list_donor": {
+        "table": "drivers",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Диспетчер",
+      "article": "dispatcher_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "ID диспетчера",
+      "article": "dispatcherID",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Телефонн диспетчера",
+      "article": "dispatcherPhone",
+      "data_type": "string",
+      "field_type": "phone",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "ТС на отправку",
+      "article": "vehicles_id",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "join": {
+        "connection_table": "orders_vehicles",
+        "donor_table": "vehicles",
+        "property_article": "vin",
+        "insert_property": "order_id",
+        "filter_property": "vehicle_id"
+      }
+    },
+    {
+      "title": "Адрес отправления",
+      "article": "sendingAddress",
+      "data_type": "string",
+      "field_type": "google_address",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Адрес получения",
+      "article": "receivingAddress",
+      "data_type": "string",
+      "field_type": "google_address",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Статус",
+      "article": "status_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "list_donor": {
+        "table": "orderStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Расстояние (миль)",
+      "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Общая стоимость",
+      "article": "cost",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    }
+  ]
+}

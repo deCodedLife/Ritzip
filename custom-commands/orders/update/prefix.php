@@ -30,14 +30,24 @@ $carDetail = $API->DB->from( "cars" )
     ->fetch();
 
 /**
+ * Получение детальной информации об прицепе
+ */
+$trailerDetail = $API->DB->from( "trailers" )
+    ->where( [
+        "id" => $previousValue[ "trailer_id" ]
+    ] )
+    ->limit( 1 )
+    ->fetch();
+
+/**
  * Получение детальной информации о автомобиле после изменения поля "Автомобиль" у заказа
  */
 $newCar = $API->DB->from( "cars" )
-->where( [
-    "id" => $requestData->car_id
-] )
-->limit( 1 )
-->fetch();
+    ->where( [
+        "id" => $requestData->car_id
+    ] )
+    ->limit( 1 )
+    ->fetch();
 
 /**
  * Получение детальной информации о водителее после изменения поля "Водитель" у заказа
@@ -48,6 +58,16 @@ $newDriver = $API->DB->from( "users" )
 ] )
 ->limit( 1 )
 ->fetch();
+
+/**
+ * Получение детальной информации о водителее после изменения поля "Водитель" у заказа
+ */
+$newTrailer = $API->DB->from( "users" )
+    ->where( [
+        "id" => $requestData->driver_id
+    ] )
+    ->limit( 1 )
+    ->fetch();
 
 /**
  * Изменение суммы заказов водителя и автомобилья
@@ -127,6 +147,44 @@ if ( $requestData->cost ) {
 
     }
 
+    /**
+     * Изменение суммы заказов прицепа если изменяется цена и приуеп
+     */
+    if (  $requestData->trailer_id && $requestData->trailer_id != $trailerDetail['id'] ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "sumOrder" => $trailerDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $trailerDetail['countOrder'] - 1
+            ] )
+            ->where( "id", $trailerDetail['id'] )
+            ->execute();
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "sumOrder" => $newTrailer['sumOrder'] + $requestData->cost,
+                "countOrder" => $newTrailer['countOrder'] + 1
+            ] )
+            ->where( "id", $newTrailer['id'] )
+            ->execute();
+
+    }
+
+    /**
+     * Изменение суммы заказов воджителя если изменяется только цена
+     */
+    if ( ! $requestData->trailer_id ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "sumOrder" => $trailerDetail['sumOrder'] - $previousValue['cost'] + $requestData->cost
+            ] )
+            ->where( "id", $trailerDetail['id'])
+            ->execute();
+
+    }
+
+
 } else {
 
     /**
@@ -170,6 +228,30 @@ if ( $requestData->cost ) {
                 "countOrder" => $newDriver['countOrder'] + 1
             ] )
             ->where( "id", $newDriver['id'] )
+            ->execute();
+
+    }
+
+
+    /**
+     * Изменение суммы заказов прицепа если изменяется только прицеп а цена заказа остается прежней
+     */
+    if ( $requestData->trailer_id && $requestData->trailer_id != $trailerDetail['id'] ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "sumOrder" => $trailerDetail['sumOrder'] - $previousValue['cost'],
+                "countOrder" => $trailerDetail['countOrder'] - 1
+            ] )
+            ->where( "id", $trailerDetail['id'] )
+            ->execute();
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "sumOrder" => $newTrailer['sumOrder'] + $previousValue['cost'],
+                "countOrder" => $newTrailer['countOrder'] + 1
+            ] )
+            ->where( "id", $newTrailer['id'] )
             ->execute();
 
     }
@@ -252,6 +334,42 @@ if ( $requestData->miles ) {
 
     }
 
+    /**
+     * Изменение количество пройденных миль водителя если изменяются мили но водитель то же
+     */
+    if ( ! $requestData->trailer_id ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "miles" => (float)$trailerDetail['miles'] - (float)$previousValue['miles'] + (float)$requestData->miles
+            ] )
+            ->where( "id", $trailerDetail['id'] )
+            ->execute();
+
+    }
+
+    /**
+     * Изменение количество пройденных миль водителя если изменяется мили и водитель
+     */
+    if ( $requestData->trailer_id && $requestData->trailer_id != $trailerDetail['id'] ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "miles" => $trailerDetail['miles'] - $previousValue['miles'],
+            ] )
+            ->where( "id", $trailerDetail['id'] )
+            ->execute();
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "miles" => $newTrailer['miles'] + $requestData->miles,
+            ] )
+            ->where( "id", $newTrailer['id'] )
+            ->execute();
+
+
+    }
+
 } else {
 
     /**
@@ -293,6 +411,28 @@ if ( $requestData->miles ) {
 
             ] )
             ->where( "id", $newDriver['id'] )
+            ->execute();
+
+    }
+
+    /**
+     * Изменение количество пройденных миль водителя если изменяется водитель а мили нет
+     */
+    if ( $requestData->trailer_id != $trailerDetail['id'] ) {
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "miles" => $trailerDetail['miles'] - $previousValue['miles'],
+            ] )
+            ->where( "id", $trailerDetail['id'] )
+            ->execute();
+
+        $API->DB->update( "trailers" )
+            ->set( [
+                "miles" => $newTrailer['miles'] + $previousValue['miles'],
+
+            ] )
+            ->where( "id", $newTrailer['id'] )
             ->execute();
 
     }

@@ -1,0 +1,44 @@
+{
+  "title": "costInsurance",
+  "table": "costInsurance",
+  "properties": [
+    {
+      "title": "Сумма",
+      "article": "sum",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "update"
+      ]
+    },
+    {
+      "title": "Период",
+      "article": "period",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "неделя",
+          "value": "week"
+        },
+        {
+          "title": "месяц",
+          "value": "month"
+        }
+      ]
+    }
+  ]
+}

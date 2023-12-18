@@ -8,31 +8,22 @@
       "icon": "garage"
     },
     {
+      "title": "Онлайн чат",
+      "href": "chat",
+      "children": [],
+      "icon": "reading"
+    },
+    {
       "title": "Заказы",
       "href": "orders",
       "children": [],
       "icon": "delivery"
     },
     {
-      "title": "Сотрудники",
-      "href": "users",
+      "title": "Задачи",
+      "href": "tasks",
       "children": [],
-      "icon": "customers"
-    },
-    {
-      "title": "Должности",
-      "href": "roles",
-      "children": [],
-      "icon": "id-card"
-    },
-    {
-      "title": "Платежи",
-      "href": "payments",
-      "children": [],
-      "icon": "tag",
-      "required_permissions": [
-        "payments_get"
-      ]
+      "icon": "bullet-list"
     },
     {
       "title": "Списки",
@@ -54,7 +45,7 @@
       "icon": "bullet-list"
     },
     {
-      "title": "Парк авто",
+      "title": "Водители и авто",
       "href": "",
       "children": [
         {
@@ -81,26 +72,39 @@
     {
       "title": "Продажи",
       "href": "sales",
-      "children": [],
+      "children": [
+        {
+          "title": "Счета",
+          "href": "accounts"
+        },
+        {
+          "title": "Платежи",
+          "href": "payments",
+          "required_permissions": [
+            "payments_get"
+          ]
+        },
+        {
+          "title": "Расходы",
+          "href": "expenses"
+        }
+      ],
       "icon": "e-commerce"
-    },
-    {
-      "title": "Расходы",
-      "href": "expenses",
-      "children": [],
-      "icon": "reading"
     },
     {
       "title": "Утилиты",
       "href": "ads",
-      "children": [],
+      "children": [
+        {
+          "title": "Доска объявлений",
+          "href": "notice_board"
+        },
+        {
+          "title": "Список напоминаний",
+          "href": "reminders"
+        }
+      ],
       "icon": "conversation"
-    },
-    {
-      "title": "Онлайн чат",
-      "href": "chat",
-      "children": [],
-      "icon": "reading"
     },
     {
       "title": "Аналитика",
@@ -108,126 +112,199 @@
       "children": [
         {
           "title": "Отчет диспетчера",
-          "href": "dispatcherReport"
+          "href": "dispatcherReport",
+          "required_permissions": [
+            "dispatcherReport"
+          ]
         },
         {
           "title": "Отчет Driver",
-          "href": "driverReport"
+          "href": "driverReport",
+          "required_permissions": [
+            "driverReport"
+          ]
         },
         {
           "title": "Отчет Owner Operator",
-          "href": "ownerReport"
+          "href": "ownerReport",
+          "required_permissions": [
+            "ownerReport"
+          ]
         },
         {
           "title": "Отчет администратора",
-          "href": "adminReport"
+          "href": "adminReport",
+          "required_permissions": [
+            "adminReport"
+          ]
         },
         {
           "title": "Отчет руководителя",
-          "href": "directorReport"
+          "href": "directorReport",
+          "required_permissions": [
+            "directorReport"
+          ]
         },
         {
           "title": "Отчет бухгалтера",
-          "href": "accountantReport"
+          "href": "accountantReport",
+          "required_permissions": [
+            "accountantReport"
+          ]
         },
         {
           "title": "Отчет инвестора",
-          "href": "investorReport"
+          "href": "investorReport",
+          "required_permissions": [
+            "investorReport"
+          ]
         },
         {
           "title": "Отчет брокера",
-          "href": "brokerReport"
+          "href": "brokerReport",
+          "required_permissions": [
+            "brokerReport"
+          ]
         },
         {
           "title": "Отчет технического специалиста",
-          "href": "technicalReport"
-        },
-        {
-          "title": "Расходы",
-          "href": "expenses"
-        },
-        {
-          "title": "Задачи",
-          "href": "tasks"
+          "href": "techSpecReport",
+          "required_permissions": [
+            "techSpecReport"
+          ]
         }
       ],
       "icon": "performance"
+    },
+    {
+      "title": "Пользователи",
+      "href": "users",
+      "children": [],
+      "icon": "customers"
     },
     {
       "title": "Настройки",
       "href": "settings",
       "children": [
         {
-          "title": "Список позиций",
-          "href": "positions"
+          "title": "Общие настройки",
+          "href": "allSettings",
+          "children": [
+            {
+              "title": "Список позиций",
+              "href": "positions"
+            },
+            {
+              "title": "Статусы оплаты",
+              "href": "orderPayStatuses"
+            },
+            {
+              "title": "Статусы заказов",
+              "href": "orderStatuses"
+            },
+            {
+              "title": "Источники заявок",
+              "href": "orderSources"
+            },
+            {
+              "title": "Категории документов",
+              "href": "documentCategories"
+            },
+            {
+              "title": "Категории компаний",
+              "href": "companyCategories"
+            },
+            {
+              "title": "Категории расходов",
+              "href": "expenseCategories"
+            },
+            {
+              "title": "Способы оплаты",
+              "href": "paymentTypes"
+            },
+            {
+              "title": "Причины отмены заявок",
+              "href": "reasons"
+            },
+            {
+              "title": "Плановые ТО",
+              "href": "maintenanceSchedules"
+            },
+            {
+              "title": "Роли",
+              "href": "roles"
+            }
+          ]
         },
         {
-          "title": "Доска объявлений",
-          "href": "notice_board"
+          "title": "Значения",
+          "href": "values",
+          "children": [
+            {
+              "title": "Типы штрафов для диспетчеров",
+              "href": "finesDispatchers"
+            },
+            {
+              "title": "Типы штрафов для водителей",
+              "href": "finesDrivers"
+            },
+            {
+              "title": "Типы бонусов для диспетчеров",
+              "href": "bonusDispatchers"
+            },
+            {
+              "title": "Типы бонусов для водителей",
+              "href": "bonusDrivers"
+            },
+            {
+              "title": "ЗП диспетчера",
+              "href": "dispatchersSalary"
+            },
+            {
+              "title": "Сумма за администрирование",
+              "href": "amountAdmin",
+              "required_permissions": [
+                "investorReport"
+              ]
+            },
+            {
+              "title": "Стоимость страхования",
+              "href": "costInsurance"
+            },
+            {
+              "title": "Диспетчерский сбор",
+              "href": "dispatchCollection",
+              "required_permissions": [
+                "ownerReport"
+              ]
+            },
+            {
+              "title": "Использование приложений",
+              "href": "useApps"
+            },
+            {
+              "title": "Look Book",
+              "href": "lookBookValues"
+            }
+          ]
         },
         {
-          "title": "Напоминания",
-          "href": "reminders"
+          "title": "Правила автоматизации",
+          "href": "automationRules"
         },
         {
-          "title": "Типы штрафов для диспетчеров",
-          "href": "finesDispatchers"
-        },
-        {
-          "title": "Типы штрафов для водителей",
-          "href": "finesDrivers"
-        },
-        {
-          "title": "Типы бонусов для диспетчеров",
-          "href": "bonusDispatchers"
-        },
-        {
-          "title": "Типы бонусов для водителей",
-          "href": "bonusDrivers"
-        },
-        {
-          "title": "Плановые ТО",
-          "href": "maintenanceSchedules"
-        },
-        {
-          "title": "Статусы оплаты",
-          "href": "orderPayStatuses"
-        },
-        {
-          "title": "Статусы заказов",
-          "href": "orderStatuses"
-        },
-        {
-          "title": "Источники заявок",
-          "href": "orderSources"
-        },
-        {
-          "title": "Категории документов",
-          "href": "documentCategories"
-        },
-        {
-          "title": "Категории компаний",
-          "href": "companyCategories"
-        },
-        {
-          "title": "Категории расходов",
-          "href": "expenseCategories"
-        },
-        {
-          "title": "Способы оплаты",
-          "href": "paymentTypes"
-        },
-        {
-          "title": "Роли",
-          "href": "roles"
-        },
-        {
-          "title": "Причины отмены заявок",
-          "href": "reasons"
-        },
-        {
-          "title": "Общие",
-          "href": "settings"
+          "title": "Приложения",
+          "href": "apps",
+          "children": [
+            {
+              "title": "Общие",
+              "href": "settings"
+            },
+            {
+              "title": "Стороние приложения",
+              "href": "moreApplications"
+            }
+          ]
         }
       ],
       "icon": "gear"

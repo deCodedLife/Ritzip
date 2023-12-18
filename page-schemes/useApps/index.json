@@ -1,0 +1,54 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Использование приложений",
+        "title": [
+          "Использование приложений"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 2,
+      "settings": {
+        "object": "useApps",
+        "command": "update",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "salaryType",
+                  "salarySum",
+                  "salaryPercent"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Изменить",
+              "background": "dark",
+              "href": "useApps"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

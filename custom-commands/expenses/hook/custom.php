@@ -5,7 +5,6 @@
  */
 $updatedFields = [];
 
-
 /**
  * Повторять каждые
  */
@@ -39,20 +38,20 @@ switch ( $requestData->repeat_templates ) {
 } // switch. $requestData->repeat_templates
 
 
-/**
- * Связки
- */
-
-$linkedFields = [ "contact_id", "trailer_id", "company_id", "car_id", "driver_id", "order_id" ];
-$disabledFields = [];
-
-foreach ( $linkedFields as $linkedFieldKey => $linkedField )
-    if ( !$requestData->{$linkedField} || ( count( $disabledFields ) != $linkedFieldKey ) )
-        $disabledFields[] = $linkedField;
-
-if ( count( $linkedFields ) > count( $disabledFields ) )
-    foreach ( $disabledFields as $disabledField )
-        $updatedFields[ $disabledField ][ "value" ] = null;
+///**
+// * Связки
+// */
+//
+//$linkedFields = [ "contact_id", "trailer_id", "company_id", "car_id", "driver_id", "order_id" ];
+//$disabledFields = [];
+//
+//foreach ( $linkedFields as $linkedFieldKey => $linkedField )
+//    if ( !$requestData->{$linkedField} || ( count( $disabledFields ) != $linkedFieldKey ) )
+//        $disabledFields[] = $linkedField;
+//
+//if ( count( $linkedFields ) > count( $disabledFields ) )
+//    foreach ( $disabledFields as $disabledField )
+//        $updatedFields[ $disabledField ][ "value" ] = null;
 
 
 $API->returnResponse( $updatedFields );

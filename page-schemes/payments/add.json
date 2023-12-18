@@ -23,12 +23,12 @@
         "command": "add",
         "areas": [
           {
-            "size": 2,
+            "size": 4,
             "blocks": [
               {
                 "title": "Основные данные",
                 "fields": [
-                  "account",
+                  "account_id",
                   "sum",
                   "created_at",
                   "object",
@@ -39,7 +39,8 @@
                   "contact_id",
                   "payBefore",
                   "status_id",
-                  "responsible_id"
+                  "responsible_id",
+                  "paymentType_id"
                 ]
               }
             ]

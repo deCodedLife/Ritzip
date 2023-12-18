@@ -21,6 +21,32 @@
       ]
     },
     {
+      "title": "Марка, модель",
+      "article": "brandModel",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Год выпуска",
+      "article": "yearRelease",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
       "title": "Автомобиль",
       "article": "car_id",
       "data_type": "integer",

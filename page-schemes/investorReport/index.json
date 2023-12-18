@@ -1,0 +1,65 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Отчет инвестора ",
+        "title": [
+          "Отчет инвестора "
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "investorReport",
+        "link": "cars",
+        "is_exel": true
+      },
+      "components": {
+        "filters": [
+          {
+            "title": "Дата (от)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_from"
+            }
+          },
+          {
+            "title": "Дата (до)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_to"
+            }
+          },
+          {
+            "title": "Автомобиль",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "id",
+              "donor_object": "cars",
+              "donor_property_title": "vin",
+              "donor_property_value": "id"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

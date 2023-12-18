@@ -33,14 +33,8 @@
                   "category_id",
                   "created_at",
                   "cost",
-                  "order_id"
-                ]
-              },
-              {
-                "title": "",
-                "fields": [
-                  "company_id",
-                  "contact_id"
+                  "order_id",
+                  "status_id"
                 ]
               }
             ]
@@ -52,8 +46,11 @@
                 "title": "Связка",
                 "fields": [
                   "driver_id",
+                  "dispatchers_id",
                   "car_id",
                   "trailer_id"
+
+
                 ]
               },
               {

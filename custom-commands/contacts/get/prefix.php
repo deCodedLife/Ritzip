@@ -1,9 +1,13 @@
 <?php
 
 /**
- * Фильтр по дате
+ * Фильтр по роли
  */
 $requestSettings[ "filter" ][ "role_id" ] = 13;
+
+/**
+ * Фильтр по дате
+ */
 
 if ( $requestData->created_at ) {
 
@@ -14,10 +18,86 @@ if ( $requestData->created_at ) {
 
 } // if. $requestData->created_at
 
-if ( $requestData->companyCategory_id ) {
 
-    $requestSettings[ "filter" ][ "companyCategory_id" ] = (int)$requestData->companyCategory_id;
+/**
+ * Фильтр по кол-ву сделок
+ */
 
-    unset( $requestData->companyCategory_id );
+if ( $requestData->order ) {
 
-} // if. $requestData->created_a
+    $orderRq = $requestData->order;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->order );
+    unset( $requestData->limit );
+
+} // if. $requestData->order
+
+if ( $requestData->thereCar ) {
+
+    $carRq = $requestData->thereCar;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->thereTrailer );
+    unset( $requestData->limit );
+
+} // if. $requestData->order
+
+if ( $requestData->task_id ) {
+
+    $taskRq = $requestData->task_id;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->task_id );
+    unset( $requestData->limit );
+
+} // if. $requestData->order
+
+
+if ( $requestData->taskStatus ) {
+
+    $taskStatuses = $requestData->taskStatus;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->taskStatus );
+    unset( $requestData->limit );
+
+} // if. $requestData->taskStatus
+
+if ( $requestData->orderStatus ) {
+
+    $orderStatuses = $requestData->orderStatus;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->orderStatus );
+    unset( $requestData->limit );
+
+} // if. $requestData->orderStatus
+
+if ( $requestData->orders_count_from ) {
+
+    $orders_count_from = $requestData->orders_count_from;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->orders_count_from );
+    unset( $requestData->limit );
+
+
+} // if. $requestData->orders_count_from
+
+if ( $requestData->orders_count_to ) {
+
+    $orders_count_to = $requestData->orders_count_to;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->orders_count_to );
+    unset( $requestData->limit );
+
+} // if. $requestData->orders_count_to

@@ -4,6 +4,24 @@
  * Фильтр по сумме
  */
 
+$userDetail = $API->DB->from( "users" )
+    ->where( "id", $API::$userDetail->id)
+    ->limit( 1 )
+    ->fetch();
+
+if ( $userDetail[ "role_id" ] == 13 ) {
+
+    $requestSettings[ "filter" ][ "sourse_contact" ] = $userDetail[ "id" ];
+
+} // if. $requestData->cost_from
+
+if ( $userDetail[ "role_id" ] == 34 ) {
+
+    $requestSettings[ "filter" ][ "responsible_id" ] = $userDetail[ "id" ];
+
+} // if. $requestData->cost_from
+
+
 if ( $requestData->cost_from ) {
 
     $requestSettings[ "filter" ][ "cost >= ?" ] = $requestData->cost_from;

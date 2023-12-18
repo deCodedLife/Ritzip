@@ -4,12 +4,6 @@
   "rows_key": "id",
   "rows": [
     {
-      "id": 1,
-      "title": "Разделы",
-      "description": "",
-      "parent_id": null
-    },
-    {
       "id": 2,
       "title": "Компании",
       "description": "",

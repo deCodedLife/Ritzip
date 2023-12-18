@@ -1,0 +1,26 @@
+{
+  "title": "Использоывание приложений",
+  "properties": [
+    {
+      "title": "Тип зарплаты",
+      "article": "salaryType",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Сумма зарплаты",
+      "article": "salarySum",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "% зарплаты",
+      "article": "salaryPercent",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    }
+  ]
+}

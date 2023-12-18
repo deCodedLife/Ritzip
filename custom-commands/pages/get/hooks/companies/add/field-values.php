@@ -5,8 +5,13 @@
  */
 if ( ( $requestData->context->form == "contacts" ) && $requestData->context->row_id ) {
 
+    $formFieldValues[ "driver_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "sender_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "recipient_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "contacts_id" ][ "is_visible" ] = false;
+    $formFieldValues[ "vehicles_id" ][ "is_visible" ] = false;
     $formFieldValues[ "main_contact_id" ][ "is_visible" ] = false;
-    $formFieldValues[ "main_contact_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "contacts_id" ][ "value" ] = [$requestData->context->row_id];
 
 }
 

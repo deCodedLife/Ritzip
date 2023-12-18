@@ -114,10 +114,28 @@
       }
     },
     {
+      "title": "Диспетчер",
+      "article": "dispatchers_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get",
+        "hook"
+      ],
+      "list_donor": {
+        "table": "dispatchers",
+        "properties_title": "last_name"
+      }
+    },
+    {
       "title": "Автомобиль",
       "article": "car_id",
-      "joined_field": "driver_id",
-      "joined_field_filter": "driver_id",
       "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": false,
@@ -237,8 +255,8 @@
     },
     {
       "title": "Статус",
-      "article": "status",
-      "data_type": "string",
+      "article": "status_id",
+      "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
@@ -249,16 +267,11 @@
         "get"
       ],
       "require_in_commands": [],
-      "custom_list": [
-        {
-          "title": "Запланировано",
-          "value": "planned"
-        },
-        {
-          "title": "Завершено",
-          "value": "success"
-        }
-      ]
+      "custom_list": [],
+      "list_donor": {
+        "table": "orderPayStatuses",
+        "properties_title": "title"
+      }
     },
     {
       "title": "Сумма",
@@ -443,6 +456,48 @@
         "get"
       ],
       "require_in_commands": []
+    },
+    {
+      "title": "Пользователь",
+      "article": "user_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Согласован",
+      "article": "is_agreed",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "Да",
+          "value": "Y"
+        },
+        {
+          "title": "Нет",
+          "value": "N"
+        }
+      ]
     }
   ],
   "action_buttons": [

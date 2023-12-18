@@ -2,6 +2,20 @@
   "title": "Категории компаний",
   "properties": [
     {
+      "title": "Получатель",
+      "article": "is_recipient",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "N"
+    },
+    {
+      "title": "Отправитель",
+      "article": "is_sender",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "N"
+    },
+    {
       "title": "Название",
       "article": "title",
       "type": "varchar(255)",

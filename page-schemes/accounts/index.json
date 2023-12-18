@@ -1,0 +1,38 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Счета",
+        "title": [
+          "Список счетов"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "accounts"
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "href",
+            "settings": {
+              "title": "Добавить счет",
+              "background": "dark",
+              "page": "accounts/add"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

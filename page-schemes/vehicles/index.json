@@ -23,6 +23,49 @@
       },
       "components": {
         "search": true,
+        "filters": [
+          {
+            "title": "Дата",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at"
+            }
+          },
+          {
+            "title": "Текущий заказ",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "order",
+              "list": [
+                {
+                  "title": "Есть",
+                  "value": "Y"
+                },
+                {
+                  "title": "Нет",
+                  "value": "N"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Статусы заказа",
+            "type": "list",
+            "settings": {
+              "is_multi": true,
+              "donor_object": "orderStatuses",
+              "recipient_property": "status_id",
+              "donor_property_title": "title",
+              "donor_property_value": "id"
+            }
+          }
+        ],
         "buttons": [
           {
             "type": "href",

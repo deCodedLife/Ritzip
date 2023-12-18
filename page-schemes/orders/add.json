@@ -69,12 +69,15 @@
                 "title": "",
                 "fields": [
                   "responsible_id",
+                  "dispatcher_id",
+                  "owneroperator_id",
                   "driver_id",
                   "car_id",
                   "trailer_id",
                   "trailerType",
                   "vehicles_id",
                   "cost",
+                  "plannedRevenue",
                   "pay_status",
                   "comment"
                 ]

@@ -6,7 +6,7 @@
 
 $API->addNotification(
     "system_alerts",
-    "Добавлена задача",
+    "Добавлена задача:" . $requestData->title,
     $requestData->description,
     "info",
     $requestData->employee_id

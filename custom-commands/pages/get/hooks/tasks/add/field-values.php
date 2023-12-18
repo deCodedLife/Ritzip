@@ -6,6 +6,7 @@
 
 $formFieldValues[ "author_id" ] = $API::$userDetail->id;
 $formFieldValues[ "watcher_id" ] = $API::$userDetail->id;
+$formFieldValues[ "employee_id" ] = $API::$userDetail->id;
 
 
 if ( ( $requestData->context->form == "tasks" ) && $requestData->context->employee_id )
@@ -50,13 +51,20 @@ if ( ( $requestData->context->form == "companyTasks" ) && $requestData->context-
 
 }
 
-
-
 if ( ( $requestData->context->form == "orderTasks" ) && $requestData->context->row_id ) {
 
-    $formFieldValues[ "order_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "order_id" ][ "is_visible" ] = false;
     $formFieldValues[ "order_id" ][ "value" ] = $requestData->context->row_id;
     $formFieldValues[ "binding" ][ "value" ] = "order";
 
 }
+
+if ( ( $requestData->context->form == "trailers" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "trailer_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "trailer_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "trailer";
+
+}
+
 

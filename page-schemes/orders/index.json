@@ -64,6 +64,9 @@
                     "type": "list",
                     "settings": {
                         "donor_object": "users",
+                        "donor_filters": {
+                            "role_id": 4
+                        },
                         "recipient_property": "driver_id",
                         "donor_property_title": "last_name",
                         "donor_property_value": "id"

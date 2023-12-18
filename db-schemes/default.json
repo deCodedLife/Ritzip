@@ -1,0 +1,21 @@
+{
+  "title": "Правила автоматизации",
+  "properties": [
+    {
+      "title": "Тип зарплаты диспетчера",
+      "article": "salaryDispatcherType",
+      "type": "varchar(75)",
+      "is_required": false,
+      "default": false
+    },
+    {
+      "title": "Сумма зарплаты диспетчера",
+      "article": "salaryDispatcherSum",
+      "type": "varchar(75)",
+      "is_required": false,
+      "default": false
+    }
+  ],
+  "rows_key": "id",
+  "rows": []
+}

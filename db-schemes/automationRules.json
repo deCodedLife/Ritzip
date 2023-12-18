@@ -1,0 +1,77 @@
+{
+  "title": "Правила автоматизации",
+  "properties": [
+    {
+      "title": "Только Технический специалист может вносить данные по пробегу авто (Данные тахометра )",
+      "article": "tech_spec_car_mileage_data",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "Y"
+    },
+    {
+      "title": "При формировании заказа автоматически формировать расход на диспетчера",
+      "article": "expense_per_dispatcher",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "N"
+    },
+    {
+      "title": "При формировании заказа автоматически формировать расход на водителя",
+      "article": "expense_per_driver",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "N"
+    },
+    {
+      "title": "При формировании расходов автоматически формировать платеж со статусом \"Не оплачен\"",
+      "article": "ex_payment_with_status_not_paid",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "N"
+    },
+    {
+      "title": "При формированании штрафа или бонуса автоматически создавать платеж со статусом \"Не оплачен\"",
+      "article": "fab_payment_with_status_not_paid",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "Y"
+    },
+    {
+      "title": "Если у Owner заказ с оплатой типа \"Наличные\", у Заказа автоматически формируется расход",
+      "article": "owner_order_cash_expense_automatically_generated",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "Y"
+    },
+    {
+      "title": "Бухгалтер подтверждает закрытие заказа при начислениии ЗП диспетчера",
+      "article": "accountant_confirms_closing_dispatcher_salary",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "N"
+    },
+    {
+      "title": "Отчеты сохранять в системе для всех ролей. В зависимости от выбора все отчеты сохраняются у Пользователей Еженедельно/Ежемесячно",
+      "article": "save_reports_roles",
+      "type": "varchar(75)",
+      "is_required": false,
+      "default": "monthly"
+    },
+    {
+      "title": "Использовование сервиса тахометрии авто",
+      "article": "using_tachometry",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "N"
+    },
+    {
+      "title": "Только супервайзер может ставить план на авто",
+      "article": "only_supervisor_plan_car",
+      "type": "char(1)",
+      "is_required": false,
+      "default": "Y"
+    }
+  ],
+  "rows_key": "id",
+  "rows": []
+}

@@ -47,7 +47,7 @@
               "type": "form",
               "size": 4,
               "settings": {
-                "object": "users",
+                "object": "drivers",
                 "command": "update",
                 "joined_property": "",
                 "areas": [
@@ -57,6 +57,8 @@
                       {
                         "title": "Основное",
                         "fields": [
+                          "avatar",
+                          "identifier",
                           "role_id",
                           "first_name",
                           "last_name",
@@ -64,7 +66,9 @@
                           "insuranceNumber",
                           "fuelСardNumber",
                           "driverType",
+                          "consumptionCard",
                           "insuranceAmount",
+                          "insurancePeriod",
                           "insurancePeriod_from",
                           "insurancePeriod_to",
                           "dispatchFee",
@@ -101,7 +105,8 @@
                           "requestersNameAddress",
                           "insuranceNumber",
                           "insurancePhoto",
-                          "idNumberEmployer"
+                          "idNumberEmployer",
+                          "fuelСardNumber"
                         ]
                       }
                     ]
@@ -113,6 +118,7 @@
                         "title": "",
                         "fields": [
                           "responsible_id",
+                          "supervisor_id",
                           "company_id",
                           "note",
                           "miles",
@@ -332,7 +338,7 @@
                 },
                 "filters": [
                   {
-                    "property": "employee_id",
+                    "property": "driver_id",
                     "value": ":id"
                   }
                 ]
@@ -467,6 +473,53 @@
                       "icon": "",
                       "href": "drivers"
                     }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Управление зарплатой",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "joined_property": "",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "Реквизиты",
+                        "fields": [
+                          "salaryType",
+                          "salarySum",
+                          "period",
+                          "includingGasoline"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "href": "drivers",
+                      "icon": "",
+                      "background": "dark"
+                    },
+                    "required_permissions": [],
+                    "required_modules": []
                   }
                 ]
               }

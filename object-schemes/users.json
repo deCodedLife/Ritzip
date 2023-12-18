@@ -4,6 +4,124 @@
   "is_trash": true,
   "properties": [
     {
+      "title": "ID",
+      "article": "identifier",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Категория",
+      "article": "companyCategory_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "list_donor": {
+        "table": "companyCategories",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Тип зарплаты",
+      "article": "dispatchFeeType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_hook": true,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "add",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "Процент",
+          "value": "percent"
+        },
+        {
+          "title": "Фиксированная",
+          "value": "fixed"
+        }
+      ]
+    },
+    {
+      "title": "Сумма зарплаты",
+      "article": "dispatchFeeSum",
+      "data_type": "float",
+      "is_hook": true,
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook",
+        "update"
+      ]
+    },
+    {
+      "title": "% зарплаты",
+      "article": "dispatchFeePercent",
+      "data_type": "float",
+      "suffix": "%",
+      "field_type": "float",
+      "is_visible": true,
+      "is_hook": true,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add",
+        "hook"
+      ]
+    },
+    {
+      "title": "Кол-во сделок (from)",
+      "article": "orders_count_from",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Кол-во сделок (to)",
+      "article": "orders_count_to",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
       "title": "Аватар",
       "article": "avatar",
       "data_type": "image",
@@ -75,6 +193,34 @@
       ]
     },
     {
+      "title": "Отправитель",
+      "article": "is_sender",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Получатель",
+      "article": "is_recipient",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
       "title": "Email",
       "article": "email",
       "data_type": "string",
@@ -115,12 +261,15 @@
       "article": "role_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
+      "is_disabled": false,
+      "is_hook": true,
       "use_in_commands": [
-        "add",
         "update",
+        "add",
+        "hook",
         "get"
       ],
       "require_in_commands": [
@@ -302,25 +451,6 @@
       "require_in_commands": []
     },
     {
-      "title": "Компания",
-      "article": "company_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "companies",
-        "properties_title": "title"
-      }
-    },
-    {
       "title": "Рекомендуемый водитель",
       "article": "recommended_driver_id",
       "data_type": "integer",
@@ -367,7 +497,8 @@
         "get",
         "update",
         "add"
-      ]
+      ],
+      "is_disabled": true
     },
     {
       "title": "Мили (Итого)",
@@ -381,7 +512,9 @@
         "get",
         "update",
         "add"
-      ]
+      ],
+      "is_disabled": true
+      
     },
     {
       "title": "W9 документ",
@@ -654,20 +787,6 @@
       ]
     },
     {
-      "title": "Должность",
-      "article": "post",
-      "data_type": "string",
-      "field_type": "string",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
       "title": "Фото прав - передняя сторона",
       "article": "driveLicenseFront",
       "data_type": "image",
@@ -735,7 +854,8 @@
       "use_in_commands": [
         "update",
         "add",
-        "hook"
+        "hook",
+        "get"
       ],
       "custom_list": [
         {
@@ -746,6 +866,20 @@
           "title": "Driver Operator",
           "value": "operator"
         }
+      ]
+    },
+    {
+      "title": "Текущий заказ",
+      "article": "order",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
       ]
     },
     {
@@ -777,6 +911,7 @@
       "use_in_commands": [
         "update",
         "add",
+        "get",
         "hook"
       ],
       "custom_list": [
@@ -795,12 +930,37 @@
       "article": "salarySum",
       "data_type": "float",
       "field_type": "price",
+      "is_hook": true,
+      "is_visible": false,
       "is_default_in_list": false,
-      "is_unique": true,
+      "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "get",
-        "update"
+        "update",
+        "add",
+        "hook"
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
+    },
+    {
+      "title": "% зарплаты",
+      "article": "salaryPercent",
+      "data_type": "float",
+      "field_type": "float",
+      "suffix": "%",
+      "is_visible": false,
+      "is_hook": true,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add",
+        "hook"
       ],
       "required_permissions": [
         "salary_management"
@@ -818,7 +978,9 @@
       "is_disabled": false,
       "use_in_commands": [
         "update",
-        "add"
+        "add",
+        "get",
+        "hook"
       ],
       "custom_list": [
         {
@@ -828,34 +990,6 @@
         {
           "title": "Месяц",
           "value": "month"
-        }
-      ],
-      "required_permissions": [
-        "salary_management"
-      ]
-    },
-    {
-      "title": "С учетом бензина",
-      "article": "includingGasoline",
-      "data_type": "string",
-      "field_type": "radio",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "is_hook": true,
-      "is_disabled": false,
-      "use_in_commands": [
-        "update",
-        "add"
-      ],
-      "custom_list": [
-        {
-          "title": "Да",
-          "value": "yes"
-        },
-        {
-          "title": "Нет",
-          "value": "no"
         }
       ],
       "required_permissions": [
@@ -876,15 +1010,44 @@
         "add",
         "get"
       ],
-      "is_visible": false,
+      "is_visible": true,
       "is_hook": true
+    },
+    {
+      "title": "Период страховки",
+      "article": "insurancePeriod",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook"
+      ],
+      "custom_list": [
+        {
+          "title": "Неделя",
+          "value": "week"
+        },
+        {
+          "title": "Месяц",
+          "value": "month"
+        }
+      ],
+      "required_permissions": [
+        "salary_management"
+      ]
     },
     {
       "title": "Срок страховки (от)",
       "article": "insurancePeriod_from",
       "data_type": "date",
       "field_type": "date",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_visible": false,
@@ -901,28 +1064,11 @@
       "article": "insurancePeriod_to",
       "data_type": "date",
       "field_type": "date",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
       "is_visible": false,
-      "use_in_commands": [
-        "update",
-        "get",
-        "hook",
-        "add"
-      ]
-    },
-    {
-      "title": "Диспетчерский сбор (%)",
-      "article": "dispatchFee",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "is_visible": false,
-      "is_hook": true,
       "use_in_commands": [
         "update",
         "get",
@@ -974,6 +1120,141 @@
       "is_autofill": true,
       "use_in_commands": [
         "add"
+      ]
+    },
+    {
+      "title": "Администратор (Супервайзер)",
+      "article": "supervisor_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "supervisors",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Расход топлива по карте",
+      "article": "consumptionCard",
+      "data_type": "float",
+      "field_type": "float",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add"
+      ],
+      "is_visible": false
+    },
+    {
+      "title": "С учетом бензина",
+      "article": "includingGasoline",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "hook"
+      ],
+      "is_visible": false
+    },
+    {
+      "title": "Статус задачи",
+      "article": "taskStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Статус заказа",
+      "article": "orderStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Привязать к ",
+      "article": "binding",
+      "data_type": "radio",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "Контакт",
+          "value": "contact"
+        },
+        {
+          "title": "Компания",
+          "value": "company"
+        },
+        {
+          "title": "Заказ",
+          "value": "order"
+        },
+        {
+          "title": "Транспортное средство",
+          "value": "car"
+        },
+        {
+          "title": "Водитель",
+          "value": "driver"
+        },
+        {
+          "title": "Прицеп",
+          "value": "trailer"
+        },
+        {
+          "title": "Без связи",
+          "value": "clear"
+        }
+      ]
+    },
+    {
+      "title": "Последняя задача",
+      "article": "task_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
       ]
     }
   ]

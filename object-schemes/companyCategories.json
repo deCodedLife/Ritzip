@@ -10,7 +10,7 @@
     "is_default_in_list": true,
     "is_unique": true,
     "is_autofill": true,
-    "use_in_commands": ["add", "update"],
+    "use_in_commands": ["add", "update", "get"],
     "require_in_commands": ["add"]
   }],
   "action_buttons": [

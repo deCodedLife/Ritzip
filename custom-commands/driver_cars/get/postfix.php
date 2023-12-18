@@ -39,6 +39,8 @@ if ( $requestData->context->block == "form_list" ) {
         if ( $carDetail[ "is_active" ] == "Y" )
 
             $car[ "id" ] = $carDetail[ "id" ];
+            $car[ "brandModel" ] = $carDetail[ "brand" ] . " " . $carDetail[ "model" ];
+            $car[ "yearRelease" ] = $carDetail[ "yearRelease" ];
             $cars[] = $car;
 
     }

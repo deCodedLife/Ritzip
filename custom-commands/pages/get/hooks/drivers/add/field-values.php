@@ -28,6 +28,13 @@ if ( ( $requestData->context->form == "companies" ) && $requestData->context->ro
 }
 
 
+$costInsurance = $API->DB->from( "costInsurance" )
+    ->limit( 1 )
+    ->fetch();
+
+$formFieldValues[ "insuranceAmount" ][ "value" ] = $costInsurance[ "sum" ];
+$formFieldValues[ "insurancePeriod" ][ "value" ] = $costInsurance[ "period" ];
+
 
 
 

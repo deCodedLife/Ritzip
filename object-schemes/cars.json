@@ -4,18 +4,30 @@
   "is_trash": true,
   "properties": [
     {
-      "title": "Фотография",
-      "article": "photo",
+      "title": "Фото автомобиля - передняя сторона",
+      "article": "avtoPhotoFront",
       "data_type": "image",
       "field_type": "image",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": []
+        "get",
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Марка, модель",
+      "article": "brandModel",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
     },
     {
       "title": "Файлы",
@@ -39,7 +51,7 @@
       "article": "vin",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": true,
       "is_autofill": true,
       "use_in_commands": [
@@ -56,7 +68,7 @@
       "article": "license_plate",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -115,7 +127,7 @@
       "article": "brand",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -129,7 +141,7 @@
       "article": "model",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -138,9 +150,9 @@
       ]
     },
     {
-      "title": "Пробег",
+      "title": "Данные тахометра",
       "article": "mileage",
-      "data_type": "float",
+      "data_type": "integer",
       "field_type": "integer",
       "is_default_in_list": false,
       "is_unique": false,
@@ -148,6 +160,9 @@
       "use_in_commands": [
         "add",
         "update"
+      ],
+      "required_permissions": [
+        "mileage_update"
       ]
     },
     {
@@ -278,7 +293,7 @@
       "article": "trailerType",
       "data_type": "string",
       "field_type": "list",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "custom_list": [
@@ -291,6 +306,70 @@
           "value": "closed"
         }
       ],
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "trailers",
+        "properties_title": "vin"
+      }
+    },
+    {
+      "title": "Ответственный",
+      "article": "responsible_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      },
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Текущий заказ",
+      "article": "order",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Кол-во заказов",
+      "article": "countOrder",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
       "use_in_commands": [
         "update",
         "get",
@@ -317,7 +396,7 @@
       "data_type": "image",
       "field_type": "image",
       "is_default_in_list": false,
-      "is_unique": true,
+      "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "update",
@@ -337,20 +416,6 @@
         "update",
         "add",
         "get"
-      ]
-    },
-    {
-      "title": "Фото автомобиля - передняя сторона",
-      "article": "avtoPhotoFront",
-      "data_type": "image",
-      "field_type": "image",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
       ]
     },
     {
@@ -414,38 +479,6 @@
       ]
     },
     {
-      "title": "Ответственный",
-      "article": "responsible_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name"
-      },
-      "use_in_commands": [
-        "update",
-        "add",
-        "get"
-      ]
-    },
-    {
-      "title": "Кол-во заказов",
-      "article": "countOrder",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
       "title": "Сумма заказов",
       "article": "sumOrder",
       "data_type": "float",
@@ -464,14 +497,15 @@
       "article": "miles",
       "data_type": "float",
       "field_type": "integer",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "get",
         "update",
         "add"
-      ]
+      ],
+      "is_disabled": true
     },
     {
       "title": "Мили (Итого)",
@@ -485,7 +519,8 @@
         "get",
         "update",
         "add"
-      ]
+      ],
+      "is_disabled": true
     },
     {
       "title": "Дата создания",
@@ -554,11 +589,11 @@
       ]
     },
     {
-      "title": "Прицеп",
-      "article": "trailer",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
+      "title": "Планируемая выручка",
+      "article": "plannedRevenue",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -566,10 +601,101 @@
         "get",
         "add"
       ],
-      "list_donor": {
-        "table": "trailers",
-        "properties_title": "vin"
-      }
+      "required_permissions": [
+        "car_admin_update"
+      ]
+    },
+    {
+      "title": "Период",
+      "article": "period",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "custom_list": [
+        {
+          "title": "месяц",
+          "value": "month"
+        },
+        {
+          "title": "неделя",
+          "value": "week"
+        }
+      ],
+      "required_permissions": [
+        "car_admin_update"
+      ]
+    },
+    {
+      "title": "Последняя задача",
+      "article": "task_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Статус задачи",
+      "article": "taskStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Наличие прицепа",
+      "article": "thereTrailer",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Текущий заказ",
+      "article": "order",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Статус заказа",
+      "article": "orderStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
     }
   ],
   "action_buttons": [

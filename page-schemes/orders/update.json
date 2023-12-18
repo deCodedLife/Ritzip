@@ -36,7 +36,23 @@
                   }
                 ]
               },
-              "components": []
+              "components": {
+                "buttons": [
+                  {
+                    "type": "print",
+                    "required_permissions": [],
+                    "settings": {
+                      "title": "Печать документов",
+                      "background": "dark",
+                      "data": {
+                        "is_edit": true,
+                        "scheme_name": "orders",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
             },
             {
               "title": "Форма",
@@ -53,6 +69,7 @@
                         "title": "Общее",
                         "fields": [
                           "status_id",
+                          "is_confirmedAccountant",
                           "created_at",
                           "certified_at",
                           "approximatelyTime",
@@ -93,13 +110,16 @@
                         "title": "",
                         "fields": [
                           "responsible_id",
+                          "dispatcher_id",
+                          "owneroperator_id",
                           "driver_id",
                           "car_id",
                           "trailer_id",
                           "trailerType",
                           "vehicles_id",
-                          "cost",
+                          "plannedRevenue",
                           "pay_status",
+                          "cost",
                           "comment"
                         ]
                       }
@@ -109,19 +129,6 @@
               },
               "components": {
                 "buttons": [
-                  {
-                    "type": "print",
-                    "required_permissions": [],
-                    "settings": {
-                      "title": "Печать документов",
-                      "background": "dark",
-                      "data": {
-                        "is_edit": true,
-                        "scheme_name": "orders",
-                        "row_id": ":id"
-                      }
-                    }
-                  },
                   {
                     "type": "submit",
                     "settings": {
@@ -318,7 +325,93 @@
         },
         {
           "title": "Документы",
-          "body": []
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "files",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "filters": [
+                  {
+                    "title": "Дата (от)",
+                    "type": "date",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                      "is_search": false,
+                      "recipient_property": "created_at_from"
+                    }
+                  },
+                  {
+                    "title": "Дата (до)",
+                    "type": "date",
+                    "required_permissions": [],
+                    "required_modules": [],
+                    "settings": {
+                      "is_search": false,
+                      "recipient_property": "created_at_to"
+                    }
+                  },
+                  {
+                    "title": "Компания",
+                    "type": "list",
+                    "settings": {
+                      "recipient_property": "company_id",
+                      "donor_property_value": "id",
+                      "donor_property_title": "title",
+                      "donor_object": "companies"
+                    }
+                  },
+                  {
+                    "title": "Автомобилю",
+                    "type": "list",
+                    "settings": {
+                      "donor_object": "cars",
+                      "recipient_property": "car_id",
+                      "donor_property_title": "vin",
+                      "donor_property_value": "id"
+                    }
+                  },
+                  {
+                    "title": "Водитель",
+                    "type": "list",
+                    "settings": {
+                      "donor_object": "users",
+                      "donor_filters": {
+                        "role_id": 4
+                      },
+                      "recipient_property": "driver_id",
+                      "donor_property_title": "last_name",
+                      "donor_property_value": "id"
+                    }
+                  }
+                ],
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить файл",
+                      "background": "dark",
+                      "page": "files/add",
+                      "context": {
+                        "form": "order",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Уведомления",
@@ -515,6 +608,21 @@
                       "context": {
                         "form": "orderExpenses",
                         "row_id": ":id"
+                      }
+                    }
+                  },
+                  {
+                    "type": "script",
+                    "required_permissions": [
+                      "expenses_check"
+                    ],
+                    "settings": {
+                      "title": "Согласовано",
+                      "background": "dark",
+                      "object": "expenses",
+                      "command": "agreed",
+                      "data": {
+                        "id": ":id"
                       }
                     }
                   }

@@ -14,6 +14,17 @@ if ( ( $requestData->context->form == "contactPayments" ) && $requestData->conte
 
 }
 
+if ( ( $requestData->context->form == "payments" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "account_id" ] = [
+
+        "value" => $requestData->context->row_id,
+        "is_visible" => true,
+
+    ];
+
+}
+
 if ( ( $requestData->context->form == "orderPayments" ) && $requestData->context->row_id ) {
 
     $formFieldValues["object"] = "order";

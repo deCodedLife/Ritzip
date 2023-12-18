@@ -23,6 +23,13 @@
       "is_required": "Y"
     },
     {
+      "title": "Owner Operator",
+      "article": "owneroperator_id",
+      "type": "int",
+      "default": null,
+      "is_required": "Y"
+    },
+    {
       "title": "Прицеп",
       "article": "trailer_id",
       "type": "int",
@@ -149,6 +156,13 @@
       "is_required": "Y"
     },
     {
+      "title": "Подтверждено бухгалтером",
+      "article": "is_confirmedAccountant",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "Y"
+    },
+    {
       "title": "Дата и время завершения заявки",
       "article": "certified_at",
       "type": "datetime",
@@ -271,6 +285,55 @@
       "title": "Тип прицепа",
       "article": "trailerType",
       "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Расходы согласованны",
+      "article": "is_agreed",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "N"
+    },
+    {
+      "title": "Мили по заказу  ",
+      "article": "orderMiles",
+      "type": "int",
+      "default": "0",
+      "is_required": "N"
+    },
+    {
+      "title": "Мили не по заказу",
+      "article": "notOrderMiles",
+      "type": "int",
+      "default": "0",
+      "is_required": "N"
+    },
+    {
+      "title": "Адрес отправления",
+      "article": "sendingAddress",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Адрес получения",
+      "article": "receivingAddress",
+      "type": "varchar(75)",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Диспетчер",
+      "article": "dispatcher_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Планируемая выручка",
+      "article": "plannedRevenue",
+      "type": "float",
       "default": null,
       "is_required": "N"
     }

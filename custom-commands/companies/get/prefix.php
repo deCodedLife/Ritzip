@@ -22,17 +22,21 @@ $limit = $requestData->limit;
 
 if ( $requestData->orders_count_from ) {
 
+    $limit = $requestData->limit;
     $requestData->limit = 0;
     $orders_count_from = $requestData->orders_count_from;
     unset( $requestData->orders_count_from );
+    unset( $requestData->limit );
 
 } // if. $requestData->orders_count_from
 
 if ( $requestData->orders_count_to ) {
 
+    $limit = $requestData->limit;
     $requestData->limit = 0;
     $orders_count_to = $requestData->orders_count_to;
     unset( $requestData->orders_count_to );
+    unset( $requestData->limit );
 
 } // if. $requestData->orders_count_to
 
@@ -43,16 +47,66 @@ if ( $requestData->orders_count_to ) {
 
 if ( $requestData->orders_cost_from ) {
 
+    $limit = $requestData->limit;
     $requestData->limit = 0;
     $orders_cost_from = $requestData->orders_cost_from;
     unset( $requestData->orders_cost_from );
+    unset( $requestData->limit );
 
 } // if. $requestData->orders_cost_from
 
 if ( $requestData->orders_cost_to ) {
 
+    $limit = $requestData->limit;
     $requestData->limit = 0;
     $orders_cost_to = $requestData->orders_cost_to;
     unset( $requestData->orders_cost_to );
+    unset( $requestData->limit );
 
 } // if. $requestData->orders_cost_to
+
+
+if ( $requestData->order ) {
+
+    $orderRq = $requestData->order;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->order );
+    unset( $requestData->limit );
+
+} // if. $requestData->order
+
+if ( $requestData->task_id ) {
+
+    $taskRq = $requestData->task_id;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->task_id );
+    unset( $requestData->limit );
+
+} // if. $requestData->order
+
+
+if ( $requestData->taskStatus ) {
+
+    $taskStatuses = $requestData->taskStatus;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->taskStatus );
+    unset( $requestData->limit );
+
+} // if. $requestData->taskStatus
+
+if ( $requestData->orderStatus ) {
+
+    $orderStatuses = $requestData->orderStatus;
+    $limit = $requestData->limit;
+    $requestData->limit = 0;
+
+    unset( $requestData->orderStatus );
+    unset( $requestData->limit );
+
+} // if. $requestData->orderStatus

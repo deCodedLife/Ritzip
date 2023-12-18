@@ -15,50 +15,92 @@
       "components": []
     },
     {
-      "title": "Форма",
-      "type": "form",
+      "title": "Табы",
+      "type": "tabs",
       "size": 4,
-      "settings": {
-        "object": "payments",
-        "command": "update",
-        "areas": [
-          {
-            "size": 2,
-            "blocks": [
-              {
-                "title": "Основные данные",
-                "fields": [
-                  "account",
-                  "sum",
-                  "created_at",
-                  "object",
-                  "order_id",
-                  "driver_id",
-                  "company_id",
-                  "car_id",
-                  "contact_id",
-                  "payBefore",
-                  "status_id",
-                  "responsible_id"
+      "settings": [
+        {
+          "title": "Основное",
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 4,
+                    "blocks": [
+                      {
+                        "title": "Основные данные",
+                        "fields": [
+                          "account_id",
+                          "sum",
+                          "created_at",
+                          "object",
+                          "order_id",
+                          "driver_id",
+                          "company_id",
+                          "car_id",
+                          "contact_id",
+                          "payBefore",
+                          "status_id",
+                          "responsible_id",
+                          "paymentType_id"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "payments"
+                    }
+                  }
                 ]
               }
-            ]
-          }
-        ]
-      },
-      "components": {
-        "buttons": [
-          {
-            "type": "submit",
-            "settings": {
-              "title": "Сохранить",
-              "background": "dark",
-              "icon": "",
-              "href": "payments"
             }
-          }
-        ]
-      }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add",
+                      "context": {
+                        "form": "payments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

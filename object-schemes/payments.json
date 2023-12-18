@@ -29,9 +29,9 @@
     },
     {
       "title": "Счет",
-      "article": "account",
-      "data_type": "string",
-      "field_type": "string",
+      "article": "account_id",
+      "data_type": "integer",
+      "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
@@ -40,7 +40,13 @@
         "update",
         "get"
       ],
-      "require_in_commands": []
+      "require_in_commands": [
+        "add"
+      ],
+      "list_donor": {
+        "table": "accounts",
+        "properties_title": "number"
+      }
     },
     {
       "title": "Сумма",
@@ -101,7 +107,7 @@
         "get"
       ],
       "list_donor": {
-        "table": "orderStatuses",
+        "table": "orderPayStatuses",
         "properties_title": "title"
       }
     },
@@ -294,6 +300,24 @@
           "value": "company"
         }
       ]
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ],
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
+      }
     }
   ],
   "action_buttons": [

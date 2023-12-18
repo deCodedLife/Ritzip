@@ -59,7 +59,7 @@ foreach ( $response[ "data" ] as $order ) {
     }
 
     $carDetail = $API->DB->from( "cars" )
-        ->where( "id", $order[ "car_id" ] )
+        ->where( "id", $order[ "car_id" ][ "title" ] )
         ->limit( 1 )
         ->fetch();
 

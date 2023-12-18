@@ -1,0 +1,65 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Отчет директора ",
+        "title": [
+          "Отчет директора "
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "directorReport",
+        "is_exel": true,
+        "link": "orders"
+      },
+      "components": {
+        "filters": [
+          {
+            "title": "Дата (от)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_from"
+            }
+          },
+          {
+            "title": "Дата (до)",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at_to"
+            }
+          },
+          {
+            "title": "Роль",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "role_id",
+              "donor_object": "roles",
+              "donor_property_title": "title",
+              "donor_property_value": "id"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

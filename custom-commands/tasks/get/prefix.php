@@ -154,6 +154,15 @@ if ( $requestData->is_today == "Y" ) {
 
 } // if. $requestData->is_today
 
+if ( $requestData->created_at ) {
+
+    $requestSettings[ "filter" ][ "created_at >= ?" ] = $requestData->created_at . " 00:00:00";
+    $requestSettings[ "filter" ][ "created_at <= ?" ] = $requestData->created_at . " 23:59:59";
+
+    unset( $requestData->created_at );
+
+} // if. $requestData->is_today
+
 if ( $requestData->is_future == "Y" ) {
 
     $requestSettings[ "filter" ][ "deadline >= ?" ] = $today . " 00:00:00";

@@ -2,6 +2,20 @@
   "title": "Прицепы",
   "properties": [
     {
+      "title": "Дата и время создания",
+      "article": "created_at",
+      "type": "datetime",
+      "default": "CURRENT_TIMESTAMP",
+      "is_required": "Y"
+    },
+    {
+      "title": "Ответственный",
+      "article": "responsible_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
       "title": "VIN Номер",
       "article": "vin",
       "type": "varchar(75)",
@@ -125,6 +139,34 @@
       "article": "positionCount",
       "type": "float",
       "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Сумма заказов",
+      "article": "sumOrder",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Кол-во заказов",
+      "article": "countOrder",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Мили (Заказы)",
+      "article": "miles",
+      "type": "float",
+      "default": "0",
+      "is_required": "N"
+    },
+    {
+      "title": "Мили",
+      "article": "milesAll",
+      "type": "float",
+      "default": "0",
       "is_required": "N"
     }
   ]

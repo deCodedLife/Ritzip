@@ -65,6 +65,8 @@ foreach ( $response[ "data" ] as $order ) {
         ->limit( 1 )
         ->fetch();
 
+    $order[ "miles" ] = number_format($order[ "miles" ], 0, '', ' ');
+
     if ($carDetail) {
 
         /**

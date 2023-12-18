@@ -45,22 +45,6 @@
                   "lot_number",
                   "count"
                 ]
-              },
-              {
-                "title": "Передняя сторона",
-                "fields": [
-                  "frontPhoto",
-                  "frontDamage",
-                  "frontDescription"
-                ]
-              },
-              {
-                "title": "Левая сторона",
-                "fields": [
-                  "leftPhoto",
-                  "leftDamage",
-                  "leftDescription"
-                ]
               }
             ]
           },
@@ -75,22 +59,6 @@
                   "height",
                   "length",
                   "weight"
-                ]
-              },
-              {
-                "title": "Правая сторона",
-                "fields": [
-                  "rightPhoto",
-                  "rightDamage",
-                  "backDescription"
-                ]
-              },
-              {
-                "title": "Задняя сторона",
-                "fields": [
-                  "backPhoto",
-                  "backDamage",
-                  "backDescription"
                 ]
               }
             ]

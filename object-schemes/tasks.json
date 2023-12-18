@@ -18,6 +18,170 @@
       ]
     },
     {
+      "title": "Дата начала",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Выполнить до",
+      "article": "deadline",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ]
+    },
+    {
+      "title": "Ответственный",
+      "article": "employee_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "users",
+        "properties_title": "last_name"
+      }
+    },
+    {
+      "title": "Статус",
+      "article": "status",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "status",
+        "get"
+      ],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "value": "not_read",
+          "title": "Не начата",
+          "color": "danger"
+        },
+        {
+          "value": "processing",
+          "title": "В процессе",
+          "color": "primary"
+        },
+        {
+          "value": "read",
+          "title": "В ожидании ответа",
+          "color": "warning"
+        },
+        {
+          "value": "completed",
+          "title": "Завершена",
+          "color": "success"
+        }
+      ]
+    },
+    {
+      "title": "Приоритет",
+      "article": "priority",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update"
+      ],
+      "require_in_commands": [],
+      "custom_list": [
+        {
+          "value": "low",
+          "title": "Низкий"
+        },
+        {
+          "value": "middle",
+          "title": "Средний"
+        },
+        {
+          "value": "height",
+          "title": "Высокий"
+        },
+        {
+          "value": "urgent",
+          "title": "Неотложный"
+        }
+      ]
+    },
+    {
+      "title": "Привязать к ",
+      "article": "binding",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_hook": true,
+      "is_disabled": false,
+      "use_in_commands": [
+        "update",
+        "add",
+        "hook",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "Контакт",
+          "value": "contact"
+        },
+        {
+          "title": "Компания",
+          "value": "company"
+        },
+        {
+          "title": "Заказ",
+          "value": "order"
+        },
+        {
+          "title": "Транспортное средство",
+          "value": "car"
+        },
+        {
+          "title": "Водитель",
+          "value": "driver"
+        },
+        {
+          "title": "Прицеп",
+          "value": "trailer"
+        },
+        {
+          "title": "Без связи",
+          "value": "clear"
+        }
+      ]
+    },
+    {
       "title": "Наблюдатель",
       "article": "watcher_id",
       "data_type": "integer",
@@ -68,30 +232,11 @@
       "require_in_commands": []
     },
     {
-      "title": "Исполнитель",
-      "article": "employee_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "users",
-        "properties_title": "last_name"
-      }
-    },
-    {
       "title": "Автор",
       "article": "author_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -110,144 +255,12 @@
       "article": "description",
       "data_type": "string",
       "field_type": "textarea",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ]
-    },
-    {
-      "title": "Статус",
-      "article": "status",
-      "data_type": "string",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "custom_list": [
-        {
-          "value": "not_read",
-          "title": "Не начата"
-        },
-        {
-          "value": "processing",
-          "title": "В процессе"
-        },
-        {
-          "value": "read",
-          "title": "В ожидании ответа"
-        },
-        {
-          "value": "completed",
-          "title": "Завершена"
-        }
-      ]
-    },
-    {
-      "title": "Приоритет",
-      "article": "priority",
-      "data_type": "string",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update"
-      ],
-      "require_in_commands": [],
-      "custom_list": [
-        {
-          "value": "low",
-          "title": "Низкий"
-        },
-        {
-          "value": "middle",
-          "title": "Средний"
-        },
-        {
-          "value": "height",
-          "title": "Высокий"
-        },
-        {
-          "value": "urgent",
-          "title": "Неотложный"
-        }
-      ]
-    },
-    {
-      "title": "Дата начала",
-      "article": "created_at",
-      "data_type": "datetime",
-      "field_type": "datetime",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
-      "title": "Выполнить до",
-      "article": "deadline",
-      "data_type": "datetime",
-      "field_type": "datetime",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ]
-    },
-    {
-      "title": "Привязать к ",
-      "article": "binding",
-      "data_type": "string",
-      "field_type": "radio",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
-      "is_hook": true,
-      "is_disabled": false,
       "use_in_commands": [
-        "update",
         "add",
-        "hook",
-        "get"
-      ],
-      "custom_list": [
-        {
-          "title": "Контакт",
-          "value": "contact"
-        },
-        {
-          "title": "Компания",
-          "value": "company"
-        },
-        {
-          "title": "Заказ",
-          "value": "order"
-        },
-        {
-          "title": "Транспортное средство",
-          "value": "car"
-        },
-        {
-          "title": "Водитель",
-          "value": "driver"
-        }
+        "update"
       ]
     },
     {
@@ -555,6 +568,28 @@
       "use_in_commands": [
         "update"
       ]
+    },
+    {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add",
+        "hook"
+      ],
+      "list_donor": {
+        "table": "trailers",
+        "properties_title": "vin"
+      },
+      "is_disabled": false,
+      "is_visible": false,
+      "min_value": 0
     }
   ],
   "action_buttons": [
@@ -567,7 +602,52 @@
           ":id"
         ],
         "icon": "gear",
-        "background": "dark"
+        "background": "danger"
+      }
+    },
+    {
+      "type": "script",
+      "settings": {
+        "title": "В процессе",
+        "background": "dark",
+        "icon": "",
+        "object": "tasks",
+        "command": "status",
+        "data": {
+          "id": ":id",
+          "status": "processing"
+        },
+        "href": "tasks"
+      }
+    },
+    {
+      "type": "script",
+      "settings": {
+        "title": "Ожидает ответа",
+        "background": "warning",
+        "icon": "",
+        "object": "tasks",
+        "command": "status",
+        "data": {
+          "id": ":id",
+          "status": "read"
+        },
+        "href": "tasks"
+      }
+    },
+    {
+      "type": "script",
+      "settings": {
+        "title": "Завершить",
+        "background": "success",
+        "icon": "",
+        "object": "tasks",
+        "command": "status",
+        "data": {
+          "id": ":id",
+          "status": "completed"
+        },
+        "href": "tasks"
       }
     }
   ]

@@ -67,6 +67,7 @@
                           "company_id",
                           "order_id",
                           "car_id",
+                          "trailer_id",
                           "driver_id",
                           "employee_id",
                           "watcher_id"
@@ -90,8 +91,53 @@
                     "type": "submit",
                     "settings": {
                       "title": "Изменить",
+                      "background": "danger",
+                      "icon": "",
+                      "href": "tasks"
+                    }
+                  },
+                  {
+                    "type": "script",
+                    "settings": {
+                      "title": "В процессе",
                       "background": "dark",
                       "icon": "",
+                      "object": "tasks",
+                      "command": "status",
+                      "data": {
+                        "id": ":id",
+                        "status": "processing"
+                      },
+                      "href": "tasks"
+                    }
+                  },
+                  {
+                    "type": "script",
+                    "settings": {
+                      "title": "Ожидает ответа",
+                      "background": "warning",
+                      "icon": "",
+                      "object": "tasks",
+                      "command": "status",
+                      "data": {
+                        "id": ":id",
+                        "status": "read"
+                      },
+                      "href": "tasks"
+                    }
+                  },
+                  {
+                    "type": "script",
+                    "settings": {
+                      "title": "Завершить",
+                      "background": "success",
+                      "icon": "",
+                      "object": "tasks",
+                      "command": "status",
+                      "data": {
+                        "id": ":id",
+                        "status": "completed"
+                      },
                       "href": "tasks"
                     }
                   }

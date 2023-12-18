@@ -35,15 +35,30 @@
       "require_in_commands": []
     },
     {
-      "title": "Имя",
-      "article": "first_name",
+      "title": "Имя и фамилия",
+      "article": "fi",
       "data_type": "string",
       "field_type": "string",
       "is_default_in_list": true,
       "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Имя",
+      "article": "first_name",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "add",
+        "get",
         "update"
       ]
     },
@@ -52,7 +67,7 @@
       "article": "last_name",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -60,6 +75,28 @@
         "get",
         "add"
       ]
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "join": {
+        "connection_table": "company_contacts",
+        "donor_table": "companies",
+        "property_article": "title",
+        "filter_property": "company_id",
+        "insert_property": "contacts_id"
+      }
     },
     {
       "title": "Email",
@@ -182,33 +219,6 @@
         "add",
         "update"
       ]
-    },
-    {
-      "title": "Компания",
-      "article": "company_id",
-      "data_type": "array",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "is_hook": false,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "companies",
-        "properties_title": "title"
-      },
-      "join": {
-        "connection_table": "company_contacts",
-        "donor_table": "companies",
-        "property_article": "title",
-        "filter_property": "company_id",
-        "insert_property": "contacts_id"
-      }
     },
     {
       "title": "Ответственный",
@@ -442,20 +452,6 @@
       ]
     },
     {
-      "title": "Кол-во заказов",
-      "article": "countOrder",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
       "title": "Дата регистрации",
       "article": "created_at",
       "data_type": "datetime",
@@ -518,7 +514,7 @@
       "title": "Адрес",
       "article": "address",
       "data_type": "string",
-      "field_type": "dadata_address",
+      "field_type": "google_address",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -763,11 +759,13 @@
       "article": "is_sender",
       "data_type": "boolean",
       "field_type": "checkbox",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": false,
+      "is_autofill": true,
       "use_in_commands": [
-        "get"
+        "get",
+        "update",
+        "add"
       ]
     },
     {
@@ -775,11 +773,13 @@
       "article": "is_recipient",
       "data_type": "boolean",
       "field_type": "checkbox",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": false,
+      "is_autofill": true,
       "use_in_commands": [
-        "get"
+        "get",
+        "update",
+        "add"
       ]
     },
     {
@@ -831,6 +831,72 @@
       ],
       "is_variable": false,
       "is_hook": false
+    },
+    {
+      "title": "Кол-во заказов",
+      "article": "countOrder",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Текущий заказ",
+      "article": "order",
+      "data_type": "string",
+      "field_type": "link",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Статус заказа",
+      "article": "orderStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Последняя задача",
+      "article": "task_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Статус задачи",
+      "article": "taskStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
     }
   ],
   "action_buttons": [

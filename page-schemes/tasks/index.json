@@ -24,6 +24,16 @@
       "components": {
         "filters": [
           {
+            "title": "Дата",
+            "type": "date",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "created_at"
+            }
+          },
+          {
             "title": "Ответственный",
             "type": "list",
             "required_permissions": [],
@@ -60,6 +70,46 @@
                 {
                   "value": "completed",
                   "title": "Завершена"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Связь",
+            "type": "list",
+            "required_permissions": [],
+            "required_modules": [],
+            "settings": {
+              "is_search": false,
+              "recipient_property": "binding",
+              "list": [
+                {
+                  "title": "Контакт",
+                  "value": "contact"
+                },
+                {
+                  "title": "Компания",
+                  "value": "company"
+                },
+                {
+                  "title": "Заказ",
+                  "value": "order"
+                },
+                {
+                  "title": "Транспортное средство",
+                  "value": "car"
+                },
+                {
+                  "title": "Водитель",
+                  "value": "driver"
+                },
+                {
+                  "title": "Прицеп",
+                  "value": "trailer"
+                },
+                {
+                  "title": "Без связи",
+                  "value": "clear"
                 }
               ]
             }

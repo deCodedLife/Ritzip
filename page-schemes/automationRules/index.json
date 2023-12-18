@@ -1,0 +1,75 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Правила автоматизации"
+        ],
+        "description": ""
+      },
+      "components": {}
+    },
+    {
+      "title": "Форма редактирования правил автоматизации",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "automationRules",
+        "command": "update",
+        "joined_property": "",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Финансы",
+                "fields": [
+                  "tech_spec_car_mileage_data",
+                  "expense_per_dispatcher",
+                  "expense_per_driver",
+                  "ex_payment_with_status_not_paid",
+                  "fab_payment_with_status_not_paid",
+                  "owner_order_cash_expense_automatically_generated",
+                  "accountant_confirms_closing_dispatcher_salary"
+                ]
+              },
+              {
+                "title": "Отчеты",
+                "fields": [
+                  "save_reports_roles"
+                ]
+              },
+              {
+                "title": "Отчеты",
+                "fields": [
+                  "using_tachometry",
+                  "only_supervisor_plan_car"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "href": "automationRules",
+              "icon": "",
+              "background": "dark"
+            },
+            "required_permissions": [],
+            "required_modules": []
+          }
+        ]
+      }
+    }
+  ]
+}

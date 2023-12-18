@@ -1,0 +1,41 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "tasks",
+        "command": "update",
+        "areas": [
+          {
+            "size": 4,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [
+                  "status"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Изменить",
+              "background": "dark",
+              "icon": "",
+              "href": "tasks"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -45,6 +45,106 @@
                         }
                     },
                     {
+                        "title": "Ответственный",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "responsible_id",
+                            "donor_object": "users",
+                            "donor_property_title": "last_name",
+                            "donor_property_value": "id"
+                        }
+                    },
+                    {
+                        "title": "Тип авто",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "recipient_property": "type",
+                            "list": [
+                                {
+                                    "title": "Pickup",
+                                    "value": "pickup"
+                                },
+                                {
+                                    "title": "Semitrack",
+                                    "value": "semitrack"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Тип прицпа",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "recipient_property": "trailerType",
+                            "list": [
+                                {
+                                    "title": "Открытый",
+                                    "value": "opened"
+                                },
+                                {
+                                    "title": "Закрытый",
+                                    "value": "closed"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Наличие прицепа",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "recipient_property": "thereTrailer",
+                            "list": [
+                                {
+                                    "title": "Есть",
+                                    "value": "Y"
+                                },
+                                {
+                                    "title": "Нет",
+                                    "value": "N"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Текущий заказ",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "recipient_property": "order",
+                            "list": [
+                                {
+                                    "title": "Есть",
+                                    "value": "Y"
+                                },
+                                {
+                                    "title": "Нет",
+                                    "value": "N"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Статусы заказа",
+                        "type": "list",
+                        "settings": {
+                            "is_multi": true,
+                            "donor_object": "orderStatuses",
+                            "recipient_property": "orderStatus",
+                            "donor_property_title": "title",
+                            "donor_property_value": "id"
+                        }
+                    },
+                    {
                         "title": "Кол-во заказов",
                         "type": "integer",
                         "required_permissions": [],
@@ -54,14 +154,62 @@
                             "recipient_property": "countOrder"
                         }
                     },
+
                     {
-                        "title": "Сумма заказов",
+                        "title": "Кол-во миль",
                         "type": "integer",
                         "required_permissions": [],
                         "required_modules": [],
                         "settings": {
                             "is_search": false,
-                            "recipient_property": "sumOrder"
+                            "recipient_property": "milesAll"
+                        }
+                    },
+                    {
+                        "title": "Налицие задач",
+                        "type": "list",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "task_id",
+                            "list": [
+                                {
+                                    "title": "С задачей",
+                                    "value": "Y"
+                                },
+                                {
+                                    "title": "Без задачи",
+                                    "value": "N"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Статусы задачи",
+                        "type": "list",
+                        "settings": {
+                            "is_search": false,
+                            "is_multi": true,
+                            "recipient_property": "taskStatus",
+                            "list": [
+                                {
+                                    "value": "not_read",
+                                    "title": "Не начата"
+                                },
+                                {
+                                    "value": "processing",
+                                    "title": "В процессе"
+                                },
+                                {
+                                    "value": "read",
+                                    "title": "В ожидании ответа"
+                                },
+                                {
+                                    "value": "completed",
+                                    "title": "Завершена"
+                                }
+                            ]
                         }
                     }
                 ]

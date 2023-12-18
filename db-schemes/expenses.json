@@ -58,6 +58,13 @@
       "is_required": "N"
     },
     {
+      "title": "Диспетчер",
+      "article": "dispatchers_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
       "title": "Прицеп",
       "article": "trailer_id",
       "type": "int",
@@ -114,10 +121,10 @@
       "is_required": "N"
     },
     {
-      "title": "Статус (planned, success)",
-      "article": "status",
-      "type": "varchar(255)",
-      "default": "planned",
+      "title": "Статус ",
+      "article": "status_id",
+      "type": "int",
+      "default": "1",
       "is_required": "Y"
     },
     {
@@ -167,6 +174,20 @@
       "article": "is_active",
       "type": "char(1)",
       "default": "Y",
+      "is_required": "Y"
+    },
+    {
+      "title": "Пользователь",
+      "article": "user_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Согласован",
+      "article": "is_agreed",
+      "type": "char(1)",
+      "default": "N",
       "is_required": "Y"
     }
   ]

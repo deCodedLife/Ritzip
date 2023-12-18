@@ -1,4 +1,79 @@
 <?php
+
+$automationRules = $API->DB->from( "automationRules" )
+    ->limit( 1 )
+    ->fetch();
+
+if ( $automationRules[ "expense_per_dispatcher" ] == "Y" ) {
+
+    $API->DB->insertInto( "expenses" )
+        ->values( [
+            "title" => "Расход на услуги диспетчера",
+            "order_id" => $requestData->id,
+            "dispatchers_id" => $requestData->dispatchers_id,
+            "author_id" => $API::$userDetail->id,
+            "category_id" => 9,
+        ] )
+        ->execute();
+
+    if ( $automationRules[ "ex_payment_with_status_not_paid" ] == "Y" ) {
+
+        $API->DB->insertInto( "payments" )
+            ->values( [
+                "car_id" => $requestData->car_id,
+                "driver_id" => $requestData->driver_id,
+                "author_id" => $API::$userDetail->id,
+                "status_id" => 14,
+            ] )
+            ->execute();
+
+    }
+
+}
+
+if ( $requestData->owneroperator_id && $requestData->paymentType_id == 1 ) {
+
+    if ( $automationRules[ "owner_order_cash_expense_automatically_generated" ] == "Y" ) {
+
+        $API->DB->insertInto( "expenses" )
+            ->values( [
+                "title" => "У Owner заказ с оплатой типа- Наличные",
+                "order_id" => $requestData->id,
+                "author_id" => $API::$userDetail->id,
+            ] )
+            ->execute();
+
+    }
+
+}
+
+if ( $automationRules[ "expense_per_driver" ] == "Y" ) {
+
+    $API->DB->insertInto( "expenses" )
+        ->values( [
+            "title" => "Расход ЗП водителя",
+            "order_id" => $requestData->id,
+            "driver_id" => $requestData->driver_id,
+            "author_id" => $API::$userDetail->id,
+            "category_id" => 9,
+        ] )
+        ->execute();
+
+    if ( $automationRules[ "ex_payment_with_status_not_paid" ] == "Y" ) {
+
+        $API->DB->insertInto( "payments" )
+            ->values( [
+                "car_id" => $requestData->car_id,
+                "driver_id" => $requestData->driver_id,
+                "author_id" => $API::$userDetail->id,
+                "status_id" => 14,
+            ] )
+            ->execute();
+
+    }
+
+}
+
 /**
  * Создание платежа
  */
@@ -34,9 +109,19 @@ $carDetail = $API->DB->from( "cars" )
 
 
 /**
- * Изменение количество пройденных миль водителя
+ * Получение детальной информации об прицепе
  */
-if ( $requestData->miles && $requestData->driver_id ) {
+$trailerDetail = $API->DB->from( "trailers" )
+    ->where( [
+        "id" => $requestData->trailer_id
+    ] )
+    ->limit( 1 )
+    ->fetch();
+
+/**
+ * Изменение количество пройденных
+ */
+if ( $requestData->miles ) {
 
     /**
      * Обновление миль водителя
@@ -56,6 +141,16 @@ if ( $requestData->miles && $requestData->driver_id ) {
             "miles" => $requestData->miles + $carDetail[ "miles" ]
         ] )
         ->where( "id", $requestData->car_id )
+        ->execute();
+
+    /**
+     * Обновление миль автомобиля
+     */
+    $API->DB->update( "trailers" )
+        ->set( [
+            "miles" => $requestData->miles + $trailerDetail[ "miles" ]
+        ] )
+        ->where( "id", $requestData->trailer_id )
         ->execute();
 
 } // if. $requestData->miles && $requestData->driver_id
@@ -78,11 +173,13 @@ $API->DB->update( "orders" )
 
 $carUpdateFields = [ "countOrder" => $carDetail[ "countOrder" ] + 1 ];
 $driverUpdateFields = [ "countOrder" => $driverDetail[ "countOrder" ] + 1 ];
+$trailerUpdateFields = [ "countOrder" => $trailerDetail[ "countOrder" ] + 1 ];
 
 if ( $requestData->cost ) {
 
     $carUpdateFields[ "sumOrder" ] = $carDetail[ "sumOrder" ] + $requestData->cost;
     $driverUpdateFields[ "sumOrder" ] = $driverDetail[ "sumOrder" ] + $requestData->cost;
+    $trailerUpdateFields[ "sumOrder" ] = $trailerDetail[ "sumOrder" ] + $requestData->cost;
 
 } // if. $requestData->cost
 
@@ -99,6 +196,11 @@ $API->DB->update( "users" )
 $API->DB->update( "cars" )
     ->set( $driverUpdateFields )
     ->where( "id", $requestData->car_id )
+    ->execute();
+
+$API->DB->update( "trailers" )
+    ->set( $trailerUpdateFields )
+    ->where( "id", $requestData->trailer_id )
     ->execute();
 
 if ( $requestData->sender_id ) {

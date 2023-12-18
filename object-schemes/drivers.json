@@ -4,6 +4,38 @@
   "is_trash": true,
   "properties": [
     {
+      "title": "ID",
+      "article": "identifier",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Администратор (Супервайзер)",
+      "article": "supervisor_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ],
+      "list_donor": {
+        "table": "supervisors",
+        "properties_title": "last_name"
+      }
+    },
+    {
       "title": "Аватар",
       "article": "avatar",
       "data_type": "image",
@@ -66,7 +98,7 @@
       "article": "patronymic",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -115,7 +147,7 @@
       "article": "role_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -302,9 +334,9 @@
       "require_in_commands": []
     },
     {
-      "title": "Компания",
+      "title": "Компании",
       "article": "company_id",
-      "data_type": "integer",
+      "data_type": "array",
       "field_type": "list",
       "is_default_in_list": false,
       "is_unique": false,
@@ -314,10 +346,12 @@
         "update",
         "get"
       ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "companies",
-        "properties_title": "title"
+      "join": {
+        "connection_table": "company_drivers",
+        "donor_table": "companies",
+        "property_article": "title",
+        "insert_property": "company_id",
+        "filter_property": "driver_id"
       }
     },
     {
@@ -338,36 +372,23 @@
       }
     },
     {
-      "title": "Ответственный (менеджер)",
+      "title": "Ответственный",
       "article": "responsible_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
         "update",
         "get",
+        "add",
         "remove"
       ],
       "list_donor": {
         "table": "users",
         "properties_title": "last_name"
       }
-    },
-    {
-      "title": "Мили (Заказы)",
-      "article": "miles",
-      "data_type": "float",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
-      ]
     },
     {
       "title": "Мили (Итого)",
@@ -381,7 +402,8 @@
         "get",
         "update",
         "add"
-      ]
+      ],
+      "is_disabled": true
     },
     {
       "title": "W9 документ",
@@ -626,20 +648,6 @@
       ]
     },
     {
-      "title": "Кол-во заказов",
-      "article": "countOrder",
-      "data_type": "integer",
-      "field_type": "integer",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "update",
-        "get",
-        "add"
-      ]
-    },
-    {
       "title": "Дата регистрации",
       "article": "created_at",
       "data_type": "datetime",
@@ -672,7 +680,7 @@
       "article": "driveLicenseFront",
       "data_type": "image",
       "field_type": "image",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -686,7 +694,7 @@
       "article": "driveLicenseBack",
       "data_type": "image",
       "field_type": "image",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -700,7 +708,7 @@
       "article": "driveLicenseInHands",
       "data_type": "image",
       "field_type": "image",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -726,13 +734,14 @@
       "title": "Тип водителя",
       "article": "driverType",
       "data_type": "string",
-      "field_type": "radio",
-      "is_default_in_list": false,
+      "field_type": "list",
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
       "is_disabled": false,
       "use_in_commands": [
+        "get",
         "update",
         "add",
         "hook"
@@ -743,10 +752,53 @@
           "value": "driver"
         },
         {
-          "title": "Driver Operator",
+          "title": "Owner operator",
           "value": "operator"
         }
       ]
+    },
+    {
+      "title": "Текущий заказ",
+      "article": "order",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Кол-во заказов",
+      "article": "countOrder",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Мили (Заказы)",
+      "article": "miles",
+      "data_type": "float",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ],
+      "is_disabled": true
     },
     {
       "title": "Номер топливной карты",
@@ -867,7 +919,7 @@
       "article": "insuranceAmount",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -884,7 +936,7 @@
       "article": "insurancePeriod_from",
       "data_type": "date",
       "field_type": "date",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_visible": false,
@@ -901,7 +953,7 @@
       "article": "insurancePeriod_to",
       "data_type": "date",
       "field_type": "date",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
@@ -918,7 +970,7 @@
       "article": "dispatchFee",
       "data_type": "integer",
       "field_type": "integer",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_visible": false,
@@ -935,7 +987,7 @@
       "article": "usingApp",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_visible": false,
@@ -952,7 +1004,7 @@
       "article": "lookBook",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -975,6 +1027,44 @@
       "use_in_commands": [
         "add"
       ]
+    },
+    {
+      "title": "Последняя задача",
+      "article": "task_id",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Статус задачи",
+      "article": "taskStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Статус заказа",
+      "article": "orderStatus",
+      "data_type": "array",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
     }
   ]
 }

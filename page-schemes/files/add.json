@@ -1,0 +1,72 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Файл - Добавление",
+        "title": [
+          "Добавление файла"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "files",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+
+              {
+                "title": "",
+                "fields": [
+                  "files",
+                  "file_name",
+                  "source",
+                  "client",
+                  "created_at"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "order_id",
+                  "company_id",
+                  "car_id",
+                  "driver_id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "background": "dark",
+              "icon": "",
+              "href": "[return]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

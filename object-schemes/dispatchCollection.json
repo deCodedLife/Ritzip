@@ -1,0 +1,65 @@
+{
+  "title": "Пользователи",
+  "table": "dispatchCollection",
+  "properties": [
+    {
+      "title": "Тип зарплаты",
+      "article": "salaryType",
+      "data_type": "string",
+      "field_type": "radio",
+      "is_hook": true,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "add",
+        "get"
+      ],
+      "custom_list": [
+        {
+          "title": "Процент",
+          "value": "percent"
+        },
+        {
+          "title": "Фиксированная",
+          "value": "fixed"
+        }
+      ]
+    },
+    {
+      "title": "Сумма зарплаты",
+      "article": "salarySum",
+      "data_type": "float",
+      "is_hook": true,
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "add",
+        "hook",
+        "update"
+      ]
+    },
+    {
+      "title": "% зарплаты",
+      "article": "salaryPercent",
+      "data_type": "float",
+      "field_type": "float",
+      "is_visible": true,
+      "is_hook": true,
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add",
+        "hook"
+      ]
+    }
+  ]
+}

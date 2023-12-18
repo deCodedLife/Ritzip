@@ -32,7 +32,10 @@
                   "logo",
                   "companyCategory_id",
                   "state_id",
-                  "zip"
+                  "zip",
+                  "address",
+                  "recipient_id",
+                  "sender_id"
                 ]
               }
             ]

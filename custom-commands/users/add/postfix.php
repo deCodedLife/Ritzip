@@ -39,3 +39,10 @@ if ( $requestData->first_name == "Заполните поле" ) {
     }
 
 }
+
+$API->DB->update( "users" )
+    ->set( [
+        "identifier" => $insertId
+    ] )
+    ->where( "id", $insertId )
+    ->execute();

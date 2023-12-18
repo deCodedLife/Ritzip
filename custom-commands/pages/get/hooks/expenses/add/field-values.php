@@ -21,6 +21,7 @@ if ( ( $requestData->context->form == "driverExpenses" ) && $requestData->contex
 if ( ( $requestData->context->form == "orderExpenses" ) && $requestData->context->row_id ) {
 
     $formFieldValues[ "order_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "order_id" ][ "is_visible" ] = false;
 
 }
 

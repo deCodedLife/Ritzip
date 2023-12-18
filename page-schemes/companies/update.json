@@ -41,7 +41,9 @@
                           "companyCategory_id",
                           "address",
                           "state_id",
-                          "zip"
+                          "zip",
+                          "recipient_id",
+                          "sender_id"
                         ]
                       }
                     ]
@@ -320,6 +322,7 @@
               "size": 4,
               "settings": {
                 "object": "company_contacts",
+                "link": "contacts",
                 "filters": [
                   {
                     "property": "company_id",

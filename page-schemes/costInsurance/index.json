@@ -1,0 +1,57 @@
+{
+  "required_permissions": [],
+  "required_modules": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          "Стоимость страхоывания"
+        ],
+        "description": ""
+      },
+      "components": {}
+    },
+    {
+      "title": "Форма редактирования стоимости страхования",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "costInsurance",
+        "command": "update",
+        "joined_property": "",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "sum",
+                  "period"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Сохранить",
+              "href": "costInsurance",
+              "icon": "",
+              "background": "dark"
+            },
+            "required_permissions": [],
+            "required_modules": []
+          }
+        ]
+      }
+    }
+  ]
+}
