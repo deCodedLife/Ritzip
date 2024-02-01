@@ -20,6 +20,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "client_id" ] = [ "is_visible" => true ];
 
         break;
@@ -29,6 +30,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "client_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
@@ -41,6 +43,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "client_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
@@ -55,6 +58,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => true ];
 
@@ -67,6 +71,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => true ];
 
@@ -80,6 +85,7 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => true ];
 
         break;
@@ -92,7 +98,21 @@ switch ( $requestData->binding ) {
         $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => false, "value" => "" ];
         $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => true ];
+
+        break;
+
+    case "expense":
+
+        $formFieldsUpdate[ "client_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "expense_id" ] = [ "is_visible" => true ];
 
         break;
 

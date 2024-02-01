@@ -5,5 +5,5 @@ $userDetail = $API->DB->from( "users" )
     ->fetch();
 
 if ( $userDetail[ "is_allTasks" ] == "N" )
-    unset( $pageScheme[ "structure" ][ 1 ][ "components" ][ "filters" ][ 9 ] );
+    unset( $pageScheme[ "structure" ][ 1 ][ "components" ][ "filters" ][ 11 ] );
 

@@ -1,1 +1,392 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"title":[":last_name"],"description":"Контакты - Редактирование"},"components":[]},{"title":"Табы","type":"tabs","size":4,"settings":[{"title":"Основная информация","body":[{"title":"Форма","type":"form","size":4,"settings":{"object":"contacts","command":"update","areas":[{"size":2,"blocks":[{"title":"","fields":["first_name","last_name","avatar","companyCategory_id","address","state_id","zipCode","credentials","paymentType","company_id"]}]},{"size":2,"blocks":[{"title":"","fields":["is_sender","is_recipient"]},{"title":"","fields":["phone","email","password"]}]}]},"components":{"buttons":[{"type":"modal","settings":{"page":"companies/add","insert_to_field":"company_id","context":{"form":"contacts","row_id":":id"},"title":"Добавить компанию"}},{"type":"submit","settings":{"title":"Сохранить","background":"dark","icon":"","href":"contacts"}}]}}]},{"title":"Платежи","body":[{"title":"Список платежей","type":"list","size":4,"settings":{"object":"payments","filters":[{"property":"contact_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить платеж","background":"dark","page":"payments/add","context":{"form":"contactPayments","row_id":":id"}}}]}}]},{"title":"Сделки","is_counter":true,"body":[{"title":"Статистика контактов","type":"analytic_widgets","size":4,"settings":{"widgets_group":"contact_statistic","filters":[{"property":"sourse_contact","value":":id"}]},"components":[]},{"title":"Сделки","type":"list","size":4,"settings":{"object":"orders","filters":[{"property":"sourse_contact","value":":id"}]},"components":[]}]},{"title":"Задачи","is_counter":true,"body":[{"title":"Список задач","type":"list","size":4,"settings":{"object":"tasks","context":{"page":"contacts"},"filters":[{"property":"contact_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить задачу","background":"dark","page":"tasks/add","context":{"form":"contactTasks","row_id":":id"}}}]}}]},{"title":"Напоминания","is_counter":true,"body":[{"title":"Список напоминаний","type":"list","size":4,"settings":{"object":"reminders","filters":[{"property":"user_id","value":":id"}]},"components":{"buttons":[{"type":"modal","settings":{"title":"Добавить напоминание","context":{"form":"reminders","row_id":":id"},"page":"reminders/add","background":"dark","modal_size":"lg"}}]}}]},{"title":"Файлы","body":[{"title":"Список файлов","type":"form","size":4,"settings":{"object":"users","command":"update","areas":[{"size":4,"blocks":[{"title":"","fields":["files"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Сохранить","background":"dark","icon":"","href":"contacts"}}]}}]},{"title":"Счета","body":[]},{"title":"Выписка по счету","body":[]},{"title":"Лента событий","is_counter":true,"body":[{"title":"История логов","type":"logs","size":4,"settings":{"object":"logs","filters":[{"property":"table_name","value":"contacts"},{"property":"row_id","value":":id"}]},"components":[]}]}]}]}
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "title": [
+          ":last_name"
+        ],
+        "description": "Контакты - Редактирование"
+      },
+      "components": []
+    },
+    {
+      "title": "Табы",
+      "type": "tabs",
+      "size": 4,
+      "settings": [
+        {
+          "title": "Основная информация",
+          "body": [
+            {
+              "title": "Форма",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "contacts",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "first_name",
+                          "last_name",
+                          "avatar",
+                          "companyCategory_id",
+                          "address",
+                          "state_id",
+                          "zipCode",
+                          "credentials",
+                          "paymentType",
+                          "company_id"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "size": 2,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "is_sender",
+                          "is_recipient"
+                        ]
+                      },
+                      {
+                        "title": "",
+                        "fields": [
+                          "phone",
+                          "email",
+                          "password"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "page": "companies/add",
+                      "insert_to_field": "company_id",
+                      "context": {
+                        "form": "contacts",
+                        "row_id": ":id"
+                      },
+                      "title": "Добавить компанию"
+                    }
+                  },
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "contacts"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Сделки",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Статистика контактов",
+              "type": "analytic_widgets",
+              "size": 4,
+              "settings": {
+                "widgets_group": "contact_statistic",
+                "filters": [
+                  {
+                    "property": "sourse_contact",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            },
+            {
+              "title": "Сделки",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "orders",
+                "filters": [
+                  {
+                    "property": "sourse_contact",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        },
+        {
+          "title": "Задачи",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список задач",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "tasks",
+                "context": {
+                  "page": "contacts"
+                },
+                "filters": [
+                  {
+                    "property": "contact_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "contactTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Напоминания",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список напоминаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "reminders",
+                "filters": [
+                  {
+                    "property": "user_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить напоминание",
+                      "context": {
+                        "form": "contact",
+                        "row_id": ":id"
+                      },
+                      "page": "reminders/add",
+                      "background": "dark",
+                      "modal_size": "lg"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Файлы",
+          "body": [
+            {
+              "title": "Список файлов",
+              "type": "form",
+              "size": 4,
+              "settings": {
+                "object": "users",
+                "command": "update",
+                "areas": [
+                  {
+                    "size": 4,
+                    "blocks": [
+                      {
+                        "title": "",
+                        "fields": [
+                          "files"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "submit",
+                    "settings": {
+                      "title": "Сохранить",
+                      "background": "dark",
+                      "icon": "",
+                      "href": "contacts"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Расходы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список расходов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "filters": [
+                  {
+                    "property": "contact_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "contactExpenses",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "contact_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "contactPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts",
+                "filters": [
+                  {
+                    "property": "contact_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Лента событий",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "История логов",
+              "type": "logs",
+              "size": 4,
+              "settings": {
+                "object": "logs",
+                "filters": [
+                  {
+                    "property": "table_name",
+                    "value": "contacts"
+                  },
+                  {
+                    "property": "row_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

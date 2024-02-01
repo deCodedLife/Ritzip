@@ -12,6 +12,19 @@ $payments = [];
 
 foreach ( $response[ "data" ] as $payment ) {
 
+    if ( $payment[ "account_id" ] ) {
+
+        $payment[ "account" ][ "href" ] = "accounts/update/" . $payment[ "account_id" ][ "value" ];
+        $payment[ "account" ][ "title" ] = $payment[ "account_id" ][ "title" ];
+
+    } else {
+
+        $payment[ "account" ][ "href" ] = "";
+        $payment[ "account" ][ "title" ] = "нет";
+
+    }
+
+
     $user = $API->DB->from( "users" )
         ->where( "id", $payment[ "responsible_id" ][ "value" ] )
         ->limit( 1 )

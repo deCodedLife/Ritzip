@@ -1,5 +1,26 @@
 <?php
 
+if ( $requestData->context->block === "form_list" ) {
+
+    $cars = [];
+
+    foreach ( $response[ "data" ] as $car ) {
+
+        $carDetail = $API->DB->from( "cars" )
+            ->where( "id", $car[ "value" ] )
+            ->limit( 1 )
+            ->fetch();
+
+        $car[ "title" ] = $carDetail[ "brand" ] . " " . $carDetail[ "model" ] . ", " . $carDetail[ "yearRelease" ] . ", " .  $carDetail[ "vin" ];
+
+        $cars[] = $car;
+
+    }
+
+    $response[ "data" ] = $cars;
+
+}
+
 function format_phone_number( $number ) {
 
     $cleaned_number = preg_replace( '/\D/', '', $number );
@@ -61,19 +82,29 @@ foreach ( $response[ "data" ] as $car ) {
             ->limit(1)
             ->fetch();
 
+        $orderStatus = $API->DB->from( "orderStatuses" )
+            ->where( "id", $order[ "status_id" ] )
+            ->limit(1)
+            ->fetch();
+
         if ( $order[ "id" ] ) {
 
-            $car[ "order" ] = $order[ "id" ];
-            $car[ "orderStatus" ] = $order[ "status_id" ];
+            $car[ "order" ][ "href" ] = "orders/update/" . $order[ "id" ];
+            $car[ "order" ][ "title" ] = $order[ "id" ];
+
+            $car[ "orderStatus" ] = [
+
+                "value" => $order[ "status_id" ],
+                "title" => $orderStatus[ "title" ]
+
+            ];
+
+        } else {
+
+            $car[ "order" ][ "value" ] = "";
+            $car[ "order" ][ "title" ] = "нет";
 
         }
-
-    }
-
-    if ( !$car[ "order" ] ) {
-
-        $car[ "order" ] = "нет";
-        $car[ "orderStatus" ] = "нет";
 
     }
 
@@ -106,13 +137,14 @@ foreach ( $response[ "data" ] as $car ) {
 
     if ( $task[ "id" ] ) {
 
-        $car[ "task_id" ] = $task[ "title" ];
+        $car[ "task_id" ][ "href" ] = "tasks/update/" . $task[ "id" ];
+        $car[ "task_id" ][ "title" ] = $task[ "id" ];
         $car[ "taskStatus" ] = $custom_list[ $task[ "status" ] ];
 
     } else {
 
-        $car[ "task_id" ] = "Без задачи";
-        $car[ "taskStatus" ] = "Без задачи";
+        $car[ "task_id" ][ "value" ] = "";
+        $car[ "task_id" ][ "title" ] = "Без задачи";
 
     }
 

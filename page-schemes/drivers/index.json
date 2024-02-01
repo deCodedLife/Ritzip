@@ -42,6 +42,7 @@
                     {
                         "type": "modal",
                         "settings": {
+                            "refresh_after_submit": true,
                             "field_place": "recipient_id",
                             "title": "Пригласить водителя",
                             "background": "dark",

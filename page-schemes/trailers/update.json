@@ -96,6 +96,68 @@
           ]
         },
         {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "trailer_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "trailerPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "title": "Расходы",
           "is_counter": true,
           "body": [
@@ -117,6 +179,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить расход",
                       "background": "dark",
                       "page": "expenses/add",
@@ -153,6 +216,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить задачу",
                       "background": "dark",
                       "page": "tasks/add",

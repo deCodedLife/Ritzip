@@ -13,13 +13,11 @@ if ( $requestData->context->block == "form_list" ) {
             ->fetch();
 
         if ( $carDetail[ "is_active" ] == "Y" )
+            $cars[] = [
+                "title" => $carDetail[ "brand" ] . " " . $carDetail[ "model" ] . ", " . $carDetail[ "yearRelease" ] . ", " .  $carDetail[ "vin" ],
+                "value" => (string)$car[ "value" ]
 
-        $cars[] = [
-
-            "title" => $carDetail[ "vin" ],
-            "value" => (string)$car[ "value" ]
-
-        ];
+            ];
 
     }
 

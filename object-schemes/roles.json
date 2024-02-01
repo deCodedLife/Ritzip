@@ -3,6 +3,9 @@
   "table": "roles",
   "search": "",
   "is_trash": false,
+  "required_permissions": [
+    "roles"
+  ],
   "scripts": {
     "get_unread_messages_count": {
       "messages_object": "personMessages",

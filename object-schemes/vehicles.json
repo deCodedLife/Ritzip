@@ -164,7 +164,7 @@
       "title": "Текущий заказ",
       "article": "order",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
@@ -177,11 +177,15 @@
     {
       "title": "Статус заказа",
       "article": "orderStatus",
-      "data_type": "string",
-      "field_type": "string",
+      "data_type": "array",
+      "field_type": "list",
       "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": false
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ],
+      "require_in_commands": []
     },
     {
       "title": "Высота (дюймы)",
@@ -362,6 +366,19 @@
       "article": "backDescription",
       "data_type": "string",
       "field_type": "textarea",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add"
+      ]
+    },
+    {
+      "title": "Наличие в заказах",
+      "article": "is_in_orders",
+      "data_type": "boolean",
+      "field_type": "checkbox",
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,

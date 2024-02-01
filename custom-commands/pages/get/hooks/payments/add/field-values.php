@@ -14,11 +14,80 @@ if ( ( $requestData->context->form == "contactPayments" ) && $requestData->conte
 
 }
 
+if ( ( $requestData->context->form == "companyPayments" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "object" ] = "company";
+    $formFieldValues[ "company_id" ] = [
+
+        "value" => $requestData->context->row_id,
+        "is_visible" => true,
+
+    ];
+
+}
+
+if ( ( $requestData->context->form == "userPayments" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "responsible_id" ] = [
+
+        "value" => $requestData->context->row_id,
+        "is_visible" => true,
+
+    ];
+
+}
+
+if ( ( $requestData->context->form == "trailerPayments" ) && $requestData->context->row_id ) {
+
+    $formFieldValues["object"] = "trailer";
+    $formFieldValues["trailer_id"] = [
+
+        "value" => $requestData->context->row_id,
+        "is_visible" => true,
+
+    ];
+}
+
 if ( ( $requestData->context->form == "payments" ) && $requestData->context->row_id ) {
 
     $formFieldValues[ "account_id" ] = [
 
         "value" => $requestData->context->row_id,
+        "is_visible" => true,
+
+    ];
+
+
+    /**
+     * Остаток оплаты
+     */
+
+    $accountDetail = $API->DB->from( "accounts" )
+        ->where( "id", $requestData->context->row_id )
+        ->limit( 1 )
+        ->fetch();
+
+    $accountPayments = $API->DB->from( "payments" )
+        ->where( "account_id", $requestData->context->row_id );
+
+
+
+    /**
+     * Текущая сумма оплаты Счета
+     */
+
+    $accountPaymentSum = 0;
+
+    foreach ( $accountPayments as $accountPayment )
+        $accountPaymentSum += $accountPayment[ "sum" ];
+
+
+    $sumFieldValue = $accountDetail[ "sum" ] - $accountPaymentSum;
+    if ( $sumFieldValue < 0 ) $sumFieldValue = 0;
+
+    $formFieldValues[ "sum" ] = [
+
+        "value" => $sumFieldValue,
         "is_visible" => true,
 
     ];

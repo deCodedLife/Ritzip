@@ -9,6 +9,12 @@ $userDetail = $API->DB->from( "users" )
     ->limit( 1 )
     ->fetch();
 
+if ( !$requestData->status_id  ) {
+
+    $requestSettings[ "filter" ][ "status_id != ?" ] = 25;
+
+}
+
 if ( $userDetail[ "role_id" ] == 13 ) {
 
     $requestSettings[ "filter" ][ "sourse_contact" ] = $userDetail[ "id" ];

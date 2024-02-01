@@ -1,6 +1,8 @@
 {
   "required_modules": [],
-  "required_permissions": [],
+  "required_permissions": [
+    "tasks_update"
+  ],
   "structure": [
     {
       "title": "Шапка",
@@ -69,6 +71,7 @@
                           "car_id",
                           "trailer_id",
                           "driver_id",
+                          "expense_id",
                           "employee_id",
                           "watcher_id"
                         ]
@@ -93,7 +96,7 @@
                       "title": "Изменить",
                       "background": "danger",
                       "icon": "",
-                      "href": "tasks"
+                      "href": "[return]"
                     }
                   },
                   {
@@ -108,7 +111,7 @@
                         "id": ":id",
                         "status": "processing"
                       },
-                      "href": "tasks"
+                      "href": "[return]"
                     }
                   },
                   {
@@ -123,7 +126,7 @@
                         "id": ":id",
                         "status": "read"
                       },
-                      "href": "tasks"
+                      "href": "[return]"
                     }
                   },
                   {
@@ -138,7 +141,7 @@
                         "id": ":id",
                         "status": "completed"
                       },
-                      "href": "tasks"
+                      "href": "[return]"
                     }
                   }
                 ]

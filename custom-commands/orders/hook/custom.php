@@ -1,66 +1,23 @@
 <?php
 
-/**
- * Вывод поля причины отмены
- */
-$formFieldsUpdate = [];
+if ( $requestData->sourceType == "sourse_contact" ) {
 
-/**
- * Переключение Компания - Клиент
- */
-switch ( $requestData->sourceType ) {
+    $updatedFields[ "sourse_contact" ][ "is_visible" ] = true;
+    $updatedFields[ "company_id" ][ "is_visible" ] = false;
 
-    case "sourse_contact":
-
-        $formFieldsUpdate[ "sourse_contact" ] = [
-            "is_visible" => true
-        ];
-
-        $formFieldsUpdate[ "company_id" ] = [
-            "is_visible" => false,
-            "value" => ""
-        ];
-
-        break;
-
-    case "company":
-
-        $formFieldsUpdate[ "company_id" ] = [
-            "is_visible" => true,
-        ];
-
-        $formFieldsUpdate[ "sourse_contact" ] = [
-            "is_visible" => false,
-            "value" => ""
-        ];
-
-        break;
-
-} // switch. $requestData->purchaseType
-
-if ( $requestData->trailer_id ) {
-
-    $trailerDetail = $API->DB->from( "trailers" )
-        ->where( "id", $requestData->trailer_id )
-        ->limit( 1 )
-        ->fetch();
-
-    $formFieldsUpdate[ "trailerType" ] = [
-        "value" => $trailerDetail[ "trailerType" ]
-    ];
-    $formFieldsUpdate[ "placeCount" ] = [
-        "value" => $trailerDetail[ "positionCount" ]
-    ];
+    $updatedFields[ "payer_contact_id" ][ "is_visible" ] = true;
+    $updatedFields[ "payer_company_id" ][ "is_visible" ] = false;
 
 }
 
-if ( $requestData->vehicles_id ) {
+if ( $requestData->sourceType == "company" ) {
 
-    $formFieldsUpdate[ "placeOccupied" ] = [
-        "value" => count($requestData->vehicles_id)
-    ];
+    $updatedFields[ "sourse_contact" ][ "is_visible" ] = false;
+    $updatedFields[ "company_id" ][ "is_visible" ] = true;
 
+    $updatedFields[ "payer_company_id" ][ "is_visible" ] = true;
+    $updatedFields[ "payer_contact_id" ][ "is_visible" ] = false;
 
 }
 
-$API->returnResponse( $formFieldsUpdate );
+$API->returnResponse($updatedFields);

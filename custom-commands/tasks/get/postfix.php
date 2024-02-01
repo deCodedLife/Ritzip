@@ -1,5 +1,12 @@
 <?php
+
+
 if ( $requestData->context->block == "list" ) {
+
+    $userDetail = $API->DB->from( "users" )
+        ->where( "id", $API::$userDetail->id)
+        ->limit( 1 )
+        ->fetch();
 
     function format_phone_number($number)
     {
@@ -9,7 +16,6 @@ if ( $requestData->context->block == "list" ) {
         return $formatted_number;
 
     }
-
 
     if ($requestData->is_repeatable == "Y") {
 
@@ -55,7 +61,7 @@ if ( $requestData->context->block == "list" ) {
 
         $tasks = mysqli_query(
             $API->DB_connection,
-            "SELECT * FROM `tasks` WHERE is_active = 'Y' GROUP BY title HAVING COUNT(title) > 1"
+            "SELECT * FROM `tasks` WHERE is_active = 'Y' AND employee_id = " . $API::$userDetail->id . " GROUP BY title HAVING COUNT(title) > 1"
         );
 
         foreach ($tasks as $task) {
@@ -134,55 +140,122 @@ if ( $requestData->context->block == "list" ) {
 
     }
 
-    if ($requestData->context->block == "list") {
+    $today = date("Y-m-d H:i:s");
 
-        $today = date("Y-m-d H:i:s");
+    $return = [];
 
-        $return = [];
+    foreach ($response["data"] as $task) {
 
-        foreach ($response["data"] as $task) {
+        $user = $API->DB->from("users")
+            ->where("id", $task["employee_id"]["value"])
+            ->limit(1)
+            ->fetch();
 
-            $user = $API->DB->from("users")
-                ->where("id", $task["employee_id"]["value"])
-                ->limit(1)
-                ->fetch();
+        $role = $API->DB->from("roles")
+            ->where("id", $user["role_id"])
+            ->limit(1)
+            ->fetch();
 
-            $role = $API->DB->from("roles")
-                ->where("id", $user["role_id"])
-                ->limit(1)
-                ->fetch();
+        if ($user["phone"]) {
 
-            if ($user["phone"]) {
-
-                $user["phone"] = ", " . format_phone_number($user["phone"]);
-
-            }
-
-            if ($role) {
-
-                $role["title"] = ", " . $role["title"];
-
-            }
-
-            $task["employee_id"]["title"] = $user["last_name"] . " " . $user["first_name"] . $role["title"] . $user["phone"];
-
-            if (!empty($task["deadline"]) && $task["deadline"] <= $today) {
-
-                $task["deadline"] = [
-
-                    "color" => "danger",
-                    "value" => $task["deadline"]
-
-                ];
-
-            }
-
-            $return[] = $task;
+            $user["phone"] = ", " . format_phone_number($user["phone"]);
 
         }
 
-        $response["data"] = $return;
+        if ($role) {
+
+            $role["title"] = ", " . $role["title"];
+
+        }
+
+        $customList = [
+            "contact" => [
+                "title" => "contacts",
+                "value" => "contact"
+            ],
+            "company" => [
+                "title" => "companies",
+                "value" => "company"
+            ],
+            "order" => [
+                "title" => "orders",
+                "value" => "order"
+            ],
+            "car" => [
+                "title" => "cars",
+                "value" => "car"
+            ],
+            "driver" => [
+                "title" => "drivers",
+                "value" => "driver"
+            ],
+            "trailer" => [
+                "title" => "trailers",
+                "value" => "trailer"
+            ],
+            "expense" => [
+                "title" => "expenses",
+                "value" => "expense"
+            ]
+        ];
+
+        $allTasks = $API->DB->from( "tasks" )
+            ->where( "is_active", "Y" );
+
+        $count = 0;
+
+        foreach ( $allTasks as $allTask ) {
+
+            if ( $allTask[ "title" ] == $task[ "title" ] && $task[ "title" ] != "" ) {
+
+                $count++;
+
+            }
+
+        }
+
+        if ( $count > 1 )  $task[ "title" ] = $task[ "title" ] . " ( повторяющаяся ) ";
+
+
+        if ( $task[ "binding" ][ "value" ] != "clear" && $task[ $task[ "binding" ][ "value" ] . "_id" ] ) {
+
+            $href = $customList[ $task[ "binding" ][ "value" ] ][ "title" ] . "/update/" . $task[ $task[ "binding" ][ "value" ] . "_id" ][ "value" ];
+            $task[ "bindingLink" ] = [
+
+                "href" => $href,
+                "title" => $task[ "binding" ][ "title" ],
+                "value" => $task[ "binding" ][ "value" ]
+
+            ];
+
+        } else {
+
+            $task[ "bindingLink" ] = [
+
+                "title" => $task[ "binding" ][ "title" ],
+                "value" => $task[ "binding" ][ "value" ]
+
+            ];
+
+        }
+
+        $task["employee_id"]["title"] = $user["last_name"] . " " . $user["first_name"] . $role["title"] . $user["phone"];
+
+        if (!empty($task["deadline"]) && $task["deadline"] <= $today) {
+
+            $task["deadline"] = [
+
+                "color" => "danger",
+                "value" => $task["deadline"]
+
+            ];
+
+        }
+
+        $return[] = $task;
 
     }
+
+    $response["data"] = $return;
 
 }

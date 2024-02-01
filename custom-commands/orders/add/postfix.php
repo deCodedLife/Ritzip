@@ -74,140 +74,51 @@ if ( $automationRules[ "expense_per_driver" ] == "Y" ) {
 
 }
 
-/**
- * Создание платежа
- */
-$API->DB->insertInto( "payments" )
+$API->DB->insertInto( "accounts" )
     ->values( [
-        "sum" => $requestData->cost,
-        "created_at" => date("Y-m-d H:i:s"),
-        "status_id" => 1,
-        "responsible_id" => $requestData->responsible_id,
-        "object" => "order",
+        "status" => "notPaid",
+        "binding" => "order",
+        "employee_id" => $requestData->responsible_id,
+        "order_id" => $insertId,
+        "number" => microtime(true) . " (Автоматический)",
+        "sum" => $requestData->cost
     ] )
     ->execute();
 
-/**
- * Получение детальной информации о водителе
- */
-$driverDetail = $API->DB->from( "users" )
-    ->where( [
-        "id" => $requestData->driver_id
-    ] )
-    ->limit( 1 )
-    ->fetch();
 
-/**
- * Получение детальной информации об автомобиле
- */
-$carDetail = $API->DB->from( "cars" )
-    ->where( [
-        "id" => $requestData->car_id
-    ] )
-    ->limit( 1 )
-    ->fetch();
-
-
-/**
- * Получение детальной информации об прицепе
- */
-$trailerDetail = $API->DB->from( "trailers" )
-    ->where( [
-        "id" => $requestData->trailer_id
-    ] )
-    ->limit( 1 )
-    ->fetch();
-
-/**
- * Изменение количество пройденных
- */
-if ( $requestData->miles ) {
-
-    /**
-     * Обновление миль водителя
-     */
-    $API->DB->update( "users" )
+$API->DB->update( "vehicles" )
         ->set( [
-            "miles" => $requestData->miles + $driverDetail[ "miles" ]
+            "is_in_orders" => "Y"
         ] )
-        ->where( "id", $requestData->driver_id )
+        ->where( "id", $requestData->vehicles_id )
         ->execute();
 
-    /**
-     * Обновление миль автомобиля
-     */
-    $API->DB->update( "cars" )
-        ->set( [
-            "miles" => $requestData->miles + $carDetail[ "miles" ]
-        ] )
-        ->where( "id", $requestData->car_id )
-        ->execute();
-
-    /**
-     * Обновление миль автомобиля
-     */
-    $API->DB->update( "trailers" )
-        ->set( [
-            "miles" => $requestData->miles + $trailerDetail[ "miles" ]
-        ] )
-        ->where( "id", $requestData->trailer_id )
-        ->execute();
-
-} // if. $requestData->miles && $requestData->driver_id
-
-
-/**
- * Заполнение поля "Нужно оплатить"
- */
-$API->DB->update( "orders" )
-    ->set( [
-        "needPay" => $requestData->cost
-    ] )
-    ->where( "id", $requestData->id )
-    ->execute();
-
-
-/**
- * Расчет значений "Кол-во заказов" и "Сумма заказов"
- */
-
-$carUpdateFields = [ "countOrder" => $carDetail[ "countOrder" ] + 1 ];
-$driverUpdateFields = [ "countOrder" => $driverDetail[ "countOrder" ] + 1 ];
-$trailerUpdateFields = [ "countOrder" => $trailerDetail[ "countOrder" ] + 1 ];
-
-if ( $requestData->cost ) {
-
-    $carUpdateFields[ "sumOrder" ] = $carDetail[ "sumOrder" ] + $requestData->cost;
-    $driverUpdateFields[ "sumOrder" ] = $driverDetail[ "sumOrder" ] + $requestData->cost;
-    $trailerUpdateFields[ "sumOrder" ] = $trailerDetail[ "sumOrder" ] + $requestData->cost;
-
-} // if. $requestData->cost
-
-
-/**
- * Обновление полей у водителя и авто
- */
-
-$API->DB->update( "users" )
-    ->set( $carUpdateFields )
-    ->where( "id", $requestData->driver_id )
-    ->execute();
-
-$API->DB->update( "cars" )
-    ->set( $driverUpdateFields )
-    ->where( "id", $requestData->car_id )
-    ->execute();
-
-$API->DB->update( "trailers" )
-    ->set( $trailerUpdateFields )
-    ->where( "id", $requestData->trailer_id )
-    ->execute();
 
 if ( $requestData->sender_id ) {
 
     $API->DB->update( "users" )
         ->set( "is_sender", "Y"  )
         ->where( "id", $requestData->sender_id )
+        ->execute();
+
+}
+
+
+if ( $requestData->source_id ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_source", "Y"  )
+        ->where( "id", $requestData->source_id )
+        ->execute();
+
+}
+
+
+if ( $requestData->payer_contact_id ) {
+
+    $API->DB->update( "users" )
+        ->set( "is_payer", "Y"  )
+        ->where( "id", $requestData->payer_contact_id )
         ->execute();
 
 }

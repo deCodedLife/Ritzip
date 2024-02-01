@@ -12,46 +12,111 @@ $updatedFields = [];
 switch ( $requestData->repeat_templates ) {
 
     case "week":
-        $updatedFields[ "repeat_days" ][ "value" ] = 7;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 7;
         break;
 
     case "two_weeks":
-        $updatedFields[ "repeat_days" ][ "value" ] = 14;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 14;
         break;
 
     case "month":
-        $updatedFields[ "repeat_days" ][ "value" ] = 30;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 30;
         break;
 
     case "three_month":
-        $updatedFields[ "repeat_days" ][ "value" ] = 90;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 90;
         break;
 
     case "half_year":
-        $updatedFields[ "repeat_days" ][ "value" ] = 180;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 180;
         break;
 
     case "year":
-        $updatedFields[ "repeat_days" ][ "value" ] = 360;
+        $formFieldsUpdate[ "repeat_days" ][ "value" ] = 360;
         break;
 
 } // switch. $requestData->repeat_templates
 
 
-///**
-// * Связки
-// */
-//
-//$linkedFields = [ "contact_id", "trailer_id", "company_id", "car_id", "driver_id", "order_id" ];
-//$disabledFields = [];
-//
-//foreach ( $linkedFields as $linkedFieldKey => $linkedField )
-//    if ( !$requestData->{$linkedField} || ( count( $disabledFields ) != $linkedFieldKey ) )
-//        $disabledFields[] = $linkedField;
-//
-//if ( count( $linkedFields ) > count( $disabledFields ) )
-//    foreach ( $disabledFields as $disabledField )
-//        $updatedFields[ $disabledField ][ "value" ] = null;
+switch ( $requestData->binding ) {
+
+    case "company":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => false, "value" => "" ];
+        
+        break;
+
+    case "order":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => false, "value" => "" ];
+
+        break;
+
+    case "car":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => false, "value" => "" ];
+
+        break;
+
+    case "driver":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => false, "value" => "" ];
+
+        break;
+
+    case "trailer":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => false, "value" => "" ];
+
+        break;
+
+    case "dispatchers":
+
+        $formFieldsUpdate[ "contact_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "company_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "order_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "car_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "driver_id" ] = [ "is_visible" => false, "value" => "" ];
+        $formFieldsUpdate[ "trailer_id" ] = [ "is_visible" => true ];
+        $formFieldsUpdate[ "dispatcher_id" ] = [ "is_visible" => true ];
+
+        break;
 
 
-$API->returnResponse( $updatedFields );
+
+} // switch. $requestData->binding
+
+
+
+
+$API->returnResponse( $formFieldsUpdate );

@@ -8,7 +8,7 @@
       "article": "title",
       "data_type": "string",
       "field_type": "string",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "required_permissions": [],
@@ -55,7 +55,7 @@
       }
     },
     {
-      "title": "Заявка",
+      "title": "Заказ",
       "article": "order_id",
       "data_type": "integer",
       "field_type": "list",
@@ -73,6 +73,98 @@
       "list_donor": {
         "table": "orders",
         "properties_title": "id"
+      },
+      "is_visible": false
+    },
+    {
+      "title": "Категория",
+      "article": "category_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [
+        "add"
+      ],
+      "list_donor": {
+        "table": "expenseCategories",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Дата и время создания",
+      "article": "created_at",
+      "data_type": "datetime",
+      "field_type": "datetime",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "get"
+      ],
+      "require_in_commands": []
+    },
+    {
+      "title": "Сумма",
+      "article": "cost",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [
+        "add"
+      ]
+    },
+    {
+      "title": "Статус",
+      "article": "status_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "custom_list": [],
+      "list_donor": {
+        "table": "orderPayStatuses",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
       }
     },
     {
@@ -100,6 +192,7 @@
       "field_type": "list",
       "is_default_in_list": false,
       "is_unique": false,
+      "is_visible": false,
       "is_autofill": true,
       "is_hook": true,
       "use_in_commands": [
@@ -119,6 +212,7 @@
       "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": false,
+      "is_visible": false,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
@@ -139,6 +233,7 @@
       "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": false,
+      "is_visible": false,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
@@ -156,6 +251,7 @@
     {
       "title": "Прицеп",
       "article": "trailer_id",
+      "is_visible": false,
       "data_type": "integer",
       "field_type": "list",
       "is_default_in_list": false,
@@ -178,6 +274,7 @@
       "article": "company_id",
       "data_type": "integer",
       "field_type": "list",
+      "is_visible": false,
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -198,6 +295,7 @@
       "article": "contact_id",
       "data_type": "integer",
       "field_type": "list",
+      "is_visible": false,
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -212,83 +310,6 @@
         "table": "contacts",
         "properties_title": "last_name"
       }
-    },
-    {
-      "title": "Категория",
-      "article": "category_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [
-        "add"
-      ],
-      "list_donor": {
-        "table": "expenseCategories",
-        "properties_title": "title"
-      }
-    },
-    {
-      "title": "Способ оплаты",
-      "article": "paymentType_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "list_donor": {
-        "table": "paymentTypes",
-        "properties_title": "title"
-      }
-    },
-    {
-      "title": "Статус",
-      "article": "status_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [],
-      "custom_list": [],
-      "list_donor": {
-        "table": "orderPayStatuses",
-        "properties_title": "title"
-      }
-    },
-    {
-      "title": "Сумма",
-      "article": "cost",
-      "data_type": "float",
-      "field_type": "price",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "add",
-        "update",
-        "get"
-      ],
-      "require_in_commands": [
-        "add"
-      ]
     },
     {
       "title": "Сумма (от)",
@@ -445,19 +466,6 @@
       ]
     },
     {
-      "title": "Дата и время создания",
-      "article": "created_at",
-      "data_type": "datetime",
-      "field_type": "datetime",
-      "is_default_in_list": true,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get"
-      ],
-      "require_in_commands": []
-    },
-    {
       "title": "Пользователь",
       "article": "user_id",
       "data_type": "integer",
@@ -497,6 +505,81 @@
           "title": "Нет",
           "value": "N"
         }
+      ]
+    },
+    {
+      "title": "Привязать к ",
+      "article": "binding",
+      "data_type": "string",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "custom_list": [
+        {
+          "value": "order",
+          "title": "Заказ"
+        },
+        {
+          "value": "driver",
+          "title": "Водитель"
+        },
+        {
+          "title": "Диспетчер",
+          "value": "dispatchers"
+        },
+        {
+          "title": "Автомобиль",
+          "value": "car"
+        },
+        {
+          "title": "Прицеп",
+          "value": "trailer"
+        },
+        {
+          "title": "Компания",
+          "value": "company"
+        },
+        {
+          "title": "Контакт",
+          "value": "contact"
+        }
+      ],
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add"
+      ],
+      "is_visible": true,
+      "is_hook": true
+    },
+    {
+      "title": "Сумма платежей ",
+      "article": "amountPayments",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
+      ]
+    },
+    {
+      "title": "Остаток",
+      "article": "remains",
+      "data_type": "float",
+      "field_type": "price",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "get",
+        "add"
       ]
     }
   ],

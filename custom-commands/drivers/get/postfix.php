@@ -49,23 +49,37 @@ foreach ( $response[ "data" ] as $driver ) {
         ->where([
             "driver_id" => $driver["id"]
         ]);
+    
+    $orderStatus = $API->DB->from( "orderStatuses" )
+        ->where( "id", $order[ "status_id" ] )
+        ->limit(1)
+        ->fetch();
 
     $driver[ "ordersCount" ] = count($orders);
 
     if ( $order[ "id" ] ) {
 
-        $driver[ "order" ] = $order[ "id" ];
-        $driver[ "orderStatus" ] = $order[ "status_id" ];
+        $driver[ "order" ][ "href" ] = "orders/update/" . $order[ "id" ];
+        $driver[ "order" ][ "title" ] = $order[ "id" ];
+
+        $driver[ "orderStatus" ] = [
+
+            "value" => $order[ "status_id" ],
+            "title" => $orderStatus[ "title" ]
+
+        ];
 
     } else {
 
-        $driver[ "order" ] = "нет";
+        $driver[ "order" ][ "value" ] = "";
+        $driver[ "order" ][ "title" ] = "нет";
 
     }
 
     $task = $API->DB->from( "tasks" )
         ->where([
-            "driver_id" => $driver["id"]
+            "driver_id" => $driver["id"],
+            "is_active" => "Y"
         ])
         ->orderBy("created_at desc")
         ->limit(1)
@@ -92,16 +106,16 @@ foreach ( $response[ "data" ] as $driver ) {
 
     if ( $task[ "id" ] ) {
 
-        $driver[ "task_id" ] = $task[ "title" ];
+        $driver[ "task_id" ][ "href" ] = "tasks/update/" . $task[ "id" ];
+        $driver[ "task_id" ][ "title" ] = $task[ "id" ];
         $driver[ "taskStatus" ] = $custom_list[ $task[ "status" ] ];
 
     } else {
 
-        $driver[ "task_id" ] = "Без задачи";
-        $driver[ "taskStatus" ] = "Без задачи";
+        $driver[ "task_id" ][ "value" ] = "";
+        $driver[ "task_id" ][ "title" ] = "Без задачи";
 
     }
-
 
     $drivers[] = $driver;
 

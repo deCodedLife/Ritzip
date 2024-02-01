@@ -20,3 +20,14 @@ if ( $automationRules[ "accountant_confirms_closing_dispatcher_salary" ] == "Y" 
         ->execute();
 
 }
+
+
+if ( $expense[ "order_id" ] ) {
+
+    $API->addLog( [
+        "table_name" => "orders",
+        "description" => "Изменен расход: " . $expense[ "title" ],
+        "row_id" => $expense[ "id" ]
+    ], $requestData );
+
+}

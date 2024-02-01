@@ -1,1 +1,96 @@
-{"required_modules":[],"required_permissions":[],"structure":[{"title":"Шапка","type":"header","size":4,"settings":{"description":"Задачи - Добавление","title":["Добавление задачи"]},"components":[]},{"title":"Форма","type":"form","size":4,"settings":{"object":"tasks","command":"add","areas":[{"size":2,"blocks":[{"title":"Основное","fields":["title","status","created_at","deadline","priority"]},{"title":"Повторять каждые","fields":["repeat_templates","repeat_days","cycles_count","is_endlessly"]}]},{"size":2,"blocks":[{"title":"","fields":["binding","contact_id","company_id","order_id","car_id","driver_id", "trailer_id","employee_id","watcher_id"]},{"title":"","fields":["description","is_visible_everyone","files"]}]}]},"components":{"buttons":[{"type":"submit","settings":{"title":"Добавить","icon":"","href":"tasks","background":"dark"}}]}}]}
+{
+  "required_modules": [],
+  "required_permissions": [
+    "tasks_add"
+  ],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Задачи - Добавление",
+        "title": [
+          "Добавление задачи"
+        ]
+      },
+      "components": []
+    },
+    {
+      "title": "Форма",
+      "type": "form",
+      "size": 4,
+      "settings": {
+        "object": "tasks",
+        "command": "add",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [
+                  "title",
+                  "status",
+                  "created_at",
+                  "deadline",
+                  "priority"
+                ]
+              },
+              {
+                "title": "Повторять каждые",
+                "fields": [
+                  "repeat_templates",
+                  "repeat_days",
+                  "cycles_count",
+                  "is_endlessly"
+                ]
+              }
+            ]
+          },
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "",
+                "fields": [
+                  "binding",
+                  "contact_id",
+                  "company_id",
+                  "order_id",
+                  "car_id",
+                  "driver_id",
+                  "expense_id",
+                  "trailer_id",
+                  "employee_id",
+                  "watcher_id"
+                ]
+              },
+              {
+                "title": "",
+                "fields": [
+                  "description",
+                  "is_visible_everyone",
+                  "files"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "components": {
+        "buttons": [
+          {
+            "type": "submit",
+            "settings": {
+              "title": "Добавить",
+              "icon": "",
+              "href": "[return]",
+              "background": "dark"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

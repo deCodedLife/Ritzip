@@ -1,5 +1,5 @@
 {
-  "title": "Категории компаний",
+  "title": "Компания",
   "properties": [
     {
       "title": "Получатель",
@@ -219,17 +219,17 @@
       "is_required": "N"
     },
     {
-      "title": "Отправитель",
-      "article": "sender_id",
-      "type": "int",
-      "default": null,
+      "title": "Получатель",
+      "article": "is_recipient",
+      "type": "char(1)",
+      "default": "N",
       "is_required": "N"
     },
     {
-      "title": "Получатель",
-      "article": "recipient_id",
-      "type": "int",
-      "default": null,
+      "title": "Отправитель",
+      "article": "is_sender",
+      "type": "char(1)",
+      "default": "N",
       "is_required": "N"
     },
     {

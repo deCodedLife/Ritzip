@@ -42,8 +42,9 @@
                           "category_id",
                           "created_at",
                           "cost",
-                          "order_id",
-                          "status_id"
+                          "status_id",
+                          "amountPayments",
+                          "remains"
                         ]
                       }
                     ]
@@ -54,12 +55,14 @@
                       {
                         "title": "Связка",
                         "fields": [
+                          "binding",
                           "driver_id",
                           "dispatchers_id",
                           "car_id",
                           "trailer_id",
                           "company_id",
-                          "contact_id"
+                          "contact_id",
+                          "order_id"
                         ]
                       },
                       {
@@ -107,17 +110,133 @@
         },
         {
           "title": "Счет на оплату",
-          "body": []
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts"
+              },
+              "components": {
+                "search": true,
+                "buttons": [
+                  {
+                    "type": "href",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Задачи",
           "is_counter": true,
-          "body": []
+          "body": [
+            {
+              "title": "Список задач",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "tasks",
+                "context": {
+                  "page": "expenses"
+                },
+                "filters": [
+                  {
+                    "property": "expense_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить задачу",
+                      "background": "dark",
+                      "page": "tasks/add",
+                      "context": {
+                        "form": "expenseTasks",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Напоминания",
           "is_counter": true,
-          "body": []
+          "body": [
+            {
+              "title": "Список напоминаний",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "reminders",
+                "filters": [
+                  {
+                    "property": "expense_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить напоминание",
+                      "background": "dark",
+                      "page": "reminders/add",
+                      "context": {
+                        "form": "expense",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Лента событий",

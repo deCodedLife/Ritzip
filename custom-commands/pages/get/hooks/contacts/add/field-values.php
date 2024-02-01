@@ -34,5 +34,10 @@ if ( ( $requestData->context->form == "recipient" ) || ( $requestData->context->
 
 }
 
+if ( $requestData->context->form == "companies" ) {
 
+    $formFieldValues[ "company_id" ][ "is_visible" ] = false;
+
+}
 $formFieldValues[ "user_id" ][ "value" ] = $API::$userDetail->id;
+$formFieldValues[ "company_id" ][ "field_type" ] = "list";

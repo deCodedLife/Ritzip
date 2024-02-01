@@ -37,7 +37,7 @@ $recipient = $API->DB->from( "users" )
 $returnReport[] = [
     "value" => $order["placeCount"],
     "description" => "Мест ( всего )",
-    "size" => "2",
+    "size" => "1",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -60,6 +60,40 @@ $returnReport[] = [
     "value" => $order["placeCount"] - $order["placeOccupied"],
     "description" => "Мест ( Свободно )",
     "size" => "1",
+    "icon" => "",
+    "prefix" => "",
+    "postfix" => [],
+    "background" => "info",
+    "detail" => []
+];
+
+$returnReport[] = [
+    "value" => $order["created_at"],
+    "description" => "Дата и время начала",
+    "size" => "1",
+    "icon" => "",
+    "prefix" => "",
+    "postfix" => [],
+    "background" => "info",
+    "detail" => []
+];
+
+$returnReport[] = [
+    "value" => $order["cost"],
+    "description" => "Стоимость заказа",
+    "size" => "2",
+    "icon" => "",
+    "prefix" => "",
+    "postfix" => [],
+    "background" => "info",
+    "detail" => []
+];
+
+
+$returnReport[] = [
+    "value" => $order["miles"],
+    "description" => "Колличество миль",
+    "size" => "2",
     "icon" => "",
     "prefix" => "",
     "postfix" => [],
@@ -98,7 +132,7 @@ if ( $sender ) {
 
     $returnReport[] = [
         "value" => "Отправитель",
-        "description" => $sender["first_name"] . " " . $sender["first_name"] . " " . $sender["patronymic"] . ", " . $sender["email"] . ", " . $phoneFormat,
+        "description" => $sender["first_name"] . " " . $sender["first_name"] . " " . $sender["patronymic"] . ", " . $sender["email"] . ", " . $phoneFormat . ", " . $recipient[ "address" ],
         "size" => "2",
         "icon" => "",
         "prefix" => "",
@@ -117,7 +151,37 @@ if ( $recipient ) {
 
     $returnReport[] = [
         "value" => "Получатель",
-        "description" => $recipient[ "first_name" ] . " " .  $recipient[ "first_name" ] . " " .  $recipient[ "patronymic" ] . ", " .  $recipient[ "email" ]  . ", " .  $phoneFormat,
+        "description" => $recipient[ "first_name" ] . " " .  $recipient[ "first_name" ] . " " .  $recipient[ "patronymic" ] . ", " .  $recipient[ "email" ]  . ", " .  $phoneFormat . ", " . $recipient[ "address" ],
+        "size" => "2",
+        "icon" => "",
+        "prefix" => "",
+        "postfix" => [],
+        "background" => "info",
+        "detail" => []
+    ];
+
+}
+
+if ( $order[ "sendingAddress" ] ) {
+
+    $returnReport[] = [
+        "value" => "Адрес отправления",
+        "description" => $order[ "sendingAddress" ],
+        "size" => "2",
+        "icon" => "",
+        "prefix" => "",
+        "postfix" => [],
+        "background" => "info",
+        "detail" => []
+    ];
+
+}
+
+if ( $order[ "receivingAddress" ] ) {
+
+    $returnReport[] = [
+        "value" => "Адрес получения",
+        "description" => $order[ "receivingAddress" ],
         "size" => "2",
         "icon" => "",
         "prefix" => "",

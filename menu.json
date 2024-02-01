@@ -8,12 +8,6 @@
       "icon": "garage"
     },
     {
-      "title": "Онлайн чат",
-      "href": "chat",
-      "children": [],
-      "icon": "reading"
-    },
-    {
       "title": "Заказы",
       "href": "orders",
       "children": [],
@@ -23,7 +17,10 @@
       "title": "Задачи",
       "href": "tasks",
       "children": [],
-      "icon": "bullet-list"
+      "icon": "bullet-list",
+      "required_permissions": [
+        "tasks_get"
+      ]
     },
     {
       "title": "Списки",
@@ -75,7 +72,10 @@
       "children": [
         {
           "title": "Счета",
-          "href": "accounts"
+          "href": "accounts",
+          "required_permissions": [
+            "accounts_get"
+          ]
         },
         {
           "title": "Платежи",
@@ -185,6 +185,9 @@
     {
       "title": "Настройки",
       "href": "settings",
+      "required_permissions": [
+        "settings"
+      ],
       "children": [
         {
           "title": "Общие настройки",
@@ -232,7 +235,10 @@
             },
             {
               "title": "Роли",
-              "href": "roles"
+              "href": "roles",
+              "required_permissions": [
+                "menu_roles"
+              ]
             }
           ]
         },
@@ -303,6 +309,10 @@
             {
               "title": "Стороние приложения",
               "href": "moreApplications"
+            },
+            {
+              "title": "Редактор приложения",
+              "href": "appEditor"
             }
           ]
         }

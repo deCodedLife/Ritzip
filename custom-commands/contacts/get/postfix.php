@@ -6,11 +6,23 @@ if ( $requestData->context->block == "list" ) {
 
     foreach ( $response[ "data" ] as $contact ) {
 
+        $companies = [];
+
+        foreach ( $contact[ "company_id" ] as $company ) {
+
+            $company[ "href" ] = "companies/update/" . $company[ "value" ];
+            $companies[] = $company;
+
+        }
+
+        $contact[ "company_id" ] = $companies;
+
         $contact[ "fi" ] = $contact[ "last_name" ] . " " . $contact[ "first_name" ];
 
         $task = $API->DB->from( "tasks" )
             ->where([
-                "contact_id" => $contact[ "id" ]
+                "contact_id" => $contact[ "id" ],
+                "is_active" => "Y"
             ])
             ->orderBy( "created_at desc" )
             ->limit(1)
@@ -37,12 +49,14 @@ if ( $requestData->context->block == "list" ) {
 
         if ( $task[ "id" ] ) {
 
-            $contact[ "task_id" ] = $task[ "id" ];
+            $contact[ "task_id" ][ "href" ] = "tasks/update/" . $task[ "id" ];
+            $contact[ "task_id" ][ "title" ] = $task[ "id" ];
             $contact[ "taskStatus" ] = $custom_list[ $task[ "status" ] ];
 
         } else {
 
-            $contact[ "task_id" ] = "Без задачи";
+            $contact[ "task_id" ][ "value" ] = "";
+            $contact[ "task_id" ][ "title" ] = "Без задачи";
 
         }
 
@@ -55,12 +69,14 @@ if ( $requestData->context->block == "list" ) {
             ->limit(1)
             ->fetch();
 
+        $allOrder = $API->DB->from( "orders" );
+
         $orders = $API->DB->from( "orders" )
             ->where([
                 "sourse_contact" => $contact["id"]
             ]);
 
-        $contact[ "countOrder" ] = count($orders);
+        $contact[ "countOrder" ] = count($allOrder);
 
         $orderStatus = $API->DB->from( "orderStatuses" )
             ->where( "id", $order[ "status_id" ] )
@@ -69,7 +85,7 @@ if ( $requestData->context->block == "list" ) {
 
         if ( $order[ "id" ] ) {
 
-            $contact[ "order" ][ "value" ] = "orders/update/" . $order[ "id" ];
+            $contact[ "order" ][ "href" ] = "orders/update/" . $order[ "id" ];
             $contact[ "order" ][ "title" ] = $order[ "id" ];
 
             $contact[ "orderStatus" ] = [
@@ -324,3 +340,23 @@ if ( $requestData->context->block == "list" ) {
     }
 
 }
+
+
+//if ( $requestData->context->block === "form_list" ) {
+//
+//    $filteredContacts = [];
+//
+//    foreach ( $response[ "data" ] as $contact ) {
+//
+//        if ( $contact[ "is_in_company" ] == "Y" ) $API->returnResponse( $contact, 500 );
+//
+//        $filteredContacts[] = $contact;
+//
+//    }
+//
+//    /**
+//     * Запись в выдачу
+//     */
+//    $response[ "data" ] = $filteredContacts;
+//
+//}

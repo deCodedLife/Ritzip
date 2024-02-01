@@ -4,6 +4,18 @@
   "is_trash": true,
   "properties": [
     {
+      "title": "№ Платежа",
+      "article": "id",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
       "title": "Дата (от)",
       "article": "created_at_from",
       "data_type": "datetime",
@@ -32,7 +44,7 @@
       "article": "account_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -47,6 +59,52 @@
         "table": "accounts",
         "properties_title": "number"
       }
+    },
+    {
+      "title": "Счет",
+      "article": "account",
+      "data_type": "string",
+      "field_type": "link",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "add",
+        "get",
+        "update"
+      ]
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ],
+      "list_donor": {
+        "table": "paymentTypes",
+        "properties_title": "title"
+      }
+    },
+    {
+      "title": "ID транзакции",
+      "article": "transaction_id",
+      "data_type": "integer",
+      "field_type": "integer",
+      "is_default_in_list": true,
+      "is_unique": true,
+      "is_autofill": true,
+      "use_in_commands": [
+        "get",
+        "update",
+        "add"
+      ]
     },
     {
       "title": "Сумма",
@@ -83,7 +141,7 @@
       "article": "payBefore",
       "data_type": "date",
       "field_type": "date",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -98,7 +156,7 @@
       "article": "status_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -160,7 +218,7 @@
       "article": "responsible_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "list_donor": {
@@ -300,24 +358,6 @@
           "value": "company"
         }
       ]
-    },
-    {
-      "title": "Способ оплаты",
-      "article": "paymentType_id",
-      "data_type": "integer",
-      "field_type": "list",
-      "is_default_in_list": false,
-      "is_unique": false,
-      "is_autofill": true,
-      "use_in_commands": [
-        "get",
-        "update",
-        "add"
-      ],
-      "list_donor": {
-        "table": "paymentTypes",
-        "properties_title": "title"
-      }
     }
   ],
   "action_buttons": [

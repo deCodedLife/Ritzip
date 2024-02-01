@@ -72,39 +72,31 @@
     },
     {
       "title": "Отправитель",
-      "article": "sender_id",
-      "data_type": "integer",
-      "field_type": "list",
+      "article": "is_sender",
+      "data_type": "boolean",
+      "field_type": "checkbox",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
-        "add",
+        "get",
         "update",
-        "get"
-      ],
-      "list_donor": {
-        "table": "contacts",
-        "properties_title": "last_name"
-      }
+        "add"
+      ]
     },
     {
       "title": "Получатель",
-      "article": "recipient_id",
-      "data_type": "integer",
-      "field_type": "list",
+      "article": "is_recipient",
+      "data_type": "boolean",
+      "field_type": "checkbox",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
-        "add",
+        "get",
         "update",
-        "get"
-      ],
-      "list_donor": {
-        "table": "contacts",
-        "properties_title": "last_name"
-      }
+        "add"
+      ]
     },
     {
       "title": "Кол-во заказов",
@@ -122,12 +114,14 @@
       "title": "Текущий заказ",
       "article": "order",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "add",
+        "get",
+        "update"
       ]
     },
     {
@@ -609,12 +603,14 @@
       "title": "Последняя задача",
       "article": "task_id",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "add",
+        "get",
+        "update"
       ]
     },
     {

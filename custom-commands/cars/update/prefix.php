@@ -13,3 +13,9 @@ if ( $requestData->mileage ) {
     }
 
 }
+
+if ( ( $requestData->plannedRevenue || $requestData->period ) && $API::$userDetail->role_id != 32 ) {
+
+    $API->returnResponse( "У вас недостаточно прав для изменения", 400 );
+
+}

@@ -45,11 +45,12 @@ if ( $user[ "role_id" ] == "31" ) {
 
 } else {
 
-    $formFieldValues[ "includingGasoline" ][ "is_visible" ] = false;
+    $formFieldValues[ "consumptionCard" ][ "is_visible" ] = false;
     $formFieldValues[ "insurancePeriod_from" ][ "is_visible" ] = false;
     $formFieldValues[ "insurancePeriod_to" ][ "is_visible" ] = false;
     $formFieldValues[ "usingApp" ][ "is_visible" ] = false;
     $formFieldValues[ "lookBook" ][ "is_visible" ] = false;
+    $formFieldValues[ "includingGasoline" ][ "is_visible" ] = false;
 
 }
 
@@ -58,21 +59,33 @@ if ( $user[ "salaryType" ] == "percent" ) {
     $formFieldValues[ "salaryPercent" ][ "is_visible" ] = true;
     $formFieldValues[ "salarySum" ][ "is_visible" ] = false;
 
-} else {
+} else if ( $user[ "salaryType" ] == "fixed" ) {
 
     $formFieldValues[ "salaryPercent" ][ "is_visible" ] = false;
     $formFieldValues[ "salarySum" ][ "is_visible" ] = true;
 
 }
 
-if ( $user[ "dispatchFeeType" ] == "percent" ) {
+if ( $user[ "role_id" ] != "3" ) {
 
-    $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = true;
+    $formFieldValues[ "dispatchFeeType" ][ "is_visible" ] = false;
+    $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = false;
     $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = false;
 
 } else {
 
-    $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = false;
-    $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = true;
+    $formFieldValues[ "dispatchFeeType" ][ "is_visible" ] = true;
+    if ( $user[ "dispatchFeeType" ] == "percent" ) {
+
+        $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = true;
+        $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = false;
+
+    } else if ( $user[ "dispatchFeeType" ] == "fixed" ) {
+
+        $formFieldValues[ "dispatchFeePercent" ][ "is_visible" ] = false;
+        $formFieldValues[ "dispatchFeeSum" ][ "is_visible" ] = true;
+
+    }
 
 }
+

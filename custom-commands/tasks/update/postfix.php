@@ -1,64 +1,176 @@
 <?php
 
+$task = $API->DB->from( "tasks" )
+    ->where( "id", $requestData->id )
+    ->limit(1)
+    ->fetch();
 /**
  * Название задачи
  */
-$taskTitle = $API->DB->from( "tasks" )
-    ->where( "id", $requestData->id )
-    ->limit( 1 )
-    ->fetch()[ "title" ];
+$taskTitle = $task[ "title" ];
 
 
-/**
- * Добавление логов
- */
 
-if ( $requestData->contact_id ) {
+if ( $requestData->status == "completed" ) {
 
-    $API->addLog( [
-        "table_name" => "contacts",
-        "description" => "Привязана задача: $taskTitle",
-        "row_id" => $requestData->contact_id
-    ], $requestData );
+    /**
+     * Добавление логов
+     */
 
-} // if. $requestData->contact_id
+    if ( $task[ "contact_id" ] ) {
 
-if ( $requestData->company_id ) {
+        $API->addLog( [
+            "table_name" => "contacts",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "contact_id" ]
+        ], $requestData );
 
-    $API->addLog( [
-        "table_name" => "companies",
-        "description" => "Привязана задача: $taskTitle",
-        "row_id" => $requestData->company_id
-    ], $requestData );
+    } // if. $requestData->contact_id
 
-} // if. $requestData->company_id
+    if ( $task[ "employee_id" ] ) {
 
-if ( $requestData->order_id ) {
+        $API->addLog( [
+            "table_name" => "contacts",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "employee_id" ]
+        ], $requestData );
 
-    $API->addLog( [
-        "table_name" => "orders",
-        "description" => "Привязана задача: $taskTitle",
-        "row_id" => $requestData->order_id
-    ], $requestData );
+    } // if. $requestData->contact_id
 
-} // if. $requestData->order_id
+    if ( $task[ "company_id" ] ) {
 
-if ( $requestData->car_id ) {
+        $API->addLog( [
+            "table_name" => "companies",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "company_id" ]
+        ], $requestData );
 
-    $API->addLog( [
-        "table_name" => "cars",
-        "description" => "Привязана задача: $taskTitle",
-        "row_id" => $requestData->car_id
-    ], $requestData );
+    } // if. $requestData->company_id
 
-} // if. $requestData->car_id
+    if ( $task[ "order_id" ] ) {
 
-if ( $requestData->driver_id ) {
+        $API->addLog( [
+            "table_name" => "orders",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "order_id" ]
+        ], $requestData );
 
-    $API->addLog( [
-        "table_name" => "users",
-        "description" => "Привязана задача: $taskTitle",
-        "row_id" => $requestData->driver_id
-    ], $requestData );
+    } // if. $requestData->order_id
 
-} // if. $requestData->driver_id
+    if ( $task[ "car_id" ] ) {
+
+        $API->addLog( [
+            "table_name" => "cars",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "car_id" ]
+        ], $requestData );
+
+    } // if. $requestData->car_id
+
+    if ( $task[ "driver_id" ] ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "driver_id" ]
+        ], $requestData );
+
+    } // if. $requestData->driver_id
+
+    if ( $task[ "trailer_id" ] ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "trailer_id" ]
+        ], $requestData );
+
+    } // if. $requestData->trailer_id
+
+    if ( $task[ "expense_id" ] ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Завершена задача: " . $task[ "title" ],
+            "row_id" => $task[ "expense_id" ]
+        ], $requestData );
+
+    } // if. $requestData->expense_id
+
+
+} else {
+
+    /**
+     * Добавление логов
+     */
+    if ( $requestData->contact_id ) {
+
+        $API->addLog( [
+            "table_name" => "contacts",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->contact_id
+        ], $requestData );
+
+    } // if. $requestData->contact_id
+
+    if ( $requestData->company_id ) {
+
+        $API->addLog( [
+            "table_name" => "companies",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->company_id
+        ], $requestData );
+
+    } // if. $requestData->company_id
+
+    if ( $requestData->order_id ) {
+
+        $API->addLog( [
+            "table_name" => "orders",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->order_id
+        ], $requestData );
+
+    } // if. $requestData->order_id
+
+    if ( $requestData->car_id ) {
+
+        $API->addLog( [
+            "table_name" => "cars",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->car_id
+        ], $requestData );
+
+    } // if. $requestData->car_id
+
+    if ( $requestData->driver_id ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->driver_id
+        ], $requestData );
+
+    } // if. $requestData->driver_id
+
+    if ( $requestData->trailer_id ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->trailer_id
+        ], $requestData );
+
+    } // if. $requestData->trailer_id
+
+    if ( $requestData->expense_id ) {
+
+        $API->addLog( [
+            "table_name" => "users",
+            "description" => "Привязана задача: $taskTitle",
+            "row_id" => $requestData->expense_id
+        ], $requestData );
+
+    } // if. $requestData->expense_id
+
+}

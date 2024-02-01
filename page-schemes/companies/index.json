@@ -31,6 +31,26 @@
           }
         },
         {
+          "title": "Отправитель",
+          "type": "checkbox",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "is_sender"
+          }
+        },
+        {
+          "title": "Получатель",
+          "type": "checkbox",
+          "required_permissions": [],
+          "required_modules": [],
+          "settings": {
+            "is_search": false,
+            "recipient_property": "is_recipient"
+          }
+        },
+        {
           "title": "Категория",
           "type": "list",
           "required_permissions": [],

@@ -14,7 +14,8 @@
       "use_in_commands": [
         "add",
         "update",
-        "get"
+        "get",
+        "status"
       ]
     },
     {
@@ -56,7 +57,8 @@
       "use_in_commands": [
         "add",
         "update",
-        "get"
+        "get",
+        "status"
       ],
       "require_in_commands": [],
       "list_donor": {
@@ -139,7 +141,7 @@
       "article": "binding",
       "data_type": "string",
       "field_type": "list",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_hook": true,
@@ -176,9 +178,26 @@
           "value": "trailer"
         },
         {
+          "title": "Расход",
+          "value": "expense"
+        },
+        {
           "title": "Без связи",
           "value": "clear"
         }
+      ]
+    },
+    {
+      "title": "Привязать к ",
+      "article": "bindingLink",
+      "data_type": "string",
+      "field_type": "link_list",
+      "is_default_in_list": true,
+      "is_unique": false,
+      "is_autofill": false,
+      "is_disabled": false,
+      "use_in_commands": [
+        "get"
       ]
     },
     {
@@ -204,7 +223,7 @@
       "article": "is_visible_everyone",
       "data_type": "boolean",
       "field_type": "checkbox",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -276,7 +295,8 @@
         "hook",
         "add",
         "update",
-        "get"
+        "get",
+        "status"
       ],
       "list_donor": {
         "table": "contacts",
@@ -298,7 +318,8 @@
         "hook",
         "add",
         "update",
-        "get"
+        "get",
+        "status"
       ],
       "list_donor": {
         "table": "orders",
@@ -320,7 +341,8 @@
         "hook",
         "update",
         "get",
-        "add"
+        "add",
+        "status"
       ],
       "list_donor": {
         "table": "cars",
@@ -342,7 +364,8 @@
         "update",
         "hook",
         "get",
-        "add"
+        "add",
+        "status"
       ],
       "list_donor": {
         "table": "companies",
@@ -364,7 +387,8 @@
         "update",
         "get",
         "hook",
-        "add"
+        "add",
+        "status"
       ],
       "list_donor": {
         "table": "drivers",
@@ -581,7 +605,8 @@
         "update",
         "get",
         "add",
-        "hook"
+        "hook",
+        "status"
       ],
       "list_donor": {
         "table": "trailers",
@@ -590,6 +615,27 @@
       "is_disabled": false,
       "is_visible": false,
       "min_value": 0
+    },
+    {
+      "title": "Расход",
+      "article": "expense_id",
+      "data_type": "integer",
+      "field_type": "list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "is_visible": false,
+      "use_in_commands": [
+        "update",
+        "hook",
+        "get",
+        "add",
+        "status"
+      ],
+      "list_donor": {
+        "table": "expenses",
+        "properties_title": "title"
+      }
     }
   ],
   "action_buttons": [

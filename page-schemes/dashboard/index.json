@@ -1,26 +1,87 @@
 {
   "required_modules": [],
   "required_permissions": [],
-  "structure": [{
-    "title": "Шапка",
-    "type": "header",
-    "size": 4,
-    "settings": {
-      "description": "",
-      "title": ["Объявления"]
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "",
+        "title": [
+          "Объявления"
+        ]
+      },
+      "components": []
     },
-    "components": []
-  }, {
-    "title": "Объявления",
-    "type": "news",
-    "size": 4,
-    "settings": {
-      "object": "ads",
-      "property_image": "image",
-      "property_title": "title",
-      "property_body": "body",
-      "property_preview": "preview_body"
+    {
+      "title": "Объявления",
+      "type": "news",
+      "size": 4,
+      "settings": {
+        "object": "ads",
+        "property_image": "image",
+        "property_title": "title",
+        "property_body": "body",
+        "property_preview": "preview_body"
+      },
+      "components": []
     },
-    "components": []
-  }]
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "tasks"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "companies"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "contacts"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "drivers"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "cars"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "payments"
+      }
+    },
+    {
+      "title": "Список",
+      "type": "list",
+      "size": 4,
+      "settings": {
+        "object": "accounts"
+      }
+    }
+  ]
 }

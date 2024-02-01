@@ -323,12 +323,14 @@
       "use_in_commands": [
         "update",
         "get",
-        "add"
+        "add",
+        "hook"
       ],
       "list_donor": {
         "table": "trailers",
         "properties_title": "vin"
-      }
+      },
+      "is_hook": true
     },
     {
       "title": "Ответственный",
@@ -352,7 +354,7 @@
       "title": "Текущий заказ",
       "article": "order",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
@@ -585,8 +587,10 @@
       "use_in_commands": [
         "update",
         "get",
-        "add"
-      ]
+        "add",
+        "hook"
+      ],
+      "is_hook": true
     },
     {
       "title": "Планируемая выручка",
@@ -636,12 +640,14 @@
       "title": "Последняя задача",
       "article": "task_id",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "add",
+        "get",
+        "update"
       ]
     },
     {
@@ -674,7 +680,7 @@
       "title": "Текущий заказ",
       "article": "order",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,

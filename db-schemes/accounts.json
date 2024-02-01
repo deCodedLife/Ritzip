@@ -2,8 +2,78 @@
   "title": "Примечания",
   "properties": [
     {
-      "title": "Заголовок",
-      "article": "title",
+      "title": "Дата и время создания",
+      "article": "created_at",
+      "type": "datetime",
+      "default": "CURRENT_TIMESTAMP",
+      "is_required": "Y"
+    },
+    {
+      "title": "Оплата до",
+      "article": "pay_before",
+      "type": "datetime",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Заявка",
+      "article": "order_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Водитель",
+      "article": "driver_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Прицеп",
+      "article": "trailer_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Авто",
+      "article": "car_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Компания",
+      "article": "company_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Контакт",
+      "article": "contact_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Расход",
+      "article": "expense_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Объект",
+      "article": "binding",
+      "type": "varchar(75)",
+      "default": "clear",
+      "is_required": "N"
+    },
+    {
+      "title": "Статус",
+      "article": "status",
       "type": "varchar(75)",
       "default": null,
       "is_required": "N"
@@ -11,7 +81,7 @@
     {
       "title": "Номер счета",
       "article": "number",
-      "type": "int",
+      "type": "varchar(75)",
       "default": null,
       "is_required": "N"
     },
@@ -21,6 +91,34 @@
       "type": "char(1)",
       "default": "Y",
       "is_required": "Y"
+    },
+    {
+      "title": "Ответственный сотрудник",
+      "article": "employee_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Сумма",
+      "article": "sum",
+      "type": "float",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Способ оплаты",
+      "article": "paymentType_id",
+      "type": "int",
+      "default": "",
+      "is_required": "N"
+    },
+    {
+      "title": "Оплатить до",
+      "article": "paymentBefore",
+      "type": "date",
+      "default": null,
+      "is_required": "N"
     }
   ]
 }

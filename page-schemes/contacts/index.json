@@ -40,6 +40,45 @@
                 ],
                 "filters": [
                     {
+                        "title": "Отправитель",
+                        "type": "checkbox",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "is_sender"
+                        }
+                    },
+                    {
+                        "title": "Получатель",
+                        "type": "checkbox",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "is_recipient"
+                        }
+                    },
+                    {
+                        "title": "Плательщик",
+                        "type": "checkbox",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "is_search": false,
+                            "recipient_property": "is_payer"
+                        }
+                    },
+                    {
+                        "title": "Дата",
+                        "type": "date",
+                        "required_permissions": [],
+                        "required_modules": [],
+                        "settings": {
+                            "recipient_property": "created_at"
+                        }
+                    },
+                    {
                         "title": "Категория",
                         "type": "list",
                         "required_permissions": [],

@@ -21,7 +21,7 @@
       "settings": {
         "object": "directorReport",
         "is_exel": true,
-        "link": "orders"
+        "link": "users"
       },
       "components": {
         "filters": [

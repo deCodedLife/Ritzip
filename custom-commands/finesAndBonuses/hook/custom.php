@@ -2,15 +2,28 @@
 
 $formFieldsUpdate = [];
 
+
+$orderDetail = $API->DB->from( "orders" )
+    ->where( "id", $requestData->id )
+    ->limit( 1 )
+    ->fetch();
+
+
 if ( $requestData->userType == "driver" ) {
 
     $formFieldsUpdate[ "dispatcher_id" ][ "is_visible" ] = false;
     $formFieldsUpdate[ "driver_id" ][ "is_visible" ] = true;
 
+
+    $formFieldsUpdate[ "driver_id" ][ "value" ] = $orderDetail[ "driver_id" ];
+
 } else if ( $requestData->userType == "dispatcher" ) {
 
     $formFieldsUpdate[ "driver_id" ][ "is_visible" ] = false;
     $formFieldsUpdate[ "dispatcher_id" ][ "is_visible" ] = true;
+
+
+    $formFieldsUpdate[ "dispatcher_id" ][ "value" ] = $orderDetail[ "responsible_id" ];
 
 }
 

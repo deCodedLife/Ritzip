@@ -1,0 +1,50 @@
+{
+  "required_modules": [],
+  "required_permissions": [],
+  "structure": [
+    {
+      "title": "Шапка",
+      "type": "header",
+      "size": 4,
+      "settings": {
+        "description": "Сотрудник - Просмотр",
+        "title": [
+          "Ваш профиль"
+        ]
+      },
+      "components": {
+        "buttons": []
+      }
+    },
+    {
+      "title": "Форма",
+      "type": "info",
+      "size": 4,
+      "settings": {
+        "object": "users",
+        "areas": [
+          {
+            "size": 2,
+            "blocks": [
+              {
+                "title": "Основное",
+                "fields": [
+                  "first_name",
+                  "last_name",
+                  "avatar",
+                  "address",
+                  "phone",
+                  "role_id",
+                  "is_allTasks",
+                  "email"
+                ]
+              }
+            ]
+          }
+        ],
+        "command": "get"
+      },
+      "components": []
+    }
+  ]
+}

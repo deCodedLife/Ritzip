@@ -1,5 +1,17 @@
 <?php
 
+if ( $requestData->is_recipient == "N" ) {
+
+    unset($requestData->is_recipient);
+
+}
+
+if ( $requestData->is_sender == "N" ) {
+
+    unset($requestData->is_sender);
+
+}
+
 /**
  * Фильтр по роли
  */
@@ -101,3 +113,11 @@ if ( $requestData->orders_count_to ) {
     unset( $requestData->limit );
 
 } // if. $requestData->orders_count_to
+
+
+if ( $requestData->context->block === "form_list" ) {
+
+    $requestData->select[] = "is_in_company";
+    $requestData->is_in_company = "N";
+
+}

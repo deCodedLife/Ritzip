@@ -43,6 +43,7 @@
       "is_hook": true,
       "is_default_in_list": false,
       "is_unique": false,
+      "is_visible": false,
       "is_autofill": true,
       "use_in_commands": [
         "update",
@@ -75,7 +76,8 @@
         "add",
         "hook",
         "update"
-      ]
+      ],
+      "is_visible": false
     },
     {
       "title": "% зарплаты",
@@ -83,7 +85,7 @@
       "data_type": "float",
       "suffix": "%",
       "field_type": "float",
-      "is_visible": true,
+      "is_visible": false,
       "is_hook": true,
       "is_default_in_list": false,
       "is_unique": false,
@@ -93,7 +95,8 @@
         "update",
         "add",
         "hook"
-      ]
+      ],
+      "is_visible": false
     },
     {
       "title": "Кол-во сделок (from)",
@@ -234,7 +237,6 @@
         "sign-in"
       ],
       "require_in_commands": [
-        "add",
         "sign-in"
       ]
     },
@@ -252,7 +254,6 @@
         "sign-in"
       ],
       "require_in_commands": [
-        "add",
         "sign-in"
       ]
     },
@@ -261,13 +262,12 @@
       "article": "role_id",
       "data_type": "integer",
       "field_type": "list",
-      "is_default_in_list": false,
+      "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
       "is_disabled": false,
       "is_hook": true,
       "use_in_commands": [
-        "update",
         "add",
         "hook",
         "get"
@@ -514,7 +514,6 @@
         "add"
       ],
       "is_disabled": true
-      
     },
     {
       "title": "W9 документ",
@@ -931,7 +930,6 @@
       "data_type": "float",
       "field_type": "price",
       "is_hook": true,
-      "is_visible": false,
       "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
@@ -943,7 +941,8 @@
       ],
       "required_permissions": [
         "salary_management"
-      ]
+      ],
+      "is_visible": false
     },
     {
       "title": "% зарплаты",
@@ -1001,7 +1000,7 @@
       "article": "insuranceAmount",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -1010,7 +1009,7 @@
         "add",
         "get"
       ],
-      "is_visible": true,
+      "is_visible": false,
       "is_hook": true
     },
     {
@@ -1040,7 +1039,8 @@
       ],
       "required_permissions": [
         "salary_management"
-      ]
+      ],
+      "is_visible": false
     },
     {
       "title": "Срок страховки (от)",
@@ -1081,7 +1081,7 @@
       "article": "usingApp",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "is_visible": false,
@@ -1098,7 +1098,7 @@
       "article": "lookBook",
       "data_type": "float",
       "field_type": "price",
-      "is_default_in_list": true,
+      "is_default_in_list": false,
       "is_unique": false,
       "is_autofill": true,
       "use_in_commands": [
@@ -1246,6 +1246,28 @@
       ]
     },
     {
+      "title": "Компания",
+      "article": "company_id",
+      "data_type": "array",
+      "field_type": "link_list",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "add",
+        "update",
+        "get"
+      ],
+      "require_in_commands": [],
+      "join": {
+        "connection_table": "company_contacts",
+        "donor_table": "companies",
+        "property_article": "title",
+        "filter_property": "company_id",
+        "insert_property": "contacts_id"
+      }
+    },
+    {
       "title": "Последняя задача",
       "article": "task_id",
       "data_type": "string",
@@ -1254,6 +1276,48 @@
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
+        "get"
+      ]
+    },
+    {
+      "title": "Привязка к компании",
+      "article": "is_in_company",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Заказчик",
+      "article": "is_source",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Плательщик",
+      "article": "is_payer",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
         "get"
       ]
     }

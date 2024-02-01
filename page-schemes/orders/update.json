@@ -81,24 +81,29 @@
                         ]
                       },
                       {
-                        "title": "Источник",
+                        "title": "Источник и плательщик",
                         "fields": [
                           "source_id",
                           "sourceType",
                           "company_id",
-                          "sourse_contact"
+                          "sourse_contact",
+                          "payer_contact_id",
+                          "payer_company_id",
+                          "payer_id"
                         ]
                       },
                       {
                         "title": "Отправка",
                         "fields": [
-                          "sender_id"
+                          "sender_id",
+                          "companySender_id"
                         ]
                       },
                       {
                         "title": "Получение",
                         "fields": [
-                          "recipient_id"
+                          "recipient_id",
+                          "companyRecipient_id"
                         ]
                       }
                     ]
@@ -136,6 +141,19 @@
                       "background": "dark",
                       "icon": "",
                       "href": "orders"
+                    }
+                  },
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "field_place": "vehicles_id",
+                      "title": "Добавить ТС на отправку",
+                      "background": "dark",
+                      "page": "vehicles/add",
+                      "context": {
+                        "form": "order",
+                        "row_id": ":id"
+                      }
                     }
                   },
                   {
@@ -184,6 +202,24 @@
                   },
                   {
                     "type": "modal",
+                    "settings": {
+                      "field_place": "companySender_id",
+                      "title": "Добавить компанию",
+                      "background": "dark",
+                      "page": "companies/add"
+                    }
+                  },
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "field_place": "companyRecipient_id",
+                      "title": "Добавить компанию",
+                      "background": "dark",
+                      "page": "companies/add"
+                    }
+                  },
+                  {
+                    "type": "modal",
                     "required_permissions": [
                       "manager_schedule"
                     ],
@@ -225,11 +261,58 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить платеж",
                       "background": "dark",
                       "page": "payments/add",
                       "context": {
                         "form": "orderPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts",
+                "filters": [
+                  {
+                    "property": "order_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  },
+                  {
+                    "type": "print",
+                    "required_permissions": [],
+                    "settings": {
+                      "title": "Документ",
+                      "background": "dark",
+                      "data": {
+                        "document_article": "1",
+                        "is_edit": true,
+                        "scheme_name": "orders",
                         "row_id": ":id"
                       }
                     }
@@ -260,6 +343,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить штраф или бонус",
                       "background": "dark",
                       "page": "finesAndBonuses/add",
@@ -297,6 +381,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить ТС на отправку",
                       "background": "dark",
                       "page": "vehicles/add",
@@ -309,6 +394,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить существующее авто",
                       "background": "dark",
                       "page": "orders_vehicles/add",
@@ -399,6 +485,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить файл",
                       "background": "dark",
                       "page": "files/add",
@@ -439,63 +526,13 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить примечание",
                       "background": "dark",
                       "page": "notes/add",
                       "context": {
                         "form": "notes",
                         "row_id": ":id"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "title": "Оплата",
-          "is_counter": true,
-          "body": [
-            {
-              "title": "Виджет информации об оплате",
-              "type": "analytic_widgets",
-              "size": 4,
-              "settings": {
-                "widgets_group": "payment_info",
-                "filters": [
-                  {
-                    "property": "id",
-                    "value": ":id"
-                  }
-                ]
-              },
-              "components": []
-            },
-            {
-              "title": "Список транзакций",
-              "type": "list",
-              "size": 4,
-              "settings": {
-                "object": "orderPayHistory",
-                "filters": [
-                  {
-                    "property": "order_id",
-                    "value": ":id"
-                  }
-                ]
-              },
-              "components": {
-                "buttons": [
-                  {
-                    "type": "modal",
-                    "settings": {
-                      "title": "Оплатить",
-                      "background": "dark",
-                      "page": "payment/add",
-                      "context": {
-                        "form": "payment",
-                        "row_id": ":needPay"
                       }
                     }
                   }
@@ -526,6 +563,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить напоминание",
                       "background": "dark",
                       "page": "reminders/add",
@@ -566,6 +604,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить задачу",
                       "background": "dark",
                       "page": "tasks/add",
@@ -602,6 +641,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить расход",
                       "background": "dark",
                       "page": "expenses/add",

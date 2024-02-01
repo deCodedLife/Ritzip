@@ -178,6 +178,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить платеж",
                       "background": "dark",
                       "page": "payments/add",
@@ -214,6 +215,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить заказ",
                       "background": "dark",
                       "page": "orders/add",
@@ -253,6 +255,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить задачу",
                       "background": "dark",
                       "page": "tasks/add",
@@ -289,6 +292,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить примечания",
                       "background": "dark",
                       "page": "carNotes/add",
@@ -329,6 +333,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить расход",
                       "background": "dark",
                       "page": "expenses/add",

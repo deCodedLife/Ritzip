@@ -33,6 +33,7 @@
                   "address",
                   "phone",
                   "role_id",
+                  "is_allTasks",
                   "email",
                   "password"
                 ]
@@ -52,13 +53,23 @@
                   "lookBook"
                 ]
               },
-
               {
                 "title": "Диспетчерский сбор",
                 "fields": [
                   "dispatchFeeType",
                   "dispatchFeeSum",
                   "dispatchFeePercent"
+                ]
+              },
+              {
+                "title": "Страховка",
+                "fields": [
+                  "consumptionCard",
+                  "insuranceAmount",
+                  "insurancePeriod",
+                  "insurancePeriod_from",
+                  "insurancePeriod_to",
+                  "usingApp"
                 ]
               }
             ]

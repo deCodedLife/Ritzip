@@ -1,5 +1,17 @@
 <?php
 
+if ( $requestData->is_recipient == "N" ) {
+
+    unset($requestData->is_recipient);
+
+}
+
+if ( $requestData->is_sender == "N" ) {
+
+    unset($requestData->is_sender);
+
+}
+
 /**
  * Фильтр по дате
  */

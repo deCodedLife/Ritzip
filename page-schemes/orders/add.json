@@ -40,24 +40,29 @@
                 ]
               },
               {
-                "title": "Источник",
+                "title": "Источник и плательщик",
                 "fields": [
                   "source_id",
                   "sourceType",
                   "company_id",
-                  "sourse_contact"
+                  "sourse_contact",
+                  "payer_contact_id",
+                  "payer_company_id",
+                  "payer_id"
                 ]
               },
               {
                 "title": "Отправка",
                 "fields": [
-                  "sender_id"
+                  "sender_id",
+                  "companySender_id"
                 ]
               },
               {
                 "title": "Получение",
                 "fields": [
-                  "recipient_id"
+                  "recipient_id",
+                  "companyRecipient_id"
                 ]
               }
             ]
@@ -100,6 +105,7 @@
           {
             "type": "modal",
             "settings": {
+              "field_place": "vehicles_id",
               "title": "Добавить ТС на отправку",
               "background": "dark",
               "page": "vehicles/add"
@@ -113,7 +119,25 @@
               "background": "dark",
               "page": "contacts/add"
             }
+          },{
+            "type": "modal",
+            "settings": {
+              "field_place": "companySender_id",
+              "title": "Добавить компанию",
+              "background": "dark",
+              "page": "companies/add"
+            }
           },
+          {
+            "type": "modal",
+            "settings": {
+              "field_place": "companyRecipient_id",
+              "title": "Добавить компанию",
+              "background": "dark",
+              "page": "companies/add"
+            }
+          },
+
           {
             "type": "modal",
             "settings": {

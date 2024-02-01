@@ -21,3 +21,14 @@ $API->DB->update( "orders" )
     ->where( "id", $requestData->order_id )
     ->execute();
 
+
+$vehicleDetail = $API->DB->from( "vehicles" )
+    ->where( "id", $requestData->vehicle_id )
+    ->limit( 1 )
+    ->fetch();
+
+$API->addLog( [
+    "table_name" => "orders",
+    "description" => "Добавлено ТС на отправку: " . $vehicleDetail[ "brand" ] . " " . $vehicleDetail[ "model" ] . ", " . $vehicleDetail[ "yearRelease" ] . ", " .  $vehicleDetail[ "vin" ],
+    "row_id" => $requestData->order_id
+], $requestData );

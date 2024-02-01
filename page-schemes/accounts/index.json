@@ -1,6 +1,8 @@
 {
   "required_modules": [],
-  "required_permissions": [],
+  "required_permissions": [
+    "accounts_get"
+  ],
   "structure": [
     {
       "title": "Шапка",
@@ -22,6 +24,7 @@
         "object": "accounts"
       },
       "components": {
+        "search": true,
         "buttons": [
           {
             "type": "href",

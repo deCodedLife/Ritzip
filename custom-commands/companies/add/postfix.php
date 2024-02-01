@@ -28,3 +28,15 @@ if ($requestData->driver_id) $API->addLog([
     "description" => "Привязана компания: " . $requestData->title,
     "row_id" => $requestData->driver_id
 ], $requestData);
+
+
+if ( $requestData->contacts_id ) {
+
+    $API->DB->update( "users" )
+        ->set( [
+            "is_in_company" => "Y"
+        ] )
+        ->where( "id", $requestData->contacts_id )
+        ->execute();
+
+}

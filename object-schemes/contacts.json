@@ -80,7 +80,7 @@
       "title": "Компания",
       "article": "company_id",
       "data_type": "array",
-      "field_type": "list",
+      "field_type": "link_list",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": true,
@@ -112,7 +112,6 @@
         "sign-in"
       ],
       "require_in_commands": [
-        "add",
         "sign-in"
       ]
     },
@@ -130,7 +129,6 @@
         "sign-in"
       ],
       "require_in_commands": [
-        "add",
         "sign-in"
       ]
     },
@@ -755,6 +753,18 @@
       }
     },
     {
+      "title": "Отправитель/Получатель",
+      "article": "senderOrRecipient",
+      "data_type": "string",
+      "field_type": "string",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": false,
+      "use_in_commands": [
+        "get"
+      ]
+    },
+    {
       "title": "Отправитель",
       "article": "is_sender",
       "data_type": "boolean",
@@ -877,12 +887,14 @@
       "title": "Последняя задача",
       "article": "task_id",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "add",
+        "get",
+        "update"
       ]
     },
     {
@@ -897,6 +909,48 @@
         "get"
       ],
       "require_in_commands": []
+    },
+    {
+      "title": "Привязка к компании",
+      "article": "is_in_company",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Заказчик",
+      "article": "is_source",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
+    },
+    {
+      "title": "Плательщик",
+      "article": "is_payer",
+      "data_type": "boolean",
+      "field_type": "checkbox",
+      "is_default_in_list": false,
+      "is_unique": false,
+      "is_autofill": true,
+      "use_in_commands": [
+        "update",
+        "add",
+        "get"
+      ]
     }
   ],
   "action_buttons": [

@@ -44,6 +44,27 @@
       "is_required": "Y"
     },
     {
+      "title": "Плательщик контакт",
+      "article": "payer_contact_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Плательщик компания",
+      "article": "payer_company_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Плательщик брокер",
+      "article": "payer_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
       "title": "Клиент",
       "article": "client_id",
       "type": "int",
@@ -62,56 +83,56 @@
       "article": "origin_city",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Штат отправки",
       "article": "origin_state",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "ZIP код отправки",
       "article": "origin_zip",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Координаты отправки",
       "article": "origin_coordinates",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Город получения",
       "article": "destination_city",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Штат получения",
       "article": "destination_state",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "ZIP код получения",
       "article": "destination_zip",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Координаты получения",
       "article": "destination_coordinates",
       "type": "varchar(255)",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Статус заявки",
@@ -130,6 +151,20 @@
     {
       "title": "Компания",
       "article": "company_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Компания П",
+      "article": "companyRecipient_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
+    },
+    {
+      "title": "Компания О",
+      "article": "companySender_id",
       "type": "int",
       "default": null,
       "is_required": "N"
@@ -160,7 +195,7 @@
       "article": "is_confirmedAccountant",
       "type": "char(1)",
       "default": "N",
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Дата и время завершения заявки",
@@ -195,7 +230,7 @@
       "article": "miles",
       "type": "float",
       "default": null,
-      "is_required": "Y"
+      "is_required": "N"
     },
     {
       "title": "Оплачено",

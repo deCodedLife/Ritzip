@@ -1,6 +1,8 @@
 {
   "required_modules": [],
-  "required_permissions": [],
+  "required_permissions": [
+    "tasks_get"
+  ],
   "structure": [
     {
       "title": "Шапка",
@@ -102,6 +104,10 @@
                 {
                   "title": "Водитель",
                   "value": "driver"
+                },
+                {
+                  "title": "Расход",
+                  "value": "expense"
                 },
                 {
                   "title": "Прицеп",

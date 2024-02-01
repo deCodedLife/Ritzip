@@ -42,8 +42,8 @@
                           "address",
                           "state_id",
                           "zip",
-                          "recipient_id",
-                          "sender_id"
+                          "is_recipient",
+                          "is_sender"
                         ]
                       }
                     ]
@@ -205,6 +205,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить задачу",
                       "background": "dark",
                       "page": "tasks/add",
@@ -241,6 +242,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить напоминание",
                       "context": {
                         "form": "company",
@@ -301,12 +303,109 @@
           ]
         },
         {
-          "title": "Счета",
-          "body": []
+          "title": "Расходы",
+          "is_counter": true,
+          "body": [
+            {
+              "title": "Список расходов",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "expenses",
+                "filters": [
+                  {
+                    "property": "company_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить расход",
+                      "background": "dark",
+                      "page": "expenses/add",
+                      "context": {
+                        "form": "companyExpenses",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Платежи",
-          "body": []
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "company_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "companyPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts",
+                "filters": [
+                  {
+                    "property": "company_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
           "title": "Выписка по счету",
@@ -333,17 +432,24 @@
               "components": {
                 "buttons": [
                   {
-                    "type": "href",
+                    "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить контакт",
                       "background": "dark",
                       "icon": "",
-                      "page": "contacts/add"
+                      "page": "contacts/add",
+                      "context": {
+                        "form": "companies",
+                        "row_id": ":id"
+                      },
+                      "insert_to_field": "contact_id"
                     }
                   },
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить существующий контакт",
                       "background": "dark",
                       "page": "company_contacts/add",

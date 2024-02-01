@@ -630,6 +630,20 @@
       "type": "char(1)",
       "default": "N",
       "is_required": "N"
+    },
+    {
+      "title": "Привязка к компании (Y/N)",
+      "article": "is_in_company",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "N"
+    },
+    {
+      "title": "Плательщик (Y/N)",
+      "article": "is_payer",
+      "type": "char(1)",
+      "default": "N",
+      "is_required": "N"
     }
   ]
 }

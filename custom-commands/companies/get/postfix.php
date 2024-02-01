@@ -23,12 +23,14 @@ foreach ( $response[ "data" ] as $company ) {
 
     $orderStatus = $API->DB->from( "orderStatuses" )
         ->where( "id", $order[ "status_id" ] )
-        ->limit( 1 )
+        ->limit(1)
         ->fetch();
 
     if ( $order[ "id" ] ) {
 
-        $company[ "order" ] = $order[ "id" ];
+        $company[ "order" ][ "href" ] = "orders/update/" . $order[ "id" ];
+        $company[ "order" ][ "title" ] = $order[ "id" ];
+
         $company[ "orderStatus" ] = [
 
             "value" => $order[ "status_id" ],
@@ -38,7 +40,8 @@ foreach ( $response[ "data" ] as $company ) {
 
     } else {
 
-        $company[ "order" ] = "нет";
+        $company[ "order" ][ "value" ] = "";
+        $company[ "order" ][ "title" ] = "нет";
 
     }
 
@@ -71,15 +74,17 @@ foreach ( $response[ "data" ] as $company ) {
 
     if ( $task[ "id" ] ) {
 
-        $company[ "task_id" ] = $task[ "id" ];
+        $company[ "task_id" ][ "href" ] = "tasks/update/" . $task[ "id" ];
+        $company[ "task_id" ][ "title" ] = $task[ "id" ];
         $company[ "taskStatus" ] = $custom_list[ $task[ "status" ] ];
 
     } else {
 
-        $company[ "task_id" ] = "Без задачи";
-        $company[ "taskStatus" ] = "Без задачи";
+        $company[ "task_id" ][ "value" ] = "";
+        $company[ "task_id" ][ "title" ] = "Без задачи";
 
     }
+
 
     $returnCompanies[] = $company;
 

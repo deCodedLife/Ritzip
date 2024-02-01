@@ -34,8 +34,8 @@
                   "state_id",
                   "zip",
                   "address",
-                  "recipient_id",
-                  "sender_id"
+                  "is_recipient",
+                  "is_sender"
                 ]
               }
             ]

@@ -5,6 +5,7 @@
  */
 
 $formFieldValues[ "author_id" ] = $API::$userDetail->id;
+$formFieldValues[ "is_visible_everyone" ] = "Y";
 $formFieldValues[ "watcher_id" ] = $API::$userDetail->id;
 $formFieldValues[ "employee_id" ] = $API::$userDetail->id;
 
@@ -40,6 +41,14 @@ if ( ( $requestData->context->form == "contactTasks" ) && $requestData->context-
     $formFieldValues[ "contact_id" ][ "is_visible" ] = true;
     $formFieldValues[ "contact_id" ][ "value" ] = $requestData->context->row_id;
     $formFieldValues[ "binding" ][ "value" ] = "contact";
+
+}
+
+if ( ( $requestData->context->form == "expenseTasks" ) && $requestData->context->row_id ) {
+
+    $formFieldValues[ "expense_id" ][ "is_visible" ] = true;
+    $formFieldValues[ "expense_id" ][ "value" ] = $requestData->context->row_id;
+    $formFieldValues[ "binding" ][ "value" ] = "expense";
 
 }
 

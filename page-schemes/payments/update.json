@@ -36,6 +36,7 @@
                       {
                         "title": "Основные данные",
                         "fields": [
+                          "transaction_id",
                           "account_id",
                           "sum",
                           "created_at",
@@ -86,6 +87,7 @@
                   {
                     "type": "modal",
                     "settings": {
+                      "refresh_after_submit": true,
                       "title": "Добавить счет",
                       "background": "dark",
                       "page": "accounts/add",

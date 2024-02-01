@@ -19,7 +19,7 @@
       "title": "Видна для всех",
       "article": "is_visible_everyone",
       "type": "char(1)",
-      "default": null,
+      "default": "Y",
       "is_required": "N"
     },
     {
@@ -42,6 +42,13 @@
       "type": "int",
       "default": null,
       "is_required": "Y"
+    },
+    {
+      "title": "Расход",
+      "article": "expense_id",
+      "type": "int",
+      "default": null,
+      "is_required": "N"
     },
     {
       "title": "Описание",

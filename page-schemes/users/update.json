@@ -49,7 +49,7 @@
                           "avatar",
                           "address",
                           "phone",
-                          "role_id",
+                          "is_allTasks",
                           "email",
                           "password"
                         ]
@@ -59,23 +59,6 @@
                   {
                     "size": 2,
                     "blocks": [
-                      {
-                        "title": "Зарплата",
-                        "fields": [
-                          "salaryType",
-                          "salarySum",
-                          "salaryPercent",
-                          "period"
-                        ]
-                      },
-                      {
-                        "title": "Диспетчерский сбор",
-                        "fields": [
-                          "dispatchFeeType",
-                          "dispatchFeeSum",
-                          "dispatchFeePercent"
-                        ]
-                      },
                       {
                         "title": "Страховка",
                         "fields": [
@@ -111,6 +94,68 @@
           ]
         },
         {
+          "title": "Платежи",
+          "body": [
+            {
+              "title": "Список платежей",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "payments",
+                "filters": [
+                  {
+                    "property": "responsible_id",
+                    "value": ":id"
+                  }
+                ]
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить платеж",
+                      "background": "dark",
+                      "page": "payments/add",
+                      "context": {
+                        "form": "userPayments",
+                        "row_id": ":id"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Счета",
+          "body": [
+            {
+              "title": "Список",
+              "type": "list",
+              "size": 4,
+              "settings": {
+                "object": "accounts"
+              },
+              "components": {
+                "buttons": [
+                  {
+                    "type": "modal",
+                    "settings": {
+                      "refresh_after_submit": true,
+                      "title": "Добавить счет",
+                      "background": "dark",
+                      "page": "accounts/add"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "title": "Управление зарплатой",
           "body": [
             {
@@ -126,10 +171,15 @@
                     "size": 2,
                     "blocks": [
                       {
-                        "title": "",
+                        "title": "Зарплата",
                         "fields": [
-                          "salary",
-                          "includingGasoline"
+                          "role_id",
+                          "salaryType",
+                          "salarySum",
+                          "salaryPercent",
+                          "period",
+                          "includingGasoline",
+                          "bonus_per_mile"
                         ]
                       }
                     ]
@@ -138,9 +188,11 @@
                     "size": 2,
                     "blocks": [
                       {
-                        "title": "",
+                        "title": "Диспетчерский сбор",
                         "fields": [
-                          "bonus_per_mile"
+                          "dispatchFeeType",
+                          "dispatchFeeSum",
+                          "dispatchFeePercent"
                         ]
                       }
                     ]

@@ -139,7 +139,7 @@
       "title": "Текущий заказ",
       "article": "order",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
@@ -156,7 +156,7 @@
       "field_type": "integer",
       "is_default_in_list": true,
       "is_unique": false,
-      "is_autofill": true,
+      "is_autofill": false,
       "use_in_commands": [
         "update",
         "get",
@@ -268,12 +268,14 @@
       "title": "Последняя задача",
       "article": "task_id",
       "data_type": "string",
-      "field_type": "string",
+      "field_type": "link",
       "is_default_in_list": true,
       "is_unique": false,
       "is_autofill": false,
       "use_in_commands": [
-        "get"
+        "add",
+        "get",
+        "update"
       ]
     },
     {

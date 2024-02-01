@@ -14,7 +14,5 @@ if ( $requestData->created_at ) {
 
 } // if. $requestData->created_at->block
 
-
-
 $requestSettings[ "multiply_filter" ][ "not role_id" ] = [ 4, 13 ];
 
